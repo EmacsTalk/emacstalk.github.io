@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 26 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>First Podcast</title><link>https://emacstalk.github.io/podcast/2021/06/26/first-podcast/</link><pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate><guid>https://emacstalk.github.io/podcast/2021/06/26/first-podcast/</guid><description>&lt;p>Hello Emacs&lt;/p></description></item><item><title>About</title><link>https://emacstalk.github.io/about/</link><pubDate>Sun, 29 Nov 2020 09:06:19 +0800</pubDate><guid>https://emacstalk.github.io/about/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 26 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>First Podcast</title><link>https://emacstalk.github.io/podcast/2021/06/26/first-podcast/</link><pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate><guid>https://emacstalk.github.io/podcast/2021/06/26/first-podcast/</guid><description>&lt;ul>
+&lt;li>Hello Emacs&lt;/li>
+&lt;li>Just a test.&lt;/li>
+&lt;/ul></description></item><item><title>About</title><link>https://emacstalk.github.io/about/</link><pubDate>Sun, 29 Nov 2020 09:06:19 +0800</pubDate><guid>https://emacstalk.github.io/about/</guid><description>
 &lt;div class="src src-text">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text"> ______ _______ _ _
 | ____| |__ __| | | |
@@ -15,12 +18,45 @@
 &lt;p>采访 Emacs Hackers，见证巨人的成长历程&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" />&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-Changelog
+如何参与录制
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>感谢您有兴趣参与《EmacsTalk》节目的录制，目前具体流程还没确定，可以通过后面的联系方式来沟通录制细节。一些供参考资料：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://pythonhunter.org/howto">https://pythonhunter.org/howto&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://anobody.im/article/podcastforbeginner/">新手如何从零开始一档播客&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+联系方式
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>本网站留言&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>邮件： &lt;code>jiacai2050+emacstalk@gmail.com&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>微信公众号 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" />&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Changelog
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>2021-06-26，使用 &lt;a href="https://gohugo.io/">hugo&lt;/a> + &lt;a href="https://github.com/frjo/hugo-theme-zen">zen&lt;/a> 主题建站&lt;/p>
