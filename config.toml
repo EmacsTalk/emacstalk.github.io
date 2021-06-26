@@ -3,9 +3,11 @@ languageCode = "en-GB"
 defaultContentLanguage = "en"
 title = "EmacsTalk"
 theme = "zen"
+copyright = "2021 EmacsTalk"
 
 [author]
     name = "EmacsTalk"
+    email = "jiacai2050+emacstalk@gmail.com"
 
 [[menu.main]]
   name = "播客"
@@ -25,7 +27,6 @@ theme = "zen"
 
 [params]
     logo = false
-    contact = "jiacai2050+emacstalk@gmail.com"
     dateformat = "2006-01-02"
     description = "分享 Emacs 技巧，编程心得"
     feedlinks = false
@@ -38,7 +39,9 @@ theme = "zen"
     footer = "Powered by [Hugo](https://gohugo.io/) and the [Zen theme](https://github.com/frjo/hugo-theme-zen)."
     [params.podcast]
         local = false
-        image = "EmacsTalk.jpg"
+        image = "itune_artwork.jpg"
+        lang = "zh-cn"
+        author = "EmacsTalk"
         [params.podcast.category]
             name = "Technology"
         [params.podcast.owner]
