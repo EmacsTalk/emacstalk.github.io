@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><guid>https://emacstalk.github.io/about/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><managingEditor>jiacai2050+emacstalk@gmail.com (EmacsTalk)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (EmacsTalk)</webMaster><copyright>2021 EmacsTalk</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (EmacsTalk)</author><guid>https://emacstalk.github.io/about/</guid><description>
 &lt;pre class="example">
 ______ _______ _ _
 | ____| |__ __| | | |
@@ -60,7 +60,7 @@ Changelog
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div></description></item><item><title>测试 Podcast</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;ul>
+&lt;/div></description></item><item><title>测试 Podcast</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (EmacsTalk)</author><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;ul>
 &lt;li>Hello Emacs&lt;/li>
 &lt;li>我是一个测试&lt;/li>
 &lt;/ul></description></item></channel></rss>
