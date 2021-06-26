@@ -1,0 +1,34 @@
+baseURL = "https://emacstalk.github.io"
+languageCode = "zh-CN"
+title = "EmacsTalk"
+theme = "zen"
+
+[author]
+    name = "EmacsTalk"
+
+[frontmatter]
+  date = [":filename", ":default", ":fileModTime"]
+
+[permalinks]
+  podcast = "/podcast/:year/:month/:day/:slug/"
+
+[[menu.main]]
+  name = "播客"
+  weight = 20
+  identifier = "podcasts"
+  url = "/podcast/"
+[[menu.main]]
+  name = "关于"
+  weight = 30
+  identifier = "about"
+  url = "/about/"
+[[menu.main]]
+  name = "RSS"
+  weight = 40
+  identifier = "rss"
+  url = "/podcast/index.xml"
+
+[params]
+    logo = false
+    [params.Podcast]
+        local = false
