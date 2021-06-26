@@ -30,5 +30,11 @@ theme = "zen"
 
 [params]
     logo = false
-    [params.Podcast]
+    description = "分享 Emacs 技巧，编程心得"
+    realfavicongenerator = true
+    copyright = "© 2021 Powered by [EmacsTalk](https://github.com/EmacsTalk) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
+    [params.podcast]
         local = false
+        image = "EmacsTalk.jpg"
+        [params.podcast.category]
+            name = "Technology"
