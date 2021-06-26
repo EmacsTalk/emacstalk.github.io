@@ -38,3 +38,6 @@ theme = "zen"
         image = "EmacsTalk.jpg"
         [params.podcast.category]
             name = "Technology"
+        [params.podcast.owner]
+            name = "EmacsTalk"
+            email = "jiacai2050@gmail.com"
