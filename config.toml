@@ -1,16 +1,11 @@
 baseURL = "https://emacstalk.github.io"
-languageCode = "zh-CN"
+languageCode = "en-GB"
+defaultContentLanguage = "en"
 title = "EmacsTalk"
 theme = "zen"
 
 [author]
     name = "EmacsTalk"
-
-[frontmatter]
-  date = [":filename", ":default", ":fileModTime"]
-
-[permalinks]
-  podcast = "/podcast/:year/:month/:day/:slug/"
 
 [[menu.main]]
   name = "播客"
@@ -30,10 +25,17 @@ theme = "zen"
 
 [params]
     logo = false
+    contact = "jiacai2050+emacstalk@gmail.com"
+    dateformat = "2006-01-02"
     description = "分享 Emacs 技巧，编程心得"
+    feedlinks = false
     realfavicongenerator = true
     relatedposts = true
+    submitted = true
+    sidebar = true
+    mobileMenu = true
     copyright = "© 2021 [EmacsTalk](https://github.com/EmacsTalk/emacstalk.github.io) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
+    footer = "Powered by [Hugo](https://gohugo.io/) and the [Zen theme](https://github.com/frjo/hugo-theme-zen)."
     [params.podcast]
         local = false
         image = "EmacsTalk.jpg"
