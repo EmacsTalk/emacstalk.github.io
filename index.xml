@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 26 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>First Podcast</title><link>https://emacstalk.github.io/podcast/2021/06/26/first-podcast/</link><pubDate>Sat, 26 Jun 2021 00:00:00 +0000</pubDate><guid>https://emacstalk.github.io/podcast/2021/06/26/first-podcast/</guid><description>&lt;p>Hello Emacs&lt;/p></description></item><item><title>About</title><link>https://emacstalk.github.io/about/</link><pubDate>Sun, 29 Nov 2020 09:06:19 +0800</pubDate><guid>https://emacstalk.github.io/about/</guid><description>
+&lt;div class="src src-text">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text"> ______ _______ _ _
+| ____| |__ __| | | |
+| |__ _ __ ___ __ _ ___ ___| | __ _| | | __
+| __| | &amp;#39;_ ` _ \ / _` |/ __/ __| |/ _` | | |/ /
+| |____| | | | | | (_| | (__\__ \ | (_| | | &amp;lt;
+|______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
 &lt;ul>
 &lt;li>
 &lt;p>分享 Emacs 使用技巧，编程心得&lt;/p>
