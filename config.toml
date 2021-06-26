@@ -32,7 +32,8 @@ theme = "zen"
     logo = false
     description = "分享 Emacs 技巧，编程心得"
     realfavicongenerator = true
-    copyright = "© 2021 Powered by [EmacsTalk](https://github.com/EmacsTalk) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
+    relatedposts = true
+    copyright = "© 2021 [EmacsTalk](https://github.com/EmacsTalk/emacstalk.github.io) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
     [params.podcast]
         local = false
         image = "EmacsTalk.jpg"
