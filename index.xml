@@ -8,7 +8,12 @@ ______ _______ _ _
 |______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\
 &lt;/pre>
 &lt;p>
-EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。&lt;/p>
+EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。节目主旨：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>专注 Emacs 社区，分享使用技巧；探索 Emacs 社区背后的人与事&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 收听方式
@@ -16,13 +21,16 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能
 &lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
+&lt;p>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>使用泛用性播客客户端订阅：&lt;a href="https://emacstalk.github.io/podcast/index.xml">https://emacstalk.github.io/podcast/index.xml&lt;/a>&lt;/p>
+&lt;p>微信公众号 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" />&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -76,9 +84,6 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能
 &lt;li>
 &lt;p>邮件： &lt;a href="mailto:jiacai2050+emacstalk@gmail.com">jiacai2050+emacstalk@gmail.com&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li>
-&lt;p>微信公众号 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" />&lt;/p>
-&lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;/div>
@@ -89,12 +94,15 @@ Changelog
 &lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;ul>
 &lt;li>
+&lt;p>2021-06-27，长久的办下去不敢说，先立个 flag，五年（即 2026-06-27）&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>2021-06-26，使用 &lt;a href="https://gohugo.io/">hugo&lt;/a> + &lt;a href="https://github.com/frjo/hugo-theme-zen">zen&lt;/a> 主题建站&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div></description></item><item><title>EmacsTalk 节目简介</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;h1 id="主要内容">主要内容&lt;/h1>
-&lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热运营的嘛？等等，主播是谁？&lt;/p>
+&lt;/div></description></item><item><title>第一期：节目简介</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;h1 id="主要内容">主要内容&lt;/h1>
+&lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？&lt;/p>
 &lt;h1 id="show-notes">Show Notes&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Structure and Interpretation of Computer Programs (SICP)&lt;/a>&lt;/li>
@@ -117,12 +125,11 @@ Changelog
 &lt;/li>
 &lt;/ul>
 &lt;p>第一次录制，不足之处还望听友包涵，有任何建议欢迎留言指出，谢谢！&lt;/p>
-&lt;h1 id="广告">广告&lt;/h1>
+&lt;h1 id="收听方式">收听方式&lt;/h1>
 &lt;ul>
-&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。&lt;/li>
-&lt;li>联系方式
-&lt;ul>
-&lt;li>官网：&lt;a href="https://emacstalk.github.io/about/">emacstalk.github.io&lt;/a>&lt;/li>
+&lt;li>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/li>
 &lt;li>公众号：EmacsTalk
 &lt;figure>
 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="EmacsTalk QR">
@@ -130,5 +137,7 @@ Changelog
 &lt;/figure>
 &lt;/li>
 &lt;/ul>
-&lt;/li>
+&lt;h1 id="广告">广告&lt;/h1>
+&lt;ul>
+&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。&lt;/li>
 &lt;/ul></description></item></channel></rss>

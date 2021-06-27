@@ -1,5 +1,5 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>EmacsTalk 节目简介</title><itunes:title>EmacsTalk 节目简介</itunes:title><link>https://emacstalk.github.io/podcast/1/</link><guid>https://emacstalk.github.io/podcast/1/</guid><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><description>&lt;h1 id="主要内容">主要内容&lt;/h1>
-&lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热运营的嘛？等等，主播是谁？&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>第一期：节目简介</title><itunes:title>第一期：节目简介</itunes:title><link>https://emacstalk.github.io/podcast/1/</link><guid>https://emacstalk.github.io/podcast/1/</guid><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><description>&lt;h1 id="主要内容">主要内容&lt;/h1>
+&lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？&lt;/p>
 &lt;h1 id="show-notes">Show Notes&lt;/h1>
 &lt;ul>
 &lt;li>&lt;a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Structure and Interpretation of Computer Programs (SICP)&lt;/a>&lt;/li>
@@ -22,12 +22,11 @@
 &lt;/li>
 &lt;/ul>
 &lt;p>第一次录制，不足之处还望听友包涵，有任何建议欢迎留言指出，谢谢！&lt;/p>
-&lt;h1 id="广告">广告&lt;/h1>
+&lt;h1 id="收听方式">收听方式&lt;/h1>
 &lt;ul>
-&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。&lt;/li>
-&lt;li>联系方式
-&lt;ul>
-&lt;li>官网：&lt;a href="https://emacstalk.github.io/about/">emacstalk.github.io&lt;/a>&lt;/li>
+&lt;li>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/li>
 &lt;li>公众号：EmacsTalk
 &lt;figure>
 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="EmacsTalk QR">
@@ -35,5 +34,7 @@
 &lt;/figure>
 &lt;/li>
 &lt;/ul>
-&lt;/li>
+&lt;h1 id="广告">广告&lt;/h1>
+&lt;ul>
+&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。&lt;/li>
 &lt;/ul></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/56b9-audiofreehighqps/59/A8/CKwRIRwErgs2ADPd0gC_fHiy.m4a" type="audio/mpeg" length="3399122"/><itunes:duration>6:59</itunes:duration><itunes:explicit>false</itunes:explicit></item></channel></rss>
