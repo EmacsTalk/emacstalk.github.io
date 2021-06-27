@@ -3,10 +3,11 @@ languageCode = "en-GB"
 defaultContentLanguage = "en"
 title = "EmacsTalk"
 theme = "zen"
-copyright = "2021 EmacsTalk"
+copyright = "2021 emacstalk.github.io"
+googleAnalytics = "UA-50745138-3"
 
 [author]
-    name = "EmacsTalk"
+    name = "写代码的西瓜"
     email = "jiacai2050+emacstalk@gmail.com"
 
 [[menu.main]]
@@ -26,24 +27,24 @@ copyright = "2021 EmacsTalk"
   url = "/podcast/index.xml"
 
 [params]
-    logo = false
+    logo = true
     dateformat = "2006-01-02"
-    description = "分享 Emacs 技巧，编程心得"
+    description = "EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。M-x thanks-for-listening"
     feedlinks = false
     realfavicongenerator = true
     relatedposts = true
     submitted = true
-    sidebar = true
+    sidebar = false
     mobileMenu = true
     copyright = "© 2021 [EmacsTalk](https://github.com/EmacsTalk/emacstalk.github.io) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
     footer = "Powered by [Hugo](https://gohugo.io/) and the [Zen theme](https://github.com/frjo/hugo-theme-zen)."
     [params.podcast]
         local = false
-        image = "itune_artwork.jpg"
+        image = "itunes_3000.jpg"
         lang = "zh-cn"
-        author = "EmacsTalk"
+        author = "emacstalk.github.io"
         [params.podcast.category]
             name = "Technology"
         [params.podcast.owner]
-            name = "EmacsTalk"
+            name = "写代码的西瓜"
             email = "jiacai2050@gmail.com"
