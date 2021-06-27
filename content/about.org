@@ -11,12 +11,13 @@
 |______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\
 #+end_example
 
-EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。
-
+EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。节目主旨：
+- 专注 Emacs 社区，分享使用技巧；探索 Emacs 社区背后的人与事
 * 收听方式
+- 推荐使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]]
 - [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]
 - [[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]
-- 使用泛用性播客客户端订阅：https://emacstalk.github.io/podcast/index.xml
+- 微信公众号 [[/images/weixin.jpg]]
 
 * 如何参与录制
 感谢您有兴趣参与《EmacsTalk》节目的录制，录制主要采用对话形式，大纲如下：
@@ -35,7 +36,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能
 - 本网站留言
 - Telegram 群组：https://t.me/emacstalk
 - 邮件： [[mailto:jiacai2050+emacstalk@gmail.com][jiacai2050+emacstalk@gmail.com]]
-- 微信公众号 [[/images/weixin.jpg]]
 
 * Changelog
+- 2021-06-27，长久的办下去不敢说，先立个 flag，五年（即 2026-06-27）
 - 2021-06-26，使用 [[https://gohugo.io/][hugo]] + [[https://github.com/frjo/hugo-theme-zen][zen]] 主题建站
