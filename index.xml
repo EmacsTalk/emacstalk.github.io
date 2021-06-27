@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><managingEditor>jiacai2050+emacstalk@gmail.com (EmacsTalk)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (EmacsTalk)</webMaster><copyright>2021 EmacsTalk</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (EmacsTalk)</author><guid>https://emacstalk.github.io/about/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
 &lt;pre class="example">
 ______ _______ _ _
 | ____| |__ __| | | |
@@ -7,20 +7,32 @@ ______ _______ _ _
 | |____| | | | | | (_| | (__\__ \ | (_| | | &amp;lt;
 |______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\
 &lt;/pre>
-&lt;ul>
-&lt;li>
-&lt;p>分享 Emacs 使用技巧，编程心得&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>采访 Emacs Hackers，见证巨人的成长历程&lt;/p>
-&lt;/li>
-&lt;/ul>
+&lt;p>
+EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 如何参与录制
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>感谢您有兴趣参与《EmacsTalk》节目的录制，目前具体流程还没确定，可以通过后面的联系方式来沟通录制细节。一些供参考资料：&lt;/p>
+&lt;p>感谢您有兴趣参与《EmacsTalk》节目的录制，录制主要采用对话形式，大纲如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>嘉宾个人简介，5-10 分钟&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 初印象，5-10 分钟&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 学习经历，10-20 分钟&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>日常工作流，10 分钟&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>推荐的 package，5分钟&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>时间控制在 30 分钟到 1 个小时之间。当然，如果嘉宾有什么要求，也可以再沟通。录制时的一些注意事项可参考：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://pythonhunter.org/howto">https://pythonhunter.org/howto&lt;/a>&lt;/p>
@@ -41,7 +53,10 @@ ______ _______ _ _
 &lt;p>本网站留言&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>邮件： &lt;code>jiacai2050+emacstalk@gmail.com&lt;/code>&lt;/p>
+&lt;p>Telegram 群组：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>邮件： &lt;a href="mailto:jiacai2050+emacstalk@gmail.com">jiacai2050+emacstalk@gmail.com&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>微信公众号 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" />&lt;/p>
@@ -60,7 +75,9 @@ Changelog
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div></description></item><item><title>测试 Podcast</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (EmacsTalk)</author><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;ul>
+&lt;/div></description></item><item><title>测试 Podcast</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;ul>
 &lt;li>Hello Emacs&lt;/li>
 &lt;li>我是一个测试&lt;/li>
+&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。&lt;/li>
+&lt;li>联系方式：&lt;a href="https://emacstalk.github.io/about/">emacstalk.github.io&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
