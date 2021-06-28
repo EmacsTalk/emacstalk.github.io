@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>en-GB</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
 &lt;pre class="example">
 ______ _______ _ _
 | ____| |__ __| | | |
@@ -8,10 +8,13 @@ ______ _______ _ _
 |______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\
 &lt;/pre>
 &lt;p>
-EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。节目主旨：&lt;/p>
+EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>专注 Emacs 社区，分享使用技巧；探索 Emacs 社区背后的人与事&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>干货不能不要，湿货不能没有&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -30,7 +33,8 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能
 &lt;p>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>微信公众号 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" />&lt;/p>
+&lt;p>微信公众号&lt;/p>
+&lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" width="500px"/>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -40,31 +44,9 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能
 如何参与录制
 &lt;/h2>
 &lt;div id="outline-text-headline-2" class="outline-text-2">
-&lt;p>感谢您有兴趣参与《EmacsTalk》节目的录制，录制主要采用对话形式，大纲如下：&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>嘉宾个人简介，5-10 分钟&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Emacs 初印象，5-10 分钟&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Emacs 学习经历，10-20 分钟&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>日常工作流，10 分钟&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>推荐的 package，5分钟&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>时间控制在 30 分钟到 1 个小时之间。当然，如果嘉宾有什么要求，也可以再沟通。录制时的一些注意事项可参考：&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://pythonhunter.org/howto">https://pythonhunter.org/howto&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://anobody.im/article/podcastforbeginner/">新手如何从零开始一档播客&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -94,9 +76,6 @@ Changelog
 &lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;ul>
 &lt;li>
-&lt;p>2021-06-27，长久的办下去不敢说，先立个 flag，五年（即 2026-06-27）&lt;/p>
-&lt;/li>
-&lt;li>
 &lt;p>2021-06-26，使用 &lt;a href="https://gohugo.io/">hugo&lt;/a> + &lt;a href="https://github.com/frjo/hugo-theme-zen">zen&lt;/a> 主题建站&lt;/p>
 &lt;/li>
 &lt;/ul>
@@ -123,6 +102,7 @@ Changelog
 &lt;li>网络 ID：写代码的西瓜&lt;/li>
 &lt;/ul>
 &lt;/li>
+&lt;li>&lt;strong>立 flag，节目坚持做五年（即 2026-06-27）&lt;/strong>&lt;/li>
 &lt;/ul>
 &lt;p>第一次录制，不足之处还望听友包涵，有任何建议欢迎留言指出，谢谢！&lt;/p>
 &lt;h1 id="收听方式">收听方式&lt;/h1>
@@ -130,14 +110,9 @@ Changelog
 &lt;li>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/li>
-&lt;li>公众号：EmacsTalk
-&lt;figure>
-&lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="EmacsTalk QR">
-&lt;figcaption>EmacsTalk QR&lt;/figcaption>
-&lt;/figure>
-&lt;/li>
+&lt;li>微信公众号：EmacsTalk&lt;/li>
 &lt;/ul>
 &lt;h1 id="广告">广告&lt;/h1>
 &lt;ul>
-&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。&lt;/li>
+&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参考方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
