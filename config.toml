@@ -1,6 +1,7 @@
 baseURL = "https://emacstalk.github.io"
-languageCode = "en-GB"
-defaultContentLanguage = "en"
+languageCode = "zh-cn"
+defaultContentLanguage = "cn"
+hasCJKLanguage = true
 title = "EmacsTalk"
 theme = "zen"
 copyright = "2021 emacstalk.github.io"
