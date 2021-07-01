@@ -11,10 +11,10 @@ ______ _______ _ _
 EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨：&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>专注 Emacs 社区，分享使用技巧；探索 Emacs 社区背后的人与事&lt;/p>
+&lt;p>专注 Emacs 社区，探索 Emacs 社区背后的 &lt;strong>奇人轶事&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>干货不能不要，湿货不能没有&lt;/p>
+&lt;p>不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -30,7 +30,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;p>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>（美区，中国区暂时搜不到，&lt;a href="https://sspai.com/post/59878">原因&lt;/a>）&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>微信公众号&lt;/p>
@@ -114,5 +114,5 @@ Changelog
 &lt;/ul>
 &lt;h1 id="广告">广告&lt;/h1>
 &lt;ul>
-&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参考方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/li>
+&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/li>
 &lt;/ul></description></item></channel></rss>
