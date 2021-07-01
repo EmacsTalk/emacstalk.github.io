@@ -7,12 +7,14 @@
 |______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\
 #+end_src
 
-- https://emacstalk.github.io/
-  - 分享 Emacs 使用技巧，编程心得
-  - 采访 Emacs Hackers，见证巨人的成长历程
+[[https://emacstalk.github.io/][EmacsTalk]] 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨：
+- 专注 Emacs 社区，探索 Emacs 社区背后的 奇人轶事
+- 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
 * iTunes Podcasts
 - [[https://podcasters.apple.com/support/825-how-to-create-an-episode][How to create an episode]]
 - [[https://help.apple.com/itc/podcasts_connect/#/itcb54353390][A Podcaster’s Guide to RSS]]
 - [[https://castfeedvalidator.com/?url=https://emacstalk.github.io/podcast/index.xml][Cast Feed Validator]]
-- image 大小需要在 1400*1400 ~ 3000*3000 之间
+- image 大小需要是 3000*3000
+* podcast subscribe icons
+- https://www.buzzsprout.com/help/64-podcast-subscribe-buttons

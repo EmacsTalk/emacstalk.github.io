@@ -21,11 +21,11 @@ googleAnalytics = "UA-50745138-3"
   weight = 30
   identifier = "about"
   url = "/about/"
-[[menu.main]]
-  name = "RSS"
-  weight = 40
-  identifier = "rss"
-  url = "/podcast/index.xml"
+# [[menu.main]]
+#   name = "RSS"
+#   weight = 40
+#   identifier = "rss"
+#   url = "/podcast/index.xml"
 
 [params]
     logo = true
@@ -35,7 +35,7 @@ googleAnalytics = "UA-50745138-3"
     realfavicongenerator = true
     relatedposts = true
     submitted = true
-    sidebar = false
+    sidebar = true
     mobileMenu = true
     copyright = "© 2021 [EmacsTalk](https://github.com/EmacsTalk/emacstalk.github.io) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
     footer = "Powered by [Hugo](https://gohugo.io/) and the [Zen theme](https://github.com/frjo/hugo-theme-zen)."
