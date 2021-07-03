@@ -1,4 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 26 Jun 2021 09:43:18 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 03 Jul 2021 22:36:08 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/2/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/2/</guid><description>&lt;h1 id="本期人物">本期人物&lt;/h1>
+&lt;ul>
+&lt;li>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/li>
+&lt;li>嘉宾：&lt;a href="https://github.com/DogLooksGood">DogLooksGood&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="show-notes">Show Notes&lt;/h1>
+&lt;ul>
+&lt;li>嘉宾介绍
+&lt;ul>
+&lt;li>姓名：石天舒&lt;/li>
+&lt;li>网络 ID: doglooksgood&lt;/li>
+&lt;li>B站： &lt;a href="https://space.bilibili.com/1281376">无知的菜狗&lt;/a>&lt;/li>
+&lt;li>五年 Emacs 使用时长，一年后开始学习 ELisp&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>让嘉宾对 Emacs 动心的 &lt;a href="https://www.reddit.com/r/unixporn/">/r/unixporn&lt;/a>&lt;/li>
+&lt;li>GUI vs TUI&lt;/li>
+&lt;li>从 Emacs 中操作 Tmux 的插件：&lt;a href="https://github.com/emacsorphanage/emamux">emamux.el&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://stackoverflow.com/questions/3509919/emacs-c-opening-corresponding-header-file">如何在 Emacs 中切换 C 的源文件与头文件&lt;/a>&lt;/li>
+&lt;li>Emacs 提高颜值的插件：&lt;a href="https://github.com/rougier/nano-emacs">nano-emacs&lt;/a>、&lt;a href="https://github.com/hlissner/doom-emacs">doom-emacs&lt;/a>&lt;/li>
+&lt;li>可能是最好的 Emacs 中文论坛：&lt;a href="https://emacs-china.org/">Emacs China&lt;/a>&lt;/li>
+&lt;li>是否有必要向周边的人推销 Emacs&lt;/li>
+&lt;li>GNU Emacs 创始人 &lt;a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman&lt;/a> 发起的 &lt;a href="https://en.wikipedia.org/wiki/Free_software_movement">free software movement&lt;/a>&lt;/li>
+&lt;li>商业化的 &lt;a href="https://en.wikipedia.org/wiki/Gosling_Emacs">Gosling Emacs&lt;/a>&lt;/li>
+&lt;li>什么人适合使用 Emacs？
+&lt;ul>
+&lt;li>对计算机细节感兴趣，动手能力强&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>如何平衡 Hack Emacs 与正常工作的时间？
+&lt;ul>
+&lt;li>设定一个明确的目标，达到后即可&lt;/li>
+&lt;li>Hack Emacs 是个放松的过程，享受它&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>对 Emacs 的偏见
+&lt;ul>
+&lt;li>Emacs make computer slow&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Emacs 计算机世上的“遗产”、瑰宝&lt;/li>
+&lt;li>Emacs &amp;ndash; 宏编辑器 Editor MACroS&lt;/li>
+&lt;li>如何看待 Emacs 很多功能隐藏的很深？&lt;/li>
+&lt;li>&lt;a href="https://www.gnu.org/software/emacs/manual/html_mono/eshell.html">Eshell&lt;/a>&lt;/li>
+&lt;li>嘉宾对新版 Emacs 功能的介绍与展望
+&lt;ul>
+&lt;li>27 版本新增的原生 &lt;a href="https://www.masteringemacs.org/article/whats-new-in-emacs-27-1">JSON 解析&lt;/a>&lt;/li>
+&lt;li>28 版本新增的 &lt;a href="https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation">native compilation&lt;/a>&lt;/li>
+&lt;li>提升 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html">GC&lt;/a> 性能
+&lt;ul>
+&lt;li>目前可以通过&lt;a href="https://github.com/hlissner/doom-emacs/issues/3108">调大 gc-cons-threshold&lt;/a> 的方式来避免 GC 造成的停顿&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>嘉宾分享
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/DogLooksGood/emacs-rime">EmacsRime&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://orgmode.org/">Org Mode&lt;/a> Your life in plain text
+&lt;ul>
+&lt;li>&lt;a href="https://www.reddit.com/r/linux/comments/1r6xpl/richard_stallman_hopes_emacs_will_become_a_word/">Richard Stallman hopes Emacs will become a word processor&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="https://github.com/magit/magit">magit&lt;/a> A Git Porcelain inside Emacs&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>主播分享
+&lt;ul>
+&lt;li>《操作系统革命 Revolution OS》，&lt;a href="https://www.bilibili.com/video/BV1iC4y187nT?seid=2969542446222854468">B 站链接&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h1 id="收听方式">收听方式&lt;/h1>
+&lt;ul>
+&lt;li>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/li>
+&lt;li>微信公众号：EmacsTalk&lt;/li>
+&lt;li>&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h1 id="广告">广告&lt;/h1>
+&lt;ul>
+&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
 &lt;pre class="example">
 ______ _______ _ _
 | ____| |__ __| | | |
@@ -80,7 +165,7 @@ Changelog
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div></description></item><item><title>第一期：节目简介</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;h1 id="主要内容">主要内容&lt;/h1>
+&lt;/div></description></item><item><title>001. EmacsTalk 节目简介</title><link>https://emacstalk.github.io/podcast/1/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/1/</guid><description>&lt;h1 id="主要内容">主要内容&lt;/h1>
 &lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？&lt;/p>
 &lt;h1 id="show-notes">Show Notes&lt;/h1>
 &lt;ul>
