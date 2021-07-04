@@ -2,7 +2,7 @@
 #+DATE: 2021-06-26T09:43:18+08:00
 #+LASTMOD: 2021-07-04T09:27:31+08:00
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/56b9-audiofreehighqps/59/A8/CKwRIRwErgs2ADPd0gC_fHiy.m4a
-#+PODCAST_DURATION: "6:59"
+#+PODCAST_DURATION: 6:59
 #+PODCAST_LENGTH: 3399122
 
 * 主要内容
@@ -30,7 +30,7 @@ EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，�
 
 * 收听方式
 1. 首推使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]] 或在微信公众号 [[https://weixin.sogou.com/weixin?&query=EmacsTalk][EmacsTalk]] 中收听
-2. 其次是 [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]、[[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]、[[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]、[[https://pca.st/hbvw3oxs][Pocket Casts]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]
+2. 其次是 [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]、[[https://music.163.com/#/djradio?id=963834541][网易云音乐]]、[[https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2][QQ 音乐]]、[[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]、[[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]、[[https://pca.st/hbvw3oxs][Pocket Casts]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]
 
 * 广告
 - 招募 Podcast 嘉宾，分享你与 Emacs
