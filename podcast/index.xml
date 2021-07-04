@@ -1,121 +1,303 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 03 Jul 2021 22:36:08 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><itunes:title>002. 与 DoglooksGood 闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/2/</link><guid>https://emacstalk.github.io/podcast/2/</guid><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><description>&lt;h1 id="本期人物">本期人物&lt;/h1>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 03 Jul 2021 22:36:08 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><itunes:title>002. 与 DoglooksGood 闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/002/</link><guid>https://emacstalk.github.io/podcast/002/</guid><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><description>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+本期人物
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
-&lt;li>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/li>
-&lt;li>嘉宾：&lt;a href="https://github.com/DogLooksGood">DogLooksGood&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h1 id="show-notes">Show Notes&lt;/h1>
-&lt;ul>
-&lt;li>嘉宾介绍
-&lt;ul>
-&lt;li>姓名：石天舒&lt;/li>
-&lt;li>网络 ID: doglooksgood&lt;/li>
-&lt;li>B站： &lt;a href="https://space.bilibili.com/1281376">无知的菜狗&lt;/a>&lt;/li>
-&lt;li>五年 Emacs 使用时长，一年后开始学习 ELisp&lt;/li>
-&lt;/ul>
+&lt;li>
+&lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li>让嘉宾对 Emacs 动心的 &lt;a href="https://www.reddit.com/r/unixporn/">/r/unixporn&lt;/a>&lt;/li>
-&lt;li>GUI vs TUI&lt;/li>
-&lt;li>从 Emacs 中操作 Tmux 的插件：&lt;a href="https://github.com/emacsorphanage/emamux">emamux.el&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://stackoverflow.com/questions/3509919/emacs-c-opening-corresponding-header-file">如何在 Emacs 中切换 C 的源文件与头文件&lt;/a>&lt;/li>
-&lt;li>Emacs 提高颜值的插件：&lt;a href="https://github.com/rougier/nano-emacs">nano-emacs&lt;/a>、&lt;a href="https://github.com/hlissner/doom-emacs">doom-emacs&lt;/a>&lt;/li>
-&lt;li>可能是最好的 Emacs 中文论坛：&lt;a href="https://emacs-china.org/">Emacs China&lt;/a>&lt;/li>
-&lt;li>是否有必要向周边的人推销 Emacs&lt;/li>
-&lt;li>GNU Emacs 创始人 &lt;a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman&lt;/a> 发起的 &lt;a href="https://en.wikipedia.org/wiki/Free_software_movement">free software movement&lt;/a>&lt;/li>
-&lt;li>商业化的 &lt;a href="https://en.wikipedia.org/wiki/Gosling_Emacs">Gosling Emacs&lt;/a>&lt;/li>
-&lt;li>什么人适合使用 Emacs？
-&lt;ul>
-&lt;li>对计算机细节感兴趣，动手能力强&lt;/li>
-&lt;/ul>
+&lt;li>
+&lt;p>嘉宾：&lt;a href="https://github.com/DogLooksGood">DogLooksGood&lt;/a>&lt;/p>
 &lt;/li>
-&lt;li>如何平衡 Hack Emacs 与正常工作的时间？
-&lt;ul>
-&lt;li>设定一个明确的目标，达到后即可&lt;/li>
-&lt;li>Hack Emacs 是个放松的过程，享受它&lt;/li>
 &lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>姓名：石天舒&lt;/p>
 &lt;/li>
-&lt;li>对 Emacs 的偏见
-&lt;ul>
-&lt;li>Emacs make computer slow&lt;/li>
-&lt;/ul>
+&lt;li>
+&lt;p>网络 ID: doglooksgood&lt;/p>
 &lt;/li>
-&lt;li>Emacs 计算机世上的“遗产”、瑰宝&lt;/li>
-&lt;li>Emacs &amp;ndash; 宏编辑器 Editor MACroS&lt;/li>
-&lt;li>如何看待 Emacs 很多功能隐藏的很深？&lt;/li>
-&lt;li>&lt;a href="https://www.gnu.org/software/emacs/manual/html_mono/eshell.html">Eshell&lt;/a>&lt;/li>
-&lt;li>嘉宾对新版 Emacs 功能的介绍与展望
-&lt;ul>
-&lt;li>27 版本新增的原生 &lt;a href="https://www.masteringemacs.org/article/whats-new-in-emacs-27-1">JSON 解析&lt;/a>&lt;/li>
-&lt;li>28 版本新增的 &lt;a href="https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation">native compilation&lt;/a>&lt;/li>
-&lt;li>提升 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html">GC&lt;/a> 性能
-&lt;ul>
-&lt;li>目前可以通过&lt;a href="https://github.com/hlissner/doom-emacs/issues/3108">调大 gc-cons-threshold&lt;/a> 的方式来避免 GC 造成的停顿&lt;/li>
-&lt;/ul>
+&lt;li>
+&lt;p>B站： &lt;a href="https://space.bilibili.com/1281376">无知的菜狗&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>五年 Emacs 使用时长，一年后开始学习 ELisp&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>嘉宾分享
+&lt;li>
+&lt;p>让嘉宾对 Emacs 动心的 &lt;a href="https://www.reddit.com/r/unixporn/">/r/unixporn&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>GUI vs TUI&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>从 Emacs 中操作 Tmux
+的插件：&lt;a href="https://github.com/emacsorphanage/emamux">emamux.el&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://stackoverflow.com/questions/3509919/emacs-c-opening-corresponding-header-file">如何在Emacs 中切换 C 的源文件与头文件&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 提高颜值的插件：&lt;a href="https://github.com/rougier/nano-emacs">nano-emacs&lt;/a>、&lt;a href="https://github.com/hlissner/doom-emacs">doom-emacs&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可能是最好的 Emacs 中文论坛：&lt;a href="https://emacs-china.org/">Emacs China&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>是否有必要向周边的人推销 Emacs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>GNU Emacs 创始人 &lt;a href="https://en.wikipedia.org/wiki/Richard_Stallman">Richard Stallman&lt;/a> 发起的 &lt;a href="https://en.wikipedia.org/wiki/Free_software_movement">free software movement&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>商业化的 &lt;a href="https://en.wikipedia.org/wiki/Gosling_Emacs">Gosling Emacs&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>什么人适合使用 Emacs？&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://github.com/DogLooksGood/emacs-rime">EmacsRime&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://orgmode.org/">Org Mode&lt;/a> Your life in plain text
-&lt;ul>
-&lt;li>&lt;a href="https://www.reddit.com/r/linux/comments/1r6xpl/richard_stallman_hopes_emacs_will_become_a_word/">Richard Stallman hopes Emacs will become a word processor&lt;/a>&lt;/li>
+&lt;li>
+&lt;p>对计算机细节感兴趣，动手能力强&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="https://github.com/magit/magit">magit&lt;/a> A Git Porcelain inside Emacs&lt;/li>
+&lt;li>
+&lt;p>如何平衡 Hack Emacs 与正常工作的时间？&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>设定一个明确的目标，达到后即可&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Hack Emacs 是个放松的过程，享受它&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>主播分享
+&lt;li>
+&lt;p>对 Emacs 的偏见&lt;/p>
 &lt;ul>
-&lt;li>《操作系统革命 Revolution OS》，&lt;a href="https://www.bilibili.com/video/BV1iC4y187nT?seid=2969542446222854468">B 站链接&lt;/a>&lt;/li>
+&lt;li>
+&lt;p>Emacs make computer slow&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 计算机世上的&amp;#34;遗产&amp;#34;、瑰宝&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs – 宏编辑器 Editor MACroS&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>如何看待 Emacs 很多功能隐藏的很深？&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.gnu.org/software/emacs/manual/html_mono/eshell.html">Eshell&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾对新版 Emacs 功能的介绍与展望&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>27 版本新增的原生 &lt;a href="https://www.masteringemacs.org/article/whats-new-in-emacs-27-1">JSON解析&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>28 版本新增的 &lt;a href="https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation">native compilation&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>提升 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html">GC&lt;/a> 性能&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>目前可以通过&lt;a href="https://github.com/hlissner/doom-emacs/issues/3108">调大 gc-cons-threshold&lt;/a> 的方式来避免 GC 造成的停顿&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
-&lt;h1 id="收听方式">收听方式&lt;/h1>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾分享&lt;/p>
 &lt;ul>
-&lt;li>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/li>
-&lt;li>微信公众号：EmacsTalk&lt;/li>
-&lt;li>&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/DogLooksGood/emacs-rime">EmacsRime&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://orgmode.org/">Org Mode&lt;/a> Your life in plain text&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.reddit.com/r/linux/comments/1r6xpl/richard_stallman_hopes_emacs_will_become_a_word/">Richard Stallman hopes Emacs will become a word processor&lt;/a>&lt;/p>
+&lt;/li>
 &lt;/ul>
-&lt;h1 id="广告">广告&lt;/h1>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/magit/magit">magit&lt;/a> A Git Porcelain inside Emacs&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>主播分享&lt;/p>
 &lt;ul>
-&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/li>
-&lt;/ul></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/1e7c-audiofreehighqps/85/49/CKwRIJEEtj04AbqVuQDCiCOK.m4a" type="audio/mpeg" length="29005241"/><itunes:duration>59:43</itunes:duration><itunes:explicit>false</itunes:explicit></item><item><title>001. EmacsTalk 节目简介</title><itunes:title>001. EmacsTalk 节目简介</itunes:title><link>https://emacstalk.github.io/podcast/1/</link><guid>https://emacstalk.github.io/podcast/1/</guid><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><description>&lt;h1 id="主要内容">主要内容&lt;/h1>
+&lt;li>
+&lt;p>《操作系统革命 Revolution OS》，&lt;a href="https://www.bilibili.com/video/BV1iC4y187nT?seid=2969542446222854468">B站链接&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+收听方式
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>微信公众号：EmacsTalk&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+广告
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/1e7c-audiofreehighqps/85/49/CKwRIJEEtj04AbqVuQDCiCOK.m4a" type="audio/mpeg" length="29005241"/><itunes:duration>59.43</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/doglooksgood.png"/><itunes:explicit>false</itunes:explicit></item><item><title>001. EmacsTalk 节目简介</title><itunes:title>001. EmacsTalk 节目简介</itunes:title><link>https://emacstalk.github.io/podcast/001/</link><guid>https://emacstalk.github.io/podcast/001/</guid><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><description>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+主要内容
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？&lt;/p>
-&lt;h1 id="show-notes">Show Notes&lt;/h1>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
-&lt;li>&lt;a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Structure and Interpretation of Computer Programs (SICP)&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.gnu.org/software/mit-scheme/">MIT/GNU Scheme&lt;/a>&lt;/li>
-&lt;li>主播最早用的配置 &lt;a href="https://www.braveclojure.com/basic-emacs/">emacs-for-clojure&lt;/a>&lt;/li>
-&lt;li>主播目前的配置 &lt;a href="https://github.com/jiacai2050/dotfiles/tree/master/.config/emacs">.config/emacs&lt;/a>。一些用到的库
+&lt;li>
+&lt;p>&lt;a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Structure
+and Interpretation of Computer Programs (SICP)&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.gnu.org/software/mit-scheme/">MIT/GNU Scheme&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>主播最早用的配置
+&lt;a href="https://www.braveclojure.com/basic-emacs/">emacs-for-clojure&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>主播目前的配置 &lt;a href="https://github.com/jiacai2050/dotfiles/tree/master/.config/emacs">.config/emacs&lt;/a>。一些用到的库&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://github.com/jwiegley/use-package">use-package&lt;/a>, 包安装与配置&lt;/li>
-&lt;li>&lt;a href="https://github.com/emacs-evil/evil">evil&lt;/a>，让 Emacs 拥有 VI 按键方式，释放小手指&lt;/li>
-&lt;li>&lt;a href="https://company-mode.github.io/">company&lt;/a>，代码补全&lt;/li>
-&lt;li>&lt;a href="https://github.com/emacs-lsp/lsp-mode/">lsp-mode&lt;/a> 代码跳转&lt;/li>
-&lt;li>&lt;a href="https://www.djcbsoftware.nl/code/mu/mu4e.html">mu4e&lt;/a> 邮件&lt;/li>
-&lt;li>&lt;a href="https://github.com/skeeto/elfeed">elfeed&lt;/a> RSS 阅读&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/jwiegley/use-package">use-package&lt;/a>, 包安装与配置&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/emacs-evil/evil">evil&lt;/a>，让 Emacs 拥有 VI 按键方式，释放小手指&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://company-mode.github.io/">company&lt;/a>，代码补全&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/emacs-lsp/lsp-mode/">lsp-mode&lt;/a> 代码跳转&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.djcbsoftware.nl/code/mu/mu4e.html">mu4e&lt;/a> 邮件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/skeeto/elfeed">elfeed&lt;/a> RSS 阅读&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>主播博客：&lt;a href="https://liujiacai.net/">https://liujiacai.net/&lt;/a>
+&lt;li>
+&lt;p>主播博客：&lt;a href="https://liujiacai.net/">https://liujiacai.net/&lt;/a>&lt;/p>
 &lt;ul>
-&lt;li>网络 ID：写代码的西瓜&lt;/li>
+&lt;li>
+&lt;p>网络 ID：写代码的西瓜&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;strong>立 flag，节目坚持做五年（即 2026-06-27）&lt;/strong>&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>立 flag，节目坚持做五年（即 2026-06-27）&lt;/strong>&lt;/p>
+&lt;/li>
 &lt;/ul>
 &lt;p>第一次录制，不足之处还望听友包涵，有任何建议欢迎留言指出，谢谢！&lt;/p>
-&lt;h1 id="收听方式">收听方式&lt;/h1>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+收听方式
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
-&lt;li>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/li>
-&lt;li>微信公众号：EmacsTalk&lt;/li>
+&lt;li>
+&lt;p>推荐使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>微信公众号：EmacsTalk&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>&lt;/p>
+&lt;/li>
 &lt;/ul>
-&lt;h1 id="广告">广告&lt;/h1>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+广告
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;ul>
-&lt;li>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/li>
-&lt;/ul></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/56b9-audiofreehighqps/59/A8/CKwRIRwErgs2ADPd0gC_fHiy.m4a" type="audio/mpeg" length="3399122"/><itunes:duration>6:59</itunes:duration><itunes:explicit>false</itunes:explicit></item></channel></rss>
+&lt;li>
+&lt;p>招募 Podcast 嘉宾，分享你与 Emacs
+的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/56b9-audiofreehighqps/59/A8/CKwRIRwErgs2ADPd0gC_fHiy.m4a" type="audio/mpeg" length="3399122"/><itunes:duration>"6:59"</itunes:duration><itunes:explicit>false</itunes:explicit></item></channel></rss>
