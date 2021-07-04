@@ -16,7 +16,8 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 - 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
 * 收听方式
-推荐使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]] 或在[[https://weixin.sogou.com/weixin?&query=EmacsTalk][微信公众号]]收听，其次是 [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]、[[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]、[[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]、[[https://pca.st/hbvw3oxs][Pocket Casts]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]（美区，中国区暂时搜不到，[[https://sspai.com/post/59878][原因]]）
+1. 首推使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]] 或在微信公众号 [[https://weixin.sogou.com/weixin?&query=EmacsTalk][EmacsTalk]] 中收听
+2. 其次是 [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]、[[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]、[[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]、[[https://pca.st/hbvw3oxs][Pocket Casts]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]（美区，中国区暂时搜不到，[[https://sspai.com/post/59878][原因]]）
   #+ATTR_HTML: :width 500px
   [[/images/weixin.jpg]]
 
@@ -28,7 +29,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 - Telegram 群组：https://t.me/emacstalk
 - 邮件：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
 
-* 请作者喝咖啡
+* Buy me a coffee ☕️
 - [[/images/alipay.jpeg][支付宝]]
 - [[/images/weixinzhifu.jpeg][微信支付]]
 * Changelog

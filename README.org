@@ -11,10 +11,13 @@
 - 专注 Emacs 社区，探索 Emacs 社区背后的 奇人轶事
 - 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
-* iTunes Podcasts
+* 一些建站素材
+** iTunes Podcasts
 - [[https://podcasters.apple.com/support/825-how-to-create-an-episode][How to create an episode]]
 - [[https://help.apple.com/itc/podcasts_connect/#/itcb54353390][A Podcaster’s Guide to RSS]]
 - [[https://castfeedvalidator.com/?url=https://emacstalk.github.io/podcast/index.xml][Cast Feed Validator]]
 - image 大小需要是 3000*3000
-* podcast subscribe icons
+** podcast subscribe icons
 - https://www.buzzsprout.com/help/64-podcast-subscribe-buttons
+** 社交分享按钮
+  - https://hugocodex.org/add-ons/share-buttons/
