@@ -1,0 +1,66 @@
+#+TITLE: 002. 与 DoglooksGood 闲聊 Emacs
+#+DATE: 2021-07-03T22:36:08+08:00
+#+LASTMOD: 2021-07-04T09:28:23+08:00
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/1e7c-audiofreehighqps/85/49/CKwRIJEEtj04AbqVuQDCiCOK.m4a
+#+PODCAST_DURATION: 59.43
+#+PODCAST_LENGTH: 29005241
+#+PODCAST_IMAGE_SRC: guests/doglooksgood.png
+#+PODCAST_IMAGE_ALT: DogLooksGood
+
+* 本期人物
+- 主播：[[https://liujiacai.net/][西瓜]]
+- 嘉宾：[[https://github.com/DogLooksGood][DogLooksGood]]
+
+* Show Notes
+- 嘉宾介绍
+  - 姓名：石天舒
+  - 网络 ID: doglooksgood
+  - B站： [[https://space.bilibili.com/1281376][无知的菜狗]]
+  - 五年 Emacs 使用时长，一年后开始学习 ELisp
+
+- 让嘉宾对 Emacs 动心的 [[https://www.reddit.com/r/unixporn/][/r/unixporn]]
+- GUI vs TUI
+- 从 Emacs 中操作 Tmux
+  的插件：[[https://github.com/emacsorphanage/emamux][emamux.el]]
+- [[https://stackoverflow.com/questions/3509919/emacs-c-opening-corresponding-header-file][如何在Emacs 中切换 C 的源文件与头文件]]
+- Emacs 提高颜值的插件：[[https://github.com/rougier/nano-emacs][nano-emacs]]、[[https://github.com/hlissner/doom-emacs][doom-emacs]]
+- 可能是最好的 Emacs 中文论坛：[[https://emacs-china.org/][Emacs China]]
+- 是否有必要向周边的人推销 Emacs
+- GNU Emacs 创始人 [[https://en.wikipedia.org/wiki/Richard_Stallman][Richard Stallman]] 发起的 [[https://en.wikipedia.org/wiki/Free_software_movement][free software movement]]
+- 商业化的 [[https://en.wikipedia.org/wiki/Gosling_Emacs][Gosling Emacs]]
+- 什么人适合使用 Emacs？
+  - 对计算机细节感兴趣，动手能力强
+- 如何平衡 Hack Emacs 与正常工作的时间？
+  - 设定一个明确的目标，达到后即可
+  - Hack Emacs 是个放松的过程，享受它
+- 对 Emacs 的偏见
+  - Emacs make computer slow
+  - Emacs 计算机世上的"遗产"、瑰宝
+  - Emacs -- 宏编辑器 Editor MACroS
+- 如何看待 Emacs 很多功能隐藏的很深？
+- [[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html][Eshell]]
+- 嘉宾对新版 Emacs 功能的介绍与展望
+  - 27 版本新增的原生 [[https://www.masteringemacs.org/article/whats-new-in-emacs-27-1][JSON解析]]
+  - 28 版本新增的 [[https://www.masteringemacs.org/article/speed-up-emacs-libjansson-native-elisp-compilation][native compilation]]
+  - 提升 [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Garbage-Collection.html][GC]] 性能
+    - 目前可以通过[[https://github.com/hlissner/doom-emacs/issues/3108][调大 gc-cons-threshold]] 的方式来避免 GC 造成的停顿
+- 嘉宾分享
+  - [[https://github.com/DogLooksGood/emacs-rime][EmacsRime]]
+  - [[https://orgmode.org/][Org Mode]] Your life in plain text
+    - [[https://www.reddit.com/r/linux/comments/1r6xpl/richard_stallman_hopes_emacs_will_become_a_word/][Richard Stallman hopes Emacs will become a word processor]]
+  - [[https://github.com/magit/magit][magit]] A Git Porcelain inside Emacs
+
+- 主播分享
+  - 《操作系统革命 Revolution OS》，[[https://www.bilibili.com/video/BV1iC4y187nT?seid=2969542446222854468][B站链接]]
+
+* 收听方式
+- 推荐使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]]
+- [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]
+- [[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]
+- 微信公众号：EmacsTalk
+- [[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]
+- [[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]
+- [[https://pca.st/hbvw3oxs][Pocket Casts]]
+
+* 广告
+- 招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：[[https://github.com/EmacsTalk/joinus]]

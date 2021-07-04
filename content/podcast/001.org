@@ -1,0 +1,42 @@
+#+TITLE: 001. EmacsTalk 节目简介
+#+DATE: 2021-06-26T09:43:18+08:00
+#+LASTMOD: 2021-07-04T09:27:31+08:00
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/56b9-audiofreehighqps/59/A8/CKwRIRwErgs2ADPd0gC_fHiy.m4a
+#+PODCAST_DURATION: "6:59"
+#+PODCAST_LENGTH: 3399122
+
+* 主要内容
+EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？
+
+* Show Notes
+- [[https://mitpress.mit.edu/sites/default/files/sicp/index.html][Structure
+  and Interpretation of Computer Programs (SICP)]]
+- [[https://www.gnu.org/software/mit-scheme/][MIT/GNU Scheme]]
+- 主播最早用的配置
+  [[https://www.braveclojure.com/basic-emacs/][emacs-for-clojure]]
+- 主播目前的配置 [[https://github.com/jiacai2050/dotfiles/tree/master/.config/emacs][.config/emacs]]。一些用到的库
+  - [[https://github.com/jwiegley/use-package][use-package]], 包安装与配置
+  - [[https://github.com/emacs-evil/evil][evil]]，让 Emacs 拥有 VI 按键方式，释放小手指
+  - [[https://company-mode.github.io/][company]]，代码补全
+  - [[https://github.com/emacs-lsp/lsp-mode/][lsp-mode]] 代码跳转
+  - [[https://www.djcbsoftware.nl/code/mu/mu4e.html][mu4e]] 邮件
+  - [[https://github.com/skeeto/elfeed][elfeed]] RSS 阅读
+
+- 主播博客：[[https://liujiacai.net/]]
+  - 网络 ID：写代码的西瓜
+- *立 flag，节目坚持做五年（即 2026-06-27）*
+
+第一次录制，不足之处还望听友包涵，有任何建议欢迎留言指出，谢谢！
+
+* 收听方式
+- 推荐使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]]
+- [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]
+- [[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]
+- 微信公众号：EmacsTalk
+- [[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]
+- [[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]
+- [[https://pca.st/hbvw3oxs][Pocket Casts]]
+
+* 广告
+- 招募 Podcast 嘉宾，分享你与 Emacs
+  的故事。参与方式见：[[https://github.com/EmacsTalk/joinus]]
