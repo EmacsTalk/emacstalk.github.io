@@ -13,11 +13,13 @@
 
 * 一些建站素材
 ** iTunes Podcasts
-- [[https://podcasters.apple.com/support/825-how-to-create-an-episode][How to create an episode]]
 - [[https://help.apple.com/itc/podcasts_connect/#/itcb54353390][A Podcaster’s Guide to RSS]]
+- [[https://podcasters.apple.com/support/825-how-to-create-an-episode][How to create an episode]]
 - [[https://castfeedvalidator.com/?url=https://emacstalk.github.io/podcast/index.xml][Cast Feed Validator]]
 - image 大小需要是 3000*3000
 ** podcast subscribe icons
 - https://www.buzzsprout.com/help/64-podcast-subscribe-buttons
 ** 社交分享按钮
   - https://hugocodex.org/add-ons/share-buttons/
+** 404 页面
+- https://freefrontend.com/html-funny-404-pages/
