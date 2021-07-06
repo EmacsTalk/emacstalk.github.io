@@ -42,6 +42,11 @@ Show Notes
 &lt;/li>
 &lt;li>
 &lt;p>GUI vs TUI&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾目前使用的终端是 Linux 下 &lt;a href="https://linux.die.net/man/1/urxvt">urxvt&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;li>
 &lt;p>从 Emacs 中操作 Tmux

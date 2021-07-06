@@ -42,6 +42,11 @@ Show Notes
 &lt;/li>
 &lt;li>
 &lt;p>GUI vs TUI&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾目前使用的终端是 Linux 下 &lt;a href="https://linux.die.net/man/1/urxvt">urxvt&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;li>
 &lt;p>从 Emacs 中操作 Tmux
@@ -216,39 +221,30 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;/div>
 &lt;div id="outline-container-headline-2" class="outline-2">
 &lt;h2 id="headline-2">
-如何参与录制
+联系方式
 &lt;/h2>
 &lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
+&lt;p>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>邮件：&lt;a href="mailto:emacstalk@liujiacai.net">emacstalk@liujiacai.net&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>网站、微信公众号留言&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-3" class="outline-2">
 &lt;h2 id="headline-3">
-联系方式
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;ul>
-&lt;li>
-&lt;p>网站、微信公众号留言&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Telegram 群组：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>邮件：&lt;a href="mailto:emacstalk@liujiacai.net">emacstalk@liujiacai.net&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
 Buy me a coffee ☕️
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://emacstalk.github.io/images/alipay.jpeg">支付宝&lt;/a>&lt;/p>
@@ -259,11 +255,11 @@ Buy me a coffee ☕️
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-5" class="outline-2">
-&lt;h2 id="headline-5">
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
 Changelog
 &lt;/h2>
-&lt;div id="outline-text-headline-5" class="outline-text-2">
+&lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>2021-07-04，修改 zen podcast 模板，可以用 org 编写文章&lt;/p>
