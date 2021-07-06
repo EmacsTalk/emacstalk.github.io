@@ -21,13 +21,11 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
   #+ATTR_HTML: :width 500px
   [[/images/weixin.jpg]]
 
-* 如何参与录制
-- https://github.com/EmacsTalk/joinus
-
 * 联系方式
-- 网站、微信公众号留言
-- Telegram 群组：https://t.me/emacstalk
+- QQ 听友群：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
+- TG 听友群：https://t.me/emacstalk
 - 邮件：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
+- 网站、微信公众号留言
 
 * Buy me a coffee ☕️
 - [[/images/alipay.jpeg][支付宝]]

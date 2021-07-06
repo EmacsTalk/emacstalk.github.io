@@ -21,6 +21,11 @@ googleAnalytics = "UA-50745138-3"
   weight = 30
   identifier = "about"
   url = "/about/"
+[[menu.main]]
+  name = "🔥 参与录制 🔥"
+  weight = 40
+  identifier = "joinus"
+  url = "https://github.com/EmacsTalk/joinus"
 # [[menu.main]]
 #   name = "RSS"
 #   weight = 40

@@ -21,6 +21,7 @@
 
 - 让嘉宾对 Emacs 动心的 [[https://www.reddit.com/r/unixporn/][/r/unixporn]]
 - GUI vs TUI
+  - 嘉宾目前使用的终端是 Linux 下 [[https://linux.die.net/man/1/urxvt][urxvt]]
 - 从 Emacs 中操作 Tmux
   的插件：[[https://github.com/emacsorphanage/emamux][emamux.el]]
 - [[https://stackoverflow.com/questions/3509919/emacs-c-opening-corresponding-header-file][如何在Emacs 中切换 C 的源文件与头文件]]
