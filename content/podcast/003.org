@@ -20,7 +20,7 @@
   - 干活为主，不去过多折腾“花哨”的配置
 - spacemacs vs doom-emacs
   - 新手推荐 doom-emacs，spacemacs 历史包袱有些重
-- 从 [[https://github.com/bbatsov/prelude][preclude]] 那里学了不少 ELisp 知识
+- 从 [[https://github.com/bbatsov/prelude][prelude]] 那里学了不少 ELisp 知识
 - 是否需要把 Emacs 当作“操作系统”
   - 已经参加工作的人尤其要注意，不要在“工具”上花太多时间
   - [[http://book.emacs-china.org/][Master Emacs in 21 Days]]
@@ -35,7 +35,7 @@
   - 学 Emacs 对于职业晋升有什么帮助？太功利容易达到职业天花板
   - 学 Emacs 主要是扩宽视野，认识 Emacs 背后的人，学习他们的优点
   - 嘉宾的推荐书籍《[[https://book.douban.com/subject/1152111/][程序员修炼之道]]》
-  - 每年学一门编程语音，按照类型来学，面向对象 vs 面向过程，静态语言 vs 动态语言，重点是学习新思想
+  - 每年学一门编程语言，按照类型来学，面向对象 vs 面向过程，静态语言 vs 动态语言，重点是学习新思想
   - 学习是量变产生质变的过程
   - 学一个东西要学习它解决问题的思路
   - [[https://baike.baidu.com/item/%E9%B2%B6%E9%B1%BC%E6%95%88%E5%BA%94/753597?fr=aladdin][鲶鱼效应]]
