@@ -3,7 +3,7 @@
 #+LASTMOD: 2021-07-04T09:28:23+08:00
 #+ALIASES[]: /podcast/2/
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/1e7c-audiofreehighqps/85/49/CKwRIJEEtj04AbqVuQDCiCOK.m4a
-#+PODCAST_DURATION: 59.43
+#+PODCAST_DURATION: 59:43
 #+PODCAST_LENGTH: 29005241
 #+PODCAST_IMAGE_SRC: guests/doglooksgood.png
 #+PODCAST_IMAGE_ALT: DogLooksGood

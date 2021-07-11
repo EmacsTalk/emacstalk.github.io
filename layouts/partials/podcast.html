@@ -8,9 +8,5 @@
 </figure>
 {{if .Params.podcast_image_src -}}
   {{ $resource := resources.Get .Params.podcast_image_src}}
-  {{ $size := "250x" }}
-  {{ with .Params.podcast_image_width }}{{ $size = (add . "x") }}
-  {{ end }}
-  {{ $image := $resource.Resize $size -}}
-<figure class="image {{ .Params.podcast_image_class | default "right" }}"><img src="{{ $image.RelPermalink }}" width="{{ .Params.podcast_image_width | default "250" }}" alt="{{ .Params.podcast_image_alt }}" title="{{ .Params.podcast_image_alt }}"></figure>
+<figure class="image {{ .Params.podcast_image_class | default "right" }}"><img src="{{ $resource.RelPermalink }}" width="{{ .Params.podcast_image_width | default "250" }}" alt="{{ .Params.podcast_image_alt }}" title="{{ .Params.podcast_image_alt }}"></figure>
 {{ end -}}
