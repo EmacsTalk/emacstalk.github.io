@@ -1,4 +1,194 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 03 Jul 2021 22:36:08 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/002/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/002/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 11 Jul 2021 08:31:38 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>003. 与子龙山人聊 Emacs 与程序员修炼之道</title><link>https://emacstalk.github.io/podcast/003/</link><pubDate>Sun, 11 Jul 2021 08:31:38 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/003/</guid><description>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+本期人物
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾：&lt;a href="https://github.com/zilongshanren">子龙山人&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>个人网站：&lt;a href="https://zilongshanren.com/">https://zilongshanren.com/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://emacs-china.org/">Emacs China&lt;/a> 论坛创始人&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>入坑经历&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>vim -&amp;gt; org mode -&amp;gt; spacemacs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>13 年开始使用，熟悉过程近 2 年&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>干活为主，不去过多折腾“花哨”的配置&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>spacemacs vs doom-emacs&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>新手推荐 doom-emacs，spacemacs 历史包袱有些重&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>从 &lt;a href="https://github.com/bbatsov/prelude">preclude&lt;/a> 那里学了不少 ELisp 知识&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>是否需要把 Emacs 当作“操作系统”&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>已经参加工作的人尤其要注意，不要在“工具”上花太多时间&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://book.emacs-china.org/">Master Emacs in 21 Days&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Hack Emacs 是件很上瘾的事情，需要防止过度，设置 deadline&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>不要觉得用其他工具就信仰崩塌了，“自由”软件的意义就在于用最合适的工具解决问题&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾对新人学 Emacs 的建议&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>学生的话，在学习算法、操作系统时，使用 org mode 来记录学习过程，org-babel 来执行代码片段，这被称为 &lt;a href="https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research">reproducible research&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>已经工作的话，基于成熟配置先把 Emacs 用起来&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>使用 evil，彻底解决小手指痛的问题&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>不要觉得在 Emacs 用 vim 按键方式就不“清真”了，中国的一句老话“经世致用”才是硬道理&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://baike.baidu.com/item/%E5%8A%9F%E5%88%A9%E4%B8%BB%E4%B9%89/1793?fr=aladdin">学习功利论&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>学 Emacs 对于职业晋升有什么帮助？太功利容易达到职业天花板&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>学 Emacs 主要是扩宽视野，认识 Emacs 背后的人，学习他们的优点&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾的推荐书籍《&lt;a href="https://book.douban.com/subject/1152111/">程序员修炼之道&lt;/a>》&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>每年学一门编程语音，按照类型来学，面向对象 vs 面向过程，静态语言 vs 动态语言，重点是学习新思想&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>学习是量变产生质变的过程&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>学一个东西要学习它解决问题的思路&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://baike.baidu.com/item/%E9%B2%B6%E9%B1%BC%E6%95%88%E5%BA%94/753597?fr=aladdin">鲶鱼效应&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾对学习、编程的一些思考&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Make it work, make it better, make it faster&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在做项目时，不要迷失在细枝末节中，找到对你职业生涯最重要的部分，熟练掌握它&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在漫长的职业生涯中跳槽时，要有一个长远的计划，朝一个方向不断前进&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>如何在繁忙的工作中进行提升？&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>follow 圈内名人，Twitter/GitHub&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>视野要放在全球，不要局限在自己的一亩三分地&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>主播的分享&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://emacs-china.org/">Emacs China 论坛&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>建站工具 &lt;a href="https://gohugo.io/">Hugo&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>支持 org mode, &lt;a href="https://emacstalk.github.io/">emacstalk&lt;/a> 网站就是使用 Hugo 搭建起来的&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+收听方式
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ol>
+&lt;li>
+&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>其次是 &lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+广告
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/002/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/002/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 本期人物
