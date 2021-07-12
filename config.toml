@@ -9,7 +9,7 @@ googleAnalytics = "UA-50745138-3"
 
 [author]
     name = "写代码的西瓜"
-    email = "jiacai2050+emacstalk@gmail.com"
+    email = "emacstalk@liujiacai.net"
 
 [[menu.main]]
   name = "播客"
