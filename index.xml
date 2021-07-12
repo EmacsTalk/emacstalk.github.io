@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</managingEditor><webMaster>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 11 Jul 2021 08:31:38 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>003. 与子龙山人聊 Emacs 与程序员修炼之道</title><link>https://emacstalk.github.io/podcast/003/</link><pubDate>Sun, 11 Jul 2021 08:31:38 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/003/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 11 Jul 2021 08:31:38 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>003. 与子龙山人聊 Emacs 与程序员修炼之道</title><link>https://emacstalk.github.io/podcast/003/</link><pubDate>Sun, 11 Jul 2021 08:31:38 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/003/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 本期人物
@@ -188,7 +188,7 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div></description></item><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/002/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/002/</guid><description>
+&lt;/div></description></item><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/002/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/002/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 本期人物
@@ -374,7 +374,7 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div></description></item><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
+&lt;/div></description></item><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
 &lt;pre class="example">
 ______ _______ _ _
 | ____| |__ __| | | |
@@ -395,25 +395,9 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-收听方式
+Get in Touch
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;ol>
-&lt;li>
-&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>其次是 &lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>（美区，中国区暂时搜不到，&lt;a href="https://sspai.com/post/59878">原因&lt;/a>）&lt;/p>
-&lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" width="500px"/>
-&lt;/li>
-&lt;/ol>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
-联系方式
-&lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/p>
@@ -430,11 +414,11 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 Buy me a coffee ☕️
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://emacstalk.github.io/images/alipay.jpeg">支付宝&lt;/a>&lt;/p>
@@ -443,6 +427,22 @@ Buy me a coffee ☕️
 &lt;p>&lt;a href="https://emacstalk.github.io/images/weixinzhifu.jpg">微信支付&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Subscribe
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ol>
+&lt;li>
+&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>其次是 &lt;a href="https://www.xiaoyuzhoufm.com/podcast/60eabfdd030f8753b9982047">小宇宙&lt;/a>、&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>（需美区账号，中国区暂时搜不到，&lt;a href="https://sspai.com/post/59878">原因&lt;/a>）&lt;/p>
+&lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" width="500px"/>
+&lt;/li>
+&lt;/ol>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-4" class="outline-2">
@@ -459,7 +459,7 @@ Changelog
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div></description></item><item><title>001. EmacsTalk 节目简介</title><link>https://emacstalk.github.io/podcast/001/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>jiacai2050+emacstalk@gmail.com (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/001/</guid><description>
+&lt;/div></description></item><item><title>001. EmacsTalk 节目简介</title><link>https://emacstalk.github.io/podcast/001/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/001/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 主要内容
