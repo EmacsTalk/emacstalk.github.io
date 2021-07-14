@@ -39,8 +39,14 @@ googleAnalytics = "UA-50745138-3"
 
 [params]
     logo = true
+    contactus = """
+-   QQ 听友群：[530146104](https://jq.qq.com/?_wv=1027&k=9tAXJ8gG)
+-   TG 听友群：<https://t.me/emacstalk>
+-   收听方式见：<https://emacstalk.github.io/>
+-   如果您喜欢这档节目，欢迎通过[「❤️发电」](https://afdian.net/@emacstalk)来支持
+"""
     dateformat = "2006-01-02"
-    description = "EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。干货不能不要，湿货不能没有。M-x thanks-for-listening"
+    description = "EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening"
     feedlinks = false
     realfavicongenerator = true
     relatedposts = true
@@ -48,7 +54,8 @@ googleAnalytics = "UA-50745138-3"
     sidebar = true
     mobileMenu = true
     copyright = "© 2021 [EmacsTalk](https://github.com/EmacsTalk/emacstalk.github.io) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
-    footer = "Powered by [Hugo](https://gohugo.io/) and the [Zen theme](https://github.com/frjo/hugo-theme-zen)."
+    poweredby = true
+    # footer = "footer"
     [params.podcast]
         local = false
         image = "itunes_3000.jpg"

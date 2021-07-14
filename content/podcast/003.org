@@ -50,3 +50,6 @@
   - [[https://emacs-china.org/][Emacs China 论坛]]
   - 建站工具 [[https://gohugo.io/][Hugo]]
     - 支持 org mode, [[https://emacstalk.github.io/][emacstalk]] 网站就是使用 Hugo 搭建起来的
+
+* Get in Touch
+{{< contactus >}}
