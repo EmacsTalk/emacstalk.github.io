@@ -161,33 +161,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-收听方式
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;ol>
-&lt;li>
-&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>其次是 &lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
-广告
-&lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
-&lt;ul>
-&lt;li>
-&lt;p>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/div>
 &lt;/div></description></item><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/002/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/002/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
@@ -347,33 +320,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-收听方式
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;ol>
-&lt;li>
-&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>其次是 &lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
-广告
-&lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
-&lt;ul>
-&lt;li>
-&lt;p>招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/div>
 &lt;/div></description></item><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
 &lt;pre class="example">
 ______ _______ _ _
@@ -393,6 +339,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;p>不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享&lt;/p>
 &lt;/li>
 &lt;/ul>
+&lt;p>如果您喜欢我们的节目，欢迎通过&lt;a href="https://afdian.net/@emacstalk">「爱发电」&lt;/a>来支持。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 Get in Touch
@@ -409,7 +356,7 @@ Get in Touch
 &lt;p>邮件：&lt;a href="mailto:emacstalk@liujiacai.net">emacstalk@liujiacai.net&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>网站、微信公众号留言&lt;/p>
+&lt;p>网站留言：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -436,10 +383,10 @@ Subscribe
 &lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ol>
 &lt;li>
-&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
+&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在 &lt;a href="https://www.xiaoyuzhoufm.com/podcast/60eabfdd030f8753b9982047">小宇宙&lt;/a>、微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>其次是 &lt;a href="https://www.xiaoyuzhoufm.com/podcast/60eabfdd030f8753b9982047">小宇宙&lt;/a>、&lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>（需美区账号，中国区暂时搜不到，&lt;a href="https://sspai.com/post/59878">原因&lt;/a>）&lt;/p>
+&lt;p>其次是 &lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>（需美区账号，中国区暂时搜不到，&lt;a href="https://sspai.com/post/59878">原因&lt;/a>）&lt;/p>
 &lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" width="500px"/>
 &lt;/li>
 &lt;/ol>
@@ -521,33 +468,5 @@ and Interpretation of Computer Programs (SICP)&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>第一次录制，不足之处还望听友包涵，有任何建议欢迎留言指出，谢谢！&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-收听方式
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;ol>
-&lt;li>
-&lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>其次是 &lt;a href="https://www.ximalaya.com/keji/50656645/">喜马拉雅&lt;/a>、&lt;a href="https://music.163.com/#/djradio?id=963834541">网易云音乐&lt;/a>、&lt;a href="https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2">QQ 音乐&lt;/a>、&lt;a href="https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI">Spotify&lt;/a>、&lt;a href="https://castbox.fm/channel/EmacsTalk-id4367580">Castbox&lt;/a>、&lt;a href="https://pca.st/hbvw3oxs">Pocket Casts&lt;/a>、&lt;a href="https://podcasts.apple.com/podcast/emacstalk/id1574036730">Apple Podcasts&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
-广告
-&lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
-&lt;ul>
-&lt;li>
-&lt;p>招募 Podcast 嘉宾，分享你与 Emacs
-的故事。参与方式见：&lt;a href="https://github.com/EmacsTalk/joinus">https://github.com/EmacsTalk/joinus&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
 &lt;/div>
 &lt;/div></description></item></channel></rss>
