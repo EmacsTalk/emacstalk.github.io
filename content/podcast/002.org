@@ -54,10 +54,3 @@
 
 - 主播分享
   - 《操作系统革命 Revolution OS》，[[https://www.bilibili.com/video/BV1iC4y187nT?seid=2969542446222854468][B站链接]]
-
-* 收听方式
-1. 首推使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]] 或在微信公众号 [[https://weixin.sogou.com/weixin?&query=EmacsTalk][EmacsTalk]] 中收听
-2. 其次是 [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]、[[https://music.163.com/#/djradio?id=963834541][网易云音乐]]、[[https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2][QQ 音乐]]、[[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]、[[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]、[[https://pca.st/hbvw3oxs][Pocket Casts]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]
-
-* 广告
-- 招募 Podcast 嘉宾，分享你与 Emacs 的故事。参与方式见：[[https://github.com/EmacsTalk/joinus]]
