@@ -40,6 +40,7 @@ googleAnalytics = "UA-50745138-3"
 [params]
     logo = true
     contactus = """
+-   微信搜索公众号[「EmacsTalk」](/images/weixin.jpg)
 -   QQ 听友群：[530146104](https://jq.qq.com/?_wv=1027&k=9tAXJ8gG)
 -   TG 听友群：<https://t.me/emacstalk>
 -   收听方式见：<https://emacstalk.github.io/>
