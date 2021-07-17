@@ -33,13 +33,17 @@
 
 * Show Notes
 - 嘉宾介绍
+  - 名字：金国
+  - 工作经历：干过除了程序员之外的大多数工作
   - 淘宝店：[[https://item.taobao.com/item.htm?id=603644408321][蓝鲨网络工作室]]
   - 对 org-mode 的贡献：https://github.com/stardiviner/org-mode
 - 入坑经历
-  - vim -> org mode -> spacemacs
+  - 2 年 vim -> org mode
   - 喜欢复古风
-- org mode
-  - 零配置复现，再去社区求助
+  - Emacs 很多厉害的黑客都在使用，跟着大宗师的路走没错
+  - 一开始是带着一点宗教意义上的盲目崇拜，仿佛学会了 Emacs 就能用它变得无所不能。男孩子嘛，总是希望手中有一把长剑，学会剑术后，梦想从此仗剑走天涯。而 Emacs 就是我手中的长剑。
+- org mode 贡献经历
+  - 零配置复现问题，再去社区求助
   - 自己想要的功能没人乐意实现
 - Elisp 学习经历
   - 文本处理比较删除
@@ -52,12 +56,13 @@
   - 如何给服务定价
     - 最贵的：500+ 人民币，100¥/小时
     - 最难的：[[https://proofgeneral.github.io/][Proof General]] 的 Emacs 环境配置
-- 嘉宾不一样的人生经历及感悟
+- 嘉宾的[[https://github.com/EmacsTalk/joinus/blob/master/podcasts/2021-07-04-stardiviner.org#%E4%B8%80%E5%AE%9A%E8%A6%81%E5%A4%9A%E6%80%9D%E8%80%83%E5%8F%8D%E6%80%9D%E8%87%AA%E5%B7%B1%E7%9A%84%E8%A1%8C%E4%B8%BA][人生经历及感悟]]
 - 嘉宾的分享
   - [[http://catb.org/~esr/faqs/smart-questions.html][How To Ask Questions The Smart Way]]
   - [[https://github.com/stardiviner/org-link-beautify][org-link-beautify]] org 美化插件，方便区分不同格式的链接（PDF/图片/视频等）
   - [[https://clojure.org/][Clojure]]
 - 主播的分享
   - [[https://liujiacai.net/blog/2021/03/05/emacs-love-mail-feed/][使用 Emacs 阅读邮件]]
+
 * Get in Touch
 {{< contactus >}}
