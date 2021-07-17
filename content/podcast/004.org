@@ -1,0 +1,63 @@
+#+TITLE: 004. 与 stardiviner 聊 Emacs 与他与众不同的人生经历
+#+OPTIONS: broken-links:t
+#+DATE: 2021-07-16T22:03:01+08:00
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/3651-audiofreehighqps/92/6A/CKwRIMAEyAqhAkMmyQDJOMqH.m4a
+#+PODCAST_DURATION: 01:18:08
+#+PODCAST_LENGTH: 37955273
+#+PODCAST_IMAGE_SRC: guests/stardiviner.jpg
+#+PODCAST_IMAGE_ALT: stardiviner
+
+本期节目又请来了一资深 Emacs 用户 [[https://stardiviner.github.io/][stardiviner]]，同时也是一名淘宝店主，用来售卖自己的 IT 技能。
+
+从 org-mode 的使用者到贡献者，他是如何做到的？更让人好奇的是他与众不同的人生经历，大学肄业后，他做过房地产销售、必胜客服务员、幼教老师、IT 支持，最后在无意间发现可以通过售卖自己的 IT 技能来赚钱，从此告别职场，走上了 freelancer 的道路。
+
+在一次次的选择中，他逐渐远离“常人”走过的路，这其中或许有一时的鲁莽，但更多的是他勇于突破传统的束缚，逐渐形成了其独特的做事风格。近一个半小时的内容，“湿货”十足，不容错过！
+
+* 本期人物
+- 主播：[[https://liujiacai.net/][西瓜]]
+- 嘉宾：[[https://stardiviner.github.io/][stardiviner]]
+
+* 时间轴
+- 00:02:09 嘉宾学习 Emacs 经历
+- 00:10:35 org mode 介绍
+- 00:15:15 Elisp 学习经历
+- 00:22:19 维护开源插件的感受
+- 00:29:04 开淘宝店，做技术咨询的经历
+- 00:39:19 国内外对服务、知识付费态度的差异
+- 00:49:22 服务定价
+- 00:57:36 转行
+- 00:58:27 如何走出一条与众不同的道路
+- 01:06:54 未来的路
+- 01:09:31 嘉宾相对听众说的话
+- 01:11:01 推荐
+
+* Show Notes
+- 嘉宾介绍
+  - 淘宝店：[[https://item.taobao.com/item.htm?id=603644408321][蓝鲨网络工作室]]
+  - 对 org-mode 的贡献：https://github.com/stardiviner/org-mode
+- 入坑经历
+  - vim -> org mode -> spacemacs
+  - 喜欢复古风
+- org mode
+  - 零配置复现，再去社区求助
+  - 自己想要的功能没人乐意实现
+- Elisp 学习经历
+  - 文本处理比较删除
+  - 不如 common lisp 强大，主要是对异步的支持的比较差
+  - [[https://github.com/stardiviner/kiwix.el][kiwix]] 在 Emacs 中离线搜索 Wikipedia
+- 开淘宝店售卖咨询
+  - 19 年开始
+  - 顾客五花八门，高中生、大学生、清华、北大、以及海外的学生
+  - 为服务付费
+  - 如何给服务定价
+    - 最贵的：500+ 人民币，100¥/小时
+    - 最难的：[[https://proofgeneral.github.io/][Proof General]] 的 Emacs 环境配置
+- 嘉宾不一样的人生经历及感悟
+- 嘉宾的分享
+  - [[http://catb.org/~esr/faqs/smart-questions.html][How To Ask Questions The Smart Way]]
+  - [[https://github.com/stardiviner/org-link-beautify][org-link-beautify]] org 美化插件，方便区分不同格式的链接（PDF/图片/视频等）
+  - [[https://clojure.org/][Clojure]]
+- 主播的分享
+  - [[https://liujiacai.net/blog/2021/03/05/emacs-love-mail-feed/][使用 Emacs 阅读邮件]]
+* Get in Touch
+{{< contactus >}}
