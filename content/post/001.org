@@ -2,7 +2,7 @@
 #+DATE: 2021-07-26T17:18:08+08:00
 #+TAGS[]: tips
 
-我有一个 userscript，[[https://violentmonkey.github.io/api/metadata-block/][元信息]]没有严格对齐，可以工作，但是不美观，怎么办呢？
+有一个 userscript，[[https://violentmonkey.github.io/api/metadata-block/][元信息]]对齐的不直观，不方便阅读，怎么办呢？
 #+begin_src
 // ==UserScript==
 // @name Github Commented Issues
@@ -26,6 +26,7 @@
 #+begin_src lisp
 (align-regexp BEG END REGEXP &optional GROUP SPACING REPEAT)
 #+end_src
+- BEG/END 表示 region 的起始、结束位置
 - REGEXP 用以对齐的正则，至少包含一个 group 即 =()= ，通过修改这个 group 来达到对齐的效果
   - =@[a-z]+\(\s-*\)= 这个正则表示用 =@name= 后的零或多个空格作为修改的 group
   - =\s-= 表示空格，具体语法可参考 [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Regexp-Backslash.html][Regexp-Backslash]]
