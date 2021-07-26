@@ -14,8 +14,13 @@ googleAnalytics = "UA-50745138-3"
 [[menu.main]]
   name = "播客"
   weight = 20
-  identifier = "podcasts"
+  identifier = "podcast"
   url = "/podcast/"
+[[menu.main]]
+  name = "文章"
+  weight = 21
+  identifier = "post"
+  url = "/post/"
 [[menu.main]]
   name = "关于"
   weight = 30
@@ -31,14 +36,15 @@ googleAnalytics = "UA-50745138-3"
   weight = 50
   identifier = "afdian"
   url = "https://afdian.net/@emacstalk"
-# [[menu.main]]
-#   name = "RSS"
-#   weight = 40
-#   identifier = "rss"
-#   url = "/podcast/index.xml"
+[[menu.main]]
+  name = "RSS"
+  weight = 60
+  identifier = "rss"
+  url = "/index.xml"
 
 [params]
     logo = true
+    mainSections = ["post", "podcast"]
     contactus = """
 -   微信搜索公众号[「EmacsTalk」](/images/weixin.jpg)
 -   QQ 听友群：[530146104](https://jq.qq.com/?_wv=1027&k=9tAXJ8gG)
