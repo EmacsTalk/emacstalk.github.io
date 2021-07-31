@@ -1,4 +1,167 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Fri, 23 Jul 2021 20:30:47 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>005. 与 Emacs 高手陈斌闲聊 Emacs</title><itunes:title>005. 与 Emacs 高手陈斌闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/005/</link><guid>https://emacstalk.github.io/podcast/005/</guid><pubDate>Fri, 23 Jul 2021 20:30:47 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 31 Jul 2021 09:20:11 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>006. 经济学博士的 Emacs 奇妙之旅</title><itunes:title>006. 经济学博士的 Emacs 奇妙之旅</itunes:title><link>https://emacstalk.github.io/podcast/006/</link><guid>https://emacstalk.github.io/podcast/006/</guid><pubDate>Sat, 31 Jul 2021 09:20:11 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+&lt;p>
+本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学博士。&lt;/p>
+&lt;p>
+非程序员群体是如何了解并使用 Emacs 的，Kathy 的经历或许可以给出一种答案。Kathy 还会分享自己参与伦敦 Emacs 线下 meetup 的趣闻，是如何接触 Scheme 以及函数式编程对其专业的影响。&lt;/p>
+&lt;p>
+本期节目的后半部分，Kathy 会讲述对英国留学的一些见解，以及英国留学的运作方式，有留学想法的同学千万不要错过。最后 Kathy 会介绍如何把经济学原理应用到日常生活中，让枯燥的知识真正提高生活品质。近一个小时的内容，精彩不容错过！&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+时间轴
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>00:00:50 嘉宾自我介绍&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:03:14 入坑经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:06:45 伦敦 Emacs 线下 meetup 趣闻&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:15:51 Emacs 使用方式&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:21:53 嘉宾的 Scheme 之旅&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:27:36 学习编程对经济学本专业的影响&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:32:20 嘉宾为什么选择经济学、去英国求学&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:39:02 英国留学特点，趣事分享&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:50:43 嘉宾对未来的规划&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:52:36 经济学对嘉宾的影响&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:57:53 推荐&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+名词解释
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>vanilla emacs，原生的 GNU Emacs，零配置&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>coding dojo，是一个学习的过程，一些程序员(通常是15-20人)在一起编程解决一个程序问题。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://baike.baidu.com/item/%E9%80%86%E5%90%91%E9%80%89%E6%8B%A9/2361024?fr=aladdin">逆向选择&lt;/a>，是信息不对称带来的另一个问题。是指市场的某一方如果能够利用多于另一方的信息使自己受益而使另一方受损，倾向于与对方签订协议进行交易。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Emacs China ID: &lt;a href="https://emacs-china.org/u/kathy_h">Kathy_H&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>网站: &lt;a href="https://sheishe.xyz/">&lt;a href="https://sheishe.xyz/">https://sheishe.xyz/&lt;/a>&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>入坑经历&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>2017 年底，差不多 6 个月后真正用起来&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs meetup&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Outline-Mode.html">outline mode&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 使用方式&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://emacs-china.org/t/v1/8218/53?u=kathy_h">在学术方面建立 text based work management&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/louietan/anki-editor">Anki&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Scheme 之旅&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>王垠的文章 &lt;a href="https://www.yinwang.org/blog-cn/2012/07/04/dan-friedman">GTF - Great Teacher Friedman&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://zh.wikipedia.org/zh-hans/%E4%B8%8D%E5%8A%A8%E7%82%B9%E7%BB%84%E5%90%88%E5%AD%90">Y 组合子&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾的推荐&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Youtube: &lt;a href="https://www.youtube.com/user/mzamansky">Mike Zamansky (Hunter College professor)&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>B站：&lt;a href="https://space.bilibili.com/314984514">金色飞贼小米&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>主播的推荐&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/redguardtoo/vc-msg">vc-msg&lt;/a> 显示当前行的 git 信息&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/jiacai2050/sicp">SICP&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>片尾音乐：&lt;a href="https://music.163.com/#/song?id=1380302523">https://music.163.com/#/song?id=1380302523&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+Get in Touch
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;ul>
+&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
+&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
+&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
+&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
+&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@emacstalk">「❤️发电」&lt;/a>来支持&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description><enclosure url="https://res.wx.qq.com/voice/getvoice?mediaid=MzA4NDU1NTg2Nl8zMDQ4MjQzNTE=" type="audio/mpeg" length="30257397"/><itunes:duration>01:03:02</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/kathy.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>005. 与 Emacs 高手陈斌闲聊 Emacs</title><itunes:title>005. 与 Emacs 高手陈斌闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/005/</link><guid>https://emacstalk.github.io/podcast/005/</guid><pubDate>Fri, 23 Jul 2021 20:30:47 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;p>
 本期节目请来了一位使用 Emacs 近十年的资深用户&lt;a href="https://blog.binchen.org/">陈斌&lt;/a>，他是著名文章&lt;a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide">《一年成为 Emacs 高手》&lt;/a>的作者，同时也是一位拥有近二十年软件开发经验的前辈。&lt;/p>
 &lt;p>
