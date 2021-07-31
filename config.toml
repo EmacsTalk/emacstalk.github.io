@@ -27,20 +27,10 @@ googleAnalytics = "UA-50745138-3"
   identifier = "about"
   url = "/about/"
 [[menu.main]]
-  name = "参与录制"
-  weight = 40
-  identifier = "joinus"
-  url = "https://github.com/EmacsTalk/joinus"
-[[menu.main]]
   name = "🔥 爱发电 🔥"
   weight = 50
   identifier = "afdian"
-  url = "https://afdian.net/@emacstalk"
-[[menu.main]]
-  name = "RSS"
-  weight = 60
-  identifier = "rss"
-  url = "/index.xml"
+  url = "/donate"
 
 [params]
     logo = true

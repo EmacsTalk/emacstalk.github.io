@@ -1,0 +1,9 @@
+#+TITLE: 发电方式
+#+DATE: 2021-07-31T12:25:36+08:00
+
+* 爱发电
+- https://afdian.net/@emacstalk
+* 微信支付
+[[/images/weixinzhifu.jpg]]
+* 支付宝
+[[/images/alipay.jpeg]]
