@@ -1,43 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 31 Jul 2021 09:20:11 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>发电方式</title><link>https://emacstalk.github.io/donate/</link><pubDate>Sat, 31 Jul 2021 12:25:36 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/donate/</guid><description>
+&lt;p>
+如果您喜欢 EmacsTalk 这档节目，欢迎为本播客发电支持。❤️&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-爱发电
+微信支付
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>&lt;img src="https://emacstalk.github.io/images/weixinzhifu.jpg" alt="/images/weixinzhifu.jpg" title="/images/weixinzhifu.jpg" />&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+支付宝
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;p>&lt;img src="https://emacstalk.github.io/images/alipay.jpeg" alt="/images/alipay.jpeg" title="/images/alipay.jpeg" />&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+爱发电
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://afdian.net/@emacstalk">https://afdian.net/@emacstalk&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
-微信支付
-&lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
-&lt;p>&lt;img src="https://emacstalk.github.io/images/weixinzhifu.jpg" alt="/images/weixinzhifu.jpg" title="/images/weixinzhifu.jpg" />&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-支付宝
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;p>&lt;img src="https://emacstalk.github.io/images/alipay.jpeg" alt="/images/alipay.jpeg" title="/images/alipay.jpeg" />&lt;/p>
-&lt;/div>
 &lt;/div></description></item><item><title>006. 经济学在读博士生的 Emacs 奇妙之旅</title><link>https://emacstalk.github.io/podcast/006/</link><pubDate>Sat, 31 Jul 2021 09:20:11 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/006/</guid><description>
 &lt;p>
-本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学在读博士生。&lt;/p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学在读博士生。&lt;/p>
 &lt;p>
 非程序员群体是如何了解并使用 Emacs 的，Kathy 的经历或许可以给出一种答案。Kathy 还会分享自己参与伦敦 Emacs 线下 meetup 的趣闻，是如何接触 Scheme 以及函数式编程对其专业的影响。&lt;/p>
 &lt;p>
 本期节目的后半部分，Kathy 会讲述对英国留学的一些见解，以及英国留学的运作方式，有留学想法的同学千万不要错过。最后 Kathy 会介绍如何把经济学原理应用到日常生活中，让枯燥的知识真正提高生活品质。近一个小时的内容，精彩不容错过！&lt;/p>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 时间轴
 &lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:50 嘉宾自我介绍&lt;/p>
@@ -75,11 +86,11 @@
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 名词解释
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>vanilla emacs，原生的 GNU Emacs，零配置&lt;/p>
@@ -93,11 +104,11 @@
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -176,11 +187,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
 Get in Touch
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-5" class="outline-text-2">
 &lt;ul>
 &lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
 &lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
@@ -295,17 +306,26 @@ dogs the quick brown&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div></description></item><item><title>005. 与 Emacs 高手陈斌闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/005/</link><pubDate>Fri, 23 Jul 2021 20:30:47 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/005/</guid><description>
 &lt;p>
-本期节目请来了一位使用 Emacs 近十年的资深用户&lt;a href="https://blog.binchen.org/">陈斌&lt;/a>，他是著名文章&lt;a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide">《一年成为 Emacs 高手》&lt;/a>的作者，同时也是一位拥有近二十年软件开发经验的前辈。&lt;/p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期节目请来了一位使用 Emacs 近十年的资深用户&lt;a href="https://blog.binchen.org/">陈斌&lt;/a>，他是著名文章&lt;a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide">《一年成为 Emacs 高手》&lt;/a>的作者，同时也是一位拥有近二十年软件开发经验的前辈。&lt;/p>
 &lt;p>
 抵触 Emacs 近十年后，陈斌用一年时间就成为了 Emacs 高手，他是怎么做到的？是什么样的契机让他打开了 Emacs 这个潘多拉魔盒？&lt;/p>
 &lt;p>
 作为一个拥有众多插件的开源软件维护者，如何处理用户的不满？如何调节生活与维护的压力？陈斌给出了自己的答案。
 此外，节目里还聊到了 Emacs 与 VSCode/Vim 等开发理念上的区别，学习这些软知识，非常有助于加深对 Emacs 的理解。近一个半小时的内容，“湿货”十足，不容错过！&lt;/p>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 本期人物
 &lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/p>
@@ -316,11 +336,11 @@ dogs the quick brown&lt;/code>&lt;/pre>&lt;/div>
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 时间轴
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:42 嘉宾自我介绍&lt;/p>
@@ -370,11 +390,11 @@ dogs the quick brown&lt;/code>&lt;/pre>&lt;/div>
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -507,11 +527,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
 Get in Touch
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-5" class="outline-text-2">
 &lt;ul>
 &lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
 &lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
@@ -522,16 +542,25 @@ Get in Touch
 &lt;/div>
 &lt;/div></description></item><item><title>004. 与 stardiviner 聊 Emacs 与他与众不同的人生经历</title><link>https://emacstalk.github.io/podcast/004/</link><pubDate>Fri, 16 Jul 2021 22:03:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/004/</guid><description>
 &lt;p>
-本期节目又请来了一资深 Emacs 用户 &lt;a href="https://stardiviner.github.io/">stardiviner&lt;/a>，同时也是一名淘宝店主，用来售卖自己的 IT 技能。&lt;/p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期节目又请来了一资深 Emacs 用户 &lt;a href="https://stardiviner.github.io/">stardiviner&lt;/a>，同时也是一名淘宝店主，用来售卖自己的 IT 技能。&lt;/p>
 &lt;p>
 从 org-mode 的使用者到贡献者，他是如何做到的？更让人好奇的是他与众不同的人生经历，大学肄业后，他做过房地产销售、必胜客服务员、幼教老师、IT 支持，最后在无意间发现可以通过售卖自己的 IT 技能来赚钱，从此告别职场，走上了 freelancer 的道路。&lt;/p>
 &lt;p>
 在一次次的选择中，他逐渐远离“常人”走过的路，这其中或许有一时的鲁莽，但更多的是他勇于突破传统的束缚，逐渐形成了其独特的做事风格。近一个半小时的内容，“湿货”十足，不容错过！&lt;/p>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 本期人物
 &lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/p>
@@ -542,11 +571,11 @@ Get in Touch
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 时间轴
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:02:09 嘉宾学习 Emacs 经历&lt;/p>
@@ -587,11 +616,11 @@ Get in Touch
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -705,11 +734,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
 Get in Touch
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-5" class="outline-text-2">
 &lt;ul>
 &lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
 &lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
@@ -719,6 +748,9 @@ Get in Touch
 &lt;/ul>
 &lt;/div>
 &lt;/div></description></item><item><title>003. 与子龙山人聊 Emacs 与程序员修炼之道</title><link>https://emacstalk.github.io/podcast/003/</link><pubDate>Sun, 11 Jul 2021 08:31:38 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/003/</guid><description>
+&lt;p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 本期人物
@@ -896,6 +928,9 @@ Get in Touch
 &lt;/ul>
 &lt;/div>
 &lt;/div></description></item><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/002/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/002/</guid><description>
+&lt;p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 本期人物
@@ -1167,9 +1202,12 @@ Changelog
 &lt;/ul>
 &lt;/div>
 &lt;/div></description></item><item><title>001. EmacsTalk 节目简介</title><link>https://emacstalk.github.io/podcast/001/</link><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/001/</guid><description>
+&lt;p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-主要内容
+概要
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？&lt;/p>
