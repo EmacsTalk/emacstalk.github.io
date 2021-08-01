@@ -35,6 +35,7 @@ googleAnalytics = "UA-50745138-3"
 [params]
     logo = true
     mainSections = ["post", "podcast"]
+    fadian = "如果您喜欢这档节目，欢迎为本播客[发电支持](https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw) ❤️"
     contactus = """
 -   微信搜索公众号[「EmacsTalk」](/images/weixin.jpg)
 -   QQ 听友群：[530146104](https://jq.qq.com/?_wv=1027&k=9tAXJ8gG)

@@ -6,6 +6,9 @@
 #+PODCAST_IMAGE_SRC: guests/kathy.jpg
 #+PODCAST_IMAGE_ALT: kathy
 
+{{< fadian >}}
+
+* 概要
 本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学在读博士生。
 
 非程序员群体是如何了解并使用 Emacs 的，Kathy 的经历或许可以给出一种答案。Kathy 还会分享自己参与伦敦 Emacs 线下 meetup 的趣闻，是如何接触 Scheme 以及函数式编程对其专业的影响。

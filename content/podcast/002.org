@@ -8,6 +8,8 @@
 #+PODCAST_IMAGE_SRC: guests/doglooksgood.png
 #+PODCAST_IMAGE_ALT: DogLooksGood
 
+{{< fadian >}}
+
 * 本期人物
 - 主播：[[https://liujiacai.net/][西瓜]]
 - 嘉宾：[[https://github.com/DogLooksGood][DogLooksGood]]

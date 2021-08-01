@@ -6,7 +6,9 @@
 #+PODCAST_DURATION: 6:59
 #+PODCAST_LENGTH: 3399122
 
-* 主要内容
+{{< fadian >}}
+
+* 概要
 EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？
 
 * Show Notes
