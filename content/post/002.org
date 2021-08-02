@@ -1,0 +1,25 @@
+#+TITLE: 如何快速熟悉 ELisp 函数使用方式
+#+DATE: 2021-08-02T19:51:48+08:00
+#+TAGS[]: tips
+
+Emacs 的文档虽然比较全，但是缺少些可以拷贝粘贴的示例代码，这对于初学者来说有些不方便，不过幸好社区内有些解决方案，而且在 Emacs 28 中也对这方便有些增强。这里就来介绍其用法。
+
+* [[https://github.com/xuchunyang/elisp-demos][ELisp demos]]
+
+这是一个插件，可以在 helpful buffer 中增加示例代码，效果如下：
+https://img.alicdn.com/imgextra/i4/581166664/O1CN01fHdXu21z6A51QWZDx_!!581166664.jpg
+
+使用方式非常简单，添加一个 advice 即可
+#+begin_src elisp
+(advice-add 'describe-function-1 :after #'elisp-demos-advice-describe-function-1)
+
+; or this if use helpful
+
+(advice-add 'helpful-update :after #'elisp-demos-advice-helpful-update)
+
+#+end_src
+* 28 的 shortdoc
+在 Emacs 28 中新增了 =shortdoc-display-group= 命令 ，对常用函数进行了归类展示，效果如下：
+[[https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg]]
+
+[[https://img.alicdn.com/imgextra/i4/581166664/O1CN01lDowRe1z6A4rF0CpD_!!581166664.jpg]]
