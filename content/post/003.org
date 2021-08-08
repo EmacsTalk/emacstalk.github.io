@@ -1,0 +1,15 @@
+#+TITLE: 使用 Dired 快速移动文件
+#+DATE: 2021-08-08T11:06:00+08:00
+#+TAGS[]: tips
+
+在第五期节目里推荐过 [[https://www.raycast.com/][Raycast]] 这个神奇，之前知道它可以直接执行脚本，但一直没尝试过，最近发现它提供了一个 [[https://github.com/raycast/script-commands][script-commands 仓库]]，里面整理了一些常用的脚本，比如清空回收箱、刷新 DNS 等，比较实用。
+
+但这个仓库的脚本非常多，我需要的只是其中很小一部分，所以需要一种方式来便捷地在两个目录间拷贝文件（称为 src 与 dst）。
+
+之前的话我都是在 Dired 里 mark 相关文件，然后再在 minibuffer 里找到 dst ，如果 src 和 dst 离得比较远，整个过程会非常枯燥、低效，今天尝试 Google 了一下[[https://emacs.stackexchange.com/questions/5603/how-to-quickly-copy-move-file-in-emacs-dired][这个问题]]，发现一个好方式，流程如下：
+
+1. 打开两个 Dired 窗口，分别对应 src 目录与 dst 目录
+2. 在 src 里 mark 文件后，按 C 拷贝时，提示的目录默认就是 dst
+3. 直接回车即可复制文件
+
+设置 =(setq dired-dwim-target t)=  即可使用上述功能。Emacs is amazing！
