@@ -53,6 +53,7 @@
 - 2018 年，嘉宾对 Effective Emacs 的回顾文章：[[https://blog.csdn.net/DelphiNew/article/details/80112823][到了2018年，还有学习Emacs的必要吗？]]
   - 如何防止小指痛：上机械键盘，用手掌边沿去按 Ctrl 比用小指按更容易更舒服
 - 嘉宾推荐
+  - [[https://detail.tmall.com/item.htm?id=617001703512][NIZ宁芝 普拉姆 X87 X108 静电容蓝牙键盘]]
   - [[https://coq.inria.fr/][Coq]]
   - Dart + Flutter
 - 主播推荐
