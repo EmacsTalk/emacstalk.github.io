@@ -1,4 +1,191 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 31 Jul 2021 09:20:11 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>006. 经济学在读博士生的 Emacs 奇妙之旅</title><itunes:title>006. 经济学在读博士生的 Emacs 奇妙之旅</itunes:title><link>https://emacstalk.github.io/podcast/006/</link><guid>https://emacstalk.github.io/podcast/006/</guid><pubDate>Sat, 31 Jul 2021 09:20:11 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 15 Aug 2021 13:42:35 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/itunes_3000.jpg"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>007. 编辑器专家的 Emacs 世界</title><itunes:title>007. 编辑器专家的 Emacs 世界</itunes:title><link>https://emacstalk.github.io/podcast/007/</link><guid>https://emacstalk.github.io/podcast/007/</guid><pubDate>Sun, 15 Aug 2021 13:42:35 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+&lt;p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期节目请来了一位使用 Emacs 15 年之久的编辑器专家领蜂，在高中竞赛时获奖后，父母送给他一台个人电脑，这打开了他的 Emacs 之旅。&lt;/p>
+&lt;p>
+由于其工作领域正好与编辑器相关，领蜂走上了一条专家型的 Emacs 学习路线，接触 Emacs 三天即开始上手 ELisp，他是怎么做的到？更令人想不到的是嘉宾的配置仅仅 200 来行，可谓精简至极，典型的“手动挡”车用户，这背后有什么样的理念？&lt;/p>
+&lt;p>
+另一方面，嘉宾十分关心开源社区的“八卦”，对早期 Emacs Hacker 的事迹信手拈来，嘉宾在节目里分享的先驱者的言论，至今来看，仍然十分超前，这些言论对我们的启发是什么？
+近一个半小时的内容，不容错过。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>00:00:54 嘉宾自我介绍&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:03:16 Emacs 初印象&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:12:15 开源社区内前辈们对嘉宾的影响&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:20:23 谈 UE/Vim/NeoVim&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:30:05 浏览器内核发展之路与浏览器之战&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:38:30 在 Emacs 社区的活动&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:44:44 ELisp 解释器为什么选用动态作用域&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:52:28 学习 ELisp 的经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:00:12 Emacs 两种学习方式：专家模式与务实模式&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:08:57 极简风格的配置&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:16:36 推荐&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾自我介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>姓名：领蜂&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>网络 ID: Joyer, DelphiNew/uppet&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>社交信息: &lt;a href="https://blog.csdn.net/delphinew/">CSDN&lt;/a>, &lt;a href="HTTPS://github.com/uppet">GitHub&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>工作经历：06 年开始工作；竞赛型程序员，IDE 开发，浏览器引擎开发，开发者工具开发&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.csdn.net/DelphiNew/article/details/6732295">目前的配置&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 初印象&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://zh.wikipedia.org/wiki/Mandriva_Linux">Mandriva Linux&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://web.mit.edu/~yandros/doc/craft-text-editing/index.html">The Craft of Text Editing&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://sites.google.com/site/steveyegge2/effective-emacs">effective-emacs &lt;/a>，嘉宾的&lt;a href="https://blog.csdn.net/DelphiNew/article/details/2053676">中文翻译&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.oreilly.com/openbook/opensources/book/tiemans.html">Open Sources: Voices from the Open Source Revolution&lt;/a> by Michael Tiemann， Cygnus 作者&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.jwz.org/">JWZ&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://web.archive.org/web/20110723033542/http://www.burlingtontelecom.net/~ashawley/gnu/emacs/doc/emacs-1978.html">An Introduction to the Emacs Editor&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>UE 为什么会逐渐消失&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.binpress.com/vim-creator-bram-moolenaar-interview/">10 Questions with Vim’s creator, Bram Moolenaar&lt;/a> 第八个问题&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>提问：如何确保 Vim 在可遇见的将来继续成功？&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>回答：Keep me alive&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Netscape 创始人 Marc Andreessen 金句：&lt;a href="https://en.wikiquote.org/wiki/Marc_Andreessen">Netscape would reduce Windows to a “poorly debugged set of device drivers”&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>其他金句：&lt;a href="https://www.wsj.com/articles/SB10001424053111903480904576512250915629460">Software is eating the world&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 28 引入的 JIT&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2018 年，嘉宾对 Effective Emacs 的回顾文章：&lt;a href="https://blog.csdn.net/DelphiNew/article/details/80112823">到了2018年，还有学习Emacs的必要吗？&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如何防止小指痛：上机械键盘，用手掌边沿去按 Ctrl 比用小指按更容易更舒服&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾推荐&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://coq.inria.fr/">Coq&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Dart + Flutter&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>主播推荐&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>EmacsTalk 听友群&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://emacstalk.github.io/post/002/">elisp-demos&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+Get in Touch
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;ul>
+&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
+&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
+&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
+&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
+&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@emacstalk">「❤️发电」&lt;/a>来支持&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description><enclosure url="https://res.wx.qq.com/voice/getvoice?mediaid=MzA4NDU1NTg2Nl8zMDQ4MjQzODI=" type="audio/mpeg" length="39209455"/><itunes:duration>01:21:41</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/joyer.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>006. 经济学在读博士生的 Emacs 奇妙之旅</title><itunes:title>006. 经济学在读博士生的 Emacs 奇妙之旅</itunes:title><link>https://emacstalk.github.io/podcast/006/</link><guid>https://emacstalk.github.io/podcast/006/</guid><pubDate>Sat, 31 Jul 2021 09:20:11 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;p>
 如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
 &lt;/p>
