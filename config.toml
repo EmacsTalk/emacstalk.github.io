@@ -56,7 +56,7 @@ googleAnalytics = "UA-50745138-3"
     # footer = "footer"
     [params.podcast]
         local = false
-        image = "itunes_3000.jpg"
+        image = "logo3000.png"
         lang = "zh-cn"
         author = "emacstalk.github.io"
         [params.podcast.category]
