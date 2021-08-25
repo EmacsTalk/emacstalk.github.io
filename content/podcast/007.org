@@ -1,8 +1,8 @@
 #+TITLE: 007. 编辑器专家的 Emacs 世界
 #+DATE: 2021-08-15T13:42:35+08:00
-#+PODCAST_MP3: https://res.wx.qq.com/voice/getvoice?mediaid=MzA4NDU1NTg2Nl8zMDQ4MjQzODI=
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/1f46-audiofreehighqps/0E/46/CKwRIRwE7udEAl1nOwDX_Jcq.m4a
 #+PODCAST_DURATION: 01:21:41
-#+PODCAST_LENGTH: 39209455
+#+PODCAST_LENGTH: 39675707
 #+PODCAST_IMAGE_SRC: guests/joyer.jpg
 #+PODCAST_IMAGE_ALT: joyer
 

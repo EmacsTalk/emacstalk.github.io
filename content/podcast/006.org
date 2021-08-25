@@ -1,8 +1,8 @@
 #+TITLE: 006. 经济学在读博士生的 Emacs 奇妙之旅
 #+DATE: 2021-07-31T09:20:11+08:00
-#+PODCAST_MP3: https://res.wx.qq.com/voice/getvoice?mediaid=MzA4NDU1NTg2Nl8zMDQ4MjQzNTE=
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/4a5e-audiofreehighqps/46/1D/CKwRIDoE2p3UAdMv1wDQZEPL.m4a
 #+PODCAST_DURATION: 01:03:02
-#+PODCAST_LENGTH: 30257397
+#+PODCAST_LENGTH: 30617559
 #+PODCAST_IMAGE_SRC: guests/kathy.jpg
 #+PODCAST_IMAGE_ALT: kathy
 

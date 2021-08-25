@@ -1,8 +1,8 @@
 #+TITLE: 005. 与 Emacs 高手陈斌闲聊 Emacs
 #+DATE: 2021-07-23T20:30:47+08:00
-#+PODCAST_MP3: https://res.wx.qq.com/voice/getvoice?mediaid=MzA4NDU1NTg2Nl8zMDQ4MjQzMzk=
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/38c4-audiofreehighqps/43/CA/CKwRIMAE0LA6Al87qgDMt3pR.m4a
 #+PODCAST_DURATION: 01:21:56
-#+PODCAST_LENGTH: 39328365
+#+PODCAST_LENGTH: 39795626
 #+PODCAST_IMAGE_SRC: guests/chenbin.jpg
 #+PODCAST_IMAGE_ALT: chenbin
 
