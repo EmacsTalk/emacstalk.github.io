@@ -1,10 +1,10 @@
-#+TITLE: 优化配置启动时间
+#+TITLE: Emacs 启动时间优化实践
 #+DATE: 2021-08-22T12:49:15+08:00
-#+DRAFT: true
+#+LASTMOD: 2021-09-01T00:16:48+08:00
+#+DRAFT: false
 #+TAGS[]: tips
 
-最近在知乎上回答了一个问题[[https://www.zhihu.com/question/472788138/answer/2006637253][请问你的emacs启动需要多久？]]，之前一直怎么花经历去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是这个周末实践了一下，这篇文章就来总结下收获。
-
+最近在知乎上回答了一个问题[[https://www.zhihu.com/question/472788138/answer/2006637253][请问你的emacs启动需要多久？]]，之前一直怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。
 * 目标
 Emacs 中提供了一个函数来记录启动时长，即 =emacs-init-time= ，后文也用这个时间作为优化目标。
 首先看下零配置下的时间，这个值也是理论上的最优值
@@ -21,14 +21,14 @@ M-x emacs-init-time
 | 阶段   | =(length package-alist)= | =(emacs-init-time)= |
 |--------+--------------------------+---------------------|
 | 优化前 |                      116 |             6.50532 |
-| 优化后 |                       65 |            1.198395 |
+| 优化后 |                       65 |            0.943392  |
 * 工具
 ** use-package
   我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项来打印包的加载时间：
   - =use-package-verbose= ，设置为 =t= 即可打印包加载时间
   - =use-package-minimum-reported-time= ，默认是 0.1 秒，可根据需要修改
 
-  有一点需要注意，verbose 统计的是 =:config= 内的执行时间， =:init= 的不会统计，所以时间这个方式统计的数据不一定准确
+  有一点需要注意，verbose 统计的是 =:config= 内的执行时间， =:init= 的不会统计，所以时间这个方式统计的数据不一定准确。
 ** [[https://github.com.cnpmjs.org/dholm/benchmark-init-el][benchmark-init-el]]
 本次优化主要使用这个工具，它提供了两种视图：
 - =benchmark-init/show-durations-tabulated= 表视图，可以查看一个包以及其依赖的加载时间
@@ -71,78 +71,94 @@ M-x emacs-init-time
   通过上面的树状图，可以看到 org-contacts 所有依赖的加载时间。
 
   本次优化前的数据放在里[[https://gist.github.com/jiacai2050/cf30db07bb2e95ffb7d5114bc95c0cfc][这个 gist]] 中，共读者参考。
-* 过程
-** 去掉 org-babel
-在很久之前，得知可以把配置写在一个
-纸上得来终倔起按
-#+begin_src emacs-lisp
+** 自定义 timer
+#+BEGIN_SRC emacs-lisp
 (defmacro my/timer (&rest body)
   "Measure and return the time it takes evaluating BODY."
   `(let ((time (current-time)))
      ,@body
      (float-time (time-since time))))
+#+END_SRC
+通过 =my/timer= 这个宏，可以得到 =body= 部分的执行时间。
+* 指导思想
+- 尽可能懒加载包
+- 精简配置，去掉那些华而不实的包，之前很有可能一时兴起安装的包，但是之后再也没用过
+* 优化过程
+** 懒加载所有包
+大多数包的安装说明中，都会推荐通过 =(xxx-mode 1)= 的方式来开启该 mode，这样的优势是简单，用户出问题的机率小，但是带来的一个问题就是会在 Emacs 启动时去加载这些包，即使暂时用不到它。
 
-(message "projectile config cost %s"
-         (my/timer
-          (use-package projectile
-            :init
-            (projectile-mode +1)
-            :bind ("C-c p" . projectile-command-map)
-            :custom (projectile-project-search-path '("~/code/" "~/gh/" "~/code/antfin/" "~/code/misc"))
-            :config
-            (setq projectile-switch-project-action #'projectile-find-file-dwim
-                  projectile-completion-system 'ivy
-                  ;; projectile-enable-caching t
-                  projectile-project-root-functions '(projectile-root-local
-                                                      projectile-root-bottom-up)
-                  projectile-project-root-files-bottom-up '(".projectile" "README.org" "README.md"
-                                                            "Makefile" "pom.xml" "go.mod" "cargo.toml" "project.clj"
-                                                            ".git" ".hg")
-                  projectile-ignored-project-function (lambda (project-root)
-                                                        (cl-dolist (deny '("\\.git" "\\.rustup" "\\.cargo" "go/pkg" "vendor"))
-                                                          (when (string-match-p deny project-root)
-                                                            (cl-return t))))))))
+use-package 提供了 =:defer= 关键字来支持懒加载，取值如下：
+- =t= ，表示不会主动加载这个包
+- 数字，表示延迟多少秒后加载
 
+优化后的配置大部分包均有 =:defer t= ，然后通过 hook/autoloads 的方式来懒加载，对于其他一些重点需要的包，通过设置延迟时间来优化。比如：
+- evil/evil-leader/smex 为 2
+- autorevert/so-long/window-numbering 为 5
+
+通过这一步，可以极大减少启动时间。在进行实践时，可以通过 benchmark-init 的表视图，找到加载最耗时的包，然后逐次优化。
+** 精简配置
+在进行第一步的过程中，发现 projectile 这个包需要 0.7s 的时间，主要时间耗在了 =(projectile-mode 1)= 这一句上。
+#+begin_src emacs-lisp
+(my/timer
+ (use-package projectile
+   :init
+   (projectile-mode +1)
+   :bind ("C-c p" . projectile-command-map)
+   :custom (projectile-project-search-path '("~/code/" "~/gh/" "~/code/antfin/" "~/code/misc"))
+   :config
+   (setq projectile-switch-project-action #'projectile-find-file-dwim
+         projectile-completion-system 'ivy
+         ;; projectile-enable-caching t
+         projectile-project-root-functions '(projectile-root-local
+                                             projectile-root-bottom-up)
+         projectile-project-root-files-bottom-up '(".projectile" "README.org" "README.md"
+                                                   "Makefile" "pom.xml" "go.mod" "cargo.toml" "project.clj"
+                                                   ".git" ".hg")
+         projectile-ignored-project-function (lambda (project-root)
+                                               (cl-dolist (deny '("\\.git" "\\.rustup" "\\.cargo" "go/pkg" "vendor"))
+                                                 (when (string-match-p deny project-root)
+                                                   (cl-return t)))))))
+;; 0.781213
 #+end_src
 
-projectile config cost 0.781213
+我日常工作流重要依赖项目管理，具体来说有以下三点：
+1. 可以方便的切换 project
+2. 可以方便的自定义 project-root ，对于 monorepo 来说尤为重要，而且 lsp-mode/citre 之类的工具也都依赖这个
+3. project 内搜索文件要快
 
+projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可达到 projectile 同样的功能，于是果断去掉了 projectile 这个依赖。
 
-67 packages loaded in 2.214488 seconds
-3.681204 seconds
+目前我是用的 project.el 配置可参考：[[https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166][i-basic.el#L85-L166]]，对于 27 版本的用户，可以在 [[https://elpa.gnu.org/packages/project.html][这里]]下载最新的 project.el。这次优化去掉的其他包还有：
+- evil-numbers
+- company-native-complete
+- comment-dwim-2
+- carbon-now-sh
+- ob-http/ob-sql-mode/org-sidebar/org-bullets
+- all-the-icons/all-the-icons-ivy/all-the-icons-dired
+- calfw/cal-china-x
+- easy-hugo
 
-#+BEGIN_SRC bash
-  ├─[~/.config/emacs/i-edit.el load 573ms]
-  │ ├─[smex require 6ms]
-  │ │ ╰─[ido require 16ms]
-  │ ├─[ivy-faces require 6ms]
-  │ ├─[ivy-overlay require 6ms]
-  │ ├─[colir require 6ms]
-  │ │ ╰─[color require 12ms]
-  │ ├─[smartparens-config require 12ms]
-  │ │ ├─[smartparens-text require 9ms]
-  │ │ ╰─[smartparens require 59ms]
-  │ │   ╰─[dash require 36ms]
-  │ ├─[persistent-scratch require 5ms]
-  │ ├─[diff require 12ms]
-  │ ├─[filenotify require 13ms]
-  │ ├─[~/.config/emacs/var/recentf-save.el load 2ms]
-  │ ├─[tree-widget require 12ms]
-  │ ├─[cus-start require 14ms]
-  │ ├─[cus-load require 20ms]
-  │ ╰─[wid-edit require 18ms]
-  ├─[~/.config/emacs/i-basic.el load 63ms]
+这些包的特点是：看上去很实用，但基本上没用过，去掉完全不影响使用体验。
+** 重新组织配置文件
+通过 benchmark-init 的数据来看，org 相关包占了很大一部分，通过 defer 可以把其相关配置懒加载，但是还有一点容易忽略，即 org-babel。优化前的配置是放在一个大 org 文件中，即所谓的『文学式编程』。
+#+BEGIN_SRC emacs-lisp
+(org-babel-load-file (expand-file-name "core.org" user-emacs-directory))
 #+END_SRC
--*- mode:grep; default-directory: "~/.config/emacs/" -*-
+优化后是拆分到多个 el 文件中，使用 load-file 来加载，之所以选择 load-file，而不是 require 之类的高级 API，是因为它比较底层，黑魔法会少一些。
+#+BEGIN_SRC emacs-lisp
+(let ((file-name-handler-alist nil))
+   (dolist (el '("i-basic.el"
+				 "i-edit.el"
+				 "i-prog.el"
+				 "i-ui.el"
+				 "i-misc.el"))
+	 (load-file (expand-file-name el user-emacs-directory))))
+#+END_SRC
+=file-name-handler-alist= 设置为 nil 是参考 [[https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/][2 easy little known steps to speed up Emacs start up time]]
 
-
-5 candidates:
-./*Benchmark Init Results Tabulated*:1:  ~/.config/emacs/i-edit.el                                         load        266     467
-./*Benchmark Init Results Tabulated*:2:  ~/.config/emacs/i-basic.el                                        load         79     603
-./*Benchmark Init Results Tabulated*:9:  ~/.config/emacs/i-ui.el                                           load         26      61
-./*Benchmark Init Results Tabulated*:26:  ~/.config/emacs/i-prog.el                                         load         14      61
-./*Benchmark Init Results Tabulated*:62:  ~/.config/emacs/i-misc.el                                         load         10      25
-
+* 总结
+Emacs 的启动慢是个老生常谈的问题，真正的 Emacs 用户重启 Emacs 的机率比较小，一般都是 server 模式常驻的，启动慢的问题对他们来说不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。
 
 * 参考
-https://blog.d46.us/advanced-emacs-startup/
+- [[https://www.manueluberti.eu/emacs/2020/09/18/project/][It’s never too late]]
+- https://blog.d46.us/advanced-emacs-startup/
