@@ -18,9 +18,59 @@ M-x emacs-init-time
 
 * 效果
 介绍具体步骤前，先看看这次优化的数据
-- 优化前：130 个包，7.681082 seconds
-- 优化后：60 个包，0.97 seconds
+| 阶段   | =(length package-alist)= | =(emacs-init-time)= |
+|--------+--------------------------+---------------------|
+| 优化前 |                      116 |             6.50532 |
+| 优化后 |                       65 |            1.198395 |
 * 工具
+** use-package
+  我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项来打印包的加载时间：
+  - =use-package-verbose= ，设置为 =t= 即可打印包加载时间
+  - =use-package-minimum-reported-time= ，默认是 0.1 秒，可根据需要修改
+
+  有一点需要注意，verbose 统计的是 =:config= 内的执行时间， =:init= 的不会统计，所以时间这个方式统计的数据不一定准确
+** [[https://github.com.cnpmjs.org/dholm/benchmark-init-el][benchmark-init-el]]
+本次优化主要使用这个工具，它提供了两种视图：
+- =benchmark-init/show-durations-tabulated= 表视图，可以查看一个包以及其依赖的加载时间
+#+begin_src bash
+| Module                       |  Type   | ms [^] | total ms |
++------------------------------+---------+--------+----------+
+| org-contacts                 | require |    10  |      1164|
+
+#+end_src
+
+  上面这个表示加载 org-contacts 本身需要 10ms ，但是加上其依赖后，总耗时却要 1164ms ，说明其依赖非常重。
+- =benchmark-init/show-durations-tree= 树视图，可以查看包的加载顺序，
+  #+begin_src
+╼►[benchmark-init/root nil 6987ms]
+  ├─[xdg require 14ms]
+  │ ├─[~/.config/emacs/var/autoloads/elfeed-autoloads.el load 46ms]
+  │ ├─[evil-terminal-cursor-changer require 4ms]
+  │ ├─[org-contacts require 10ms]
+  │ │ ├─[org-capture require 17ms]
+  │ │ ├─[org-agenda require 29ms]
+  │ │ │ ╰─[org-refile require 18ms]
+  │ │ ├─[gnus-art require 27ms]
+  │ │ │ ├─[mm-uu require 15ms]
+  │ │ │ │ ╰─[mml2015 require 15ms]
+  │ │ │ ├─[mm-view require 15ms]
+  │ │ │ │ ├─[mml-smime require 15ms]
+  │ │ │ │ ╰─[smime require 21ms]
+  │ │ │ │   ╰─[dig require 14ms]
+  │ │ │ ├─[gnus-sum require 31ms]
+  │ │ │ │ ├─[url require 13ms]
+  │ │ │ │ │ ├─[url-proxy require 17ms]
+  │ │ │ │ │ ├─[url-privacy require 13ms]
+  │ │ │ │ │ ├─[url-expand require 13ms]
+  │ │ │ │ │ │ ╰─[url-methods require 13ms]
+  │ │ │ │ │ ├─[url-history require 17ms]
+  │ │ │ │ │ ╰─[mailcap require 17ms]
+  ......
+  ......
+  #+end_src
+  通过上面的树状图，可以看到 org-contacts 所有依赖的加载时间。
+
+  本次优化前的数据放在里[[https://gist.github.com/jiacai2050/cf30db07bb2e95ffb7d5114bc95c0cfc][这个 gist]] 中，共读者参考。
 * 过程
 ** 去掉 org-babel
 在很久之前，得知可以把配置写在一个
