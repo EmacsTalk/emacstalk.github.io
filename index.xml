@@ -1,4 +1,311 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 15 Aug 2021 13:42:35 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>007. 编辑器专家的 Emacs 世界</title><link>https://emacstalk.github.io/podcast/007/</link><pubDate>Sun, 15 Aug 2021 13:42:35 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/007/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 22 Aug 2021 12:49:15 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs 启动时间优化实践</title><link>https://emacstalk.github.io/post/004/</link><pubDate>Sun, 22 Aug 2021 12:49:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/004/</guid><description>
+&lt;p>
+最近在知乎上回答了一个问题&lt;a href="https://www.zhihu.com/question/472788138/answer/2006637253">请问你的emacs启动需要多久？&lt;/a>，之前一直怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+目标
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>Emacs 中提供了一个函数来记录启动时长，即 &lt;code class="verbatim">emacs-init-time&lt;/code> ，后文也用这个时间作为优化目标。
+首先看下零配置下的时间，这个值也是理论上的最优值&lt;/p>
+&lt;div class="src src-text">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">emacs -Q -nw
+M-x emacs-init-time
+0.005363 seconds&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+效果
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;p>介绍具体步骤前，先看看这次优化的数据&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>阶段&lt;/th>
+&lt;th class="align-right">&lt;code class="verbatim">(length package-alist)&lt;/code>&lt;/th>
+&lt;th class="align-right">&lt;code class="verbatim">(emacs-init-time)&lt;/code>&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>优化前&lt;/td>
+&lt;td class="align-right">116&lt;/td>
+&lt;td class="align-right">6.50532&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>优化后&lt;/td>
+&lt;td class="align-right">65&lt;/td>
+&lt;td class="align-right">0.943392&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+工具
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-container-headline-4" class="outline-3">
+&lt;h3 id="headline-4">
+use-package
+&lt;/h3>
+&lt;div id="outline-text-headline-4" class="outline-text-3">
+&lt;p>我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项来打印包的加载时间：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code class="verbatim">use-package-verbose&lt;/code> ，设置为 &lt;code class="verbatim">t&lt;/code> 即可打印包加载时间&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code class="verbatim">use-package-minimum-reported-time&lt;/code> ，默认是 0.1 秒，可根据需要修改&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>有一点需要注意，verbose 统计的是 &lt;code class="verbatim">:config&lt;/code> 内的执行时间， &lt;code class="verbatim">:init&lt;/code> 的不会统计，所以时间这个方式统计的数据不一定准确。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-5" class="outline-3">
+&lt;h3 id="headline-5">
+&lt;a href="https://github.com.cnpmjs.org/dholm/benchmark-init-el">benchmark-init-el&lt;/a>
+&lt;/h3>
+&lt;div id="outline-text-headline-5" class="outline-text-3">
+&lt;p>本次优化主要使用这个工具，它提供了两种视图：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code class="verbatim">benchmark-init/show-durations-tabulated&lt;/code> 表视图，可以查看一个包以及其依赖的加载时间&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">| Module | Type | ms &lt;span style="color:#f92672">[&lt;/span>^&lt;span style="color:#f92672">]&lt;/span> | total ms |
++------------------------------+---------+--------+----------+
+| org-contacts | require | &lt;span style="color:#ae81ff">10&lt;/span> | 1164|&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+上面这个表示加载 org-contacts 本身需要 10ms ，但是加上其依赖后，总耗时却要 1164ms ，说明其依赖非常重。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code class="verbatim">benchmark-init/show-durations-tree&lt;/code> 树视图，可以查看包的加载顺序，&lt;/p>
+&lt;div class="src src-text">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">╼►[benchmark-init/root nil 6987ms]
+├─[xdg require 14ms]
+│ ├─[~/.config/emacs/var/autoloads/elfeed-autoloads.el load 46ms]
+│ ├─[evil-terminal-cursor-changer require 4ms]
+│ ├─[org-contacts require 10ms]
+│ │ ├─[org-capture require 17ms]
+│ │ ├─[org-agenda require 29ms]
+│ │ │ ╰─[org-refile require 18ms]
+│ │ ├─[gnus-art require 27ms]
+│ │ │ ├─[mm-uu require 15ms]
+│ │ │ │ ╰─[mml2015 require 15ms]
+│ │ │ ├─[mm-view require 15ms]
+│ │ │ │ ├─[mml-smime require 15ms]
+│ │ │ │ ╰─[smime require 21ms]
+│ │ │ │ ╰─[dig require 14ms]
+│ │ │ ├─[gnus-sum require 31ms]
+│ │ │ │ ├─[url require 13ms]
+│ │ │ │ │ ├─[url-proxy require 17ms]
+│ │ │ │ │ ├─[url-privacy require 13ms]
+│ │ │ │ │ ├─[url-expand require 13ms]
+│ │ │ │ │ │ ╰─[url-methods require 13ms]
+│ │ │ │ │ ├─[url-history require 17ms]
+│ │ │ │ │ ╰─[mailcap require 17ms]
+......
+......&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>通过上面的树状图，可以看到 org-contacts 所有依赖的加载时间。&lt;/p>
+&lt;p>
+本次优化前的数据放在里&lt;a href="https://gist.github.com/jiacai2050/cf30db07bb2e95ffb7d5114bc95c0cfc">这个 gist&lt;/a> 中，共读者参考。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-6" class="outline-3">
+&lt;h3 id="headline-6">
+自定义 timer
+&lt;/h3>
+&lt;div id="outline-text-headline-6" class="outline-text-3">
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defmacro my/timer (&lt;span style="color:#66d9ef">&amp;amp;rest&lt;/span> body)
+&lt;span style="color:#e6db74">&amp;#34;Measure and return the time it takes evaluating BODY.&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">`&lt;/span>(let ((time (&lt;span style="color:#a6e22e">current-time&lt;/span>)))
+&lt;span style="color:#f92672">,@&lt;/span>body
+(&lt;span style="color:#a6e22e">float-time&lt;/span> (time-since time))))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>通过 &lt;code class="verbatim">my/timer&lt;/code> 这个宏，可以得到 &lt;code class="verbatim">body&lt;/code> 部分的执行时间。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-7" class="outline-2">
+&lt;h2 id="headline-7">
+指导思想
+&lt;/h2>
+&lt;div id="outline-text-headline-7" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>尽可能懒加载包&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>精简配置，去掉那些华而不实的包，之前很有可能一时兴起安装的包，但是之后再也没用过&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-8" class="outline-2">
+&lt;h2 id="headline-8">
+优化过程
+&lt;/h2>
+&lt;div id="outline-text-headline-8" class="outline-text-2">
+&lt;div id="outline-container-headline-9" class="outline-3">
+&lt;h3 id="headline-9">
+懒加载所有包
+&lt;/h3>
+&lt;div id="outline-text-headline-9" class="outline-text-3">
+&lt;p>大多数包的安装说明中，都会推荐通过 &lt;code class="verbatim">(xxx-mode 1)&lt;/code> 的方式来开启该 mode，这样的优势是简单，用户出问题的机率小，但是带来的一个问题就是会在 Emacs 启动时去加载这些包，即使暂时用不到它。&lt;/p>
+&lt;p>
+use-package 提供了 &lt;code class="verbatim">:defer&lt;/code> 关键字来支持懒加载，取值如下：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code class="verbatim">t&lt;/code> ，表示不会主动加载这个包&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>数字，表示延迟多少秒后加载&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>优化后的配置大部分包均有 &lt;code class="verbatim">:defer t&lt;/code> ，然后通过 hook/autoloads 的方式来懒加载，对于其他一些重点需要的包，通过设置延迟时间来优化。比如：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>evil/evil-leader/smex 为 2&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>autorevert/so-long/window-numbering 为 5&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>通过这一步，可以极大减少启动时间。在进行实践时，可以通过 benchmark-init 的表视图，找到加载最耗时的包，然后逐次优化。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-10" class="outline-3">
+&lt;h3 id="headline-10">
+精简配置
+&lt;/h3>
+&lt;div id="outline-text-headline-10" class="outline-text-3">
+&lt;p>在进行第一步的过程中，发现 projectile 这个包需要 0.7s 的时间，主要时间耗在了 &lt;code class="verbatim">(projectile-mode 1)&lt;/code> 这一句上。&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(my/timer
+(use-package projectile
+:init
+(projectile-mode &lt;span style="color:#ae81ff">+1&lt;/span>)
+:bind (&lt;span style="color:#e6db74">&amp;#34;C-c p&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> projectile-command-map)
+:custom (projectile-project-search-path &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;~/code/&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/gh/&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/code/antfin/&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/code/misc&amp;#34;&lt;/span>))
+:config
+(setq projectile-switch-project-action &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>projectile-find-file-dwim
+projectile-completion-system &lt;span style="color:#e6db74">&amp;#39;ivy&lt;/span>
+&lt;span style="color:#75715e">;; projectile-enable-caching t&lt;/span>
+projectile-project-root-functions &lt;span style="color:#f92672">&amp;#39;&lt;/span>(projectile-root-local
+projectile-root-bottom-up)
+projectile-project-root-files-bottom-up &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;.projectile&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;README.org&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;README.md&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;Makefile&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pom.xml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;go.mod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;cargo.toml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;project.clj&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;.git&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.hg&amp;#34;&lt;/span>)
+projectile-ignored-project-function (lambda (project-root)
+(cl-dolist (deny &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;\\.git&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\.rustup&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;\\.cargo&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;go/pkg&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;vendor&amp;#34;&lt;/span>))
+(when (string-match-p deny project-root)
+(cl-return &lt;span style="color:#66d9ef">t&lt;/span>)))))))
+&lt;span style="color:#75715e">;; 0.781213&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+我日常工作流重要依赖项目管理，具体来说有以下三点：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>可以方便的切换 project&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>可以方便的自定义 project-root ，对于 monorepo 来说尤为重要，而且 lsp-mode/citre 之类的工具也都依赖这个&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project 内搜索文件要快&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可达到 projectile 同样的功能，于是果断去掉了 projectile 这个依赖。&lt;/p>
+&lt;p>
+目前我是用的 project.el 配置可参考：&lt;a href="https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166">i-basic.el#L85-L166&lt;/a>，对于 27 版本的用户，可以在 &lt;a href="https://elpa.gnu.org/packages/project.html">这里&lt;/a>下载最新的 project.el。这次优化去掉的其他包还有：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>evil-numbers&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>company-native-complete&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>comment-dwim-2&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>carbon-now-sh&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>ob-http/ob-sql-mode/org-sidebar/org-bullets&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>all-the-icons/all-the-icons-ivy/all-the-icons-dired&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>calfw/cal-china-x&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>easy-hugo&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>这些包的特点是：看上去很实用，但基本上没用过，去掉完全不影响使用体验。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-11" class="outline-3">
+&lt;h3 id="headline-11">
+重新组织配置文件
+&lt;/h3>
+&lt;div id="outline-text-headline-11" class="outline-text-3">
+&lt;p>通过 benchmark-init 的数据来看，org 相关包占了很大一部分，通过 defer 可以把其相关配置懒加载，但是还有一点容易忽略，即 org-babel。优化前的配置是放在一个大 org 文件中，即所谓的『文学式编程』。&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(org-babel-load-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;core.org&amp;#34;&lt;/span> user-emacs-directory))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>优化后是拆分到多个 el 文件中，使用 load-file 来加载，之所以选择 load-file，而不是 require 之类的高级 API，是因为它比较底层，黑魔法会少一些。&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(let ((file-name-handler-alist &lt;span style="color:#66d9ef">nil&lt;/span>))
+(dolist (el &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;i-basic.el&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;i-edit.el&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;i-prog.el&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;i-ui.el&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;i-misc.el&amp;#34;&lt;/span>))
+(load-file (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> el user-emacs-directory))))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;code class="verbatim">file-name-handler-alist&lt;/code> 设置为 nil 是参考 &lt;a href="https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/">2 easy little known steps to speed up Emacs start up time&lt;/a>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-12" class="outline-2">
+&lt;h2 id="headline-12">
+总结
+&lt;/h2>
+&lt;div id="outline-text-headline-12" class="outline-text-2">
+&lt;p>Emacs 的启动慢是个老生常谈的问题，真正的 Emacs 用户重启 Emacs 的机率比较小，一般都是 server 模式常驻的，启动慢的问题对他们来说不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-13" class="outline-2">
+&lt;h2 id="headline-13">
+参考
+&lt;/h2>
+&lt;div id="outline-text-headline-13" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.manueluberti.eu/emacs/2020/09/18/project/">It’s never too late&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.d46.us/advanced-emacs-startup/">https://blog.d46.us/advanced-emacs-startup/&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item><item><title>007. 编辑器专家的 Emacs 世界</title><link>https://emacstalk.github.io/podcast/007/</link><pubDate>Sun, 15 Aug 2021 13:42:35 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/007/</guid><description>
 &lt;p>
 如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
 &lt;/p>
