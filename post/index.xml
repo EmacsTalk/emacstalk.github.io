@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description> Posts EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 22 Aug 2021 12:49:15 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs 启动时间优化实践</title><link>https://emacstalk.github.io/post/004/</link><pubDate>Sun, 22 Aug 2021 12:49:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/004/</guid><description>
 &lt;p>
-最近在知乎上回答了一个问题&lt;a href="https://www.zhihu.com/question/472788138/answer/2006637253">请问你的emacs启动需要多久？&lt;/a>，之前一直怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。&lt;/p>
+最近在知乎上回答了一个问题&lt;a href="https://www.zhihu.com/question/472788138/answer/2006637253"> Emacs启动需要多久&lt;/a>，之前一直没怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 目标
@@ -20,7 +20,7 @@ M-x emacs-init-time
 效果
 &lt;/h2>
 &lt;div id="outline-text-headline-2" class="outline-text-2">
-&lt;p>介绍具体步骤前，先看看这次优化的数据&lt;/p>
+&lt;p>介绍具体步骤前，先介绍下本次优化的数据&lt;/p>
 &lt;table>
 &lt;thead>
 &lt;tr>
@@ -31,12 +31,12 @@ M-x emacs-init-time
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td>优化前&lt;/td>
+&lt;td>前&lt;/td>
 &lt;td class="align-right">116&lt;/td>
 &lt;td class="align-right">6.50532&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>优化后&lt;/td>
+&lt;td>后&lt;/td>
 &lt;td class="align-right">65&lt;/td>
 &lt;td class="align-right">0.943392&lt;/td>
 &lt;/tr>
@@ -54,7 +54,7 @@ M-x emacs-init-time
 use-package
 &lt;/h3>
 &lt;div id="outline-text-headline-4" class="outline-text-3">
-&lt;p>我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项来打印包的加载时间：&lt;/p>
+&lt;p>我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;code class="verbatim">use-package-verbose&lt;/code> ，设置为 &lt;code class="verbatim">t&lt;/code> 即可打印包加载的信息&lt;/p>
@@ -63,7 +63,7 @@ use-package
 &lt;p>&lt;code class="verbatim">use-package-minimum-reported-time&lt;/code> ，超过这个设定时间会打印耗时，默认是 0.1 秒&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>有一点需要注意，verbose 统计的是 &lt;code class="verbatim">:config&lt;/code> 内的执行时间， &lt;code class="verbatim">:init&lt;/code> 的不会统计，所以时间这个方式统计的数据不一定准确。&lt;/p>
+&lt;p>有一点需要注意，verbose 统计的是 &lt;code class="verbatim">:config&lt;/code> 内的执行时间， &lt;code class="verbatim">:init&lt;/code> 的不会统计，所以这个方式统计的时间不一定准确。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-5" class="outline-3">
@@ -133,7 +133,7 @@ use-package
 &lt;span style="color:#f92672">,@&lt;/span>body
 (&lt;span style="color:#a6e22e">float-time&lt;/span> (time-since time))))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>通过 &lt;code class="verbatim">my/timer&lt;/code> 这个宏，可以很方便的测试某段代码的的执行时间。&lt;/p>
+&lt;p>通过 &lt;code class="verbatim">my/timer&lt;/code> 这个宏，可以很方便的测试某段代码的执行时间。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
@@ -227,9 +227,9 @@ projectile-ignored-project-function (lambda (project-root)
 &lt;p>project 内搜索文件要快&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可达到 projectile 同样的功能，于是果断去掉了 projectile 这个依赖。&lt;/p>
+&lt;p>projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可满足上述三点需求，于是果断去掉了 projectile 这个依赖。&lt;/p>
 &lt;p>
-目前我是用的 project.el 配置可参考：&lt;a href="https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166">i-basic.el#L85-L166&lt;/a>，对于 27 版本的用户，可以在 &lt;a href="https://elpa.gnu.org/packages/project.html">这里&lt;/a>下载最新的 project.el。这次去掉的其他华而不实的包主要还有：&lt;/p>
+目前使用的 project.el 配置可参考：&lt;a href="https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166">i-basic.el#L85-L166&lt;/a>，对于 27 版本的用户，可以在 &lt;a href="https://elpa.gnu.org/packages/project.html">这里&lt;/a>下载最新的 project.el。这次去掉的其他华而不实的包主要还有：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>evil-numbers&lt;/p>
@@ -311,7 +311,7 @@ projectile-ignored-project-function (lambda (project-root)
 总结
 &lt;/h2>
 &lt;div id="outline-text-headline-13" class="outline-text-2">
-&lt;p>Emacs 的启动慢是个老生常谈的问题，真正的 Emacs 用户重启 Emacs 的机率比较小，一般都是 server 模式常驻的，启动慢的问题对他们来说不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。&lt;/p>
+&lt;p>Emacs 的启动慢是个老生常谈的问题，但熟练用户的重启机率很小，一般都是 server 模式常驻的，所以启动慢对他们来说并不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-14" class="outline-2">
