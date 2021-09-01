@@ -4,7 +4,7 @@
 #+DRAFT: false
 #+TAGS[]: tips
 
-最近在知乎上回答了一个问题[[https://www.zhihu.com/question/472788138/answer/2006637253][请问你的emacs启动需要多久？]]，之前一直怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。
+最近在知乎上回答了一个问题[[https://www.zhihu.com/question/472788138/answer/2006637253][ Emacs启动需要多久]]，之前一直没怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。
 * 目标
 Emacs 中提供了一个函数来记录启动时长，即 =emacs-init-time= ，后文也用这个时间作为优化目标。
 #+BEGIN_SRC
@@ -16,18 +16,18 @@ M-x emacs-init-time
 
 
 * 效果
-介绍具体步骤前，先看看这次优化的数据
-| 阶段   | =(length package-alist)= | =(emacs-init-time)= |
-|--------+--------------------------+---------------------|
-| 优化前 |                      116 |             6.50532 |
-| 优化后 |                       65 |            0.943392  |
+介绍具体步骤前，先介绍下本次优化的数据
+| 阶段 | =(length package-alist)= | =(emacs-init-time)= |
+|------+--------------------------+---------------------|
+| 前   |                      116 |             6.50532 |
+| 后   |                       65 |            0.943392 |
 * 工具
 ** use-package
-  我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项来打印包的加载时间：
+  我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项：
   - =use-package-verbose= ，设置为 =t= 即可打印包加载的信息
   - =use-package-minimum-reported-time= ，超过这个设定时间会打印耗时，默认是 0.1 秒
 
-  有一点需要注意，verbose 统计的是 =:config= 内的执行时间， =:init= 的不会统计，所以时间这个方式统计的数据不一定准确。
+  有一点需要注意，verbose 统计的是 =:config= 内的执行时间， =:init= 的不会统计，所以这个方式统计的时间不一定准确。
 ** [[https://github.com.cnpmjs.org/dholm/benchmark-init-el][benchmark-init-el]]
 本次优化主要使用这个工具，它提供了两种视图：
 - =benchmark-init/show-durations-tabulated= 表视图，可以查看一个包以及其依赖的加载时间
@@ -78,7 +78,7 @@ M-x emacs-init-time
      ,@body
      (float-time (time-since time))))
 #+END_SRC
-通过 =my/timer= 这个宏，可以很方便的测试某段代码的的执行时间。
+通过 =my/timer= 这个宏，可以很方便的测试某段代码的执行时间。
 * 指导思想
 - 尽可能懒加载包
 - 精简配置，去掉那些华而不实的包，之前很有可能一时兴起安装的包，但是之后再也没用过
@@ -125,9 +125,9 @@ use-package 提供了 =:defer= 关键字来支持懒加载，取值如下：
 2. 可以方便的自定义 project-root ，对于 monorepo 来说尤为重要，而且 lsp-mode/citre 之类的工具也都依赖这个
 3. project 内搜索文件要快
 
-projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可达到 projectile 同样的功能，于是果断去掉了 projectile 这个依赖。
+projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可满足上述三点需求，于是果断去掉了 projectile 这个依赖。
 
-目前我是用的 project.el 配置可参考：[[https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166][i-basic.el#L85-L166]]，对于 27 版本的用户，可以在 [[https://elpa.gnu.org/packages/project.html][这里]]下载最新的 project.el。这次去掉的其他华而不实的包主要还有：
+目前使用的 project.el 配置可参考：[[https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166][i-basic.el#L85-L166]]，对于 27 版本的用户，可以在 [[https://elpa.gnu.org/packages/project.html][这里]]下载最新的 project.el。这次去掉的其他华而不实的包主要还有：
 - evil-numbers
 - company-native-complete
 - comment-dwim-2
@@ -178,7 +178,7 @@ projectile 我也是调教了很久才用的比较舒服，但感觉还是太重
 #+END_SRC
 
 * 总结
-Emacs 的启动慢是个老生常谈的问题，真正的 Emacs 用户重启 Emacs 的机率比较小，一般都是 server 模式常驻的，启动慢的问题对他们来说不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。
+Emacs 的启动慢是个老生常谈的问题，但熟练用户的重启机率很小，一般都是 server 模式常驻的，所以启动慢对他们来说并不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。
 
 * 参考
 - [[https://www.manueluberti.eu/emacs/2020/09/18/project/][It’s never too late]]
