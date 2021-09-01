@@ -7,14 +7,13 @@
 最近在知乎上回答了一个问题[[https://www.zhihu.com/question/472788138/answer/2006637253][请问你的emacs启动需要多久？]]，之前一直怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。
 * 目标
 Emacs 中提供了一个函数来记录启动时长，即 =emacs-init-time= ，后文也用这个时间作为优化目标。
-首先看下零配置下的时间，这个值也是理论上的最优值
-
 #+BEGIN_SRC
 emacs -Q -nw
-
 M-x emacs-init-time
 0.005363 seconds
 #+END_SRC
+零配置下启动时间，是优化的终极值。
+
 
 * 效果
 介绍具体步骤前，先看看这次优化的数据
@@ -25,8 +24,8 @@ M-x emacs-init-time
 * 工具
 ** use-package
   我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项来打印包的加载时间：
-  - =use-package-verbose= ，设置为 =t= 即可打印包加载时间
-  - =use-package-minimum-reported-time= ，默认是 0.1 秒，可根据需要修改
+  - =use-package-verbose= ，设置为 =t= 即可打印包加载的信息
+  - =use-package-minimum-reported-time= ，超过这个设定时间会打印耗时，默认是 0.1 秒
 
   有一点需要注意，verbose 统计的是 =:config= 内的执行时间， =:init= 的不会统计，所以时间这个方式统计的数据不一定准确。
 ** [[https://github.com.cnpmjs.org/dholm/benchmark-init-el][benchmark-init-el]]
@@ -70,7 +69,7 @@ M-x emacs-init-time
   #+end_src
   通过上面的树状图，可以看到 org-contacts 所有依赖的加载时间。
 
-  本次优化前的数据放在里[[https://gist.github.com/jiacai2050/cf30db07bb2e95ffb7d5114bc95c0cfc][这个 gist]] 中，共读者参考。
+  本次优化前的数据放在里[[https://gist.github.com/jiacai2050/cf30db07bb2e95ffb7d5114bc95c0cfc][这个 gist]] 中，供读者参考。
 ** 自定义 timer
 #+BEGIN_SRC emacs-lisp
 (defmacro my/timer (&rest body)
@@ -79,7 +78,7 @@ M-x emacs-init-time
      ,@body
      (float-time (time-since time))))
 #+END_SRC
-通过 =my/timer= 这个宏，可以得到 =body= 部分的执行时间。
+通过 =my/timer= 这个宏，可以很方便的测试某段代码的的执行时间。
 * 指导思想
 - 尽可能懒加载包
 - 精简配置，去掉那些华而不实的包，之前很有可能一时兴起安装的包，但是之后再也没用过
@@ -89,13 +88,13 @@ M-x emacs-init-time
 
 use-package 提供了 =:defer= 关键字来支持懒加载，取值如下：
 - =t= ，表示不会主动加载这个包
-- 数字，表示延迟多少秒后加载
+- 数字，表示延迟多少秒后加载，内部用 =run-with-idle-timer= 实现
 
 优化后的配置大部分包均有 =:defer t= ，然后通过 hook/autoloads 的方式来懒加载，对于其他一些重点需要的包，通过设置延迟时间来优化。比如：
 - evil/evil-leader/smex 为 2
 - autorevert/so-long/window-numbering 为 5
 
-通过这一步，可以极大减少启动时间。在进行实践时，可以通过 benchmark-init 的表视图，找到加载最耗时的包，然后逐次优化。
+通过这一步，可以 **极大** 减少启动时间，也是本次优化最为耗时的部分。在进行实践时，可以通过 benchmark-init 的表视图，找到加载最耗时的包，然后逐个优化。
 ** 精简配置
 在进行第一步的过程中，发现 projectile 这个包需要 0.7s 的时间，主要时间耗在了 =(projectile-mode 1)= 这一句上。
 #+begin_src emacs-lisp
@@ -128,7 +127,7 @@ use-package 提供了 =:defer= 关键字来支持懒加载，取值如下：
 
 projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可达到 projectile 同样的功能，于是果断去掉了 projectile 这个依赖。
 
-目前我是用的 project.el 配置可参考：[[https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166][i-basic.el#L85-L166]]，对于 27 版本的用户，可以在 [[https://elpa.gnu.org/packages/project.html][这里]]下载最新的 project.el。这次优化去掉的其他包还有：
+目前我是用的 project.el 配置可参考：[[https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166][i-basic.el#L85-L166]]，对于 27 版本的用户，可以在 [[https://elpa.gnu.org/packages/project.html][这里]]下载最新的 project.el。这次去掉的其他华而不实的包主要还有：
 - evil-numbers
 - company-native-complete
 - comment-dwim-2
@@ -156,9 +155,31 @@ projectile 我也是调教了很久才用的比较舒服，但感觉还是太重
 #+END_SRC
 =file-name-handler-alist= 设置为 nil 是参考 [[https://www.reddit.com/r/emacs/comments/3kqt6e/2_easy_little_known_steps_to_speed_up_emacs_start/][2 easy little known steps to speed up Emacs start up time]]
 
+* 其他优化
+下面列的一些方案本次优化前已经使用，仅供读者参考。以下代码在 =early-init.el= 中添加：
+#+BEGIN_SRC emacs-lisp
+(setq gc-cons-threshold most-positive-fixnum)
+
+(defvar my/gc-timer
+  (run-with-idle-timer 30 t
+                       (lambda ()
+                         (let ((inhibit-read-only t)
+                               (gc-msg (format "Garbage Collector has run for %.06fsec"
+                                               (my/timer (garbage-collect)))))
+                           (with-current-buffer "*Messages*"
+	                         (insert gc-msg "\n"))))))
+
+;; 上面代码的含义是只在空闲时进行 GC ，最大程度避免 GC 停顿导致的卡吨。
+
+(setq read-process-output-max (* 1024 1024)) ;; 1mb
+
+;; 从子进程一次读取的最大字节数，默认是 4K ，对于使用 JSON 通信的 LSP 协议来说，太小了
+;; 调大这个值可以减少系统调用次数
+#+END_SRC
+
 * 总结
 Emacs 的启动慢是个老生常谈的问题，真正的 Emacs 用户重启 Emacs 的机率比较小，一般都是 server 模式常驻的，启动慢的问题对他们来说不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。
 
 * 参考
 - [[https://www.manueluberti.eu/emacs/2020/09/18/project/][It’s never too late]]
-- https://blog.d46.us/advanced-emacs-startup/
+- [[https://blog.d46.us/advanced-emacs-startup/][Advanced Techniques for Reducing Emacs Startup Time]]
