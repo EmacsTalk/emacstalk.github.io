@@ -6,13 +6,13 @@
 目标
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>Emacs 中提供了一个函数来记录启动时长，即 &lt;code class="verbatim">emacs-init-time&lt;/code> ，后文也用这个时间作为优化目标。
-首先看下零配置下的时间，这个值也是理论上的最优值&lt;/p>
+&lt;p>Emacs 中提供了一个函数来记录启动时长，即 &lt;code class="verbatim">emacs-init-time&lt;/code> ，后文也用这个时间作为优化目标。&lt;/p>
 &lt;div class="src src-text">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">emacs -Q -nw
 M-x emacs-init-time
 0.005363 seconds&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
+&lt;p>零配置下启动时间，是优化的终极值。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-2" class="outline-2">
@@ -57,10 +57,10 @@ use-package
 &lt;p>我现在的配置都是基于 use-package 来配置，use-package 提供了下面两个配置项来打印包的加载时间：&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;code class="verbatim">use-package-verbose&lt;/code> ，设置为 &lt;code class="verbatim">t&lt;/code> 即可打印包加载时间&lt;/p>
+&lt;p>&lt;code class="verbatim">use-package-verbose&lt;/code> ，设置为 &lt;code class="verbatim">t&lt;/code> 即可打印包加载的信息&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;code class="verbatim">use-package-minimum-reported-time&lt;/code> ，默认是 0.1 秒，可根据需要修改&lt;/p>
+&lt;p>&lt;code class="verbatim">use-package-minimum-reported-time&lt;/code> ，超过这个设定时间会打印耗时，默认是 0.1 秒&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>有一点需要注意，verbose 统计的是 &lt;code class="verbatim">:config&lt;/code> 内的执行时间， &lt;code class="verbatim">:init&lt;/code> 的不会统计，所以时间这个方式统计的数据不一定准确。&lt;/p>
@@ -116,7 +116,7 @@ use-package
 &lt;/div>
 &lt;p>通过上面的树状图，可以看到 org-contacts 所有依赖的加载时间。&lt;/p>
 &lt;p>
-本次优化前的数据放在里&lt;a href="https://gist.github.com/jiacai2050/cf30db07bb2e95ffb7d5114bc95c0cfc">这个 gist&lt;/a> 中，共读者参考。&lt;/p>
+本次优化前的数据放在里&lt;a href="https://gist.github.com/jiacai2050/cf30db07bb2e95ffb7d5114bc95c0cfc">这个 gist&lt;/a> 中，供读者参考。&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -133,7 +133,7 @@ use-package
 &lt;span style="color:#f92672">,@&lt;/span>body
 (&lt;span style="color:#a6e22e">float-time&lt;/span> (time-since time))))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>通过 &lt;code class="verbatim">my/timer&lt;/code> 这个宏，可以得到 &lt;code class="verbatim">body&lt;/code> 部分的执行时间。&lt;/p>
+&lt;p>通过 &lt;code class="verbatim">my/timer&lt;/code> 这个宏，可以很方便的测试某段代码的的执行时间。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
@@ -171,7 +171,7 @@ use-package 提供了 &lt;code class="verbatim">:defer&lt;/code> 关键字来支
 &lt;p>&lt;code class="verbatim">t&lt;/code> ，表示不会主动加载这个包&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>数字，表示延迟多少秒后加载&lt;/p>
+&lt;p>数字，表示延迟多少秒后加载，内部用 &lt;code class="verbatim">run-with-idle-timer&lt;/code> 实现&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>优化后的配置大部分包均有 &lt;code class="verbatim">:defer t&lt;/code> ，然后通过 hook/autoloads 的方式来懒加载，对于其他一些重点需要的包，通过设置延迟时间来优化。比如：&lt;/p>
@@ -183,7 +183,7 @@ use-package 提供了 &lt;code class="verbatim">:defer&lt;/code> 关键字来支
 &lt;p>autorevert/so-long/window-numbering 为 5&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>通过这一步，可以极大减少启动时间。在进行实践时，可以通过 benchmark-init 的表视图，找到加载最耗时的包，然后逐次优化。&lt;/p>
+&lt;p>通过这一步，可以 &lt;strong>&lt;strong>极大&lt;/strong>&lt;/strong> 减少启动时间，也是本次优化最为耗时的部分。在进行实践时，可以通过 benchmark-init 的表视图，找到加载最耗时的包，然后逐个优化。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-10" class="outline-3">
@@ -229,7 +229,7 @@ projectile-ignored-project-function (lambda (project-root)
 &lt;/ol>
 &lt;p>projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可达到 projectile 同样的功能，于是果断去掉了 projectile 这个依赖。&lt;/p>
 &lt;p>
-目前我是用的 project.el 配置可参考：&lt;a href="https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166">i-basic.el#L85-L166&lt;/a>，对于 27 版本的用户，可以在 &lt;a href="https://elpa.gnu.org/packages/project.html">这里&lt;/a>下载最新的 project.el。这次优化去掉的其他包还有：&lt;/p>
+目前我是用的 project.el 配置可参考：&lt;a href="https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166">i-basic.el#L85-L166&lt;/a>，对于 27 版本的用户，可以在 &lt;a href="https://elpa.gnu.org/packages/project.html">这里&lt;/a>下载最新的 project.el。这次去掉的其他华而不实的包主要还有：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>evil-numbers&lt;/p>
@@ -285,23 +285,46 @@ projectile-ignored-project-function (lambda (project-root)
 &lt;/div>
 &lt;div id="outline-container-headline-12" class="outline-2">
 &lt;h2 id="headline-12">
-总结
+其他优化
 &lt;/h2>
 &lt;div id="outline-text-headline-12" class="outline-text-2">
-&lt;p>Emacs 的启动慢是个老生常谈的问题，真正的 Emacs 用户重启 Emacs 的机率比较小，一般都是 server 模式常驻的，启动慢的问题对他们来说不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。&lt;/p>
+&lt;p>下面列的一些方案本次优化前已经使用，仅供读者参考。以下代码在 &lt;code class="verbatim">early-init.el&lt;/code> 中添加：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq gc-cons-threshold most-positive-fixnum)
+(defvar my/gc-timer
+(run-with-idle-timer &lt;span style="color:#ae81ff">30&lt;/span> &lt;span style="color:#66d9ef">t&lt;/span>
+(lambda ()
+(let ((inhibit-read-only &lt;span style="color:#66d9ef">t&lt;/span>)
+(gc-msg (&lt;span style="color:#a6e22e">format&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Garbage Collector has run for %.06fsec&amp;#34;&lt;/span>
+(my/timer (&lt;span style="color:#a6e22e">garbage-collect&lt;/span>)))))
+(with-current-buffer &lt;span style="color:#e6db74">&amp;#34;*Messages*&amp;#34;&lt;/span>
+(&lt;span style="color:#a6e22e">insert&lt;/span> gc-msg &lt;span style="color:#e6db74">&amp;#34;\n&amp;#34;&lt;/span>))))))
+&lt;span style="color:#75715e">;; 上面代码的含义是只在空闲时进行 GC ，最大程度避免 GC 停顿导致的卡吨。&lt;/span>
+(setq read-process-output-max (&lt;span style="color:#a6e22e">*&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span> &lt;span style="color:#ae81ff">1024&lt;/span>)) &lt;span style="color:#75715e">;; 1mb&lt;/span>
+&lt;span style="color:#75715e">;; 从子进程一次读取的最大字节数，默认是 4K ，对于使用 JSON 通信的 LSP 协议来说，太小了&lt;/span>
+&lt;span style="color:#75715e">;; 调大这个值可以减少系统调用次数&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-13" class="outline-2">
 &lt;h2 id="headline-13">
-参考
+总结
 &lt;/h2>
 &lt;div id="outline-text-headline-13" class="outline-text-2">
+&lt;p>Emacs 的启动慢是个老生常谈的问题，真正的 Emacs 用户重启 Emacs 的机率比较小，一般都是 server 模式常驻的，启动慢的问题对他们来说不严重，但是对于新手或其他编辑器阵营的用户来说，启动慢就是一个大瑕疵，希望通过本文的实践能给读者提供优化思路的同时，让更多读者喜欢上把玩 Emacs 。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-14" class="outline-2">
+&lt;h2 id="headline-14">
+参考
+&lt;/h2>
+&lt;div id="outline-text-headline-14" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://www.manueluberti.eu/emacs/2020/09/18/project/">It’s never too late&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.d46.us/advanced-emacs-startup/">https://blog.d46.us/advanced-emacs-startup/&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.d46.us/advanced-emacs-startup/">Advanced Techniques for Reducing Emacs Startup Time&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
