@@ -19,7 +19,7 @@
 
 =align-regexp= to the resuce!
 
-=C-u M-x align-regexp @[a-z]+\(\s-*\) RET 1 RET 1 RET n=
+=C-u M-x align-regexp RET @[a-z]+\(\s-*\) RET 1 RET 1 RET n=
 
 解释上面的命令前先看下其签名：
 
@@ -61,6 +61,7 @@ the quick brown fox
 jumped over the lazy
 dogs the quick brown
 #+end_src
+
 =C-u M-x align-regexp \(\s-*\)\s- RET 1 RET 0 RET y=
 #+begin_src
 the    quick brown fox
