@@ -1,8 +1,9 @@
 #+TITLE: 设置 emacsclient 为文件默认打开程序
 #+DATE: 2021-09-11T14:38:01+08:00
-#+DRAFT: true
+#+DRAFT: false
 #+TAGS[]: tips
 
+对于 Emacs 熟练用户来说，大部分都会选择启动 server 模式，这样可以加速后续的启动时间，为与其他命令行工具组合使用奠定基础。
 本文介绍一种将 emacsclient 设置为文件默认打开程序的方式，适用平台 macOS。
 
 1. 打开 Automator ，新创建『应用』类型文档
@@ -10,6 +11,7 @@
    #+begin_src bash
 /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c "$@" &
    #+end_src
+   需要注意，命令最后有个 =&= ，表示后台执行，应用本身立刻退出。
    [[https://img.alicdn.com/imgextra/i1/581166664/O1CN01rJRTwh1z6A5R1HRAa_!!581166664.png]]
 3. 导出应用
 4. 在 Finder 中找到需要修改打开程序的文件，按 =M-i= ，在 Open With 子栏中选择刚才导出的应用，并点击 =Change All=
