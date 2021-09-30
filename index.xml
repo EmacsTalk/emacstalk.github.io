@@ -1,4 +1,184 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 11 Sep 2021 14:38:01 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>设置 emacsclient 为文件默认打开程序</title><link>https://emacstalk.github.io/post/006/</link><pubDate>Sat, 11 Sep 2021 14:38:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/006/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Thu, 30 Sep 2021 18:25:19 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>009. 与 tumashu 聊 Emacs 中文输入法</title><link>https://emacstalk.github.io/podcast/009/</link><pubDate>Thu, 30 Sep 2021 18:25:19 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/009/</guid><description>
+&lt;p>
+如果您喜欢这档节目，欢迎为本播客&lt;a href="https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw">发电支持&lt;/a> ❤️
+&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>
+本期节目请来了一位非科班的 Emacs 资深用户冯书（aka tumashu），Emacs 中文输入法 &lt;a href="https://github.com/tumashu/pyim">pyim&lt;/a> 的作者。作为一位卫健委信息中心的办事人员，他是如何接触到 Emacs 的？又是什么原因让他接手、维护 pyim？pyim 的工作原理是怎么样的，与 &lt;a href="https://github.com/DogLooksGood/emacs-rime">emacs-rime&lt;/a> 有什么区别？&lt;/p>
+&lt;p>
+接触 Emacs 十余年后，嘉宾总结出一套&lt;a href="https://github.com/EmacsTalk/joinus/blob/master/podcasts/2021-09-24-tumashu.org#%E6%8E%A8%E8%8D%90%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%BC%8F">五个阶段 Emacs 学习境界&lt;/a>，每个境界需要的技能是什么？如何去突破？相信通过嘉宾的经历，可以给更多非科班听众打开 Emacs 源码的神秘面纱，近一个半小时的分享，精彩不容错过。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>00:00:39 嘉宾自我介绍&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:01:12 Emacs 初印象&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:06:32 Emacs 为什么能吸取各行各业的人进来&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:12:04 ELisp 学习经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:15:13 pyim 接手、维护经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:43:19 使用前缀树来做输入法的词库搜索&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:46:24 pyim 与 emacs-rime 实现方式的区别&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:03:42 是否会向周边人推销 emacs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:07:46 是否考虑过转成全职程序员&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:09:47 Emacs 学习的五种境界&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:17:02 八卦&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:18:19 分享&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾自我介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>网络 ID: &lt;a href="https://github.com/tumashu">tumashu&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>03 年大学，专业化工；07 年研究生，专业管理&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>目前 Emacs 的配置：&lt;a href="https://github.com/tumashu/emacs-helper">emacs-helper&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>GNU Emacs 自 23.1 版本开始支持 &lt;a href="https://www.emacswiki.org/emacs/XftGnuEmacs">XFT&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>使用 Emacs 内置输入法优势&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>输入中文与敲 Emacs 命令自动切换&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>直接使用拼音搜中文内容&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>拼音搜中文实现方案主要有两个&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>把输入的拼音正则，利用 pyim 转化为对于的汉字正则，然后直接去搜&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>把搜索的目标中的汉字转为拼音，然后再用输入的正则去匹配&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Child-Frames.html">Child Frames&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>弹出框三种方式&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/tumashu/posframe">posframe&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/auto-complete/popup-el">popup&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.emacswiki.org/emacs/PosTip">PosTip&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Emacs 学习的五种境界&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>初学攒配置&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>入门写扩展&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>一入 &lt;a href="https://github.com/emacs-mirror/emacs">emacs 源码&lt;/a>深似海&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>你不入 C 狱谁入 C 狱&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>千万里挑一 emacs 的武学奇才&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾的分享&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/protesilaos/modus-themes">modus-themes&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>主播的分享&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://liujiacai.net/blog/2021/03/05/emacs-love-mail-feed/#headline-13">elfeed&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/jiacai2050/dotfiles/blob/137c4b716ca16a5a2d5fd0bc4723297b09ff33d4/.config/emacs/i-misc.el#L157-L385">相关配置&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://music.163.com/#/song?id=1380302523">片尾音乐&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+Get in Touch
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;ul>
+&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
+&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
+&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
+&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
+&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@emacstalk">「❤️发电」&lt;/a>来支持&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item><item><title>设置 emacsclient 为文件默认打开程序</title><link>https://emacstalk.github.io/post/006/</link><pubDate>Sat, 11 Sep 2021 14:38:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/006/</guid><description>
 &lt;p>
 对于 Emacs 熟练用户来说，大部分都会选择启动 server 模式，这样可以加速后续的启动时间，为与其他命令行工具组合使用奠定基础。
 本文介绍一种将 emacsclient 设置为文件默认打开程序的方式，适用平台 macOS。&lt;/p>
