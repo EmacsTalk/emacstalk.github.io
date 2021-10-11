@@ -2,26 +2,26 @@
 #+DATE: 2021-10-10T21:17:44+08:00
 #+TAGS[]: tips
 
-Emacs 自带的 url.el 包提供了网络请求的基本 API，但是问题比较多，比如 elfeed 的作者的 [[https://nullprogram.com/blog/2016/06/16/][Elfeed, cURL, and You]] 这篇文章就介绍了使用 cURL 代替 url-retrieve 的好处，主要有以下几点：
+Emacs 自带的 url.el 包提供了网络请求的基本 API，但是问题比较多，比如 [[https://nullprogram.com/blog/2016/06/16/][Elfeed, cURL, and You]] 这篇文章就介绍了使用 cURL 代替 url-retrieve 的好处，主要有以下几点：
 1. 更快
    - 早期的 url.el 中 DNS 查询是同步的，直到 25 版本才改成异步
-   - 更方便定义头信息，将少不必要的请求
+   - 更方便定义头信息，减少不必要的请求
 2. bug 更少
    - url-retrieve 的 CALLBACK 可以会调用多次或零次
    - 不用再去折腾 GnuTLS
    - url.el 对 Windows 平台支持差
 
-此外，在 Emacs 设置代理也比较局限，http 的还好，https/socks 的问题就有些多，一些问题链接：
+此外，在 Emacs 设置代理问题比较多，http 的还好，麻烦的是 https/socks，一些问题链接：
 - [[https://stackoverflow.com/questions/19699294/make-emacs-access-to-https-over-socks-proxy][Make Emacs access to HTTPS over Socks proxy]]
 - [[https://emacs-china.org/t/topic/2808][Emacs 怎么使用代理]]
 - [[https://emacs-china.org/t/url-el/11276][[吐槽] 新手劝退元凶: url.el #我们中出了一个叛徒]]
 
-如果连网络请求不通畅，那么诸如 eww、elfeed 等怎么会有好的体验？ elfeed 还算好，提供了 curl 的支持，但很多包是不支持，因此最彻底的解决办法就是本文标题说的，直接用 curl 来作为 use-retrieve 的后端实现。
+如果连网络请求不通畅，那么诸如 eww、elfeed 等怎么会有好的体验？ elfeed 还算好，提供了 cURL 的支持，但很多包是不支持的，因此最彻底的解决办法就是本文标题说的，直接用 cURL 来作为 use-retrieve 的后端实现。
 
-此外，curl 的代理支持也很简单， =-x socks://127.0.0.1:1080= 就可以指定 socks 代理，而且没有 bug！
+cURL 的代理支持很简单， =-x socks://127.0.0.1:1080= 就可以指定 socks 代理，而且更重要的，没有 bug！
 
 * mb-url
-上面介绍了使用 curl 的动机，那么如果实现呢？可以使用 around 机制来拦截 url.el 内部的接口，繁琐的地方在于解析 curl 的结果，让它符合 url.el 内部接口。
+上面介绍了使用 cURL 的动机，那么如果实现呢？可以使用 advice 机制来拦截 url.el 内部的接口，繁琐的地方在于解析 cURL 的结果，让它符合 url.el 内部接口。
 
 幸运的是，社区内已经有包解决这个问题了，它就是 [[https://github.com/dochang/mb-url][mb-url]] ，其前身是 [[https://github.com/nicferrier/curl-url-retrieve][curl-url-retrieve]] 。在使用过程中，我发现了它的一些[[https://github.com/dochang/mb-url/issues/5][问题]]，目前需要使用我 [[https://github.com/jiacai2050/mb-url][fork 的版本]]才能正确请求类似图片之类的二进制数据。下面给出使用 use-package 的配置，供读者参考：
 #+BEGIN_SRC emacs-lisp
@@ -50,7 +50,7 @@ Emacs 自带的 url.el 包提供了网络请求的基本 API，但是问题比�
 执行上面的代码，如果展示出 logo 的图片，说明 mb-url 可以正确解析图片数据。
 
 * Emacs + libcurl
-通过使用 mb-url 问题是可以得到解决，但是不仅会疑问，Emacs 当初为什么不直接集成 [[https://curl.se/libcurl/][libcurl]] ，而是选择自己来实现呢？
+通过使用 mb-url 问题是可以得到解决，但是不禁会疑问，Emacs 当初为什么不直接集成 [[https://curl.se/libcurl/][libcurl]] ，而是选择自己来实现呢？
 git log 可以看到 url.el 的首次提交是 2004-05-04，根据 [[https://curl.se/docs/releases.html][cURL Release Table]] ，那时候大概是版本 7.11，不知道是不是当时的版本还不成熟？
 
-搜了下 devel 邮件列表，最新的一次讨论是 [[https://lists.gnu.org/archive/html/emacs-devel/2020-12/msg01291.html][Emacs HTTP libraries]]，看下来是建议先 profile 下现在 url.el 的问题所在，另起炉灶的可能性不大，还是以改进现有代码的方式为主，此外 RMS 也提到 curl 的集成也可以通过 fork/exec 的方式，这样更简单些。
+搜了下 devel 邮件列表，最新的一次讨论是 [[https://lists.gnu.org/archive/html/emacs-devel/2020-12/msg01291.html][Emacs HTTP libraries]]，看下来是建议先 profile 下现在 url.el 的问题所在，另起炉灶的可能性不大，还是以改进现有代码的方式为主，此外 RMS 也提到 cURL 的集成也可以通过 fork/exec 的方式，这样更简单些。
