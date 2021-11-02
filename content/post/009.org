@@ -1,0 +1,24 @@
+#+TITLE: Emacs 28 新特性介绍
+#+DATE: 2021-11-02T08:21:22+08:00
+#+DRAFT: true
+#+TAGS[]: tips
+
+现任 Emacs 维护者 Eli Zaretskii 在 9 月 30 号通过[[https://mail.gnu.org/archive/html/emacs-devel/2021-09/msg02290.html][邮件列表]]宣布 emacs-28 分支已经创建出，这意味着 28 版本的大功能已经 ready，不会再有大改动，但距离正式发版还要一段时间，根据之前的[[https://www.gnu.org/software/emacs/history.html][发版记录]]，大概率会在 22 年上半年 release。
+
+#+begin_src
+2021-03-25 - Emacs 27.2 released.
+2020-08-10 - Emacs 27.1 released.
+2019-08-28 - Emacs 26.3 released.
+2019-04-12 - Emacs 26.2 released.
+2018-05-28 - Emacs 26.1 released.
+2017-09-11 - Emacs 25.3 released.
+...
+#+end_src
+对于 Emacs 拥趸来说，新功能要等上才能使用一两年是无法接受的。但实际这个问题不大，因为很多用户都在用开发版，这可能也是 Emacs 社区的特殊文化，自己去编译 master 分支来使用应该算是常态。由于使用人数多，所以即使是开发版，质量也能得到保证。
+
+这篇文章就来介绍 Emacs 28 中，让我眼前一亮的功能，完整列表可参考 [[http://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-28][NEWS]]，然后会介绍如何在 macOS 上编译。
+
+* 28 新功能
+- native compilation，这个功能是近期 Emacs 中最大的更新。
+
+  =M-x view-emacs-news= （C-h n）即可查看当前版本的功能介绍，
