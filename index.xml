@@ -12,15 +12,15 @@
 &lt;/div>
 &lt;p>对于 Emacs 拥趸来说，新功能要等上才能使用一两年是无法接受的。但实际这个问题不大，因为很多用户都在用开发版，这可能也是 Emacs 社区的特殊文化，自己去编译 master 分支来使用应该算是常态。由于使用人数多，所以即使是开发版，质量也能得到保证。&lt;/p>
 &lt;p>
-这篇文章就来介绍 Emacs 28 中，笔者个人觉得比较实用的功能，完整列表可参考 &lt;a href="http://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-28">NEWS&lt;/a> （ &lt;code class="verbatim">M-x view-emacs-news&lt;/code> 即可查看当前版本的），最后会介绍如何在 macOS 上编译。&lt;/p>
+这篇文章就来介绍 Emacs 28 中，笔者个人觉得比较实用的功能，完整列表可参考 &lt;a href="http://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-28">NEWS&lt;/a> （ &lt;code class="verbatim">M-x view-emacs-news&lt;/code> ），最后会介绍如何在 macOS 上编译。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-安装变更
+安装选项变更
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
-&lt;p>native compilation。这个功能是近几年 Emacs 中最大的更新，没有之一。它可以把解释执行的 elisp 代码通过 gccjit 技术直接编译成二进制代码。如果觉得目前的配置较慢，可以试试这个功能。&lt;/p>
+&lt;p>&lt;code class="verbatim">--with-native-compilation&lt;/code> 这个功能是近几年 Emacs 中最大的更新，没有之一。它可以把解释执行的 elisp 代码通过 gccjit 技术直接编译成二进制代码。社区内&lt;a href="https://emacs-china.org/t/macos-emacs-28-native-comp/12201">相关讨论&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -32,16 +32,17 @@
 &lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
-&lt;p>新配置 &lt;code class="verbatim">word-wrap-by-category&lt;/code> 针对 CJK 字符，提高 word-wrap 的效果&lt;/p>
+&lt;p>新配置 &lt;code class="verbatim">word-wrap-by-category&lt;/code> 这是第八期嘉宾 casouri 的贡献，针对 CJK 字符，提高 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html">word-wrap&lt;/a> 的效果。默认 false
+&lt;img src="https://img.alicdn.com/imgextra/i1/581166664/O1CN01gJZmxX1z6A6Jp0Gtn_!!581166664.png" alt="https://img.alicdn.com/imgextra/i1/581166664/O1CN01gJZmxX1z6A6Jp0Gtn_!!581166664.png" title="https://img.alicdn.com/imgextra/i1/581166664/O1CN01gJZmxX1z6A6Jp0Gtn_!!581166664.png" />&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>新增命令 &lt;code class="verbatim">undo-redo&lt;/code> （C-?） 取消上一次 undo 命令，而且这个取消操作本身无法取消。Emacs undo 机制比较绕，可以参考我之前的&lt;a href="https://liujiacai.net/blog/2020/11/25/why-emacs/#undoredo">文章介绍&lt;/a>&lt;/p>
+&lt;p>新增命令 &lt;code class="verbatim">undo-redo&lt;/code> （C-?） 取消上一次 undo 命令，而且这个取消操作本身无法取消。Emacs undo 机制比较绕，可以参考之前的&lt;a href="https://liujiacai.net/blog/2020/11/25/why-emacs/#undoredo">文章介绍&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>新增命令 &lt;code class="verbatim">copy-matching-lines&lt;/code> 与 &lt;code class="verbatim">kill-matching-lines&lt;/code> 。与 &lt;code class="verbatim">flush-lines&lt;/code> 命令类似，但是匹配的行会作为整体加到 kill ring 中&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>新配置 &lt;code class="verbatim">kill-transform-function&lt;/code> 配置字符在添加到 kill ring 中的预处理函数&lt;/p>
+&lt;p>新配置 &lt;code class="verbatim">kill-transform-function&lt;/code> 字符在添加到 kill ring 中的预处理函数&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>新命令 &lt;code class="verbatim">revert-buffer-quick&lt;/code> 提示更少的 revert&lt;/p>
@@ -84,6 +85,10 @@
 &lt;p>&lt;code class="verbatim">remove-hook&lt;/code> 改成 interactive 命令&lt;/p>
 &lt;/li>
 &lt;li>
+&lt;p>新增命令 &lt;code class="verbatim">shortdoc-display-group&lt;/code> &lt;a href="https://emacstalk.github.io/post/002/">之前节目&lt;/a>中多次提到过的功能，按函数类型归类，展示其用法
+&lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" />&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>新增命令 &lt;code class="verbatim">memory-report&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
@@ -123,7 +128,7 @@
 &lt;p>&lt;code class="verbatim">recentf-auto-cleanup&lt;/code> 如果设置成时间字符串，会每天定时清理。比如 &lt;code class="verbatim">11:00pm&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>新配置 &lt;code class="verbatim">browse-url-default-handlers&lt;/code> 根据 url 来定制不同的浏览方式&lt;/p>
+&lt;p>新配置 &lt;code class="verbatim">browse-url-default-handlers&lt;/code> 根据 url 来定制不同的打开方式&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>mode-line 会展示 Elisp 作用域方式&lt;/p>
@@ -162,7 +167,7 @@
 &lt;p>&lt;a href="https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/hierarchy.el">hierarchy.el&lt;/a>，用于操作具有层级关系数据结构的库&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/shorthands.el">shorthands.el&lt;/a> 一个简单的 ELisp 命名空间实现，&lt;a href="https://emacs-china.org/t/elisp-shorthands-emacs28/18481">社区内的讨论&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/shorthands.el">shorthands.el&lt;/a> 一种 ELisp 命名空间的实现，社区内&lt;a href="https://emacs-china.org/t/elisp-shorthands-emacs28/18481">相关讨论&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -195,6 +200,9 @@ Windows
 &lt;ul>
 &lt;li>
 &lt;p>可以使用原生图像 API （MS-Windows GDI+）展示图片，该特性在测试阶段，需开启 &lt;code class="verbatim">w32-use-native-image-API&lt;/code> 选项才能使用&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>新增方法 &lt;code class="verbatim">w32-set-ime-open-status&lt;/code> ，用于控制输入法切换，可以在 evil 切到 normal 模式时自动切到英文。社区内&lt;a href="https://emacs-china.org/t/emacs-28-0-windows/12350">相关讨论&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
