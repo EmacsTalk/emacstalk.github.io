@@ -10,7 +10,7 @@
 2017-09-11 - Emacs 25.3 released.
 ...&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>对于 Emacs 拥趸来说，新功能要等上才能使用一两年是无法接受的。但实际这个问题不大，因为很多用户都在用开发版，这可能也是 Emacs 社区的特殊文化，自己去编译 master 分支来使用应该算是常态。由于使用人数多，所以即使是开发版，质量也能得到保证。&lt;/p>
+&lt;p>对于 Emacs 拥趸来说，新功能要等上一两年才能使用是无法接受的。但实际这个问题不大，因为很多用户都在用开发版，这可能也是 Emacs 社区的特殊文化，自己去编译 master 分支来使用应该算是常态。由于使用人数多，所以即使是开发版，质量也能得到保证。&lt;/p>
 &lt;p>
 这篇文章就来介绍 Emacs 28 中，笔者个人觉得比较实用的功能，完整列表可参考 &lt;a href="http://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-28">NEWS&lt;/a> （ &lt;code class="verbatim">M-x view-emacs-news&lt;/code> ），最后会介绍如何在 macOS 上编译。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -110,7 +110,7 @@
 &lt;p>新配置 &lt;code class="verbatim">dired-kill-when-opening-new-dired-buffer&lt;/code> 默认 false&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>新配置 &lt;code class="verbatim">dired-compress-directory-default-suffix&lt;/code> 控制压缩目录是的默认后缀，nil 表示 &lt;code class="verbatim">tar.gz&lt;/code>&lt;/p>
+&lt;p>新配置 &lt;code class="verbatim">dired-compress-directory-default-suffix&lt;/code> 控制压缩目录的默认后缀，nil 表示 &lt;code class="verbatim">tar.gz&lt;/code>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>新配置 &lt;code class="verbatim">dired-copy-dereference&lt;/code> 拷贝时是否跟随源文件中的符号链接&lt;/p>
