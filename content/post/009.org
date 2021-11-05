@@ -1,5 +1,6 @@
 #+TITLE: Emacs 28 新特性介绍
 #+DATE: 2021-11-02T08:21:22+08:00
+#+LASTMOD: 2021-11-05T08:33:56+08:00
 #+DRAFT: false
 #+TAGS[]: tips
 
@@ -16,14 +17,16 @@
 #+end_src
 对于 Emacs 拥趸来说，新功能要等上才能使用一两年是无法接受的。但实际这个问题不大，因为很多用户都在用开发版，这可能也是 Emacs 社区的特殊文化，自己去编译 master 分支来使用应该算是常态。由于使用人数多，所以即使是开发版，质量也能得到保证。
 
-这篇文章就来介绍 Emacs 28 中，笔者个人觉得比较实用的功能，完整列表可参考 [[http://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-28][NEWS]] （ =M-x view-emacs-news= 即可查看当前版本的），最后会介绍如何在 macOS 上编译。
-* 安装变更
-- native compilation。这个功能是近几年 Emacs 中最大的更新，没有之一。它可以把解释执行的 elisp 代码通过 gccjit 技术直接编译成二进制代码。如果觉得目前的配置较慢，可以试试这个功能。
+这篇文章就来介绍 Emacs 28 中，笔者个人觉得比较实用的功能，完整列表可参考 [[http://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-28][NEWS]] （ =M-x view-emacs-news= ），最后会介绍如何在 macOS 上编译。
+* 安装选项变更
+- =--with-native-compilation= 这个功能是近几年 Emacs 中最大的更新，没有之一。它可以把解释执行的 elisp 代码通过 gccjit 技术直接编译成二进制代码。社区内[[https://emacs-china.org/t/macos-emacs-28-native-comp/12201][相关讨论]]
 * 编辑变更
-- 新配置 =word-wrap-by-category= 针对 CJK 字符，提高 word-wrap 的效果
-- 新增命令 =undo-redo= （C-?） 取消上一次 undo 命令，而且这个取消操作本身无法取消。Emacs undo 机制比较绕，可以参考我之前的[[https://liujiacai.net/blog/2020/11/25/why-emacs/#undoredo][文章介绍]]
+- 新配置 =word-wrap-by-category= 这是第八期嘉宾 casouri 的贡献，针对 CJK 字符，提高 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Visual-Line-Mode.html][word-wrap]] 的效果。默认 false
+  https://img.alicdn.com/imgextra/i1/581166664/O1CN01gJZmxX1z6A6Jp0Gtn_!!581166664.png
+
+- 新增命令 =undo-redo= （C-?） 取消上一次 undo 命令，而且这个取消操作本身无法取消。Emacs undo 机制比较绕，可以参考之前的[[https://liujiacai.net/blog/2020/11/25/why-emacs/#undoredo][文章介绍]]
 - 新增命令 =copy-matching-lines= 与 =kill-matching-lines= 。与 =flush-lines= 命令类似，但是匹配的行会作为整体加到 kill ring 中
-- 新配置 =kill-transform-function= 配置字符在添加到 kill ring 中的预处理函数
+- 新配置 =kill-transform-function= 字符在添加到 kill ring 中的预处理函数
 - 新命令 =revert-buffer-quick=  提示更少的 revert
 - =show-paren-mode= 默认开启
 * 通用变更
@@ -42,6 +45,8 @@
   #+END_SRC
 - 新选项 =copy-directory-create-symlink= 在 src dir 为软链时， =copy-directory= 的 dst dir 是否也为软链，默认 false。
 - =remove-hook= 改成 interactive 命令
+- 新增命令 =shortdoc-display-group= [[https://emacstalk.github.io/post/002/][之前节目]]中多次提到过的功能，按函数类型归类，展示其用法
+  https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg
 - 新增命令 =memory-report=
 - 新增命令 =submit-emacs-patch=
 - 在没有设置 LANG 时，默认采用 UTF8 编码，之前是 ISO-8859-1
@@ -53,7 +58,7 @@
 - [[https://elpa.nongnu.org/][NonGNU]] ELPA 默认开启
 - 新配置 =abbrev-suggest= ，开启后会根据用户输入，在 echo area 区域提示使用 abbrev 来简化输入
 - =recentf-auto-cleanup= 如果设置成时间字符串，会每天定时清理。比如 =11:00pm=
-- 新配置 =browse-url-default-handlers= 根据 url 来定制不同的浏览方式
+- 新配置 =browse-url-default-handlers= 根据 url 来定制不同的打开方式
 - mode-line 会展示 Elisp 作用域方式
 https://img.alicdn.com/imgextra/i3/581166664/O1CN01KPbMHi1z6A6HsqYx3_!!581166664.png
 - 新配置 =shr-max-width= 默认 120。
@@ -64,13 +69,14 @@ https://img.alicdn.com/imgextra/i3/581166664/O1CN01KPbMHi1z6A6HsqYx3_!!581166664
 - 新 major mode =lisp-data-mode= 适用于 lisp 表达式,但不是可执行的程序，比如 =.dir-locals.el=
 - [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/transient.el][transient.el]]，就是 magit 中菜单导航使用的库，[[https://github.com/jiacai2050/dotfiles/blob/1758c493243087f09f087e382f2021e139bb4c41/.config/emacs/i-basic.el#L346][我的配置]]中大量使用。
 - [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/hierarchy.el][hierarchy.el]]，用于操作具有层级关系数据结构的库
-- [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/shorthands.el][shorthands.el]] 一个简单的 ELisp 命名空间实现，[[https://emacs-china.org/t/elisp-shorthands-emacs28/18481][社区内的讨论]]
+- [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/shorthands.el][shorthands.el]] 一种 ELisp 命名空间的实现，社区内[[https://emacs-china.org/t/elisp-shorthands-emacs28/18481][相关讨论]]
 * 平台相关变更
 ** macOS
 - =s-<left>= 与 =s-<right>= 绑定到 =move-beginning-of-line= 与 =move-end-of-line=
 - 支持 Xwidget 组件
 ** Windows
 - 可以使用原生图像 API （MS-Windows GDI+）展示图片，该特性在测试阶段，需开启 =w32-use-native-image-API= 选项才能使用
+- 新增方法 =w32-set-ime-open-status= ，用于控制输入法切换，可以在 evil 切到 normal 模式时自动切到英文。社区内[[https://emacs-china.org/t/emacs-28-0-windows/12350][相关讨论]]
 * 不兼容变更
 - Xref 实现机制从 EIEIO 迁移到 cl-defstruct， 不能再使用 =oref= 与 =with-slots=
 - 使用 =define-minor-mode= 中的 positional 参数已经被淘汰
