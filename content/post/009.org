@@ -73,7 +73,9 @@ https://img.alicdn.com/imgextra/i3/581166664/O1CN01KPbMHi1z6A6HsqYx3_!!581166664
 * 平台相关变更
 ** macOS
 - =s-<left>= 与 =s-<right>= 绑定到 =move-beginning-of-line= 与 =move-end-of-line=
-- 支持 Xwidget 组件
+- 支持 Xwidget 组件，[[https://github.com/emacs-mirror/emacs/commit/d089c4fbfc8be432dc3015a99b4044dab0a0de97][committer]] 是个[[https://github.com/goranmoomin][韩国美少女?]]
+#+CAPTION: 使用 xwidget-webkit-browse-url 浏览百度
+https://img.alicdn.com/imgextra/i3/581166664/O1CN01ngPPMX1z6A6CRhuIG_!!581166664.png
 ** Windows
 - 可以使用原生图像 API （MS-Windows GDI+）展示图片，该特性在测试阶段，需开启 =w32-use-native-image-API= 选项才能使用
 - 新增方法 =w32-set-ime-open-status= ，用于控制输入法切换，可以在 evil 切到 normal 模式时自动切到英文。社区内[[https://emacs-china.org/t/emacs-28-0-windows/12350][相关讨论]]
@@ -93,7 +95,7 @@ brew install mailutils libxml2
 
 3. 编译
 make configure
-./configure --with-mailutils
+./configure --with-mailutils --with-xwidgets
 make -j4
 make install
 
