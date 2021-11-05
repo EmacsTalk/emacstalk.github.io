@@ -15,7 +15,7 @@
 2017-09-11 - Emacs 25.3 released.
 ...
 #+end_src
-对于 Emacs 拥趸来说，新功能要等上才能使用一两年是无法接受的。但实际这个问题不大，因为很多用户都在用开发版，这可能也是 Emacs 社区的特殊文化，自己去编译 master 分支来使用应该算是常态。由于使用人数多，所以即使是开发版，质量也能得到保证。
+对于 Emacs 拥趸来说，新功能要等上一两年才能使用是无法接受的。但实际这个问题不大，因为很多用户都在用开发版，这可能也是 Emacs 社区的特殊文化，自己去编译 master 分支来使用应该算是常态。由于使用人数多，所以即使是开发版，质量也能得到保证。
 
 这篇文章就来介绍 Emacs 28 中，笔者个人觉得比较实用的功能，完整列表可参考 [[http://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS?h=emacs-28][NEWS]] （ =M-x view-emacs-news= ），最后会介绍如何在 macOS 上编译。
 * 安装选项变更
@@ -52,7 +52,7 @@
 - 在没有设置 LANG 时，默认采用 UTF8 编码，之前是 ISO-8859-1
 * 特定 mode 变更
 - 新配置 =dired-kill-when-opening-new-dired-buffer= 默认 false
-- 新配置 =dired-compress-directory-default-suffix= 控制压缩目录是的默认后缀，nil 表示 =tar.gz=
+- 新配置 =dired-compress-directory-default-suffix= 控制压缩目录的默认后缀，nil 表示 =tar.gz=
 - 新配置 =dired-copy-dereference= 拷贝时是否跟随源文件中的符号链接
 - Org 升级到 9.5 版本
 - [[https://elpa.nongnu.org/][NonGNU]] ELPA 默认开启
