@@ -11,6 +11,13 @@
 - 专注 Emacs 社区，探索 Emacs 社区背后的 奇人轶事
 - 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
+* Get in Touch
+- https://twitter.com/EmacsTalk
+- QQ 听友群：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
+- TG 听友群：https://t.me/emacstalk
+- 邮件：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
+- [[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]
+
 * 一些建站素材
 ** iTunes Podcasts
 - [[https://help.apple.com/itc/podcasts_connect/#/itcb54353390][A Podcaster’s Guide to RSS]]
