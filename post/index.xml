@@ -1,4 +1,140 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description> Posts EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 02 Nov 2021 08:21:22 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs 28 新特性介绍</title><link>https://emacstalk.github.io/post/009/</link><pubDate>Tue, 02 Nov 2021 08:21:22 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/009/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description> Posts EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Fri, 26 Nov 2021 17:59:34 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>project.el 使用说明</title><link>https://emacstalk.github.io/post/010/</link><pubDate>Fri, 26 Nov 2021 17:59:34 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/010/</guid><description>
+&lt;p>
+在之前的文章中就多次提到过 28 版本的 project.el 是如何好用，但一直没去详细介绍，这篇文章就来填上这个坑。一句话总结，project.el 完全可以替换 &lt;a href="https://github.com/bbatsov/projectile">projectile&lt;/a>。&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+下载
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>直接编译 28 版本或者在&lt;a href="https://elpa.gnu.org/packages/project.html"> elpa&lt;/a> 下载最新版。project 相关命令绑定在 &lt;code class="verbatim">C-x p&lt;/code> 。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+根目录
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;p>在日常编程中，Emacs 的很多包都依赖一个功能：查找当前项目的根目录，比如 lsp-mode、citre 等。在 project.el 中，默认只支持 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html">VC&lt;/a> 中的 Git，即 project-try-vc，但可以自定义找根目录的方式，配置如下：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/project-try-local (dir)
+&lt;span style="color:#e6db74">&amp;#34;Determine if DIR is a non-Git project.&amp;#34;&lt;/span>
+(catch &lt;span style="color:#e6db74">&amp;#39;ret&lt;/span>
+(let ((pr-flags &lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;.project&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pom.xml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;go.mod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Cargo.toml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;project.clj&amp;#34;&lt;/span>) &lt;span style="color:#75715e">;; higher priority&lt;/span>
+(&lt;span style="color:#e6db74">&amp;#34;Makefile&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;README.org&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;README.md&amp;#34;&lt;/span>))))
+(dolist (current-level pr-flags)
+(dolist (f current-level)
+(when-let ((root (locate-dominating-file dir f)))
+(throw &lt;span style="color:#e6db74">&amp;#39;ret&lt;/span> (&lt;span style="color:#a6e22e">cons&lt;/span> &lt;span style="color:#e6db74">&amp;#39;local&lt;/span> root))))))))
+(setq project-find-functions &lt;span style="color:#f92672">&amp;#39;&lt;/span>(my/project-try-local project-try-vc))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;code class="verbatim">my/project-try-local&lt;/code> 函数定义了常用编程语言的依赖描述文件，只要有这些文件，都可以看作项目根目录。
+作为额外的补充，可以通过创建一个名为 &lt;code class="verbatim">.project&lt;/code> 的文件，用作根目录的标识，与 &lt;code class="verbatim">.projectile&lt;/code> 类似&lt;/p>
+&lt;p>
+该函数返回一个 cons，car 为项目类型，这里定义为 local，cdr 为根目录。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+查找文件
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;p>查找文件是非常高频的操作，可以使用 Rust 编写的 &lt;a href="https://github.com/sharkdp/fd">fd&lt;/a> 来代替 find，速度更快。配置如下：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/project-files-in-directory (dir)
+&lt;span style="color:#e6db74">&amp;#34;Use &lt;/span>&lt;span style="color:#e6db74">`fd&amp;#39;&lt;/span>&lt;span style="color:#e6db74"> to list files in DIR.&amp;#34;&lt;/span>
+(let* ((default-directory dir)
+(localdir (file-local-name (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> dir)))
+(command (&lt;span style="color:#a6e22e">format&lt;/span> &lt;span style="color:#e6db74">&amp;#34;fd -H -t f -0 . %s&amp;#34;&lt;/span> localdir)))
+(project--remote-file-names
+(&lt;span style="color:#a6e22e">sort&lt;/span> (split-string (shell-command-to-string command) &lt;span style="color:#e6db74">&amp;#34;\0&amp;#34;&lt;/span> &lt;span style="color:#66d9ef">t&lt;/span>)
+&lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>string&amp;lt;))))
+(cl-defmethod project-files ((project (head local)) &lt;span style="color:#66d9ef">&amp;amp;optional&lt;/span> dirs)
+&lt;span style="color:#e6db74">&amp;#34;Override &lt;/span>&lt;span style="color:#e6db74">`project-files&amp;#39;&lt;/span>&lt;span style="color:#e6db74"> to use &lt;/span>&lt;span style="color:#e6db74">`fd&amp;#39;&lt;/span>&lt;span style="color:#e6db74"> in local projects.&amp;#34;&lt;/span>
+(mapcan &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>my/project-files-in-directory
+(or dirs (&lt;span style="color:#a6e22e">list&lt;/span> (project-root project)))))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>通过重载 &lt;code class="verbatim">project-files&lt;/code> ， &lt;code class="verbatim">M-x project-find-file&lt;/code> 时就会用 fd 来搜索文件了。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+常用命令
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;p>project.el 提供了很多命令来方便在项目中进行操作，这里列举几个常用的：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>project-remember-projects-under，增加项目&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-forget-project，删除项目&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-switch-project，切换项目&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-compile，执行项目的 compile 命令&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-search，在项目中搜索指定关键字&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-query-replace-regexp，在项目中执行正则替换&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-shell-command，执行 shell 命令&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-eshell，在根目录打开 eshell&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-dired，在根目录打开 dired&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-find-dir，在项目指定目录打开 dired&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>project-switch-to-buffer，切换到项目中已经打开的 buffer&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
+扩展命令
+&lt;/h2>
+&lt;div id="outline-text-headline-5" class="outline-text-2">
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/project-info ()
+(interactive)
+(&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;%s&amp;#34;&lt;/span> (project-current &lt;span style="color:#66d9ef">t&lt;/span>)))
+(defun my/project-discover ()
+&lt;span style="color:#e6db74">&amp;#34;Add dir to project under search-path.&amp;#34;&lt;/span>
+(interactive)
+(dolist (search-path &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;~/code/&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/git/&amp;#34;&lt;/span>))
+(dolist (file (&lt;span style="color:#a6e22e">file-name-all-completions&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> search-path))
+(when (not (&lt;span style="color:#a6e22e">member&lt;/span> file &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;./&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;../&amp;#34;&lt;/span>)))
+(let ((full-name (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> file search-path)))
+(when (&lt;span style="color:#a6e22e">file-directory-p&lt;/span> full-name)
+(when-let ((pr (project-current &lt;span style="color:#66d9ef">nil&lt;/span> full-name)))
+(project-remember-project pr)
+(&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;add project %s...&amp;#34;&lt;/span> pr))))))))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>上面函数的功能通过名字即可看出，这里不再赘述。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-6" class="outline-2">
+&lt;h2 id="headline-6">
+参考
+&lt;/h2>
+&lt;div id="outline-text-headline-6" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.manueluberti.eu/emacs/2020/09/18/project/">It’s never too late&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item><item><title>Emacs 28 新特性介绍</title><link>https://emacstalk.github.io/post/009/</link><pubDate>Tue, 02 Nov 2021 08:21:22 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/009/</guid><description>
 &lt;p>
 现任 Emacs 维护者 Eli Zaretskii 在 9 月 30 号通过&lt;a href="https://mail.gnu.org/archive/html/emacs-devel/2021-09/msg02290.html">邮件列表&lt;/a>宣布 emacs-28 分支已经创建出，这意味着 28 版本的大功能已经 ready，不会再有大改动，但距离正式发版还要一段时间，根据之前的&lt;a href="https://www.gnu.org/software/emacs/history.html">发版记录&lt;/a>，大概率会在 22 年上半年 release。&lt;/p>
 &lt;div class="src src-text">
