@@ -6,7 +6,7 @@
 下载
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>直接编译 28 版本或者在&lt;a href="https://elpa.gnu.org/packages/project.html"> elpa&lt;/a> 下载最新版。project 相关命令绑定在 &lt;code class="verbatim">C-x p&lt;/code> 。&lt;/p>
+&lt;p>直接编译 28 版本或者在&lt;a href="https://elpa.gnu.org/packages/project.html"> elpa&lt;/a> 下载最新版。project 相关命令绑定在 &lt;code class="verbatim">C-x p&lt;/code> ，笔者使用的相关配置在 &lt;a href="https://github.com/jiacai2050/dotfiles/blob/143ec31c02b18163e825b784f2a83fb4dbe03f2e/.config/emacs/i-basic.el#L78-L187">i-basic.el#L78-L187&lt;/a>，共读者参考。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-2" class="outline-2">
@@ -19,7 +19,8 @@
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/project-try-local (dir)
 &lt;span style="color:#e6db74">&amp;#34;Determine if DIR is a non-Git project.&amp;#34;&lt;/span>
 (catch &lt;span style="color:#e6db74">&amp;#39;ret&lt;/span>
-(let ((pr-flags &lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;.project&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pom.xml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;go.mod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Cargo.toml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;project.clj&amp;#34;&lt;/span>) &lt;span style="color:#75715e">;; higher priority&lt;/span>
+(let ((pr-flags &lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;.project&amp;#34;&lt;/span>)
+(&lt;span style="color:#e6db74">&amp;#34;go.mod&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Cargo.toml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;project.clj&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pom.xml&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;package.json&amp;#34;&lt;/span>) &lt;span style="color:#75715e">;; higher priority&lt;/span>
 (&lt;span style="color:#e6db74">&amp;#34;Makefile&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;README.org&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;README.md&amp;#34;&lt;/span>))))
 (dolist (current-level pr-flags)
 (dolist (f current-level)
@@ -27,8 +28,30 @@
 (throw &lt;span style="color:#e6db74">&amp;#39;ret&lt;/span> (&lt;span style="color:#a6e22e">cons&lt;/span> &lt;span style="color:#e6db74">&amp;#39;local&lt;/span> root))))))))
 (setq project-find-functions &lt;span style="color:#f92672">&amp;#39;&lt;/span>(my/project-try-local project-try-vc))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>&lt;code class="verbatim">my/project-try-local&lt;/code> 函数定义了常用编程语言的依赖描述文件，只要有这些文件，都可以看作项目根目录。
-作为额外的补充，可以通过创建一个名为 &lt;code class="verbatim">.project&lt;/code> 的文件，用作根目录的标识，与 &lt;code class="verbatim">.projectile&lt;/code> 类似&lt;/p>
+&lt;p>&lt;code class="verbatim">project-find-functions&lt;/code> 是 project.el 中用于查找根目录的函数列表，默认只有 &lt;code class="verbatim">project-try-vc&lt;/code> ，这里额外定义了一个 &lt;code class="verbatim">my/project-try-local&lt;/code> 。&lt;/p>
+&lt;p>
+该函数使用一些文件作为根目录标识，只要某个文件夹内有 &lt;code class="verbatim">pr-flags&lt;/code> 定义的文件，都可以看作项目根目录，并且具有如下优先级顺序：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;code class="verbatim">.project&lt;/code> ，与 &lt;code class="verbatim">.projectile&lt;/code> 类似&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>常用编程语言的依赖描述文件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Makefile/README 文件&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>比如有如下文件目录结构：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">project-demo/
+├── .project
+├── bar
+│   └── pom.xml
+└── foo
+└── package.json&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>由于 &lt;code class="verbatim">project-demo&lt;/code> 内有 &lt;code class="verbatim">.project&lt;/code> 文件，所以 bar/foo 不再是根目录，这个特性主要用在 monorepo 中。&lt;/p>
 &lt;p>
 该函数返回一个 cons，car 为项目类型，这里定义为 local，cdr 为根目录。&lt;/p>
 &lt;/div>
@@ -108,8 +131,14 @@
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/project-info ()
 (interactive)
 (&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;%s&amp;#34;&lt;/span> (project-current &lt;span style="color:#66d9ef">t&lt;/span>)))
+(defun my/add-dot-project ()
+(interactive)
+(let* ((root-dir (read-directory-name &lt;span style="color:#e6db74">&amp;#34;Root: &amp;#34;&lt;/span>))
+(f (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;.project&amp;#34;&lt;/span> root-dir)))
+(&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Create %s...&amp;#34;&lt;/span> f)
+(make-empty-file f)))
 (defun my/project-discover ()
-&lt;span style="color:#e6db74">&amp;#34;Add dir to project under search-path.&amp;#34;&lt;/span>
+&lt;span style="color:#e6db74">&amp;#34;Add dir under search-path to project.&amp;#34;&lt;/span>
 (interactive)
 (dolist (search-path &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;~/code/&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/git/&amp;#34;&lt;/span>))
 (dolist (file (&lt;span style="color:#a6e22e">file-name-all-completions&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> search-path))
