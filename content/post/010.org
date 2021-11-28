@@ -6,8 +6,7 @@
 在之前的文章中就多次提到过 28 版本的 project.el 是如何好用，但一直没去详细介绍，这篇文章就来填上这个坑。一句话总结，project.el 完全可以替换 [[https://github.com/bbatsov/projectile][projectile]]。
 
 * 下载
-直接编译 28 版本或者在[[https://elpa.gnu.org/packages/project.html][ elpa]] 下载最新版。project 相关命令绑定在 =C-x p= 。
-
+直接编译 28 版本或者在[[https://elpa.gnu.org/packages/project.html][ elpa]] 下载最新版。project 相关命令绑定在 =C-x p= ，笔者使用的相关配置在 [[https://github.com/jiacai2050/dotfiles/blob/143ec31c02b18163e825b784f2a83fb4dbe03f2e/.config/emacs/i-basic.el#L78-L187][i-basic.el#L78-L187]]，共读者参考。
 * 根目录
 在日常编程中，Emacs 的很多包都依赖一个功能：查找当前项目的根目录，比如 lsp-mode、citre 等。在 project.el 中，默认只支持 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html][VC]] 中的 Git，即 project-try-vc，但可以自定义找根目录的方式，配置如下：
 
@@ -15,7 +14,8 @@
 (defun my/project-try-local (dir)
   "Determine if DIR is a non-Git project."
   (catch 'ret
-    (let ((pr-flags '((".project" "pom.xml" "go.mod" "Cargo.toml" "project.clj") ;; higher priority
+    (let ((pr-flags '((".project")
+                      ("go.mod" "Cargo.toml" "project.clj" "pom.xml" "package.json") ;; higher priority
                       ("Makefile" "README.org" "README.md"))))
       (dolist (current-level pr-flags)
         (dolist (f current-level)
@@ -24,8 +24,24 @@
 
 (setq project-find-functions '(my/project-try-local project-try-vc))
 #+END_SRC
-=my/project-try-local= 函数定义了常用编程语言的依赖描述文件，只要有这些文件，都可以看作项目根目录。
-作为额外的补充，可以通过创建一个名为 =.project= 的文件，用作根目录的标识，与 =.projectile= 类似
+=project-find-functions= 是 project.el 中用于查找根目录的函数列表，默认只有 =project-try-vc= ，这里额外定义了一个 =my/project-try-local= 。
+
+该函数使用一些文件作为根目录标识，只要某个文件夹内有 =pr-flags= 定义的文件，都可以看作项目根目录，并且具有如下优先级顺序：
+1. =.project= ，与 =.projectile= 类似
+2. 常用编程语言的依赖描述文件
+3. Makefile/README 文件
+
+比如有如下文件目录结构：
+
+#+begin_src bash
+project-demo/
+├── .project
+├── bar
+│   └── pom.xml
+└── foo
+    └── package.json
+#+end_src
+由于 =project-demo= 内有 =.project= 文件，所以 bar/foo 不再是根目录，这个特性主要用在 monorepo 中。
 
 该函数返回一个 cons，car 为项目类型，这里定义为 local，cdr 为根目录。
 * 查找文件
@@ -66,8 +82,15 @@ project.el 提供了很多命令来方便在项目中进行操作，这里列举
   (interactive)
   (message "%s" (project-current t)))
 
+(defun my/add-dot-project ()
+  (interactive)
+  (let* ((root-dir (read-directory-name "Root: "))
+         (f (expand-file-name ".project" root-dir)))
+    (message "Create %s..." f)
+    (make-empty-file f)))
+
 (defun my/project-discover ()
-  "Add dir to project under search-path."
+  "Add dir under search-path to project."
   (interactive)
   (dolist (search-path '("~/code/" "~/git/"))
     (dolist (file (file-name-all-completions  "" search-path))
