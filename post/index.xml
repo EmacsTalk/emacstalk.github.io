@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description>Recent content in Posts on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Fri, 26 Nov 2021 17:59:34 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>GPG in Emacs</title><link>https://emacstalk.github.io/post/011/</link><pubDate>Fri, 26 Nov 2021 17:59:34 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/011/</guid><description>
 &lt;p>
-Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、加密的一款软件，现如今已经有了标准化协议 OpenPGP，最常用的实现是 GnuPG，一般提到 GPG 时都是指定 GnuPG。&lt;/p>
+Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、加密的一款软件，现如今已经有了标准化协议 OpenPGP，最常用的实现是 GnuPG，一般提到 GPG 时都是指的 GnuPG。&lt;/p>
 &lt;p>
-笔者在保存一些私人文件时，像日记、密码等，就会用 GPG 格式的文件来保存。这篇文章就来介绍下 Emacs 对 GPG 文件的支持，关于如何创建 GPG key，读者可参考 &lt;a href="http://www.ruanyifeng.com/blog/2013/07/gpg.html">GPG入门教程 by 阮一峰&lt;/a>&lt;/p>
+笔者在保存一些私人文件像日记、密码等时，就会用 GPG 格式的文件来保存。这篇文章就来介绍下 Emacs 对 GPG 文件的支持，关于如何创建 GPG key，读者可参考 &lt;a href="http://www.ruanyifeng.com/blog/2013/07/gpg.html">GPG入门教程 by 阮一峰&lt;/a>&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 密码输入
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>为了提高 key 安全系数，一般推荐在创建 key 时设置一个密码，这样即使密钥丢了，别人也无法使用。但是每次
+&lt;p>为了提高 key 安全系数，一般推荐在创建 key 时设置一个密码，这样即使密钥丢了，别人也无法使用。&lt;/p>
+&lt;p>
+但是每次
 输入密码显得有些繁琐，解决方式是让 gpg-agent 这个进程记住密码，这样只需要在系统第一次使用时输入即可。为了让 Emacs 功能在首次使用 GPG 时，捕获密码输入框，在 minibuffer 中输入密码，需要做如下的配置：&lt;/p>
 &lt;ul>
 &lt;li>
@@ -57,7 +59,7 @@ If no one is selected, symmetric encryption will be performed.
 u D3026E5C08A0BAB4 Jiacai Liu &amp;lt;xxx@gmail.com&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>
-而且，这个文件的 major mode 也能正确识别为 org mode，这样就可以非常方便的编辑 GPG 文件。与此同理，可以方便地创建任何格式的 GPG 文件，比如： &lt;code class="verbatim">diary.md.gpg&lt;/code>&lt;/p>
+而且，这个文件的 major mode 也能正确识别为 org mode，这样就可以非常方便的编辑 GPG 文件。与此同理，可以方便地创建任何格式的 GPG 文件，比如： &lt;code class="verbatim">diary.md.gpg&lt;/code> ，重新打开文件时，Emacs 会自动解密，并设置相应的 major mode。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-3" class="outline-2">
