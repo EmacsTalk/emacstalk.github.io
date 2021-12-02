@@ -1,4 +1,140 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description> EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Fri, 26 Nov 2021 17:59:34 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>project.el 使用说明</title><link>https://emacstalk.github.io/post/010/</link><pubDate>Fri, 26 Nov 2021 17:59:34 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/010/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Fri, 26 Nov 2021 17:59:34 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>GPG in Emacs</title><link>https://emacstalk.github.io/post/011/</link><pubDate>Fri, 26 Nov 2021 17:59:34 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/011/</guid><description>
+&lt;p>
+Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、加密的一款软件，现如今已经有了标准化协议 OpenPGP，最常用的实现是 GnuPG，一般提到 GPG 时都是指定 GnuPG。&lt;/p>
+&lt;p>
+笔者在保存一些私人文件时，像日记、密码等，就会用 GPG 格式的文件来保存。这篇文章就来介绍下 Emacs 对 GPG 文件的支持，关于如何创建 GPG key，读者可参考 &lt;a href="http://www.ruanyifeng.com/blog/2013/07/gpg.html">GPG入门教程 by 阮一峰&lt;/a>&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+密码输入
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>为了提高 key 安全系数，一般推荐在创建 key 时设置一个密码，这样即使密钥丢了，别人也无法使用。但是每次
+输入密码显得有些繁琐，解决方式是让 gpg-agent 这个进程记住密码，这样只需要在系统第一次使用时输入即可。为了让 Emacs 功能在首次使用 GPG 时，捕获密码输入框，在 minibuffer 中输入密码，需要做如下的配置：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>首先是修改 agent 的配置文件&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="src src-text">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text"># cat ~/.gnupg/gpg-agent.conf
+allow-emacs-pinentry
+allow-loopback-pinentry
+# 之后然后加载即可
+gpgconf --reload gpg-agent&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>
+&lt;p>然后安装 &lt;a href="https://elpa.gnu.org/packages/pinentry.html">pinentry&lt;/a> 包，配置 loopback，最后启动 pinentry server，参考配置&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package pinentry
+:config
+(setq epa-pinentry-mode &lt;span style="color:#e6db74">&amp;#39;loopback&lt;/span>)
+(pinentry-start))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+笔者之前一直很好奇为什么这么复杂，pinentry 是什么东西？为什么需要它？我只是像输入一个密码而已呀。
+直到写这篇文章，我才彻底了解了 pinentry 的作用：&lt;/p>
+&lt;blockquote>
+&lt;p>它会让用户输入的密码不会因内存不足而换出到磁盘，说到底还是安全问题。&lt;/p>
+&lt;/blockquote>
+&lt;p>更多技术细节可参考：&lt;a href="https://sarata.com/manpages/pinentry-curses.1.html">pinentry-curses(1) man page&lt;/a>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+文件操作
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;p>GPG 格式的文件是一种二进制文件，一般的编辑器是无法打开的，但 Emacs 对 GPG 提供了非常方便的支持，比如创建一个名为 password.org.gpg 的文件，保存时 Emacs 会自动弹出选择框，让用户选择加密的公钥。&lt;/p>
+&lt;div class="src src-text">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">Select recipients for encryption.
+If no one is selected, symmetric encryption will be performed.
+- ‘m’ to mark a key on the line
+- ‘u’ to unmark a key on the line
+[Cancel][OK]
+u D3026E5C08A0BAB4 Jiacai Liu &amp;lt;xxx@gmail.com&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+而且，这个文件的 major mode 也能正确识别为 org mode，这样就可以非常方便的编辑 GPG 文件。与此同理，可以方便地创建任何格式的 GPG 文件，比如： &lt;code class="verbatim">diary.md.gpg&lt;/code>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+EasyPG
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;p>Emacs 自带的 EasyPG 包对常用 GPG 都提供了相应函数的支持：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>epa-sign-file&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-decrypt-file&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-import-keys&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-export-keys&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-list-keys&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-list-secret-keys&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-delete-keys&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+Git 集成
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;p>Git 对 GPG 这种二进制文件有特殊的支持，可以转化为文本的方式，这样就能非常方便的进行 diff、merge 了。&lt;/p>
+&lt;div class="src src-text">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">git config --global diff.gpg.textconv &amp;#34;gpg --no-tty --decrypt&amp;#34;
+echo &amp;#34;*.gpg filter=gpg diff=gpg&amp;#34; &amp;gt; ~/.gitattributes&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
+弦外之音
+&lt;/h2>
+&lt;div id="outline-text-headline-5" class="outline-text-2">
+&lt;p>尽管 GPG 出现的时间很久，但互联网上每隔一段时间都会出现批评它的文章，比如：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://news.ycombinator.com/item?id=9104188">HN: GPG and Me&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.filippo.io/giving-up-on-long-term-pgp/">I&amp;#39;m giving up on PGP&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>但目前为止，GPG 还没有替代品。没有 Emacs 的话，很难想象如何去方便、快捷地操作 GPG。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-6" class="outline-2">
+&lt;h2 id="headline-6">
+参考
+&lt;/h2>
+&lt;div id="outline-text-headline-6" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://magit.vc/manual/magit/How-to-show-diffs-for-gpg_002dencrypted-files_003f.html">A.1.4 How to show diffs for gpg-encrypted files?&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://emacs-china.org/t/magit-gpg-diff-merge/19084">[求助]magit 处理 gpg 文件： diff、merge&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item><item><title>project.el 使用说明</title><link>https://emacstalk.github.io/post/010/</link><pubDate>Fri, 26 Nov 2021 17:59:34 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/010/</guid><description>
 &lt;p>
 在之前的文章中就多次提到过 28 版本的 project.el 是如何好用，但一直没去详细介绍，这篇文章就来填上这个坑。一句话总结，project.el 完全可以替换 &lt;a href="https://github.com/bbatsov/projectile">projectile&lt;/a>。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
