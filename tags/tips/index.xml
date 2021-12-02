@@ -67,13 +67,22 @@ u D3026E5C08A0BAB4 Jiacai Liu &amp;lt;xxx@gmail.com&amp;gt;&lt;/code>&lt;/pre>&l
 EasyPG
 &lt;/h2>
 &lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;p>Emacs 自带的 EasyPG 包对常用 GPG 都提供了相应函数的支持：&lt;/p>
+&lt;p>Emacs 自带的 EasyPG 包对常用 GPG 命令都提供了相应函数的支持：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>epa-sign-file&lt;/p>
 &lt;/li>
 &lt;li>
+&lt;p>epa-encrypt-file&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>epa-decrypt-file&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-encrypt-region&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>epa-decrypt-region&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>epa-import-keys&lt;/p>
