@@ -1,11 +1,13 @@
 baseURL = "https://emacstalk.github.io"
 languageCode = "zh-cn"
-defaultContentLanguage = "cn"
+defaultContentLanguage = "en"
 hasCJKLanguage = true
 title = "EmacsTalk"
 theme = "zen"
 copyright = "2021 emacstalk.github.io"
 googleAnalytics = "UA-50745138-3"
+paginate = 10
+paginatePath = "page"
 
 [author]
     name = "写代码的西瓜"

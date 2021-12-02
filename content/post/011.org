@@ -1,0 +1,81 @@
+#+TITLE: GPG in Emacs
+#+DATE: 2021-11-26T17:59:34+08:00
+#+DRAFT: false
+#+TAGS[]: tips
+
+Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、加密的一款软件，现如今已经有了标准化协议 OpenPGP，最常用的实现是 GnuPG，一般提到 GPG 时都是指定 GnuPG。
+
+笔者在保存一些私人文件时，像日记、密码等，就会用 GPG 格式的文件来保存。这篇文章就来介绍下 Emacs 对 GPG 文件的支持，关于如何创建 GPG key，读者可参考 [[http://www.ruanyifeng.com/blog/2013/07/gpg.html][GPG入门教程 by 阮一峰]]
+
+
+* 密码输入
+为了提高 key 安全系数，一般推荐在创建 key 时设置一个密码，这样即使密钥丢了，别人也无法使用。但是每次
+输入密码显得有些繁琐，解决方式是让 gpg-agent 这个进程记住密码，这样只需要在系统第一次使用时输入即可。为了让 Emacs 功能在首次使用 GPG 时，捕获密码输入框，在 minibuffer 中输入密码，需要做如下的配置：
+- 首先是修改 agent 的配置文件
+#+begin_src
+# cat ~/.gnupg/gpg-agent.conf
+
+allow-emacs-pinentry
+allow-loopback-pinentry
+
+# 之后然后加载即可
+gpgconf --reload gpg-agent
+#+end_src
+- 然后安装 [[https://elpa.gnu.org/packages/pinentry.html][pinentry]] 包，配置 loopback，最后启动 pinentry server，参考配置
+#+begin_src emacs-lisp
+(use-package pinentry
+  :config
+  (setq epa-pinentry-mode 'loopback)
+  (pinentry-start))
+#+end_src
+
+笔者之前一直很好奇为什么这么复杂，pinentry 是什么东西？为什么需要它？我只是像输入一个密码而已呀。
+直到写这篇文章，我才彻底了解了 pinentry 的作用：
+#+begin_quote
+它会让用户输入的密码不会因内存不足而换出到磁盘，说到底还是安全问题。
+#+end_quote
+更多技术细节可参考：[[https://sarata.com/manpages/pinentry-curses.1.html][pinentry-curses(1) man page]]
+
+* 文件操作
+GPG 格式的文件是一种二进制文件，一般的编辑器是无法打开的，但 Emacs 对 GPG 提供了非常方便的支持，比如创建一个名为 password.org.gpg 的文件，保存时 Emacs 会自动弹出选择框，让用户选择加密的公钥。
+
+#+begin_src
+Select recipients for encryption.
+If no one is selected, symmetric encryption will be performed.
+- ‘m’ to mark a key on the line
+- ‘u’ to unmark a key on the line
+[Cancel][OK]
+
+  u D3026E5C08A0BAB4 Jiacai Liu <xxx@gmail.com>
+
+#+end_src
+
+而且，这个文件的 major mode 也能正确识别为 org mode，这样就可以非常方便的编辑 GPG 文件。与此同理，可以方便地创建任何格式的 GPG 文件，比如： =diary.md.gpg=
+
+* EasyPG
+Emacs 自带的 EasyPG 包对常用 GPG 都提供了相应函数的支持：
+- epa-sign-file
+- epa-decrypt-file
+- epa-import-keys
+- epa-export-keys
+- epa-list-keys
+- epa-list-secret-keys
+- epa-delete-keys
+
+* Git 集成
+Git 对 GPG 这种二进制文件有特殊的支持，可以转化为文本的方式，这样就能非常方便的进行 diff、merge 了。
+#+begin_src
+git config --global diff.gpg.textconv "gpg --no-tty --decrypt"
+echo "*.gpg filter=gpg diff=gpg" > ~/.gitattributes
+#+end_src
+
+* 弦外之音
+尽管 GPG 出现的时间很久，但互联网上每隔一段时间都会出现批评它的文章，比如：
+- [[https://news.ycombinator.com/item?id=9104188][HN: GPG and Me]]
+- [[https://blog.filippo.io/giving-up-on-long-term-pgp/][I'm giving up on PGP]]
+
+但目前为止，GPG 还没有替代品。没有 Emacs 的话，很难想象如何去方便、快捷地操作 GPG。
+
+* 参考
+- [[https://magit.vc/manual/magit/How-to-show-diffs-for-gpg_002dencrypted-files_003f.html][A.1.4 How to show diffs for gpg-encrypted files?]]
+- [[https://emacs-china.org/t/magit-gpg-diff-merge/19084][[求助]magit 处理 gpg 文件： diff、merge]]
