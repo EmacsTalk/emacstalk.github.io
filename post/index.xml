@@ -2,7 +2,7 @@
 &lt;p>
 Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、加密的一款软件，现如今已经有了标准化协议 OpenPGP，最常用的实现是 GnuPG，一般提到 GPG 时都是指的 GnuPG。&lt;/p>
 &lt;p>
-笔者在保存一些私人文件像日记、密码等时，就会用 GPG 格式的文件来保存。这篇文章就来介绍下 Emacs 对 GPG 文件的支持，关于如何创建 GPG key，读者可参考 &lt;a href="http://www.ruanyifeng.com/blog/2013/07/gpg.html">GPG入门教程 by 阮一峰&lt;/a>&lt;/p>
+笔者在保存一些私人文件像日记、密码等时，就会用 GPG 格式的文件来保存。这篇文章就来介绍下 Emacs 对 GPG 的支持，关于如何创建 GPG key，读者可参考 &lt;a href="http://www.ruanyifeng.com/blog/2013/07/gpg.html">GPG入门教程 by 阮一峰&lt;/a>&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 密码输入
@@ -11,12 +11,10 @@ Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、
 &lt;p>为了提高 key 安全系数，一般推荐在创建 key 时设置一个密码，这样即使密钥丢了，别人也无法使用。&lt;/p>
 &lt;p>
 但是每次
-输入密码显得有些繁琐，解决方式是让 gpg-agent 这个进程记住密码，这样只需要在系统第一次使用时输入即可。为了让 Emacs 功能在首次使用 GPG 时，捕获密码输入框，在 minibuffer 中输入密码，需要做如下的配置：&lt;/p>
-&lt;ul>
+输入密码显得有些繁琐，解决方式是让 gpg-agent 这个进程记住密码，这样只需在系统第一次使用时输入即可。为了让 Emacs 能在首次使用 GPG 时，捕获密码输入框，在 minibuffer 中输入密码，需要做如下的配置：&lt;/p>
+&lt;ol>
 &lt;li>
-&lt;p>首先是修改 agent 的配置文件&lt;/p>
-&lt;/li>
-&lt;/ul>
+&lt;p>修改 agent 的配置文件&lt;/p>
 &lt;div class="src src-text">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text"># cat ~/.gnupg/gpg-agent.conf
 allow-emacs-pinentry
@@ -24,24 +22,26 @@ allow-loopback-pinentry
 # 之后然后加载即可
 gpgconf --reload gpg-agent&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;ul>
-&lt;li>
-&lt;p>然后安装 &lt;a href="https://elpa.gnu.org/packages/pinentry.html">pinentry&lt;/a> 包，配置 loopback，最后启动 pinentry server，参考配置&lt;/p>
 &lt;/li>
-&lt;/ul>
+&lt;li>
+&lt;p>安装 &lt;a href="https://elpa.gnu.org/packages/pinentry.html">pinentry&lt;/a> 包，配置 loopback，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>启动 pinentry server，参考配置&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package pinentry
 :config
 (setq epa-pinentry-mode &lt;span style="color:#e6db74">&amp;#39;loopback&lt;/span>)
 (pinentry-start))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>
-笔者之前一直很好奇为什么这么复杂，pinentry 是什么东西？为什么需要它？我只是像输入一个密码而已呀。
-直到写这篇文章，我才彻底了解了 pinentry 的作用：&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>笔者之前一直很好奇为什么这么复杂，pinentry 是什么东西？为什么需要它？我只是想输入一个密码而已呀。
+直到写这篇文章，我才彻底了解 pinentry 进程的作用：&lt;/p>
 &lt;blockquote>
-&lt;p>它会让用户输入的密码不会因内存不足而换出到磁盘，说到底还是安全问题。&lt;/p>
+&lt;p>它会让用户输入的密码不会因内存不足而换出到磁盘&lt;/p>
 &lt;/blockquote>
-&lt;p>更多技术细节可参考：&lt;a href="https://sarata.com/manpages/pinentry-curses.1.html">pinentry-curses(1) man page&lt;/a>&lt;/p>
+&lt;p>说到底还是安全问题，更多技术细节可参考：&lt;a href="https://sarata.com/manpages/pinentry-curses.1.html">pinentry-curses(1) man page&lt;/a>&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-2" class="outline-2">
@@ -142,6 +142,9 @@ echo &amp;#34;*.gpg filter=gpg diff=gpg&amp;#34; &amp;gt; ~/.gitattributes&lt;/c
 &lt;/li>
 &lt;li>
 &lt;p>&lt;a href="https://emacs-china.org/t/magit-gpg-diff-merge/19084">[求助]magit 处理 gpg 文件： diff、merge&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://beorgapp.com/learning/emacs-encryption/">Getting started with encryption in Org mode on macOS&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
