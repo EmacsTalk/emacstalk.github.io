@@ -20,7 +20,7 @@ Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、
 allow-emacs-pinentry
 allow-loopback-pinentry
 
-# 之后然后加载即可
+# 之后重新加载即可
 gpgconf --reload gpg-agent
   #+end_src
 2. 安装 [[https://elpa.gnu.org/packages/pinentry.html][pinentry]] 包，配置 loopback，
@@ -56,17 +56,24 @@ If no one is selected, symmetric encryption will be performed.
 而且，这个文件的 major mode 也能正确识别为 org mode，这样就可以非常方便的编辑 GPG 文件。与此同理，可以方便地创建任何格式的 GPG 文件，比如： =diary.md.gpg= ，重新打开文件时，Emacs 会自动解密，并设置相应的 major mode。
 
 * EasyPG
-Emacs 自带的 EasyPG 包对常用 GPG 命令都提供了相应函数的支持：
+Emacs 自带的 [[https://www.gnu.org/software/emacs/manual/html_mono/epa.html][EasyPG]] 包对常用 GPG 命令都提供了相应函数的支持：
 - epa-sign-file
-- epa-encrypt-file
-- epa-decrypt-file
-- epa-encrypt-region
-- epa-decrypt-region
+- epa-encrypt-<file/region>
+- epa-decrypt-<file/region>
 - epa-import-keys
 - epa-export-keys
 - epa-list-keys
 - epa-list-secret-keys
 - epa-delete-keys
+
+EasyPG 还提供了与 Dired 的集成：
+#+ATTR_HTML: :border 1 :style text-align:center
+| key binding | description |
+|-------------+-------------|
+| =: d=       | Decrypt     |
+| =: e=       | Encrypt     |
+| =: s=       | Sign        |
+| =: v=       | verify      |
 
 * Git 集成
 Git 对 GPG 这种二进制文件有特殊的支持，可以转化为文本的方式，这样就能非常方便的进行 diff、merge 了。
@@ -86,3 +93,4 @@ echo "*.gpg filter=gpg diff=gpg" > ~/.gitattributes
 - [[https://magit.vc/manual/magit/How-to-show-diffs-for-gpg_002dencrypted-files_003f.html][A.1.4 How to show diffs for gpg-encrypted files?]]
 - [[https://emacs-china.org/t/magit-gpg-diff-merge/19084][[求助]magit 处理 gpg 文件： diff、merge]]
 - [[https://beorgapp.com/learning/emacs-encryption/][Getting started with encryption in Org mode on macOS]]
+- [[https://www.masteringemacs.org/article/keeping-secrets-in-emacs-gnupg-auth-sources][Keeping Secrets in Emacs with GnuPG and Auth Sources]]
