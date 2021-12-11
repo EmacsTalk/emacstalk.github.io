@@ -58,6 +58,7 @@ If no one is selected, symmetric encryption will be performed.
 * EasyPG
 Emacs 自带的 [[https://www.gnu.org/software/emacs/manual/html_mono/epa.html][EasyPG]] 包对常用 GPG 命令都提供了相应函数的支持：
 - epa-sign-file
+- epa-verify-file
 - epa-encrypt-<file/region>
 - epa-decrypt-<file/region>
 - epa-import-keys
@@ -82,6 +83,14 @@ git config --global diff.gpg.textconv "gpg --no-tty --decrypt"
 echo "*.gpg filter=gpg diff=gpg" > ~/.gitattributes
 #+end_src
 
+* 软件签名校验
+在互联网上下载软件时，网站一般会提供一些校验手段，保证软件没有被篡改过，常用的手段有：
+- PGP，签名文件一般为 asc 或 sig
+- 文件哈希，常用的算法有 MD5、SHA512
+
+比如在 [[https://lucene.apache.org/core/downloads.html][Apache Lucene]] 下载页就提供了这两种验证文件，在下载了源文件与签名 PGP 文件到同一目录后，执行 =epa-verify-file= 即可验证。当然，这需要事先导入签名者的公钥，具体可以参考：
+- https://www.apache.org/info/verification.html
+但是有一点，用户无法验证该公钥的真实性，毕竟 keyserver 是谁都可以发布的，想要真正的安全，只能去线下亲自找那个人来交换公钥，但现实是没人这么做。
 * 弦外之音
 尽管 GPG 出现的时间很久，但互联网上每隔一段时间都会出现批评它的文章，比如：
 - [[https://news.ycombinator.com/item?id=9104188][HN: GPG and Me]]

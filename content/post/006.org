@@ -9,9 +9,11 @@
 1. 打开 Automator ，新创建『应用』类型文档
 2. Action 选择 Run Shell Script ， =Pass input= 设为 =as arguments= ，并输入以下内容：
    #+begin_src bash
-/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c "$@" &
+/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -c "$@"
    #+end_src
-   需要注意，命令最后有个 =&= ，表示后台执行，应用本身立刻退出。
+   +需要注意，命令最后有个 =&= ，表示后台执行，应用本身立刻退出。+
+
+   上面的 shell 命令，不需要 =&= ，只需要加上 =-n= 选项后，即可在执行后，立刻退出该应用。
    [[https://img.alicdn.com/imgextra/i1/581166664/O1CN01rJRTwh1z6A5R1HRAa_!!581166664.png]]
 3. 导出应用
 4. 在 Finder 中找到需要修改打开程序的文件，按 =M-i= ，在 Open With 子栏中选择刚才导出的应用，并点击 =Change All=
@@ -20,4 +22,5 @@
 这样以后在打开相同后缀名的文件时，就会用 emacsclient 打开了。
 
 * 参考
+- [[https://liujiacai.net/blog/2021/03/05/emacs-love-mail-feed/#headline-12][设置 emacsclient 为默认邮件客户端]]
 - [[https://stackoverflow.com/questions/45548847/how-to-open-an-emacs-file-in-os-x-by-double-clicking-on-it-using-the-emacsclie][How to open an EMACS file in OS X by double-clicking on it]]
