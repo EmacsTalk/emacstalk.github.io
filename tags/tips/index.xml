@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tips on EmacsTalk</title><link>https://emacstalk.github.io/tags/tips/</link><description>Recent content in tips on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 26 Dec 2021 22:55:59 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/tips/index.xml" rel="self" type="application/rss+xml"/><item><title>拷贝浏览器链接到 org-mode</title><link>https://emacstalk.github.io/post/012/</link><pubDate>Sun, 26 Dec 2021 22:55:59 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/012/</guid><description>
 &lt;p>
-在 org-mode 里些博客文章时，经常都会旁征博引一些链接，之前都是用 &lt;code class="verbatim">C-c C-l（org-insert-link）&lt;/code> 的快捷键来输入链接，但这是个费事费力的事情，需要去浏览器里面拷贝两次，一次是链接，一次是标题，有没有更好地方式呢？答案是肯定的。不同浏览器做法大同小异，这里以 macOS 上的 Safari 与 Firefox 为例说明。&lt;/p>
+在 org-mode 里写博客文章时，经常会旁征博引一些链接，之前都是用 &lt;code class="verbatim">C-c C-l（org-insert-link）&lt;/code> 的快捷键来输入链接，但这是个费事费力的事情，需要去浏览器里面拷贝两次，一次是链接，一次是标题，有没有更好地方式呢？答案是肯定的。不同浏览器做法大同小异，这里以 macOS 上的 Safari 与 Firefox 为例说明。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 Safari
