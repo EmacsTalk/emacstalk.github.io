@@ -1,0 +1,58 @@
+#+TITLE: 拷贝浏览器链接到 org-mode
+#+DATE: 2021-12-26T22:55:59+08:00
+#+DRAFT: false
+#+TAGS[]: tips
+
+在 org-mode 里些博客文章时，经常都会旁征博引一些链接，之前都是用 =C-c C-l（org-insert-link）= 的快捷键来输入链接，但这是个费事费力的事情，需要去浏览器里面拷贝两次，一次是链接，一次是标题，有没有更好地方式呢？答案是肯定的。不同浏览器做法大同小异，这里以 macOS 上的 Safari 与 Firefox 为例说明。
+
+* Safari
+在 macOS 中，可以使用下面的 applescript 脚本来获取 org 格式的链接：
+
+#+begin_src bash
+#!/usr/bin/osascript
+
+# @raycast.title Copy URL as org-capture
+# @raycast.packageName org-capture-url-safari
+# @raycast.mode silent
+# @raycast.schemaVersion 1
+
+
+tell application "Safari"
+    set tab_link to URL of front document
+    set tab_title to NAME of front document
+    set org_link to ("[[" & tab_link & "]" & "[" & tab_title & "]]")
+    set the clipboard to org_link
+    display notification org_link with title "链接复制成功"
+end tell
+#+end_src
+我这里封装成了 Raycast 中可以调用的格式。
+
+#+CAPTION: Raycast 调用示范
+https://img.alicdn.com/imgextra/i2/581166664/O1CN016HmVsr1z6A73zIseR_!!581166664.png
+
+* Firefox
+按理来说，Firefox 也可以参考 Safari 的做法，但是 Firefox 有个长达 20 年的 bug：
+- [[https://bugzilla.mozilla.org/show_bug.cgi?id=125419][125419 - [META]Add AppleScript support and capabilities to Mozilla on Mac, e.g. AppleScript/OSA Script menu]]
+
+因此只能另辟蹊径，虽然网上有些 [[https://matthewbilyeu.com/blog/2018-08-24/getting-url-and-tab-title-from-firefox-with-applescript][hack]] 的解法，但是我觉得太复杂了，不如直接用 userscript 来解决（完整代码可参考 [[https://github.com/jiacai2050/blog-snippets/blob/master/userscript/web-util.js][web-util.js]]）：
+
+#+begin_src js
+function copy_as_org_capture() {
+  const url = window.location.href;
+  const title = window.document.title;
+  GM_setClipboard(`[[${url}][${title}]]`);
+  alert(title);
+}
+GM_registerMenuCommand("org-capture", copy_as_org_capture);
+
+VM.shortcut.register('c-i', copy_as_org_capture);
+#+end_src
+这样既能在快捷菜单中，通过点击来实现链接的复制，也能通过快捷键 =C-i= 来复制。
+
+#+CAPTION: 油猴脚本快捷菜单
+https://img.alicdn.com/imgextra/i2/581166664/O1CN01dSLObd1z6A7CdhPcw_!!581166664.png
+
+* 参考
+- [[https://violentmonkey.github.io/api/gm/#gm_registermenucommand][Violentmonkey API]]
+- [[https://matthewbilyeu.com/blog/2018-08-24/getting-url-and-tab-title-from-firefox-with-applescript][Getting URL and Tab Title from Firefox with AppleScript · Matt's programming blog]]
+- [[http://blog.jiayuanzhang.com/post/blog-with-ox-hugo/][使用 Emacs + ox-hugo 来写博客 · Jiayuan Thoughts]]
