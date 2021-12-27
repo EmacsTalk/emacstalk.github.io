@@ -52,6 +52,15 @@ VM.shortcut.register('c-i', copy_as_org_capture);
 #+CAPTION: 油猴脚本快捷菜单
 https://img.alicdn.com/imgextra/i2/581166664/O1CN01dSLObd1z6A7CdhPcw_!!581166664.png
 
+* org-mac-link
+在本文发布后，有热心读者提到在 macOS 上已经有这方面的轮子了：[[https://orgmode.org/worg/org-contrib/org-mac-link.html][org-mac-link.el]]，原理也是通过 applescript 来获取链接信息，源码在[[https://git.sr.ht/~bzg/org-contrib/tree/master/item/lisp/org-mac-link.el][这里]]。我自己试用了下，Firefox 不能正常拷贝，Safari 实现和本文一致，感兴趣的读者可以自己尝试下。这个插件使用很简单：
+
+#+BEGIN_SRC emacs-lisp
+(use-package org-mac-link
+  :defer t
+  :load-path "~/.config/vendor/org-contrib/lisp" ;; org-contrib 的本地路径
+  :commands (org-mac-grab-link))
+#+END_SRC
 * 参考
 - [[https://violentmonkey.github.io/api/gm/#gm_registermenucommand][Violentmonkey API]]
 - [[https://matthewbilyeu.com/blog/2018-08-24/getting-url-and-tab-title-from-firefox-with-applescript][Getting URL and Tab Title from Firefox with AppleScript · Matt's programming blog]]
