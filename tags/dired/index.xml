@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>dired on EmacsTalk</title><link>https://emacstalk.github.io/tags/dired/</link><description>Recent content in dired on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 08 Aug 2021 11:06:00 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/dired/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 Dired 快速移动文件</title><link>https://emacstalk.github.io/post/003/</link><pubDate>Sun, 08 Aug 2021 11:06:00 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/003/</guid><description>&lt;p>
+在第五期节目里推荐过 &lt;a href="https://www.raycast.com/">Raycast&lt;/a> 这个神器，之前知道它可以直接执行脚本，但一直没尝试过，最近发现它提供了一个 &lt;a href="https://github.com/raycast/script-commands">script-commands&lt;/a> 仓库，里面整理了一些常用的脚本，比如清空废纸篓、刷新 DNS 等，比较实用。&lt;/p>
+&lt;p>
+但这个仓库的脚本非常多，我需要的只是其中很小一部分，所以需要一种方式来便捷地在两个目录间拷贝文件（称为 src 与 dst）。&lt;/p>
+&lt;p>
+之前的话我都是在 Dired 里 mark 相关文件，然后再在 minibuffer 里找到 dst ，如果 src 和 dst 离得比较远，整个过程会非常枯燥、低效，今天尝试 Google 了一下&lt;a href="https://emacs.stackexchange.com/questions/5603/how-to-quickly-copy-move-file-in-emacs-dired">这个问题&lt;/a>，发现一个好方式，流程如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>打开两个 Dired 窗口，分别对应 src 目录与 dst 目录&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 src 里 mark 文件后，按 C 拷贝时，提示的目录默认就是 dst&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>直接回车即可复制文件&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>设置 &lt;code class="verbatim">(setq dired-dwim-target t)&lt;/code> 即可使用上述功能。Emacs is amazing！&lt;/p>
+&lt;figure>
+&lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN01xPceni1z6A51fp11T_!!581166664.gif" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN01xPceni1z6A51fp11T_!!581166664.gif" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN01xPceni1z6A51fp11T_!!581166664.gif" />&lt;figcaption>
+dired 移动文件示意图
+&lt;/figcaption>
+&lt;/figure></description></item></channel></rss>
