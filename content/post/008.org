@@ -1,6 +1,6 @@
 #+TITLE: 使用 deftheme 来修改样式
 #+DATE: 2021-10-27T07:53:51+08:00
-#+TAGS[]: tips
+#+TAGS[]: tips, theme
 
 在使用 Emacs 的过程中，或多或少都会去自定义样式，比如 macOS 下的 [[https://github.com/DarwinAwardWinner/dotemacs#dont-use-ns_selection_fg_color-and-ns_selection_bg_color][ns_selection_bg_color]]，想法是挺好，跟随系统色调来调整 region 的背景色，但是晚上的颜色巨丑，严重影响使用体验，截图可参考[[https://emacs-china.org/t/region-background/15271][这个帖子]]。
 

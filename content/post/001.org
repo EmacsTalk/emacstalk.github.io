@@ -1,6 +1,6 @@
 #+TITLE: 使用 align-regexp 对齐 userscript 元信息
 #+DATE: 2021-07-26T17:18:08+08:00
-#+TAGS[]: tips
+#+TAGS[]: tips, text
 
 有一个 userscript，[[https://violentmonkey.github.io/api/metadata-block/][元信息]]对齐的不直观，不方便阅读，怎么办呢？
 #+begin_src

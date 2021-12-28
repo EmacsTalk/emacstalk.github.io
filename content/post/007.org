@@ -1,6 +1,6 @@
 #+TITLE: url-retrieve 使用 curl 作为后端实现
 #+DATE: 2021-10-10T21:17:44+08:00
-#+TAGS[]: tips
+#+TAGS[]: tips, network
 
 Emacs 自带的 url.el 包提供了网络请求的基本 API，但是问题比较多，比如 [[https://nullprogram.com/blog/2016/06/16/][Elfeed, cURL, and You]] 这篇文章就介绍了使用 cURL 代替 url-retrieve 的好处，主要有以下几点：
 1. 更快

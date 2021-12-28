@@ -1,14 +1,12 @@
 #+TITLE: 002. 与 DoglooksGood 闲聊 Emacs
 #+DATE: 2021-07-03T22:36:08+08:00
-#+LASTMOD: 2021-07-04T09:28:23+08:00
+#+LASTMOD: 2021-12-28T19:12:06+0800
 #+ALIASES[]: /podcast/2/
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/1e7c-audiofreehighqps/85/49/CKwRIJEEtj04AbqVuQDCiCOK.m4a
 #+PODCAST_DURATION: 59:43
 #+PODCAST_LENGTH: 29005241
 #+PODCAST_IMAGE_SRC: guests/doglooksgood.png
 #+PODCAST_IMAGE_ALT: DogLooksGood
-
-
 
 * 本期人物
 - 主播：[[https://liujiacai.net/][西瓜]]

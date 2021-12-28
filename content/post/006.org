@@ -1,7 +1,7 @@
 #+TITLE: 设置 emacsclient 为文件默认打开程序
 #+DATE: 2021-09-11T14:38:01+08:00
 #+DRAFT: false
-#+TAGS[]: tips
+#+TAGS[]: tips, macOS, emacsclient
 
 对于 Emacs 熟练用户来说，大部分都会选择启动 server 模式，这样可以加速后续的启动时间，为与其他命令行工具组合使用奠定基础。
 本文介绍一种将 emacsclient 设置为文件默认打开程序的方式，适用平台 macOS。

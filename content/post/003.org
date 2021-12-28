@@ -1,6 +1,6 @@
 #+TITLE: 使用 Dired 快速移动文件
 #+DATE: 2021-08-08T11:06:00+08:00
-#+TAGS[]: tips
+#+TAGS[]: tips, dired
 
 在第五期节目里推荐过 [[https://www.raycast.com/][Raycast]] 这个神器，之前知道它可以直接执行脚本，但一直没尝试过，最近发现它提供了一个 [[https://github.com/raycast/script-commands][script-commands]] 仓库，里面整理了一些常用的脚本，比如清空废纸篓、刷新 DNS 等，比较实用。
 

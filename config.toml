@@ -8,6 +8,10 @@ copyright = "2021 emacstalk.github.io"
 googleAnalytics = "UA-50745138-3"
 paginate = 10
 paginatePath = "page"
+enableGitInfo = true
+
+[frontmatter]
+  lastmod = [':git', 'lastmod', ':fileModTime', ':default']
 
 [author]
     name = "写代码的西瓜"

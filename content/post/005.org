@@ -1,6 +1,6 @@
 #+TITLE: 使用 replace-regexp 在行首添加序号
 #+DATE: 2021-09-11T09:41:02+08:00
-#+TAGS[]: tips
+#+TAGS[]: tips, text
 
 假设有如下文本
 

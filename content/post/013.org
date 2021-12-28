@@ -1,0 +1,49 @@
+#+TITLE: 自动更新文件中的修改时间
+#+DATE: 2021-12-28T19:57:14+08:00
+#+DRAFT: false
+#+TAGS[]: tips, org-mode
+
+写博客多年，除了 [[https://emacstalk.github.io/][EmacsTalk]] 这个网站，我还有个[[https://liujiacai.net/][ Keep Coding]] 的个人博客。写博客的好处这里不想多说，可以参考这篇文章：
+- [[http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/][[BetterExplained]为什么你应该（从现在开始就）写博客 – 刘未鹏 | Mind Hacks]]
+
+一般来说，文章发布后，后续经常会有更新，因为观点可能随着时间会变，而且也很难保证之前的内容准确无误。我看其他人的文章时，也会留意这个文章最近是不是有更新过。如果很久没更新了，那文章的参考价值将大打折扣。
+
+对于使用 hugo 建站的文章来说，主要就是 date、lastmod 两个字段：
+- date 是指文件的创建时间，这个一般不用改
+- lastmod 是指文件最后一次更新时间，很明显每次改动文件时都需要改动
+
+hugo 提供了非常方便的[[https://gohugo.io/getting-started/configuration/#configure-front-matter][配置]]，来动态获取文件的更新时间，比如以下配置：
+#+begin_src toml
+enableGitInfo = true
+
+[frontmatter]
+  lastmod = [':git', 'lastmod', ':fileModTime', ':default']
+#+end_src
+frontmatter 里面的 lastmod 字段表示『更新时间』的获取方式，依次为：
+- =:git= 从文件的 git 提交记录获取
+- =lastmod= 从文件中的 =lastmod= 字段获取
+- =:fileModTime'= 从文件修改时间获取
+
+我个人比较倾向 =:git= ，读者可根据自身情况调整配置顺序。
+
+最近逛 [[https://github.com/pprevos/EmacsLife][Managing your life and work with Emacs]] 时发现，Emacs 默认就提供了修改文件更新时间的功能，配置如下：
+
+#+BEGIN_SRC emacs-lisp
+(setq time-stamp-start "#\\+LASTMOD:[ \t]*"
+      time-stamp-end  "$"
+	  time-stamp-format "%Y-%m-%dT%02H:%02m:%02S%5z")
+
+;; 然后在博客根目录的 .dir-locals 中添加如下代码即可
+((org-mode . ((eval . (add-hook 'before-save-hook 'time-stamp nil t)))))
+#+END_SRC
+=time-stamp= 函数会根据 time-stamp-start 指定的模式进行匹配，之后换成 =time-stamp-format= 指定的时间格式。比如有个[[https://github.com/EmacsTalk/emacstalk.github.io/blob/master/content/about.org][页面]]配置如下：
+
+#+BEGIN_SRC org-mode
+#+TITLE: 关于
+#+DATE: 2021-06-26T13:06:19+0800
+#+LASTMOD: 2021-12-28T23:12:23+0800
+#+END_SRC
+
+那么在每次保存 org 时，都会自动去更新 =#+LASTMOD:= 的值。
+
+其实，[[https://www.gnu.org/software/emacs/manual/html_node/emacs/Time-Stamps.html][time-stamp]] 这个函数可以作用在任何文件中，定义好匹配的模式就好了，是不是很强大呢？
