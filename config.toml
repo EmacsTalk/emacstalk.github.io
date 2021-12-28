@@ -37,7 +37,12 @@ paginatePath = "page"
 [params]
     logo = true
     mainSections = ["post", "podcast"]
-    fadian = "如果您喜欢这档节目，欢迎为本播客[发电支持](https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw) ❤️"
+    fadian = """
+#### 公告栏 -- Bulletin Board
+1. 招募 [Podcast 嘉宾](https://github.com/emacstalk/joinus)，分享您与 Emacs 的故事
+2. 欢迎[投稿](https://github.com/EmacsTalk/emacstalk.github.io/issues/new)，与大家一起分享 Emacs 使用技巧
+3. 如果 EmacsTalk 对您有所帮助，欢迎进行[发电支持](https://mp.weixin.qq.com/s/zWyW5t46KuSEl6usoCifsw) ❤️
+"""
     contactus = """
 -   微信搜索公众号[「EmacsTalk」](/images/weixin.jpg)
 -   QQ 听友群：[530146104](https://jq.qq.com/?_wv=1027&k=9tAXJ8gG)

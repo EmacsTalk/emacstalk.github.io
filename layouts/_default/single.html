@@ -7,6 +7,8 @@
 {{ if .Params.tags }}{{ partial "tags.html" . }}{{ end -}}
 </header>
 <div class="content">
+
+{{ partial "fadian.html" . }}
 {{ .Content }}
 
 {{ if $.Param "relatedposts" | default false }}{{ partial "related.html" . }}{{ end -}}

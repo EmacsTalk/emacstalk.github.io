@@ -7,7 +7,7 @@
 #+PODCAST_IMAGE_SRC: guests/stardiviner.jpg
 #+PODCAST_IMAGE_ALT: stardiviner
 
-{{< fadian >}}
+
 
 * 概要
 本期节目又请来了一资深 Emacs 用户 [[https://stardiviner.github.io/][stardiviner]]，同时也是一名淘宝店主，用来售卖自己的 IT 技能。

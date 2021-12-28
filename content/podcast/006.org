@@ -6,7 +6,7 @@
 #+PODCAST_IMAGE_SRC: guests/kathy.jpg
 #+PODCAST_IMAGE_ALT: kathy
 
-{{< fadian >}}
+
 
 * 概要
 本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学在读博士生。

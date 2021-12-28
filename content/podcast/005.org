@@ -6,7 +6,7 @@
 #+PODCAST_IMAGE_SRC: guests/chenbin.jpg
 #+PODCAST_IMAGE_ALT: chenbin
 
-{{< fadian >}}
+
 
 * 概要
 本期节目请来了一位使用 Emacs 近十年的资深用户[[https://blog.binchen.org/][陈斌]]，他是著名文章[[https://github.com/redguardtoo/mastering-emacs-in-one-year-guide][《一年成为 Emacs 高手》]]的作者，同时也是一位拥有近二十年软件开发经验的前辈。

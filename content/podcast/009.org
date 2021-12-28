@@ -7,8 +7,6 @@
 #+PODCAST_IMAGE_SRC: guests/tumashu.png
 #+PODCAST_IMAGE_ALT: tumashu
 
-{{< fadian >}}
-
 * 概要
 
 本期节目请来了一位非科班的 Emacs 资深用户冯书（aka tumashu），Emacs 中文输入法 [[https://github.com/tumashu/pyim][pyim]] 的作者。作为一位卫健委信息中心的办事人员，他是如何接触到 Emacs 的？又是什么原因让他接手、维护 pyim？pyim 的工作原理是怎么样的，与 [[https://github.com/DogLooksGood/emacs-rime][emacs-rime]] 有什么区别？

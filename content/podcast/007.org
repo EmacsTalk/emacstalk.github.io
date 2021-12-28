@@ -6,7 +6,7 @@
 #+PODCAST_IMAGE_SRC: guests/joyer.jpg
 #+PODCAST_IMAGE_ALT: joyer
 
-{{< fadian >}}
+
 
 * 概要
 本期节目请来了一位使用 Emacs 15 年之久的编辑器专家领蜂，在高中竞赛时获奖后，父母送给他一台个人电脑，这打开了他的 Emacs 之旅。

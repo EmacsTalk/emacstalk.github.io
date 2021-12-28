@@ -6,7 +6,7 @@
 #+PODCAST_IMAGE_SRC: guests/casouri.jpg
 #+PODCAST_IMAGE_ALT: casouri
 
-{{< fadian >}}
+
 
 * 概要
 

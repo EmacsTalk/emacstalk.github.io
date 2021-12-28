@@ -6,7 +6,7 @@
 #+PODCAST_IMAGE_SRC: guests/zilongshanren.jpg
 #+PODCAST_IMAGE_ALT: 子龙山人
 
-{{< fadian >}}
+
 
 * 本期人物
 - 主播：[[https://liujiacai.net/][西瓜]]
