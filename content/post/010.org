@@ -1,7 +1,7 @@
 #+TITLE: project.el 使用说明
 #+DATE: 2021-11-26T17:59:34+08:00
 #+DRAFT: false
-#+TAGS[]: tips, project
+#+TAGS[]: tips project
 
 在之前的文章中就多次提到过 28 版本的 project.el 是如何好用，但一直没去详细介绍，这篇文章就来填上这个坑。一句话总结，project.el 完全可以替换 [[https://github.com/bbatsov/projectile][projectile]]。
 

@@ -1,7 +1,7 @@
 #+TITLE: 拷贝浏览器链接到 org-mode
 #+DATE: 2021-12-26T22:55:59+08:00
 #+DRAFT: false
-#+TAGS[]: tips, org-mode
+#+TAGS[]: tips org-mode
 
 在 org-mode 里写博客文章时，经常会旁征博引一些链接，之前都是用 =C-c C-l（org-insert-link）= 的快捷键来输入链接，但这是个费事费力的事情，需要去浏览器里面拷贝两次，一次是链接，一次是标题，有没有更好地方式呢？答案是肯定的。不同浏览器做法大同小异，这里以 macOS 上的 Safari 与 Firefox 为例说明。
 

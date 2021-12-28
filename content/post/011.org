@@ -1,7 +1,7 @@
 #+TITLE: GPG in Emacs
 #+DATE: 2021-11-26T17:59:34+08:00
 #+DRAFT: false
-#+TAGS[]: tips, GPG
+#+TAGS[]: tips GPG
 
 Pretty Good Privacy (PGP) 是一款诞生于 1991 年的，一款用于认证、加密的一款软件，现如今已经有了标准化协议 OpenPGP，最常用的实现是 GnuPG，一般提到 GPG 时都是指的 GnuPG。
 
