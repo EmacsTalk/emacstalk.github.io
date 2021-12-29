@@ -23,7 +23,7 @@ enableGitInfo = true
   identifier = "podcast"
   url = "/podcast/"
 [[menu.main]]
-  name = "文章"
+  name = "使用技巧"
   weight = 21
   identifier = "post"
   url = "/post/"
