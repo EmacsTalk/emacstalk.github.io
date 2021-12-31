@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>review on EmacsTalk</title><link>https://emacstalk.github.io/tags/review/</link><description>Recent content in review on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Fri, 31 Dec 2021 18:20:27 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/review/index.xml" rel="self" type="application/rss+xml"/><item><title>2021 年终回顾</title><link>https://emacstalk.github.io/post/2021-review/</link><pubDate>Fri, 31 Dec 2021 18:20:27 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/2021-review/</guid><description>
+&lt;p>
+Time Flies！&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+回顾
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>EmacsTalk 在 2021-06-26 上线，到现在已经半年了，元旦将至，是时候做个年终回顾了。先看看这半年的数据吧：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>播客：9 期&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>技巧文章：13 期&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>网站 PV：13450&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>网站 UV：10758&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>公众号订阅数：866&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>发电赞助： ¥500（由衷感谢这些发电的热心听众）&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;figure>
+&lt;img src="https://img.alicdn.com/imgextra/i3/581166664/O1CN01SDbLcu1z6A7Hdeh1g_!!581166664.png" alt="https://img.alicdn.com/imgextra/i3/581166664/O1CN01SDbLcu1z6A7Hdeh1g_!!581166664.png" title="https://img.alicdn.com/imgextra/i3/581166664/O1CN01SDbLcu1z6A7Hdeh1g_!!581166664.png" />&lt;figcaption>
+百度统计 07/01-12/31
+&lt;/figcaption>
+&lt;/figure>
+&lt;p>
+在节目一开始，主要是进行播客的制作，一方面是新奇，热情高涨，另一方面是知道随着时间的推进，节目的节奏肯定会慢下来，因此想一开始多制作几台，让大家对这个播客有些了解，算是在市场站住脚。&lt;/p>
+&lt;p>
+最快的时候当天录制，第二天就剪辑发布出来了。时长一小时的播客，制作时间一般需要 3-4 个小时，但是听播客就很快，我一般都是倍速听播客，而且一般听是在闲暇时间，所以更没有时间的概念。&lt;/p>
+&lt;p>
+在制作了 9 期后，正好赶上双十一，工作上的事会多些，因此就打算方式放松一段时间，然后就一直到现在。这期间一直在创作使用技巧的文章，Emacs 就是这么神奇，即使在使用了 5 年后，还是能不时发现新的用法。&lt;/p>
+&lt;div id="outline-container-headline-2" class="outline-3">
+&lt;h3 id="headline-2">
+数据分析
+&lt;/h3>
+&lt;div id="outline-text-headline-2" class="outline-text-3">
+&lt;p>借助于百度、谷歌统计，能大致看出 EmacsTalk 的听众的画像，觉得还比较有意思，可以和大家分享下。&lt;/p>
+&lt;div id="outline-container-headline-3" class="outline-4">
+&lt;h4 id="headline-3">
+最受欢迎的嘉宾
+&lt;/h4>
+&lt;div id="outline-text-headline-3" class="outline-text-4">
+&lt;table border="1" style="text-align:center">
+&lt;thead>
+&lt;tr>
+&lt;th class="align-right">排名&lt;/th>
+&lt;th>百度统计&lt;/th>
+&lt;th>Google 统计&lt;/th>
+&lt;th>小宇宙&lt;/th>
+&lt;th>微信公众号&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td class="align-right">1&lt;/td>
+&lt;td>领蜂&lt;/td>
+&lt;td>陈斌&lt;/td>
+&lt;td>陈斌&lt;/td>
+&lt;td>Kathy&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="align-right">2&lt;/td>
+&lt;td>陈斌&lt;/td>
+&lt;td>Kathy&lt;/td>
+&lt;td>领蜂&lt;/td>
+&lt;td>领蜂&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td class="align-right">3&lt;/td>
+&lt;td>tumashu&lt;/td>
+&lt;td>stardiviner&lt;/td>
+&lt;td>Kathy&lt;/td>
+&lt;td>陈斌&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>
+恭喜上述 TOP3 的嘉宾，但数据并不能代表一切，其他嘉宾的内容同样“湿货”满满，这里着重感谢所有嘉宾的鼎力支持。❤️️&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-4">
+&lt;h4 id="headline-4">
+听众区域分布
+&lt;/h4>
+&lt;div id="outline-text-headline-4" class="outline-text-4">
+&lt;figure>
+&lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN01I2obiY1z6A7Dv6h9p_!!581166664.png" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN01I2obiY1z6A7Dv6h9p_!!581166664.png" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN01I2obiY1z6A7Dv6h9p_!!581166664.png" />&lt;figcaption>
+国内
+&lt;/figcaption>
+&lt;/figure>
+&lt;figure>
+&lt;img src="https://img.alicdn.com/imgextra/i1/581166664/O1CN01QADkBR1z6A7FmQB7V_!!581166664.png" alt="https://img.alicdn.com/imgextra/i1/581166664/O1CN01QADkBR1z6A7FmQB7V_!!581166664.png" title="https://img.alicdn.com/imgextra/i1/581166664/O1CN01QADkBR1z6A7FmQB7V_!!581166664.png" />&lt;figcaption>
+国外
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
+展望
+&lt;/h2>
+&lt;div id="outline-text-headline-5" class="outline-text-2">
+&lt;p>在新一年，除了现有采访模式的播客，我还以为能再找一个主播，和我一起来讨论 Emacs 最近的一些动向，因为在订阅 emacs-devel 邮件列表后，发现里面有很多有意思的讨论。邮件列表的内容很容易被埋没，因此如果能有人能定期把里面有价值、有趣的内容分享出来，觉得会是件非常是意义的事，如果哪位听众、读者对这件事感兴趣，欢迎和我联系。&lt;/p>
+&lt;p>
+此外，如果能找到另一个主播，节目的更新频率也能得到更好地保证。&lt;/p>
+&lt;p>
+最后定个新年目标吧，希望 2022 年能完成 12 期播客节目，30 篇使用技巧的文章。&lt;/p>
+&lt;p>
+祝各位读者、听众新年快乐，Make Emacs Great Again！&lt;/p>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
