@@ -23,7 +23,7 @@ https://img.alicdn.com/imgextra/i3/581166664/O1CN01SDbLcu1z6A7Hdeh1g_!!581166664
 
 在制作了 9 期后，正好赶上双十一，工作上的事会多些，因此就打算方式放松一段时间，然后就一直到现在。这期间一直在创作使用技巧的文章，Emacs 就是这么神奇，即使在使用了 5 年后，还是能不时发现新的用法。
 ** 数据分析
-借助于百度、谷歌统计，能大致看出 EmacsTalk 的听众的画像，觉得还比较有意思，可以和大家分享下。
+借助于百度、微信等平台，能大致看出 EmacsTalk 的听众的画像，觉得还比较有意思，这里和大家分享下。
 *** 最受欢迎的嘉宾
 #+ATTR_HTML: :border 1 :style text-align:center
 | 排名 | 百度统计 | Google 统计 | 小宇宙 | 微信公众号 |
@@ -33,6 +33,8 @@ https://img.alicdn.com/imgextra/i3/581166664/O1CN01SDbLcu1z6A7Hdeh1g_!!581166664
 |    3 | tumashu  | stardiviner | Kathy  | 陈斌       |
 
 恭喜上述 TOP3 的嘉宾，但数据并不能代表一切，其他嘉宾的内容同样“湿货”满满，这里着重感谢所有嘉宾的鼎力支持。❤️️
+#+CAPTION: 小宇宙信息统计
+https://img.alicdn.com/imgextra/i1/581166664/O1CN01xAP4JM1z6A79huitw_!!581166664.jpg
 *** 听众区域分布
 #+CAPTION: 国内
 https://img.alicdn.com/imgextra/i2/581166664/O1CN01I2obiY1z6A7Dv6h9p_!!581166664.png
