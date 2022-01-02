@@ -1,6 +1,6 @@
 #+TITLE: 关于
 #+DATE: 2021-06-26T13:06:19+0800
-#+LASTMOD: 2021-12-28T23:12:23+0800
+#+LASTMOD: 2022-01-02T13:01:25+0800
 
 #+begin_example
  ______                       _______    _ _
@@ -15,7 +15,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 - 专注 Emacs 社区，探索 Emacs 社区背后的 *奇人轶事*
 - 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
-*如果您喜欢这档节目，欢迎通过[[https://afdian.net/@emacstalk][「❤️发电」]]来支持* ，也欢迎大家提出反馈意见和建议。
+*如果您喜欢这档节目，欢迎通过[[https://afdian.net/@coding-xigua][「❤️发电」]]来支持* ，也欢迎大家提出反馈意见和建议。
 
 * Get in Touch
 - https://twitter.com/EmacsTalk
