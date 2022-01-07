@@ -1,6 +1,6 @@
 #+TITLE: 010. 与宇宙学博士后聊 Emacs
 #+DATE: 2022-01-04T20:33:25+08:00
-#+LASTMOD: 2022-01-07T21:44:55+0800
+#+LASTMOD: 2022-01-07T22:22:16+0800
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/2098-audiofreehighqps/99/3C/GKwRIW4FrfWkAaCFKQEK8C7n.m4a
 #+PODCAST_DURATION: 00:56:11
 #+PODCAST_LENGTH: 27269231
@@ -8,7 +8,7 @@
 #+PODCAST_IMAGE_ALT: guanyilun
 
 * 概要
-本期嘉宾是一个研究宇宙学的博士后：管轶伦。嘉宾根据自身的学术工作需求，将 Emacs 打造成辅助他高效工作的利器，对于正在求学的听众，会比较有参考价值。
+本期嘉宾是一个研究宇宙学的博士后：管轶伦。嘉宾根据自身的学术工作需求，将 Emacs 打造成辅助他高效工作的利器，并且调侃到：“电脑这东西，不就是用来开 Emacs 的嘛”，足见其硬核。
 
 说起物理学，在我们一般人看来是个很遥远的事情，和日常的生活关系不大，更何况是千亿光年外的宇宙呢。嘉宾为什么选择了这条方向？研究宇宙学的意义在哪里？在近一个小时的节目里，这些问题统统可以找到答案，精彩不容错过。
 
@@ -40,7 +40,6 @@
 - [[https://joostkremers.github.io/ebib/][Ebib]] 管理网摘、项目进度
 - [[https://orgmode.org/worg/exporters/beamer/tutorial.html][Writing Beamer presentations in org-mode]]
 - [[https://github.com/seagle0128/.emacs.d][Centaur Emacs - A Fancy and Fast Emacs Configuration]]
-- “电脑这东西，不就是用来开 Emacs 的嘛”
 - 观测宇宙背景辐射的天文台
   - [[https://zh.wikipedia.org/wiki/%E9%98%BF%E5%A1%94%E5%8D%A1%E9%A6%AC%E5%A4%A7%E5%9E%8B%E6%AF%AB%E7%B1%B3%E6%B3%A2/%E4%BA%9E%E6%AF%AB%E7%B1%B3%E6%B3%A2%E9%99%A3%E5%88%97][智利阿塔卡马沙漠-拉诺德查南托天文台]]
   - 南极
