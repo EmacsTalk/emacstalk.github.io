@@ -1,6 +1,6 @@
 #+TITLE: 010. 与宇宙学博士后聊 Emacs
 #+DATE: 2022-01-04T20:33:25+08:00
-#+LASTMOD: 2022-01-07T20:42:41+0800
+#+LASTMOD: 2022-01-07T21:44:55+0800
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/2098-audiofreehighqps/99/3C/GKwRIW4FrfWkAaCFKQEK8C7n.m4a
 #+PODCAST_DURATION: 00:56:11
 #+PODCAST_LENGTH: 27269231
@@ -8,7 +8,7 @@
 #+PODCAST_IMAGE_ALT: guanyilun
 
 * 概要
-本期嘉宾是一个研究宇宙学的博士后 Guan Yilun。嘉宾根据自身的学术工作需求，将 Emacs 打造成辅助他高效工作的利器，对于正在求学的听众，会比较有参考价值。
+本期嘉宾是一个研究宇宙学的博士后：管轶伦。嘉宾根据自身的学术工作需求，将 Emacs 打造成辅助他高效工作的利器，对于正在求学的听众，会比较有参考价值。
 
 说起物理学，在我们一般人看来是个很遥远的事情，和日常的生活关系不大，更何况是千亿光年外的宇宙呢。嘉宾为什么选择了这条方向？研究宇宙学的意义在哪里？在近一个小时的节目里，这些问题统统可以找到答案，精彩不容错过。
 
@@ -29,10 +29,10 @@
 
 * Show Notes
 - 嘉宾自我介绍
-  - Guan Yilun
+  - 管轶伦（Guan Yilun）
   - 研究宇宙学的博士后
   - 大概耗时半年时间才适应 Emacs
-  - [[https://github.com/guanyilun/.emacs.d/][guanyilun/.emacs.d: My Emacs configuration for personal laptop]]
+  - [[https://github.com/guanyilun/.emacs.d/][guanyilun/.emacs.d]]
 - 使用 Emacs 登录超级计算中心来进行代码编写与调试
 - 吸引嘉宾喜欢 Lisp 的文章：[[http://www.catb.org/esr/faqs/hacker-howto.html][How To Become A Hacker]]
 - 用 Lisp 方式写 Python 的库：[[https://github.com/hpyproject/hpy][HPy: a better API for Python]]
