@@ -175,7 +175,7 @@ Time Flies！&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq time-stamp-start &lt;span style="color:#e6db74">&amp;#34;#\\+LASTMOD:[ \t]*&amp;#34;&lt;/span>
 time-stamp-end &lt;span style="color:#e6db74">&amp;#34;$&amp;#34;&lt;/span>
-time-stamp-format &lt;span style="color:#e6db74">&amp;#34;%Y-%m-%dT%02H:%02m:%02S%5z&amp;#34;&lt;/span>)
+time-stamp-format &lt;span style="color:#e6db74">&amp;#34;%Y-%m-%dT%02H:%02M:%02S%5z&amp;#34;&lt;/span>)
 &lt;span style="color:#75715e">;; 然后在博客根目录的 .dir-locals 中添加如下代码即可&lt;/span>
 ((org-mode &lt;span style="color:#f92672">.&lt;/span> ((&lt;span style="color:#a6e22e">eval&lt;/span> &lt;span style="color:#f92672">.&lt;/span> (add-hook &lt;span style="color:#e6db74">&amp;#39;before-save-hook&lt;/span> &lt;span style="color:#e6db74">&amp;#39;time-stamp&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> &lt;span style="color:#66d9ef">t&lt;/span>)))))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
@@ -459,6 +459,8 @@ echo &amp;#34;*.gpg filter=gpg diff=gpg&amp;#34; &amp;gt; ~/.gitattributes&lt;/c
 &lt;/li>
 &lt;/ul>
 &lt;p>但目前为止，GPG 还没有替代品。没有 Emacs 的话，很难想象如何去方便、快捷地操作 GPG。&lt;/p>
+&lt;p>
+GnuPG 在 2022-01-02 发布了一篇文章 &lt;a href="https://gnupg.org/blog/20220102-a-new-future-for-gnupg.html">a-new-future-for-gnupg&lt;/a>，介绍了它最新的发展情况，主要给企业提供加密方案，而且已经成立公司来运营，并且已经盈利，说不准将来哪一天 GPG 能迎来新春？&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-7" class="outline-2">

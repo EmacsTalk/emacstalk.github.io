@@ -176,6 +176,8 @@ echo &amp;#34;*.gpg filter=gpg diff=gpg&amp;#34; &amp;gt; ~/.gitattributes&lt;/c
 &lt;/li>
 &lt;/ul>
 &lt;p>但目前为止，GPG 还没有替代品。没有 Emacs 的话，很难想象如何去方便、快捷地操作 GPG。&lt;/p>
+&lt;p>
+GnuPG 在 2022-01-02 发布了一篇文章 &lt;a href="https://gnupg.org/blog/20220102-a-new-future-for-gnupg.html">a-new-future-for-gnupg&lt;/a>，介绍了它最新的发展情况，主要给企业提供加密方案，而且已经成立公司来运营，并且已经盈利，说不准将来哪一天 GPG 能迎来新春？&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-7" class="outline-2">
