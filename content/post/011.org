@@ -1,5 +1,6 @@
 #+TITLE: GPG in Emacs
 #+DATE: 2021-11-26T17:59:34+08:00
+#+LASTMOD: 2022-01-07T23:31:06+0800
 #+DRAFT: false
 #+TAGS[]: tips GPG
 
@@ -97,6 +98,8 @@ echo "*.gpg filter=gpg diff=gpg" > ~/.gitattributes
 - [[https://blog.filippo.io/giving-up-on-long-term-pgp/][I'm giving up on PGP]]
 
 但目前为止，GPG 还没有替代品。没有 Emacs 的话，很难想象如何去方便、快捷地操作 GPG。
+
+GnuPG 在 2022-01-02 发布了一篇文章 [[https://gnupg.org/blog/20220102-a-new-future-for-gnupg.html][a-new-future-for-gnupg]]，介绍了它最新的发展情况，主要给企业提供加密方案，而且已经成立公司来运营，并且已经盈利，说不准将来哪一天 GPG 能迎来新春？
 
 * 参考
 - [[https://magit.vc/manual/magit/How-to-show-diffs-for-gpg_002dencrypted-files_003f.html][A.1.4 How to show diffs for gpg-encrypted files?]]

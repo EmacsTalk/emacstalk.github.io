@@ -31,7 +31,7 @@ frontmatter 里面的 lastmod 字段表示『更新时间』的获取方式，�
 #+BEGIN_SRC emacs-lisp
 (setq time-stamp-start "#\\+LASTMOD:[ \t]*"
       time-stamp-end  "$"
-	  time-stamp-format "%Y-%m-%dT%02H:%02m:%02S%5z")
+	  time-stamp-format "%Y-%m-%dT%02H:%02M:%02S%5z")
 
 ;; 然后在博客根目录的 .dir-locals 中添加如下代码即可
 ((org-mode . ((eval . (add-hook 'before-save-hook 'time-stamp nil t)))))
