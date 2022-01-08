@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tips on EmacsTalk</title><link>https://emacstalk.github.io/tags/tips/</link><description>Recent content in tips on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 28 Dec 2021 19:57:14 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/tips/index.xml" rel="self" type="application/rss+xml"/><item><title>自动更新文件中的修改时间</title><link>https://emacstalk.github.io/post/013/</link><pubDate>Tue, 28 Dec 2021 19:57:14 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/013/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tips on EmacsTalk</title><link>https://emacstalk.github.io/tags/tips/</link><description>Recent content in tips on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 08 Jan 2022 23:26:01 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/tips/index.xml" rel="self" type="application/rss+xml"/><item><title>org-agenda 设置每月最后一天为 deadline</title><link>https://emacstalk.github.io/post/014/</link><pubDate>Sat, 08 Jan 2022 23:26:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/014/</guid><description>&lt;p>
+在 org-agenda 中，支持设置&lt;a href="https://orgmode.org/manual/Repeated-tasks.html">重复的任务&lt;/a>，示例如下：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">** TODO Pay the rent
+DEADLINE: &amp;lt;2005-10-01 Sat +1m&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+日期最后的 &lt;code class="verbatim">+1m&lt;/code> 表示每个月重复一次，其他的时间单位还有 y 年、w 周、d 天、h 时。
+在将 TODO 任务转为 DONE 时，org 会自动开启新一轮的 deadline，比如上面任务完成一次后会变成：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">** TODO Pay the rent
+DEADLINE: &amp;lt;2005-11-01 Tue +1m&amp;gt;
+:PROPERTIES:
+:LAST_REPEAT: [2022-01-08 Sat 23:33]
+:END:
+&lt;span style="color:#a6e22e">-&lt;/span> CLOSING NOTE [2022-01-08 Sat 23:33]&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+但是这里有一个问题，即 org 支持设置循环月首时间，但是不支持循环月末时间。如果上面示例中的日期变成 &lt;code class="verbatim">2005-01-31&lt;/code> ，执行一次 DONE 后，日期则变成了 &lt;code class="verbatim">2005-03-03&lt;/code> ，而不是 &lt;code class="verbatim">2005-02-28&lt;/code> 。网上有类似提问，比如下面这个链接：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://emacs.stackexchange.com/questions/31683/schedule-org-task-for-last-day-of-every-month">org mode - Schedule org task for last day of every month? - Emacs Stack Exchange&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>这里的一个答案介绍了两种方法：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>增加 &lt;code class="verbatim">diary-last-day-of-month&lt;/code> 函数，&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>用 &lt;code class="verbatim">org-clone-subtree-with-time-shift&lt;/code> 来把十二个月的代办全部生成出来&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>第一种方法我测试了下没有成功，于是转向第二种，第二种方法看上去挺笨的，但是其实更灵活，可以灵活调整每个月的时间。但是直接用 &lt;code class="verbatim">org-clone-subtree-with-time-shift&lt;/code> 来生成不是很灵活，DEADLINE 倒是可以动态生成，但是标题都是一样的。比如：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#a6e22e">*&lt;/span> TODO My Task
+SCHEDULED: &amp;lt;2022-01-30 Sun&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>用 1m 作为间隔，拷贝 4 份，效果如下：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#a6e22e">*&lt;/span> TODO My Task
+SCHEDULED: &amp;lt;2022-01-30 Sun&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO My Task
+SCHEDULED: &amp;lt;2022-03-02 Wed&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO My Task
+SCHEDULED: &amp;lt;2022-03-30 Wed&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO My Task
+SCHEDULED: &amp;lt;2022-04-30 Sat&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO My Task
+SCHEDULED: &amp;lt;2022-05-30 Mon&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+如果生成标题时能传入变量就好了。这里突然想到之前用的 &lt;a href="https://github.com/abo-abo/tiny">abo-abo/tiny&lt;/a> 这个插件，它可以非常方便的生成有规律的序列。对于我这里的需求，可以输入以下模板：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">m1\n12 |* TODO %d 月 \n &amp;lt;2022-%02d-30&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>然后光标移动到行末，然后 &lt;code class="verbatim">M-x tiny-expand&lt;/code> ，就会得到如下的文本：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">1&lt;/span> 月
+&amp;lt;2022-01-30&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">2&lt;/span> 月
+&amp;lt;2022-02-30&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">3&lt;/span> 月
+&amp;lt;2022-03-30&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">4&lt;/span> 月
+&amp;lt;2022-04-30&amp;gt;
+&lt;span style="color:#f92672">...&lt;/span> 省略后面的&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>然后选中所有的 2022（比如可以用 &lt;a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors&lt;/a> 的 &lt;code class="verbatim">mc/mark-all-like-this&lt;/code> ），然后执行 &lt;code class="verbatim">C-c C-c&lt;/code> ，这样日期就会修正，效果如下：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">1&lt;/span> 月
+&amp;lt;2022-01-30 Sun&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">2&lt;/span> 月
+&amp;lt;2022-03-02 Wed&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">3&lt;/span> 月
+&amp;lt;2022-03-30 Wed&amp;gt;
+&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">4&lt;/span> 月
+&amp;lt;2022-04-30 Sat&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>最后再手动调整下 2 月份的日期即可，如果对 tiny-expand、multiple-cursors 等插件比较熟悉，一两分钟就可以完整上面的配置。&lt;/p>
+&lt;p>
+这就是用基于纯文本的 org 来管理代办的好处，可以用自己熟悉的命令来实现自己的个性化需求。&lt;/p>
+&lt;figure>
+&lt;img src="https://img.alicdn.com/imgextra/i4/581166664/O1CN01zpRJsk1z6A7F8j03o_!!581166664.png" alt="https://img.alicdn.com/imgextra/i4/581166664/O1CN01zpRJsk1z6A7F8j03o_!!581166664.png" title="https://img.alicdn.com/imgextra/i4/581166664/O1CN01zpRJsk1z6A7F8j03o_!!581166664.png" />&lt;figcaption>
+EmacsTalk 2022 年代办
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>自动更新文件中的修改时间</title><link>https://emacstalk.github.io/post/013/</link><pubDate>Tue, 28 Dec 2021 19:57:14 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/013/</guid><description>&lt;p>
 写博客多年，除了 &lt;a href="https://emacstalk.github.io/">EmacsTalk&lt;/a> 这个网站，我还有个&lt;a href="https://liujiacai.net/"> Keep Coding&lt;/a> 的个人博客。写博客的好处这里不想多说，可以参考这篇文章：&lt;/p>
 &lt;ul>
 &lt;li>
