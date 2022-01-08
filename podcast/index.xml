@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 04 Jan 2022 20:33:25 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>emacstalk.github.io</itunes:author><itunes:explicit>false</itunes:explicit><item><title>010. 与宇宙学博士后聊 Emacs</title><itunes:title>010. 与宇宙学博士后聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/010/</link><guid>https://emacstalk.github.io/podcast/010/</guid><pubDate>Tue, 04 Jan 2022 20:33:25 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 04 Jan 2022 20:33:25 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>010. 与宇宙学博士后聊 Emacs</title><itunes:title>010. 与宇宙学博士后聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/010/</link><guid>https://emacstalk.github.io/podcast/010/</guid><pubDate>Tue, 04 Jan 2022 20:33:25 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 概要
@@ -46,7 +46,7 @@
 &lt;p>00:39:33 为什么我们还没有找到地外文明👽&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>00:44:39 宇宙背景辐射是均匀的意义&lt;/p>
+&lt;p>00:44:39 宇宙背景辐射是均匀的现实意义&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>00:49:04 读博期间有意思的事&lt;/p>
@@ -67,16 +67,10 @@ Show Notes
 &lt;p>嘉宾自我介绍&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>管轶伦（Guan Yilun）&lt;/p>
+&lt;p>管轶伦（Guan Yilun），研究宇宙学的博士后&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>研究宇宙学的博士后&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>大概耗时半年时间才适应 Emacs&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://github.com/guanyilun/.emacs.d/">guanyilun/.emacs.d&lt;/a>&lt;/p>
+&lt;p>大概耗时半年时间才适应 Emacs，目前的&lt;a href="https://github.com/guanyilun/.emacs.d/">配置&lt;/a>，参考自 &lt;a href="https://github.com/seagle0128/.emacs.d">Centaur Emacs&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/li>
@@ -114,9 +108,6 @@ Show Notes
 &lt;p>&lt;a href="https://baike.baidu.com/item/%E9%98%BF%E9%87%8C%E5%A4%A9%E6%96%87%E8%A7%82%E6%B5%8B%E5%9F%BA%E5%9C%B0/19412988">阿里天文观测基地_百度百科&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>宇宙背景辐射是均匀的意义&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>在智利🇨🇱看到的两个中国品牌：摩拜单车与华为手机&lt;/p>
