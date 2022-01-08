@@ -1,7 +1,7 @@
 #+TITLE: 自动更新文件中的修改时间
 #+DATE: 2021-12-28T19:57:14+08:00
 #+DRAFT: false
-#+TAGS[]: tips, org-mode
+#+TAGS[]: tips org-mode
 
 写博客多年，除了 [[https://emacstalk.github.io/][EmacsTalk]] 这个网站，我还有个[[https://liujiacai.net/][ Keep Coding]] 的个人博客。写博客的好处这里不想多说，可以参考这篇文章：
 - [[http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/][[BetterExplained]为什么你应该（从现在开始就）写博客 – 刘未鹏 | Mind Hacks]]
