@@ -1,21 +1,19 @@
 #+TITLE: 关于
 #+DATE: 2021-06-26T13:06:19+0800
-#+LASTMOD: 2022-01-02T13:01:25+0800
+#+LASTMOD: 2022-01-08T19:05:26+0800
 
-#+begin_example
- ______                       _______    _ _
-|  ____|                     |__   __|  | | |
-| |__   _ __ ___   __ _  ___ ___| | __ _| | | __
-|  __| | '_ ` _ \ / _` |/ __/ __| |/ _` | | |/ /
-| |____| | | | | | (_| | (__\__ \ | (_| | |   <
-|______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\
-#+end_example
+#+BEGIN_EXPORT html
+<p align="center">
+<img src="/apple-touch-icon.png" title="EmacsTalk Logo" />
+</p>
+#+END_EXPORT
 
 EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨：
 - 专注 Emacs 社区，探索 Emacs 社区背后的 *奇人轶事*
 - 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
 *如果您喜欢这档节目，欢迎通过[[https://afdian.net/@coding-xigua][「❤️发电」]]来支持* ，也欢迎大家提出反馈意见和建议。
+ [[/donate][Buy me a coffee ☕️]]
 
 * Get in Touch
 - https://twitter.com/EmacsTalk
@@ -23,11 +21,6 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 - TG 听友群：https://t.me/emacstalk
 - 邮件：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
 - [[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]
-
-
-* Buy me a coffee ☕️
-- [[/images/alipay.jpeg][支付宝]]
-- [[/images/weixinzhifu.jpg][微信支付]]
 
 * 参与录制
 - https://github.com/EmacsTalk/joinus
@@ -41,3 +34,12 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 * Changelog
 - 2021-07-04，修改 zen podcast 模板，可以用 org 编写文章
 - 2021-06-26，使用 [[https://gohugo.io/][hugo]] + [[https://github.com/frjo/hugo-theme-zen][zen]] 主题建站
+
+#+begin_example
+ ______                       _______    _ _
+|  ____|                     |__   __|  | | |
+| |__   _ __ ___   __ _  ___ ___| | __ _| | | __
+|  __| | '_ ` _ \ / _` |/ __/ __| |/ _` | | |/ /
+| |____| | | | | | (_| | (__\__ \ | (_| | |   <
+|______|_| |_| |_|\__,_|\___|___/_|\__,_|_|_|\_\
+#+end_example

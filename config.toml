@@ -74,7 +74,7 @@ enableGitInfo = true
         local = false
         image = "logo3000.png"
         lang = "zh-cn"
-        author = "emacstalk.github.io"
+        author = "写代码的西瓜"
         [params.podcast.category]
             name = "Technology"
         [params.podcast.owner]
