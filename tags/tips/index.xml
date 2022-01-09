@@ -16,13 +16,7 @@ DEADLINE: &amp;lt;2005-11-01 Tue +1m&amp;gt;
 &lt;span style="color:#a6e22e">-&lt;/span> CLOSING NOTE [2022-01-08 Sat 23:33]&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>
-但是这里有一个问题，即 org 支持设置循环月首时间，但是不支持循环月末时间。如果上面示例中的日期变成 &lt;code class="verbatim">2005-01-31&lt;/code> ，执行一次 DONE 后，日期则变成了 &lt;code class="verbatim">2005-03-03&lt;/code> ，而不是 &lt;code class="verbatim">2005-02-28&lt;/code> 。网上有类似提问，比如下面这个链接：&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;a href="https://emacs.stackexchange.com/questions/31683/schedule-org-task-for-last-day-of-every-month">org mode - Schedule org task for last day of every month? - Emacs Stack Exchange&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>这里的一个答案介绍了两种方法：&lt;/p>
+但是这里有一个问题，即 org 月首时间循环是没问题的，但是不能正确支持按月末时间循环。如果上面示例中的日期变成 &lt;code class="verbatim">2005-01-31&lt;/code> ，执行一次 DONE 后，日期则变成了 &lt;code class="verbatim">2005-03-03&lt;/code> ，而不是 &lt;code class="verbatim">2005-02-28&lt;/code> 。网上有类似提问：&lt;a href="https://emacs.stackexchange.com/questions/31683/schedule-org-task-for-last-day-of-every-month">Schedule org task for last day of every month?&lt;/a>，回答里介绍了两种方法：&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>增加 &lt;code class="verbatim">diary-last-day-of-month&lt;/code> 函数，&lt;/p>
@@ -52,7 +46,7 @@ SCHEDULED: &amp;lt;2022-05-30 Mon&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>
 如果生成标题时能传入变量就好了。这里突然想到之前用的 &lt;a href="https://github.com/abo-abo/tiny">abo-abo/tiny&lt;/a> 这个插件，它可以非常方便的生成有规律的序列。对于我这里的需求，可以输入以下模板：&lt;/p>
 &lt;div class="src src-emacs-lisp">
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">m1\n12 |* TODO %d 月 \n &amp;lt;2022-%02d-30&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">m1\n12 |* TODO %d 月 \n&amp;lt;2022-%02d-30&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>然后光标移动到行末，然后 &lt;code class="verbatim">M-x tiny-expand&lt;/code> ，就会得到如下的文本：&lt;/p>
 &lt;div class="src src-emacs-lisp">
@@ -66,7 +60,7 @@ SCHEDULED: &amp;lt;2022-05-30 Mon&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
 &amp;lt;2022-04-30&amp;gt;
 &lt;span style="color:#f92672">...&lt;/span> 省略后面的&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>然后选中所有的 2022（比如可以用 &lt;a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors&lt;/a> 的 &lt;code class="verbatim">mc/mark-all-like-this&lt;/code> ），然后执行 &lt;code class="verbatim">C-c C-c&lt;/code> ，这样日期就会修正，效果如下：&lt;/p>
+&lt;p>然后选中所有的 2022（可以用 &lt;a href="https://github.com/magnars/multiple-cursors.el">multiple-cursors&lt;/a> 的 &lt;code class="verbatim">mc/mark-all-like-this&lt;/code> ），然后执行 &lt;code class="verbatim">C-c C-c&lt;/code> ，这样日期就会修正，效果如下：&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">1&lt;/span> 月
 &amp;lt;2022-01-30 Sun&amp;gt;
@@ -77,7 +71,7 @@ SCHEDULED: &amp;lt;2022-05-30 Mon&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
 &lt;span style="color:#a6e22e">*&lt;/span> TODO &lt;span style="color:#ae81ff">4&lt;/span> 月
 &amp;lt;2022-04-30 Sat&amp;gt;&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>最后再手动调整下 2 月份的日期即可，如果对 tiny-expand、multiple-cursors 等插件比较熟悉，一两分钟就可以完整上面的配置。&lt;/p>
+&lt;p>最后再手动调整下 2 月份的日期即可，其他有 31 天的月可以忽略，毕竟差一天也能接受。如果对 tiny-expand、multiple-cursors 等插件比较熟悉，不到一分钟就可以完整上面的配置。&lt;/p>
 &lt;p>
 这就是用基于纯文本的 org 来管理代办的好处，可以用自己熟悉的命令来实现自己的个性化需求。&lt;/p>
 &lt;figure>
