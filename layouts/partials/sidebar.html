@@ -2,6 +2,12 @@
 {{ $currentID := "" -}}
 {{ with .File }}{{ $currentID = .UniqueID }}{{ end -}}
 <aside class="sidebar layout__second-sidebar">
+  <button title="Powered By Google Translate" onclick="translateCurrentPage()">English Version</button>
+  <script type="text/javascript">
+    function translateCurrentPage() {
+      window.open('https://translate.google.com/translate?tl=en&sl=auto&u='+location.href, '_blank')
+    }
+  </script>
   <section>
     <h4 class="menu">收听方式</h4>
     <ul class="menu">
