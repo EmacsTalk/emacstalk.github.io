@@ -1,6 +1,6 @@
 #+TITLE: 关于
 #+DATE: 2021-06-26T13:06:19+0800
-#+LASTMOD: 2022-01-08T19:05:26+0800
+#+LASTMOD: 2022-01-17T20:13:26+0800
 
 #+BEGIN_EXPORT html
 <p align="center">
@@ -15,7 +15,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 *如果您喜欢这档节目，欢迎通过[[https://afdian.net/@coding-xigua][「❤️发电」]]来支持* ，也欢迎大家提出反馈意见和建议。
  [[/donate][Buy me a coffee ☕️]]
 
-* Get in Touch
+* 联系方式
 - https://twitter.com/EmacsTalk
 - QQ 听友群：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
 - TG 听友群：https://t.me/emacstalk
@@ -32,8 +32,8 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
   [[/images/weixin.jpg]]
 
 * Changelog
-- 2021-07-04，修改 zen podcast 模板，可以用 org 编写文章
-- 2021-06-26，使用 [[https://gohugo.io/][hugo]] + [[https://github.com/frjo/hugo-theme-zen][zen]] 主题建站
+- 2021-07-04 :: 修改 zen podcast 模板，可以用 org 编写文章
+- 2021-06-26 :: 使用 [[https://gohugo.io/][hugo]] + [[https://github.com/frjo/hugo-theme-zen][zen]] 主题建站
 
 #+begin_example
  ______                       _______    _ _
