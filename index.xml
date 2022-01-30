@@ -272,6 +272,7 @@ Time Flies！&lt;/p>
 &lt;th>Google 统计&lt;/th>
 &lt;th>小宇宙&lt;/th>
 &lt;th>微信公众号&lt;/th>
+&lt;th>喜马拉雅&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
@@ -281,11 +282,13 @@ Time Flies！&lt;/p>
 &lt;td>陈斌&lt;/td>
 &lt;td>陈斌&lt;/td>
 &lt;td>Kathy&lt;/td>
+&lt;td>tumashu&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td class="align-right">2&lt;/td>
 &lt;td>陈斌&lt;/td>
 &lt;td>Kathy&lt;/td>
+&lt;td>领蜂&lt;/td>
 &lt;td>领蜂&lt;/td>
 &lt;td>领蜂&lt;/td>
 &lt;/tr>
@@ -295,6 +298,7 @@ Time Flies！&lt;/p>
 &lt;td>stardiviner&lt;/td>
 &lt;td>Kathy&lt;/td>
 &lt;td>陈斌&lt;/td>
+&lt;td>Kathy&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -3374,7 +3378,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;a href="https://emacstalk.github.io/donate">Buy me a coffee ☕️&lt;/a>&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-Get in Touch
+联系方式
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
@@ -3429,14 +3433,20 @@ Subscribe
 Changelog
 &lt;/h2>
 &lt;div id="outline-text-headline-4" class="outline-text-2">
-&lt;ul>
-&lt;li>
-&lt;p>2021-07-04，修改 zen podcast 模板，可以用 org 编写文章&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>2021-06-26，使用 &lt;a href="https://gohugo.io/">hugo&lt;/a> + &lt;a href="https://github.com/frjo/hugo-theme-zen">zen&lt;/a> 主题建站&lt;/p>
-&lt;/li>
-&lt;/ul>
+&lt;dl>
+&lt;dt>
+2021-07-04
+&lt;/dt>
+&lt;dd>
+&lt;p>修改 zen podcast 模板，可以用 org 编写文章&lt;/p>
+&lt;/dd>
+&lt;dt>
+2021-06-26
+&lt;/dt>
+&lt;dd>
+&lt;p>使用 &lt;a href="https://gohugo.io/">hugo&lt;/a> + &lt;a href="https://github.com/frjo/hugo-theme-zen">zen&lt;/a> 主题建站&lt;/p>
+&lt;/dd>
+&lt;/dl>
 &lt;pre class="example">
 ______ _______ _ _
 | ____| |__ __| | | |
