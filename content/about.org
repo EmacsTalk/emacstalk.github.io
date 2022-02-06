@@ -1,6 +1,6 @@
 #+TITLE: 关于
 #+DATE: 2021-06-26T13:06:19+0800
-#+LASTMOD: 2022-01-17T20:13:26+0800
+#+LASTMOD: 2022-02-06T21:51:17+0800
 
 #+BEGIN_EXPORT html
 <p align="center">
@@ -12,8 +12,9 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 - 专注 Emacs 社区，探索 Emacs 社区背后的 *奇人轶事*
 - 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
-*如果您喜欢这档节目，欢迎通过[[https://afdian.net/@coding-xigua][「❤️发电」]]来支持* ，也欢迎大家提出反馈意见和建议。
- [[/donate][Buy me a coffee ☕️]]
+如果 EmacsTalk 对您有所帮助
+- 欢迎在各大播客平台留言、打分、转发
+- 也欢迎您为本节目进行[[/donate][捐助支持]] ❤️
 
 * 联系方式
 - https://twitter.com/EmacsTalk
@@ -27,7 +28,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 
 * Subscribe
 1. 首推使用泛用性播客客户端订阅 [[https://emacstalk.github.io/podcast/index.xml][RSS]] 或在 [[https://www.xiaoyuzhoufm.com/podcast/60eabfdd030f8753b9982047][小宇宙]]、[[https://h5.qishuier.com/podcasts/195916240953294849][汽水儿]]、微信公众号 [[https://weixin.sogou.com/weixin?&query=EmacsTalk][EmacsTalk]] 中收听
-2. 其次是 [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]、[[https://music.163.com/#/djradio?id=963834541][网易云音乐]]、[[https://y.qq.com/n/ryqq/albumDetail/000BkGbT1J1Mo2][QQ 音乐]]、[[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]、[[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]、[[https://pca.st/hbvw3oxs][Pocket Casts]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts]]（需美区账号，中国区暂时搜不到，[[https://sspai.com/post/59878][原因]]）
+2. 其次是 [[https://www.ximalaya.com/keji/50656645/][喜马拉雅]]、[[https://music.163.com/#/djradio?id=963834541][网易云音乐]]、[[https://open.spotify.com/show/6QdmFKhhjN6IAhXDIknUqI][Spotify]]、[[https://castbox.fm/channel/EmacsTalk-id4367580][Castbox]]、[[https://pca.st/hbvw3oxs][Pocket Casts]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574036730][Apple Podcasts(美区)]]、[[https://podcasts.apple.com/podcast/emacstalk/id1574135675][Apple Podcasts(国区)]]
   #+ATTR_HTML: :width 500px
   [[/images/weixin.jpg]]
 

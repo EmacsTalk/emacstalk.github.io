@@ -47,10 +47,9 @@ enableGitInfo = true
     logo = true
     mainSections = ["post", "podcast"]
     fadian = """
-#### 公告栏 -- Bulletin Board
-1. 招募 [Podcast 嘉宾](https://github.com/emacstalk/joinus)，分享您与 Emacs 的故事
-2. 欢迎[投稿](https://github.com/EmacsTalk/emacstalk.github.io/issues/new)，与大家一起分享 Emacs 使用技巧
-3. 如果 EmacsTalk 对您有所帮助，欢迎进行[发电支持](/donate) ❤️
+#### 如果 EmacsTalk 对您有所帮助
+- 欢迎在各大播客平台留言、打分、转发
+- 也欢迎您为本节目进行[捐助支持](/donate) ❤️
 """
     contactus = """
 -   微信搜索公众号[「EmacsTalk」](/images/weixin.jpg)
