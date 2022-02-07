@@ -1,6 +1,6 @@
 #+TITLE: 使用 EWW 阅读技术文章
 #+DATE: 2022-02-06T21:56:31+0800
-#+LASTMOD: 2022-02-07T11:25:25+0800
+#+LASTMOD: 2022-02-07T11:40:29+0800
 #+TAGS[]: eww
 
 [[https://www.gnu.org/software/emacs/manual/html_mono/eww.html][EWW]] 是 Emacs 内置的 Web 浏览器，虽然比起 Firefox 之类的主流浏览器来说，EWW 显得有些“简陋”，但[[https://baike.baidu.com/item/少即是多/8634644][少就是多]]，在阅读技术文章，或其他有深度的文字时，EWW 有它无与伦比的优势：
@@ -43,7 +43,7 @@ https://img.alicdn.com/imgextra/i1/581166664/O1CN01ucA9mR1z6A7SOMpdT_!!581166664
 
 =n/p= 是通过寻找页面中含有 next 标记的链接，比如 [[https://dev.mysql.com/doc/internals/en/files-in-innodb-sources.html][MySQL 的文档]]就支持上下页跳转。更令人惊喜的是，默认就有『[[https://www.zhihu.com/question/19905949][阅读模式]]』，它可以去掉网页中乱七八糟的元素，专注于内容阅读。看了是提交记录，是 Lars 在 2014-11 月[[https://github.com/emacs-mirror/emacs/commit/2e8259b044fda2a6424b71eb8368cafa2fa6d86e][提交的]]，感谢大神的贡献。
 
-为了方便浏览国外技术网站，需要让 EWW 走代理，可以参考：[[/post/007][url-retrieve 使用 curl 作为后端实现]]。可以通过 =browse-url-browser-function= 设置链接打开的默认浏览器，这是全局的配置，也可以通过正则的方式来配置：
+为了方便浏览国外技术网站，需要让 EWW 走代理，可以参考：[[/post/007][url-retrieve 使用 curl 作为后端实现]]。可以通过 =browse-url-browser-function= 设置超链接打开的默认浏览器，这是全局的配置，也可以通过正则表达式来给指定 URL 配置打开方式：
 #+BEGIN_SRC emacs-lisp
 ;; 28.1 新引入的配置项
 (setq browse-url-handlers '(("baidu\\|kaiyanapp\\.com" . browse-url-default-browser)
@@ -52,3 +52,8 @@ https://img.alicdn.com/imgextra/i1/581166664/O1CN01ucA9mR1z6A7SOMpdT_!!581166664
 上面配置的含义是：
 - 百度、[[https://home.eyepetizer.net/][开眼视频]]的链接用默认浏览器
 - GitHub、Google、Twitter 使用 Firefox 浏览器打开
+
+* 更多参考
+- [[https://www.emacswiki.org/emacs/eww][EmacsWiki: eww]]
+- [[https://www.reddit.com/r/emacs/comments/6yn8lo/what_do_you_use_eww_for/][What do you use eww for? : emacs]]
+- [[https://www.reddit.com/r/emacs/comments/a1d05q/is_there_anyway_to_enable_ewwreadable_by_default/][Is there anyway to enable eww-readable by default? : emacs]]
