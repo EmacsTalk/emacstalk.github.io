@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description>Recent content in Posts on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 06 Feb 2022 21:56:31 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 eww 阅读技术文章</title><link>https://emacstalk.github.io/post/015/</link><pubDate>Sun, 06 Feb 2022 21:56:31 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/015/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description>Recent content in Posts on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 06 Feb 2022 21:56:31 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 EWW 阅读技术文章</title><link>https://emacstalk.github.io/post/015/</link><pubDate>Sun, 06 Feb 2022 21:56:31 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/015/</guid><description>
 &lt;p>
 &lt;a href="https://www.gnu.org/software/emacs/manual/html_mono/eww.html">EWW&lt;/a> 是 Emacs 内置的 Web 浏览器，虽然比起 Firefox 之类的主流浏览器来说，EWW 显得有些“简陋”，但&lt;a href="https://baike.baidu.com/item/少即是多/8634644">少就是多&lt;/a>，在阅读技术文章，或其他有深度的文字时，EWW 有它无与伦比的优势：&lt;/p>
 &lt;ol>
@@ -89,9 +89,23 @@ fontconfig))))
 &lt;/tbody>
 &lt;/table>
 &lt;p>
-&lt;code class="verbatim">n/p&lt;/code> 是通过寻找页面中含有 next 标记的链接，比如 &lt;a href="https://dev.mysql.com/doc/internals/en/files-in-innodb-sources.html">MySQL 的文档&lt;/a>就支持上下页跳转。&lt;/p>
+&lt;code class="verbatim">n/p&lt;/code> 是通过寻找页面中含有 next 标记的链接，比如 &lt;a href="https://dev.mysql.com/doc/internals/en/files-in-innodb-sources.html">MySQL 的文档&lt;/a>就支持上下页跳转。更令人惊喜的是，默认就有『&lt;a href="https://www.zhihu.com/question/19905949">阅读模式&lt;/a>』，它可以去掉网页中乱七八糟的元素，专注于内容阅读。看了是提交记录，是 Lars 在 2014-11 月&lt;a href="https://github.com/emacs-mirror/emacs/commit/2e8259b044fda2a6424b71eb8368cafa2fa6d86e">提交的&lt;/a>，感谢大神的贡献。&lt;/p>
 &lt;p>
-为了方便浏览国外技术网站，需要让 EWW 走代理，可以参考：&lt;a href="https://emacstalk.github.io/post/007">url-retrieve 使用 curl 作为后端实现&lt;/a>。&lt;/p>
+为了方便浏览国外技术网站，需要让 EWW 走代理，可以参考：&lt;a href="https://emacstalk.github.io/post/007">url-retrieve 使用 curl 作为后端实现&lt;/a>。可以通过 &lt;code class="verbatim">browse-url-browser-function&lt;/code> 设置链接打开的默认浏览器，这是全局的配置，也可以通过正则的方式来配置：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="color:#75715e">;; 28.1 新引入的配置项&lt;/span>
+(setq browse-url-handlers &lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;baidu\\|kaiyanapp\\.com&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> browse-url-default-browser)
+(&lt;span style="color:#e6db74">&amp;#34;github\\|google\\|twitter\\.com&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> browse-url-firefox)))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>上面配置的含义是：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>百度、&lt;a href="https://home.eyepetizer.net/">开眼视频&lt;/a>的链接用默认浏览器&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>GitHub、Google、Twitter 使用 Firefox 浏览器打开&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;/div>
 &lt;/div></description></item><item><title>org-agenda 设置每月最后一天为 deadline</title><link>https://emacstalk.github.io/post/014/</link><pubDate>Sat, 08 Jan 2022 23:26:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/014/</guid><description>&lt;p>
 在 org-agenda 中，支持设置&lt;a href="https://orgmode.org/manual/Repeated-tasks.html">重复的任务&lt;/a>，示例如下：&lt;/p>
