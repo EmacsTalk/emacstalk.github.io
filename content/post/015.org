@@ -1,6 +1,6 @@
 #+TITLE: 使用 EWW 阅读技术文章
 #+DATE: 2022-02-06T21:56:31+0800
-#+LASTMOD: 2022-02-07T22:43:56+0800
+#+LASTMOD: 2022-02-11T23:52:48+0800
 #+TAGS[]: eww
 
 [[https://www.gnu.org/software/emacs/manual/html_mono/eww.html][EWW]] 是 Emacs 内置的 Web 浏览器，虽然比起 Firefox 之类的主流浏览器来说，EWW 显得有些“简陋”，但[[https://baike.baidu.com/item/少即是多/8634644][少就是多]]，在阅读技术文章，或其他有深度的文字时，EWW 有它无与伦比的优势：
@@ -58,3 +58,4 @@ https://img.alicdn.com/imgextra/i1/581166664/O1CN01ucA9mR1z6A7SOMpdT_!!581166664
 - [[https://www.emacswiki.org/emacs/eww][EmacsWiki: eww]]
 - [[https://www.reddit.com/r/emacs/comments/6yn8lo/what_do_you_use_eww_for/][What do you use eww for? : emacs]]
 - [[https://www.reddit.com/r/emacs/comments/a1d05q/is_there_anyway_to_enable_ewwreadable_by_default/][Is there anyway to enable eww-readable by default? : emacs]]
+- [[https://readingworldmagazine.com/emacs/2022-01-24-how-to-use-eww-browser-in-emacs/][How to Use EWW Browser in Emacs [and What it Isn't Good For]]]
