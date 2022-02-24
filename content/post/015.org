@@ -1,6 +1,6 @@
 #+TITLE: 使用 EWW 阅读技术文章
 #+DATE: 2022-02-06T21:56:31+0800
-#+LASTMOD: 2022-02-11T23:52:48+0800
+#+LASTMOD: 2022-02-12T18:20:59+0800
 #+TAGS[]: eww
 
 [[https://www.gnu.org/software/emacs/manual/html_mono/eww.html][EWW]] 是 Emacs 内置的 Web 浏览器，虽然比起 Firefox 之类的主流浏览器来说，EWW 显得有些“简陋”，但[[https://baike.baidu.com/item/少即是多/8634644][少就是多]]，在阅读技术文章，或其他有深度的文字时，EWW 有它无与伦比的优势：
@@ -11,13 +11,14 @@
 第二点非常重要，有些网页的设计实在是不方便沉浸式阅读，要不就是文字太小，要不就是背景色太亮，而在 EWW 中，这些问题都能解决，就是一般的 buffer 设置而已。
 
 #+BEGIN_SRC emacs-lisp
-(defun my/set-eww-font (fontconfig)
-  (interactive "sFontconfig(Ubuntu-20): ")
-  (let ((font (or (if (string-empty-p fontconfig)
-                      "Ubuntu-20"
-                    fontconfig))))
+(defun my/set-font (fontconfig)
+  (interactive "sFontconfig(Charter-18): ")
+  (let ((font (if (string-empty-p fontconfig)
+                  "Charter-18"
+                fontconfig)))
     (set-face-attribute 'variable-pitch (selected-frame) :font font)))
 #+END_SRC
+
 这是我用来改变字体的辅助命令，下面是 [[https://news.ycombinator.com/item?id=30221187][Hacker News]] 帖子的效果对比
 
 #+CAPTION: 在 Firefox 中的 UI
@@ -26,6 +27,7 @@ https://img.alicdn.com/imgextra/i3/581166664/O1CN015SMPFF1z6A7Zgl8UZ_!!581166664
 #+CAPTION: 在 EWW 中的 UI
 https://img.alicdn.com/imgextra/i1/581166664/O1CN01ucA9mR1z6A7SOMpdT_!!581166664.png
 
+唯一比较遗憾的是 EWW 的历史记录没有持久化，重启就没有了，书签可以解决部分问题。
 * 常用快捷键
 在 EWW 中，我主要使用如下几个快捷键：
 | 快捷键 | 含义                     |
@@ -59,3 +61,4 @@ https://img.alicdn.com/imgextra/i1/581166664/O1CN01ucA9mR1z6A7SOMpdT_!!581166664
 - [[https://www.reddit.com/r/emacs/comments/6yn8lo/what_do_you_use_eww_for/][What do you use eww for? : emacs]]
 - [[https://www.reddit.com/r/emacs/comments/a1d05q/is_there_anyway_to_enable_ewwreadable_by_default/][Is there anyway to enable eww-readable by default? : emacs]]
 - [[https://readingworldmagazine.com/emacs/2022-01-24-how-to-use-eww-browser-in-emacs/][How to Use EWW Browser in Emacs [and What it Isn't Good For]]]
+- [[https://www.reddit.com/r/emacs/comments/jvqzg4/persist_eww_history/][Persist EWW History : emacs]]

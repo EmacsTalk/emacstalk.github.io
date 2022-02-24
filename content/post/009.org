@@ -1,6 +1,6 @@
 #+TITLE: Emacs 28 新特性介绍
 #+DATE: 2021-11-02T08:21:22+08:00
-#+LASTMOD: 2021-11-05T08:33:56+08:00
+#+LASTMOD: 2022-02-24T09:08:44+0800
 #+DRAFT: false
 #+TAGS[]: tips
 
@@ -45,7 +45,7 @@
   #+END_SRC
 - 新选项 =copy-directory-create-symlink= 在 src dir 为软链时， =copy-directory= 的 dst dir 是否也为软链，默认 false。
 - =remove-hook= 改成 interactive 命令
-- 新增命令 =shortdoc-display-group= [[https://emacstalk.github.io/post/002/][之前节目]]中多次提到过的功能，按函数类型归类，展示其用法
+- 新增命令 =shortdoc-display-group= [[/post/002][之前节目]]中多次提到过的功能，按函数类型归类，展示其用法
   https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg
 - 新增命令 =memory-report=
 - 新增命令 =submit-emacs-patch=

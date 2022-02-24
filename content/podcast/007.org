@@ -60,7 +60,7 @@
   - EmacsTalk 听友群
     - QQ 听友群：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
     - TG 听友群：https://t.me/emacstalk
-  - [[https://emacstalk.github.io/post/002/][elisp-demos]]
+  - [[/post/002][elisp-demos]]
 
 * Get in Touch
 {{< contactus >}}
