@@ -680,7 +680,7 @@ GnuPG 在 2022-01-02 发布了一篇文章 &lt;a href="https://gnupg.org/blog/20
 &lt;p>&lt;code class="verbatim">remove-hook&lt;/code> 改成 interactive 命令&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>新增命令 &lt;code class="verbatim">shortdoc-display-group&lt;/code> &lt;a href="https://emacstalk.github.io/post/002/">之前节目&lt;/a>中多次提到过的功能，按函数类型归类，展示其用法
+&lt;p>新增命令 &lt;code class="verbatim">shortdoc-display-group&lt;/code> &lt;a href="https://emacstalk.github.io/post/002">之前节目&lt;/a>中多次提到过的功能，按函数类型归类，展示其用法
 &lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" />&lt;/p>
 &lt;/li>
 &lt;li>

@@ -14,14 +14,15 @@
 &lt;/ol>
 &lt;p>第二点非常重要，有些网页的设计实在是不方便沉浸式阅读，要不就是文字太小，要不就是背景色太亮，而在 EWW 中，这些问题都能解决，就是一般的 buffer 设置而已。&lt;/p>
 &lt;div class="src src-emacs-lisp">
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/set-eww-font (fontconfig)
-(interactive &lt;span style="color:#e6db74">&amp;#34;sFontconfig(Ubuntu-20): &amp;#34;&lt;/span>)
-(let ((font (or (if (string-empty-p fontconfig)
-&lt;span style="color:#e6db74">&amp;#34;Ubuntu-20&amp;#34;&lt;/span>
-fontconfig))))
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/set-font (fontconfig)
+(interactive &lt;span style="color:#e6db74">&amp;#34;sFontconfig(Charter-18): &amp;#34;&lt;/span>)
+(let ((font (if (string-empty-p fontconfig)
+&lt;span style="color:#e6db74">&amp;#34;Charter-18&amp;#34;&lt;/span>
+fontconfig)))
 (set-face-attribute &lt;span style="color:#e6db74">&amp;#39;variable-pitch&lt;/span> (&lt;span style="color:#a6e22e">selected-frame&lt;/span>) :font font)))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>这是我用来改变字体的辅助命令，下面是 &lt;a href="https://news.ycombinator.com/item?id=30221187">Hacker News&lt;/a> 帖子的效果对比&lt;/p>
+&lt;p>
+这是我用来改变字体的辅助命令，下面是 &lt;a href="https://news.ycombinator.com/item?id=30221187">Hacker News&lt;/a> 帖子的效果对比&lt;/p>
 &lt;figure>
 &lt;img src="https://img.alicdn.com/imgextra/i3/581166664/O1CN015SMPFF1z6A7Zgl8UZ_!!581166664.png" alt="https://img.alicdn.com/imgextra/i3/581166664/O1CN015SMPFF1z6A7Zgl8UZ_!!581166664.png" title="https://img.alicdn.com/imgextra/i3/581166664/O1CN015SMPFF1z6A7Zgl8UZ_!!581166664.png" />&lt;figcaption>
 在 Firefox 中的 UI
@@ -32,6 +33,8 @@ fontconfig))))
 在 EWW 中的 UI
 &lt;/figcaption>
 &lt;/figure>
+&lt;p>
+唯一比较遗憾的是 EWW 的历史记录没有持久化，重启就没有了，书签可以解决部分问题。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 常用快捷键
@@ -129,6 +132,9 @@ fontconfig))))
 &lt;/li>
 &lt;li>
 &lt;p>&lt;a href="https://readingworldmagazine.com/emacs/2022-01-24-how-to-use-eww-browser-in-emacs/">How to Use EWW Browser in Emacs [and What it Isn&amp;#39;t Good For&lt;/a>]&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.reddit.com/r/emacs/comments/jvqzg4/persist_eww_history/">Persist EWW History : emacs&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -953,7 +959,7 @@ GnuPG 在 2022-01-02 发布了一篇文章 &lt;a href="https://gnupg.org/blog/20
 &lt;p>&lt;code class="verbatim">remove-hook&lt;/code> 改成 interactive 命令&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>新增命令 &lt;code class="verbatim">shortdoc-display-group&lt;/code> &lt;a href="https://emacstalk.github.io/post/002/">之前节目&lt;/a>中多次提到过的功能，按函数类型归类，展示其用法
+&lt;p>新增命令 &lt;code class="verbatim">shortdoc-display-group&lt;/code> &lt;a href="https://emacstalk.github.io/post/002">之前节目&lt;/a>中多次提到过的功能，按函数类型归类，展示其用法
 &lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN01BVN4AY1z6A4rEzCTD_!!581166664.jpg" />&lt;/p>
 &lt;/li>
 &lt;li>
