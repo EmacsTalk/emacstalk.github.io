@@ -1572,20 +1572,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
-&lt;/ul>
-&lt;/div>
 &lt;/div></description></item><item><title>设置 emacsclient 为文件默认打开程序</title><link>https://emacstalk.github.io/post/006/</link><pubDate>Sat, 11 Sep 2021 14:38:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/006/</guid><description>
 &lt;p>
 对于 Emacs 熟练用户来说，大部分都会选择启动 server 模式，这样可以加速后续的启动时间，为与其他命令行工具组合使用奠定基础。
@@ -1824,20 +1810,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;/div></description></item><item><title>Emacs 启动时间优化实践</title><link>https://emacstalk.github.io/post/004/</link><pubDate>Sun, 22 Aug 2021 12:49:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/004/</guid><description>
@@ -2343,20 +2315,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
-&lt;/ul>
-&lt;/div>
 &lt;/div></description></item><item><title>使用 Dired 快速移动文件</title><link>https://emacstalk.github.io/post/003/</link><pubDate>Sun, 08 Aug 2021 11:06:00 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/003/</guid><description>&lt;p>
 在第五期节目里推荐过 &lt;a href="https://www.raycast.com/">Raycast&lt;/a> 这个神器，之前知道它可以直接执行脚本，但一直没尝试过，最近发现它提供了一个 &lt;a href="https://github.com/raycast/script-commands">script-commands&lt;/a> 仓库，里面整理了一些常用的脚本，比如清空废纸篓、刷新 DNS 等，比较实用。&lt;/p>
 &lt;p>
@@ -2562,20 +2520,6 @@ Show Notes
 &lt;li>
 &lt;p>片尾音乐：&lt;a href="https://music.163.com/#/song?id=1380302523">https://music.163.com/#/song?id=1380302523&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-5" class="outline-2">
-&lt;h2 id="headline-5">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-5" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;/div></description></item><item><title>使用 align-regexp 对齐 userscript 元信息</title><link>https://emacstalk.github.io/post/001/</link><pubDate>Mon, 26 Jul 2021 17:18:08 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/001/</guid><description>
@@ -2902,20 +2846,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-5" class="outline-2">
-&lt;h2 id="headline-5">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-5" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
-&lt;/ul>
-&lt;/div>
 &lt;/div></description></item><item><title>004. 与 stardiviner 聊 Emacs 与他与众不同的人生经历</title><link>https://emacstalk.github.io/podcast/004/</link><pubDate>Fri, 16 Jul 2021 22:03:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/004/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
@@ -3106,20 +3036,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-5" class="outline-2">
-&lt;h2 id="headline-5">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-5" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
-&lt;/ul>
-&lt;/div>
 &lt;/div></description></item><item><title>003. 与子龙山人聊 Emacs 与程序员修炼之道</title><link>https://emacstalk.github.io/podcast/003/</link><pubDate>Sun, 11 Jul 2021 08:31:38 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/003/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
@@ -3283,20 +3199,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
-&lt;/ul>
-&lt;/div>
 &lt;/div></description></item><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><link>https://emacstalk.github.io/podcast/002/</link><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/002/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
@@ -3454,20 +3356,6 @@ Show Notes
 &lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
 &lt;/ul>
 &lt;/div>
 &lt;/div></description></item><item><title>关于</title><link>https://emacstalk.github.io/about/</link><pubDate>Sat, 26 Jun 2021 13:06:19 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/about/</guid><description>
@@ -3650,19 +3538,5 @@ and Interpretation of Computer Programs (SICP)&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>第一次录制，不足之处还望听友包涵，有任何建议欢迎留言指出，谢谢！&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-Get in Touch
-&lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
-&lt;ul>
-&lt;li>微信搜索公众号&lt;a href="https://emacstalk.github.io/images/weixin.jpg">「EmacsTalk」&lt;/a>&lt;/li>
-&lt;li>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/li>
-&lt;li>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/li>
-&lt;li>收听方式见：&lt;a href="https://emacstalk.github.io/">https://emacstalk.github.io/&lt;/a>&lt;/li>
-&lt;li>如果您喜欢这档节目，欢迎通过&lt;a href="https://afdian.net/@coding-xigua">「❤️发电」&lt;/a>来支持&lt;/li>
-&lt;/ul>
 &lt;/div>
 &lt;/div></description></item></channel></rss>
