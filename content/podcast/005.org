@@ -6,8 +6,6 @@
 #+PODCAST_IMAGE_SRC: guests/chenbin.jpg
 #+PODCAST_IMAGE_ALT: chenbin
 
-
-
 * 概要
 本期节目请来了一位使用 Emacs 近十年的资深用户[[https://blog.binchen.org/][陈斌]]，他是著名文章[[https://github.com/redguardtoo/mastering-emacs-in-one-year-guide][《一年成为 Emacs 高手》]]的作者，同时也是一位拥有近二十年软件开发经验的前辈。
 
@@ -74,6 +72,3 @@
 - 主播的分享
   - macOS 上的程序启动器 [[https://raycast.com/][Raycast]]，类似与 Alfred，但是免费，且支持剪贴板📋管理
 - 片尾音乐：https://music.163.com/#/song?id=1380302523
-
-* Get in Touch
-{{< contactus >}}

@@ -6,8 +6,6 @@
 #+PODCAST_IMAGE_SRC: guests/kathy.jpg
 #+PODCAST_IMAGE_ALT: kathy
 
-
-
 * 概要
 本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学在读博士生。
 
@@ -52,6 +50,3 @@
   - [[https://github.com/redguardtoo/vc-msg][vc-msg]] 显示当前行的 git 信息
   - [[https://github.com/jiacai2050/sicp][SICP]]
 - 片尾音乐：https://music.163.com/#/song?id=1380302523
-
-* Get in Touch
-{{< contactus >}}

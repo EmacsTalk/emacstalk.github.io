@@ -57,7 +57,3 @@
   - [[https://liujiacai.net/blog/2021/03/05/emacs-love-mail-feed/#headline-13][elfeed]]
   - [[https://github.com/jiacai2050/dotfiles/blob/137c4b716ca16a5a2d5fd0bc4723297b09ff33d4/.config/emacs/i-misc.el#L157-L385][相关配置]]
 - [[https://music.163.com/#/song?id=1380302523][片尾音乐]]
-
-
-* Get in Touch
-{{< contactus >}}

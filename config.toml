@@ -51,13 +51,6 @@ enableGitInfo = true
 - 欢迎在各大播客平台留言、打分、转发
 - 也欢迎您为本节目进行[打赏支持](https://liujiacai.net/donate/) ❤️
 """
-    contactus = """
--   微信搜索公众号[「EmacsTalk」](/images/weixin.jpg)
--   QQ 听友群：[530146104](https://jq.qq.com/?_wv=1027&k=9tAXJ8gG)
--   TG 听友群：<https://t.me/emacstalk>
--   收听方式见：<https://emacstalk.github.io/>
--   如果您喜欢这档节目，欢迎通过[「❤️发电」](https://afdian.net/@coding-xigua)来支持
-"""
     dateformat = "2006-01-02"
     description = "EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening"
     feedlinks = false

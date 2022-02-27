@@ -6,8 +6,6 @@
 #+PODCAST_IMAGE_SRC: guests/joyer.jpg
 #+PODCAST_IMAGE_ALT: joyer
 
-
-
 * 概要
 本期节目请来了一位使用 Emacs 15 年之久的编辑器专家领蜂，在高中竞赛时获奖后，父母送给他一台个人电脑，这打开了他的 Emacs 之旅。
 
@@ -61,6 +59,3 @@
     - QQ 听友群：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
     - TG 听友群：https://t.me/emacstalk
   - [[/post/002][elisp-demos]]
-
-* Get in Touch
-{{< contactus >}}

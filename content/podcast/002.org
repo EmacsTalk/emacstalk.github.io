@@ -1,6 +1,6 @@
 #+TITLE: 002. 与 DoglooksGood 闲聊 Emacs
 #+DATE: 2021-07-03T22:36:08+08:00
-#+LASTMOD: 2021-12-28T19:12:06+0800
+#+LASTMOD: 2022-02-27T20:36:33+0800
 #+ALIASES[]: /podcast/2/
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/1e7c-audiofreehighqps/85/49/CKwRIJEEtj04AbqVuQDCiCOK.m4a
 #+PODCAST_DURATION: 59:43
@@ -54,6 +54,3 @@
 
 - 主播分享
   - 《操作系统革命 Revolution OS》，[[https://www.bilibili.com/video/BV1iC4y187nT?seid=2969542446222854468][B站链接]]
-
-* Get in Touch
-{{< contactus >}}

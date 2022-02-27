@@ -6,8 +6,6 @@
 #+PODCAST_IMAGE_SRC: guests/casouri.jpg
 #+PODCAST_IMAGE_ALT: casouri
 
-
-
 * 概要
 
 本期节目请来了一位特殊嘉宾--付禹安，社区内一般称他为『Emacs 之光』。之所以这么称呼，是因为今年才刚刚大学毕业的他，就已经给 Emacs 贡献了多次代码。👍
@@ -54,6 +52,3 @@
   - [[https://practicaltypography.com/][Practical Typography]]
 - 主播的分享
   - 关注牙齿健康，最好每年去看一次牙医
-
-* Get in Touch
-{{< contactus >}}
