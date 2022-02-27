@@ -1,6 +1,6 @@
 #+TITLE: 关于
 #+DATE: 2021-06-26T13:06:19+0800
-#+LASTMOD: 2022-02-06T21:51:17+0800
+#+LASTMOD: 2022-02-27T20:31:56+0800
 
 #+BEGIN_EXPORT html
 <p align="center">
@@ -14,7 +14,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 
 如果 EmacsTalk 对您有所帮助
 - 欢迎在各大播客平台留言、打分、转发
-- 也欢迎您为本节目进行[[/donate][捐助支持]] ❤️
+- 也欢迎您为本节目进行[[https://liujiacai.net/donate/][打赏支持]] ❤️
 
 * 联系方式
 - https://twitter.com/EmacsTalk
@@ -22,6 +22,9 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 - TG 听友群：https://t.me/emacstalk
 - 邮件：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
 - [[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]
+
+* 主播
+- 西瓜 :: 个人播客：https://liujiacai.net/
 
 * 参与录制
 - https://github.com/EmacsTalk/joinus
