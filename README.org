@@ -1,3 +1,7 @@
+[[https://twitter.com/EmacsTalk][https://img.shields.io/twitter/follow/emacstalk.svg]]
+[[https://t.me/emacstalk][file:static/images/chat-on-telegram.svg]]
+[[https://emacstalk.github.io/podcast/index.xml][https://img.shields.io/badge/rss-F88900.svg?style=flat&logo=rss&logoColor=white]]
+
 #+begin_src
  ______                       _______    _ _
 |  ____|                     |__   __|  | | |
@@ -11,22 +15,12 @@
 - 专注 Emacs 社区，探索 Emacs 社区背后的 奇人轶事
 - 不追求「枯燥无味」的干货，更关注「耐人寻味」经验分享
 
-* Get in Touch
-- https://twitter.com/EmacsTalk
-- QQ 听友群：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
-- TG 听友群：https://t.me/emacstalk
-- 邮件：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
-- [[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]
-
-* 一些建站素材
-** iTunes Podcasts
-- [[https://help.apple.com/itc/podcasts_connect/#/itcb54353390][A Podcaster’s Guide to RSS]]
-- [[https://podcasters.apple.com/support/825-how-to-create-an-episode][How to create an episode]]
-- [[https://castfeedvalidator.com/?url=https://emacstalk.github.io/podcast/index.xml][Cast Feed Validator]]
-- image 大小需要是 3000*3000
-** podcast subscribe icons
-- https://www.buzzsprout.com/help/64-podcast-subscribe-buttons
-** 社交分享按钮
-  - https://hugocodex.org/add-ons/share-buttons/
-** 404 页面
-- https://freefrontend.com/html-funny-404-pages/
+* 联系方式
+- 网站：https://emacstalk.github.io/
+- 听友群：
+  - QQ：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
+  - Telegram：https://t.me/emacstalk
+- Twitter：https://twitter.com/EmacsTalk
+- 写信：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
+- 备份：[[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]
+- 捐助支持：https://liujiacai.net/donate/
