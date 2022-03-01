@@ -3388,19 +3388,32 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://twitter.com/EmacsTalk">https://twitter.com/EmacsTalk&lt;/a>&lt;/p>
+&lt;p>Twitter：&lt;a href="https://twitter.com/EmacsTalk">EmacsTalk&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>QQ 听友群：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/p>
+&lt;p>听友群&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>QQ：&lt;a href="https://jq.qq.com/?_wv=1027&amp;amp;k=9tAXJ8gG">530146104&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>TG 听友群：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/p>
+&lt;p>Telegram：&lt;a href="https://t.me/emacstalk">https://t.me/emacstalk&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>邮件：&lt;a href="mailto:emacstalk@liujiacai.net">emacstalk@liujiacai.net&lt;/a>&lt;/p>
+&lt;p>写信：&lt;a href="mailto:emacstalk@liujiacai.net">emacstalk@liujiacai.net&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://www.zhihu.com/column/c_1392481558700384256">知乎专栏&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.zhihu.com/column/c_1392481558700384256">知乎专栏&lt;/a>（网站备份）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>微信公众号：EmacsTalk&lt;/p>
+&lt;figure>
+&lt;img src="https://emacstalk.github.io/images/weixin.jpg" alt="/images/weixin.jpg" title="/images/weixin.jpg" />&lt;figcaption>
+微信公众号
+&lt;/figcaption>
+&lt;/figure>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
@@ -3415,7 +3428,7 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 西瓜
 &lt;/dt>
 &lt;dd>
-&lt;p>个人播客：&lt;a href="https://liujiacai.net/">https://liujiacai.net/&lt;/a>&lt;/p>
+&lt;p>个人博客：&lt;a href="https://liujiacai.net/">https://liujiacai.net/&lt;/a>&lt;/p>
 &lt;/dd>
 &lt;/dl>
 &lt;/div>
@@ -3434,9 +3447,24 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
 &lt;/div>
 &lt;div id="outline-container-headline-4" class="outline-2">
 &lt;h2 id="headline-4">
-Subscribe
+友情推荐
 &lt;/h2>
 &lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;dl>
+&lt;dt>
+&lt;a href="https://rusttalk.github.io/">RustTalk&lt;/a>
+&lt;/dt>
+&lt;dd>
+&lt;p>一档专注在 Rust 社区的程序员闲聊节目&lt;/p>
+&lt;/dd>
+&lt;/dl>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
+Subscribe
+&lt;/h2>
+&lt;div id="outline-text-headline-5" class="outline-text-2">
 &lt;ol>
 &lt;li>
 &lt;p>首推使用泛用性播客客户端订阅 &lt;a href="https://emacstalk.github.io/podcast/index.xml">RSS&lt;/a> 或在 &lt;a href="https://www.xiaoyuzhoufm.com/podcast/60eabfdd030f8753b9982047">小宇宙&lt;/a>、&lt;a href="https://h5.qishuier.com/podcasts/195916240953294849">汽水儿&lt;/a>、微信公众号 &lt;a href="https://weixin.sogou.com/weixin?&amp;amp;query=EmacsTalk">EmacsTalk&lt;/a> 中收听&lt;/p>
@@ -3448,11 +3476,11 @@ Subscribe
 &lt;/ol>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-5" class="outline-2">
-&lt;h2 id="headline-5">
+&lt;div id="outline-container-headline-6" class="outline-2">
+&lt;h2 id="headline-6">
 Changelog
 &lt;/h2>
-&lt;div id="outline-text-headline-5" class="outline-text-2">
+&lt;div id="outline-text-headline-6" class="outline-text-2">
 &lt;dl>
 &lt;dt>
 2021-07-04
