@@ -23,4 +23,4 @@
 - Twitter：https://twitter.com/EmacsTalk
 - 写信：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
 - 备份：[[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]
-- 捐助支持：https://liujiacai.net/donate/
+- 打赏支持：https://liujiacai.net/donate/
