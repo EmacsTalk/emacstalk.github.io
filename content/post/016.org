@@ -1,0 +1,74 @@
+#+TITLE: 使用 eglot 代替 lsp-mode
+#+DATE: 2022-03-06T17:21:47+0800
+#+LASTMOD: 2022-03-06T17:22:13+0800
+#+TAGS[]: lsp eglot
+
+[[https://microsoft.github.io/language-server-protocol/][LSP]] 是当前使用最广泛的一套协议，用于给文本编辑器提供类似 IDE 的功能，比如：自动补全、定义跳转等。对于 Emacs 来说，主要有两个实现：
+- [[https://github.com/emacs-lsp/lsp-mode][emacs-lsp/lsp-mode]]，主打功能丰富
+- [[https://github.com/joaotavora/eglot][joaotavora/eglot]]，主打小巧精悍
+
+具体使用那个看各人口味，笔者本人在使用 lsp-mode 多年后转到了 eglot，主要觉得 lsp 太占用内存，很多功能华而不实。
+
+下面是笔者在使用 lsp-mode 几天后，执行 =memory-report= 后的数据（[[https://gist.github.com/jiacai2050/0874bf3f111392800de4b6f9db3b363d][完整版]]）：
+#+begin_example
+Largest Variables
+
+   1.8 GiB  lsp-clients
+   1.8 GiB  lsp--session
+   1.8 GiB  lsp--last-active-workspaces
+   4.6 MiB  package-archive-contents
+   4.5 MiB  elfeed-db
+
+Largest Buffers
+
+   3.6 GiB  database.rs
+   3.6 GiB  source.rs
+   3.6 GiB  history-backup/main.rs
+   1.8 GiB  datafusion-5.0.0/src/logical_plan/expr.rs
+   1.8 GiB  prometheus.rs
+   1.8 GiB  libsqlite3-sys-0.23.2/src/error.rs
+#+end_example
+可以看到，占内存最高的变量都与 lsp-mode 有关，而且在用 lsp-mode 进行 Rust 开发时，能明显感到卡吨，根本不敢用 [[https://github.com/rust-analyzer/rust-analyzer][rust-analyzer]] 来进行补全，之前笔者都是用 [[https://www.tabnine.com/][tabnine]] 来进行 Rust 代码的补全，只用 lsp 来进行『查找定义』。
+
+在替换成 eglot 后，内存使用就没有这么夸张了，用 rust-analyzer 进行补全时，之前的卡吨感没有了，和在 VSCode 中的体验无异。而且 eglot 的依赖很少，会尽量复用 Emacs 内置的模块，比如采用 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Flymake.html][flymake]]，而不是 [[https://www.flycheck.org/en/latest/][flycheck]]，也有相关 issue 讨论如何用在 eglot 中使用 flycheck：
+- [[https://github.com/joaotavora/eglot/issues/42#issuecomment-1059820859][How to configure eglot to use flycheck? · Issue #42]]
+
+笔者使用 eglot 的配置如下，主要进行了下面三点的改进：
+1. eldoc 高度限制为 3 行，太大了影响阅读代码
+2. 修改高亮『当前变量』的字体，默认的不是很明显
+3. 增加 Rust 宏展开的命令，lsp-mode [[https://emacs-lsp.github.io/lsp-mode/page/lsp-rust-analyzer/#macro-expansion][默认支持]]，这里给出了 eglot 的实现
+#+BEGIN_SRC emacs-lisp
+(use-package eglot
+  :defer t
+  :commands (eglot-ensure my/rust-expand-macro)
+  :config
+  (progn
+    (setq eldoc-echo-area-use-multiline-p 3
+          eldoc-echo-area-display-truncation-message nil)
+    (set-face-attribute 'eglot-highlight-symbol-face nil
+                        :background "#b3d7ff")
+
+    (defun my/rust-expand-macro ()
+      "Expand macro at point, same as `lsp-rust-analyzer-expand-macro'.
+https://rust-analyzer.github.io/manual.html#expand-macro-recursively"
+      (interactive)
+      (jsonrpc-async-request
+       (eglot--current-server-or-lose)
+       :rust-analyzer/expandMacro (eglot--TextDocumentPositionParams)
+       :error-fn (lambda (msg) (error "Macro expand failed, msg:%s." msg))
+       :success-fn
+       (lambda (expanded-macro)
+	     (cl-destructuring-bind (name format expansion result) expanded-macro
+	       (let* ((pr (eglot--current-project))
+			      (buf (get-buffer-create (format "*rust macro expansion %s*" (cdr pr)))))
+		     (with-current-buffer buf
+		       (let ((inhibit-read-only t))
+			     (erase-buffer)
+			     (insert result)
+			     (rust-mode)))
+		     (switch-to-buffer-other-window buf))))))
+    ))
+#+END_SRC
+
+#+CAPTION: eglot 宏展开示意图
+https://img.alicdn.com/imgextra/i2/581166664/O1CN01YF2Q8k1z6A7lbyjS9_!!581166664.png
