@@ -8,7 +8,7 @@
 &lt;p>&lt;a href="https://github.com/joaotavora/eglot">joaotavora/eglot&lt;/a>，主打小巧精悍&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>具体使用那个看各人口味，笔者本人在使用 lsp-mode 多年后转到了 eglot，主要觉得 lsp 太占用内存，很多功能华而不实。&lt;/p>
+&lt;p>笔者本人在使用 lsp-mode 多年后转到了 eglot，主要觉得 lsp 太占用内存，有很多华而不实的功能，导致使用时能明显感到卡顿。&lt;/p>
 &lt;p>
 下面是笔者在使用 lsp-mode 几天后，执行 &lt;code class="verbatim">memory-report&lt;/code> 后的数据（&lt;a href="https://gist.github.com/jiacai2050/0874bf3f111392800de4b6f9db3b363d">完整版&lt;/a>）：&lt;/p>
 &lt;pre class="example">
@@ -26,9 +26,9 @@ Largest Buffers
 1.8 GiB prometheus.rs
 1.8 GiB libsqlite3-sys-0.23.2/src/error.rs
 &lt;/pre>
-&lt;p>可以看到，占内存最高的变量都与 lsp-mode 有关，而且在用 lsp-mode 进行 Rust 开发时，能明显感到卡吨，根本不敢用 &lt;a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer&lt;/a> 来进行补全，之前笔者都是用 &lt;a href="https://www.tabnine.com/">tabnine&lt;/a> 来进行 Rust 代码的补全，只用 lsp 来进行『查找定义』。&lt;/p>
+&lt;p>可以看到，占内存最高的变量都与 lsp-mode 有关，而且在用 lsp-mode 进行 Rust 开发时，能明显感到卡顿，根本不敢用 &lt;a href="https://github.com/rust-analyzer/rust-analyzer">rust-analyzer&lt;/a> 来进行补全，之前笔者都是用 &lt;a href="https://www.tabnine.com/">tabnine&lt;/a> 来进行 Rust 代码的补全，只用 lsp 来进行『查找定义』。&lt;/p>
 &lt;p>
-在替换成 eglot 后，内存使用就没有这么夸张了，用 rust-analyzer 进行补全时，之前的卡吨感没有了，和在 VSCode 中的体验无异。而且 eglot 的依赖很少，会尽量复用 Emacs 内置的模块，比如采用 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Flymake.html">flymake&lt;/a>，而不是 &lt;a href="https://www.flycheck.org/en/latest/">flycheck&lt;/a>，也有相关 issue 讨论如何用在 eglot 中使用 flycheck：&lt;/p>
+在替换成 eglot 后，内存使用就没有这么夸张了，用 rust-analyzer 进行补全时，之前的卡顿感没有了，和在 VSCode 中的体验无异。而且 eglot 的依赖很少，会尽量复用 Emacs 内置的模块，比如采用 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Flymake.html">flymake&lt;/a>，而不是 &lt;a href="https://www.flycheck.org/en/latest/">flycheck&lt;/a>，也有相关 issue 讨论如何用在 eglot 中使用 flycheck：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://github.com/joaotavora/eglot/issues/42#issuecomment-1059820859">How to configure eglot to use flycheck? · Issue #42&lt;/a>&lt;/p>
@@ -68,7 +68,7 @@ eldoc-echo-area-display-truncation-message &lt;span style="color:#66d9ef">nil&lt
 (lambda (expanded-macro)
 (cl-destructuring-bind (name &lt;span style="color:#a6e22e">format&lt;/span> expansion result) expanded-macro
 (let* ((pr (eglot--current-project))
-(buf (&lt;span style="color:#a6e22e">get-buffer-create&lt;/span> (&lt;span style="color:#a6e22e">format&lt;/span> &lt;span style="color:#e6db74">&amp;#34;*rust macro expansion %s*&amp;#34;&lt;/span> (&lt;span style="color:#a6e22e">cdr&lt;/span> pr)))))
+(buf (&lt;span style="color:#a6e22e">get-buffer-create&lt;/span> (&lt;span style="color:#a6e22e">format&lt;/span> &lt;span style="color:#e6db74">&amp;#34;*rust macro expansion %s*&amp;#34;&lt;/span> (project-root pr)))))
 (with-current-buffer buf
 (let ((inhibit-read-only &lt;span style="color:#66d9ef">t&lt;/span>))
 (&lt;span style="color:#a6e22e">erase-buffer&lt;/span>)
@@ -79,6 +79,11 @@ eldoc-echo-area-display-truncation-message &lt;span style="color:#66d9ef">nil&lt
 &lt;/div>
 &lt;figure>
 &lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN01YF2Q8k1z6A7lbyjS9_!!581166664.png" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN01YF2Q8k1z6A7lbyjS9_!!581166664.png" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN01YF2Q8k1z6A7lbyjS9_!!581166664.png" />&lt;figcaption>
-eglot 宏展开示意图
+Rust 宏展开示意图
 &lt;/figcaption>
-&lt;/figure></description></item></channel></rss>
+&lt;/figure>
+&lt;p>
+最后，读者可以根据自身需求，通过添加 hook 的方式来自动打开 eglot：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(add-hook &lt;span style="color:#e6db74">&amp;#39;rust-mode-hook&lt;/span> &lt;span style="color:#e6db74">&amp;#39;eglot-ensure&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div></description></item></channel></rss>
