@@ -2,7 +2,7 @@
 &lt;p>
 Emacs 在 25 版本后，支持了&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html">动态模块&lt;/a>（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。&lt;/p>
 &lt;p>
-本文就来介绍，如何使用 C/Rust 两种语言来进行 Emacs 动态模块的开发。&lt;/p>
+本文就来介绍，如何使用 C/Rust 两种语言来进行 Emacs 动态模块的开发。本文所有代码可在 &lt;a href="https://github.com/jiacai2050/blog-snippets/tree/master/emacs-dynamic-module">emacs-dynamic-module&lt;/a> 这里找到。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 C
