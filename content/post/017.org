@@ -1,6 +1,6 @@
 #+TITLE: Emacs 动态模块开发指南
 #+DATE: 2022-03-12T12:37:24+0800
-#+LASTMOD: 2022-03-12T17:27:25+0800
+#+LASTMOD: 2022-03-12T18:40:53+0800
 #+TAGS[]: c rust
 
 Emacs 在 25 版本后，支持了[[https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html][动态模块]]（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。
@@ -139,7 +139,7 @@ https://emacs.stackexchange.com/a/36501/16450"
 #+END_SRC
 在 Rust 中，还有一个方案，即 [[https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md][rs-module/load]]，后文会具体介绍。
 * Rust
-使用 Rust 开发动态模块要比 C 简单不少，毕竟作为新时代的语言，但包管理这一方面就甩 C 好几条街。这里主要会用到 [[https://github.com/ubolonton/emacs-module-rs][emacs-module-rs]] 这个 crate，示例代码如下：
+使用 Rust 开发动态模块要比 C 简单不少，毕竟作为新时代的语言，单就包管理这一方面，就比 C 好用不少。这里主要会用到 [[https://github.com/ubolonton/emacs-module-rs][emacs-module-rs]] 这个 crate，示例代码如下：
 #+begin_src rust
 use emacs::{defun, Env, Result, Value};
 
