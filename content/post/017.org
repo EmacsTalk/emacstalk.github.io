@@ -1,7 +1,7 @@
 #+TITLE: Emacs 动态模块开发指南
 #+DATE: 2022-03-12T12:37:24+0800
-#+LASTMOD: 2022-03-12T18:40:53+0800
-#+TAGS[]: c rust
+#+LASTMOD: 2022-03-12T22:08:16+0800
+#+TAGS: c rust
 
 Emacs 在 25 版本后，支持了[[https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html][动态模块]]（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。
 
@@ -85,11 +85,11 @@ c-add is a module function.
 C-based adder
 #+end_example
 
-上面的示例代码虽然功能简单，但是把开发『动态模块』所需功能都介绍到了，如果需要更复杂的功能，可以参考文档：
+上面的示例代码虽然功能简单，但把开发『动态模块』的核心功能都介绍到了，像如何进行错误处理、如何在 C 与 ELisp 间传递自定义结构等高级功能，可以参考文档：
 - [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Writing-Dynamic-Modules.html][Writing Dynamically-Loaded Modules]]
 - [[https://phst.eu/emacs-modules.html][Emacs modules | Philipp’s documents]]
 ** 简化方法调用
-从上面介绍的示例可看出，基本所有函数都需要 env 这个参数，这是由于 C 的 struct [[https://www.geeksforgeeks.org/difference-c-structures-c-structures/][不支持成员函数]]，可以用宏来简化些，比如：
+从上面介绍的示例可看出，基本所有函数都需要 env 这个参数，这是由于 C 的 struct [[https://www.geeksforgeeks.org/difference-c-structures-c-structures/][不支持成员函数]]，可以用宏来简化，比如：
 #+begin_src c
 #define lisp_integer(env, integer)              \
   ({                                            \
@@ -118,26 +118,24 @@ C-based adder
 #+end_src
 需要注意的是，上面的宏使用了 [[https://stackoverflow.com/q/6440021/2163429][Statement Expression]]，不是 C 语言的标准，是 [[https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html][GNU99]] 的扩展，但由于十分有用，大多数编译器都支持了这种语法（可通过 =-std=gnu99= 指定），所以可以放心使用。其次是用到了[[https://en.wikipedia.org/wiki/Variadic_macro_in_the_C_preprocessor][可变参的宏]]，这是 C99 引入的。使用方式如下：
 #+begin_src c
-  emacs_value ret = lisp_funcall(env, "1+", lisp_integer(env, 1));
-  lisp_funcall(env, "message",
-               lisp_string(env, "(1+ %d) is %d"),
-               (lisp_integer(env, 1)),
-               ret);
-
+lisp_funcall(env,
+             "message",
+             lisp_string(env, "(1+ %d) is %d"),
+             (lisp_integer(env, 1)),
+             lisp_funcall(env, "1+", lisp_integer(env, 1)));
 #+end_src
 ** 热加载
-在开发过程中，最重要的是热加载，不能每次重启服务来让新代码生效，但是这里通过 module-load 加载的动态模块，[[https://emacs.stackexchange.com/questions/33976/how-do-you-reload-a-dynamic-module][是无法卸载的]]，只能重启 Emacs 解决，这不是很友好，可以通过一种变通的方式来实现：
+在开发过程中，热加载是非常重要的需求，不能每次重启服务来让新代码生效。但是通过 module-load 加载的动态模块，[[https://emacs.stackexchange.com/questions/33976/how-do-you-reload-a-dynamic-module][是无法卸载的]]，那是不是必须要重启 Emacs 呢？[[https://emacs.stackexchange.com/a/36501/16450][xuchunyang]] 给出了一种不需要重启的热加载方案：
 #+BEGIN_SRC emacs-lisp
 (defun fake-module-reload (module)
-  "通过加载临时文件的方式来模拟热加载
-https://emacs.stackexchange.com/a/36501/16450"
   (interactive "fReload Module file: ")
   (let ((tmpfile (make-temp-file
                   (file-name-nondirectory module) nil module-file-suffix)))
     (copy-file module tmpfile t)
     (module-load tmpfile)))
 #+END_SRC
-在 Rust 中，还有一个方案，即 [[https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md][rs-module/load]]，后文会具体介绍。
+该方式很巧妙，虽然已经加载的 dylib 不能卸载，但可通过重新加载另一个功能相同的 dylib 来覆盖之前的，这间接实现了热加载的效果。
+在 Rust 中，还有一个更有技术含量的方案，后文会具体介绍。
 * Rust
 使用 Rust 开发动态模块要比 C 简单不少，毕竟作为新时代的语言，单就包管理这一方面，就比 C 好用不少。这里主要会用到 [[https://github.com/ubolonton/emacs-module-rs][emacs-module-rs]] 这个 crate，示例代码如下：
 #+begin_src rust
@@ -166,6 +164,12 @@ fn say_hello(env: &Env, name: String) -> Result<Value<'_>> {
 #+END_SRC
 更多使用细节可以参考[[https://ubolonton.github.io/emacs-module-rs/latest/overview.html][官方文档]]，里面有非常详细的描述。
 - [[https://cireu.github.io/2020/04/05/rust-emacs-module/][用Rust扩展Emacs功能 | NIL]]，这篇文章算是对官方文档的中文翻译，供读者参考
+** 实现原理
+emacs-module-rs 使用了大量过程宏来简化代码的编写，比如上面的 =defun=, =emacs::module= ，利用 [[https://github.com/dtolnay/cargo-expand][cargo-expand]] 可以将这些宏代码展开，可以看到实现原理如下：
+1. 使用 defun 声明的函数会被添加到 [[https://github.com/ubolonton/emacs-module-rs/blob/0.18.0/src/init.rs#L74][~__INIT_FNS__~]]，这是一个全局的 map
+2. 在生成的 =emacs_module_init= 中，去遍历 =__INIT_FNS__= ，调用 fset 将 Rust 到 C 的 binding 函数导出到 ELisp 中
+
+完整的宏展开代码在 [[https://github.com/jiacai2050/blog-snippets/blob/master/emacs-dynamic-module/helloworld-rust/src/expanded.rs][expanded.rs]]，对细节感兴趣的读者可自行研究。
 ** 热加载
 使用 emacs-module-rs 开发的动态模块，会暴露一个 reload 的函数 [[https://github.com/ubolonton/emacs-module-rs/blob/9a29b076681abe3507cec50d9fa424f3ccd70e91/rs-module/src/lib.rs#L48][emacs_rs_module_init]]，然后利用 [[https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md][rs-module/load]] 即可实现热加载。相关命令如下：
 #+begin_src bash
