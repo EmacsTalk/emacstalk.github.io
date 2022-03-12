@@ -1,4 +1,245 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 06 Mar 2022 17:21:47 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 eglot 代替 lsp-mode</title><link>https://emacstalk.github.io/post/016/</link><pubDate>Sun, 06 Mar 2022 17:21:47 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/016/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 12 Mar 2022 12:37:24 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs 动态模块开发指南</title><link>https://emacstalk.github.io/post/017/</link><pubDate>Sat, 12 Mar 2022 12:37:24 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/017/</guid><description>
+&lt;p>
+Emacs 在 25 版本后，支持了&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html">动态模块&lt;/a>（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。&lt;/p>
+&lt;p>
+本文就来介绍，如何使用 C/Rust 两种语言来进行 Emacs 动态模块的开发。&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+C
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>C 是开发动态模块最直接的语言，Emacs 核心部分就是用 C 开发的。一个简单的 hello world 示例如下：&lt;/p>
+&lt;div class="src src-c">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">&lt;span style="color:#75715e">// emacs 动态模块的头文件，一般在 Emacs 安装目录内可找到
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;emacs-module.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#include&lt;/span> &lt;span style="color:#75715e">&amp;lt;string.h&amp;gt;&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">// 声明该模块是 GPL 兼容的
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> plugin_is_GPL_compatible;
+&lt;span style="color:#75715e">// 模块的入口函数，相当于普通 C 程序的 main
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#66d9ef">int&lt;/span> &lt;span style="color:#a6e22e">emacs_module_init&lt;/span> (&lt;span style="color:#66d9ef">struct&lt;/span> emacs_runtime &lt;span style="color:#f92672">*&lt;/span>ert)
+{
+emacs_env &lt;span style="color:#f92672">*&lt;/span>env &lt;span style="color:#f92672">=&lt;/span> ert&lt;span style="color:#f92672">-&amp;gt;&lt;/span>get_environment(ert);
+emacs_value message &lt;span style="color:#f92672">=&lt;/span> env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>intern(env, &lt;span style="color:#e6db74">&amp;#34;message&amp;#34;&lt;/span>);
+&lt;span style="color:#66d9ef">char&lt;/span> &lt;span style="color:#f92672">*&lt;/span>msg &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;hello world&amp;#34;&lt;/span>;
+emacs_value args[] &lt;span style="color:#f92672">=&lt;/span> { env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>make_string(env, msg, strlen(msg)) };
+env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>funcall(env, message, &lt;span style="color:#ae81ff">1&lt;/span>, args);
+&lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+}&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>把上面的代码编译成动态链接库，macOS 下可以用如下命令：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cc -dynamiclib -o helloworld.dylib -I&lt;span style="color:#e6db74">&amp;#34;/Applications/Emacs.app/Contents/Resources/include/&amp;#34;&lt;/span> main.c&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>其他环境下的编译命令可参考 &lt;a href="https://www.oreilly.com/library/view/c-cookbook/0596007612/ch01s05.html">Building a Dynamic Library from the Command Line&lt;/a>。
+动态链接库后缀名在不同平台是不一样的，Linux 下是 so， Windows 下是 dll。生产动态链接库后，可以用下面的命令加载：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(module-load (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/helloworld.dylib&amp;#34;&lt;/span>))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>这时，会在 &lt;code class="verbatim">*Message*&lt;/code> 内打印出 &lt;code class="verbatim">hello world&lt;/code> ， &lt;code class="verbatim">module-load&lt;/code> 函数本身返回 &lt;code class="verbatim">t&lt;/code> 。&lt;/p>
+&lt;p>
+为了简化数据类型在 C 与 ELisp 之间的转化，Emacs 提供了一系列函数，比如：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>C–&amp;gt;Elisp&lt;/th>
+&lt;th>Elisp–&amp;gt;C&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;code class="verbatim">make_integer&lt;/code>&lt;/td>
+&lt;td>&lt;code class="verbatim">extract_integer&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code class="verbatim">make_float&lt;/code>&lt;/td>
+&lt;td>&lt;code class="verbatim">extract_float&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;code class="verbatim">make_string&lt;/code>&lt;/td>
+&lt;td>&lt;code class="verbatim">copy_string_contents&lt;/code>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>更多类型转化可参考官方文档：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Module-Values.html">Conversion Between Lisp and Module Values&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>这里着重介绍下如何将 C 里面的函数导出到 ELisp 中：&lt;/p>
+&lt;div class="src src-c">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">emacs_value &lt;span style="color:#a6e22e">c_add&lt;/span>(emacs_env &lt;span style="color:#f92672">*&lt;/span>env, ptrdiff_t nargs, emacs_value &lt;span style="color:#f92672">*&lt;/span>args, &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#f92672">*&lt;/span>data) {
+intmax_t ret &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>;
+&lt;span style="color:#66d9ef">for&lt;/span>(&lt;span style="color:#66d9ef">int&lt;/span> i&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>;i&lt;span style="color:#f92672">&amp;lt;&lt;/span>nargs;i&lt;span style="color:#f92672">++&lt;/span>) {
+ret &lt;span style="color:#f92672">+=&lt;/span> env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>extract_integer(env, args[i]);
+}
+&lt;span style="color:#66d9ef">return&lt;/span> env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>make_integer(env, ret);
+}
+&lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">define_elisp_function&lt;/span>(emacs_env &lt;span style="color:#f92672">*&lt;/span>env) {
+emacs_value func &lt;span style="color:#f92672">=&lt;/span> env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>make_function (env, &lt;span style="color:#ae81ff">1&lt;/span>, emacs_variadic_function, &lt;span style="color:#75715e">// 任意多个参数，类似 &amp;amp;rest
+&lt;/span>&lt;span style="color:#75715e">&lt;/span> c_add, &lt;span style="color:#e6db74">&amp;#34;C-based adder&amp;#34;&lt;/span>, NULL);
+emacs_value symbol &lt;span style="color:#f92672">=&lt;/span> env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>intern (env, &lt;span style="color:#e6db74">&amp;#34;c-add&amp;#34;&lt;/span>);
+emacs_value args[] &lt;span style="color:#f92672">=&lt;/span> {symbol, func};
+env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>funcall (env, env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>intern (env, &lt;span style="color:#e6db74">&amp;#34;defalias&amp;#34;&lt;/span>), &lt;span style="color:#ae81ff">2&lt;/span>, args);
+}&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>在 &lt;code class="verbatim">emacs_module_init&lt;/code> 中调用 &lt;code class="verbatim">define_elisp_function&lt;/code> 即可将 &lt;code class="verbatim">c-add&lt;/code> 导出到 ELisp 中，使用示例：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(c-add &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">2&lt;/span>)
+&lt;span style="color:#75715e">;; 3&lt;/span>
+(&lt;span style="color:#a6e22e">apply&lt;/span> &lt;span style="color:#e6db74">&amp;#39;c-add&lt;/span> (number-sequence &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">100&lt;/span>))
+&lt;span style="color:#75715e">;; 5050&lt;/span>
+(c-add)
+&lt;span style="color:#75715e">;; Debugger entered--Lisp error: (wrong-number-of-arguments #&amp;lt;module function c_add from /tmp/helloworld.dylib&amp;gt; 0)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;code class="verbatim">M-x describe-function RET c-add RET&lt;/code> 返回如下：&lt;/p>
+&lt;pre class="example">
+c-add is a module function.
+(c-add ARG1 &amp;amp;rest REST)
+C-based adder
+&lt;/pre>
+&lt;p>
+上面的示例代码虽然功能简单，但是把开发『动态模块』所需功能都介绍到了，如果需要更复杂的功能，可以参考文档：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Writing-Dynamic-Modules.html">Writing Dynamically-Loaded Modules&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://phst.eu/emacs-modules.html">Emacs modules | Philipp’s documents&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div id="outline-container-headline-2" class="outline-3">
+&lt;h3 id="headline-2">
+简化方法调用
+&lt;/h3>
+&lt;div id="outline-text-headline-2" class="outline-text-3">
+&lt;p>从上面介绍的示例可看出，基本所有函数都需要 env 这个参数，这是由于 C 的 struct &lt;a href="https://www.geeksforgeeks.org/difference-c-structures-c-structures/">不支持成员函数&lt;/a>，可以用宏来简化些，比如：&lt;/p>
+&lt;div class="src src-c">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">&lt;span style="color:#75715e">#define lisp_integer(env, integer) \
+&lt;/span>&lt;span style="color:#75715e"> ({ \
+&lt;/span>&lt;span style="color:#75715e"> emacs_env *_env_ = env; \
+&lt;/span>&lt;span style="color:#75715e"> _env_-&amp;gt;make_integer(_env_, (integer)); \
+&lt;/span>&lt;span style="color:#75715e"> }) \
+&lt;/span>&lt;span style="color:#75715e">
+&lt;/span>&lt;span style="color:#75715e">#define lisp_string(env, string) \
+&lt;/span>&lt;span style="color:#75715e"> ({ \
+&lt;/span>&lt;span style="color:#75715e"> emacs_env *_env_ = env; \
+&lt;/span>&lt;span style="color:#75715e"> char* _str_ = string; \
+&lt;/span>&lt;span style="color:#75715e"> _env_-&amp;gt;make_string(_env_, _str_, strlen(_str_)); \
+&lt;/span>&lt;span style="color:#75715e"> })
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>
+&lt;span style="color:#75715e">#define lisp_funcall(env, fn_name, ...) \
+&lt;/span>&lt;span style="color:#75715e"> ({ \
+&lt;/span>&lt;span style="color:#75715e"> emacs_env *_env_ = env; \
+&lt;/span>&lt;span style="color:#75715e"> emacs_value _args_[] = { __VA_ARGS__ }; \
+&lt;/span>&lt;span style="color:#75715e"> int _nargs_ = sizeof(_args_) / sizeof(emacs_value); \
+&lt;/span>&lt;span style="color:#75715e"> _env_-&amp;gt;funcall(_env_, \
+&lt;/span>&lt;span style="color:#75715e"> env-&amp;gt;intern(env, (fn_name)), \
+&lt;/span>&lt;span style="color:#75715e"> _nargs_, \
+&lt;/span>&lt;span style="color:#75715e"> _args_ \
+&lt;/span>&lt;span style="color:#75715e"> ); \
+&lt;/span>&lt;span style="color:#75715e"> })&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>需要注意的是，上面的宏使用了 &lt;a href="https://stackoverflow.com/q/6440021/2163429">Statement Expression&lt;/a>，不是 C 语言的标准，是 &lt;a href="https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html">GNU99&lt;/a> 的扩展，但由于十分有用，大多数编译器都支持了这种语法（可通过 &lt;code class="verbatim">-std=gnu99&lt;/code> 指定），所以可以放心使用。其次是用到了&lt;a href="https://en.wikipedia.org/wiki/Variadic_macro_in_the_C_preprocessor">可变参的宏&lt;/a>，这是 C99 引入的。使用方式如下：&lt;/p>
+&lt;div class="src src-c">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c"> emacs_value ret &lt;span style="color:#f92672">=&lt;/span> lisp_funcall(env, &lt;span style="color:#e6db74">&amp;#34;1+&amp;#34;&lt;/span>, lisp_integer(env, &lt;span style="color:#ae81ff">1&lt;/span>));
+lisp_funcall(env, &lt;span style="color:#e6db74">&amp;#34;message&amp;#34;&lt;/span>,
+lisp_string(env, &lt;span style="color:#e6db74">&amp;#34;(1+ %d) is %d&amp;#34;&lt;/span>),
+(lisp_integer(env, &lt;span style="color:#ae81ff">1&lt;/span>)),
+ret);&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-3">
+&lt;h3 id="headline-3">
+热加载
+&lt;/h3>
+&lt;div id="outline-text-headline-3" class="outline-text-3">
+&lt;p>在开发过程中，最重要的是热加载，不能每次重启服务来让新代码生效，但是这里通过 module-load 加载的动态模块，&lt;a href="https://emacs.stackexchange.com/questions/33976/how-do-you-reload-a-dynamic-module">是无法卸载的&lt;/a>，只能重启 Emacs 解决，这不是很友好，可以通过一种变通的方式来实现：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun fake-module-reload (module)
+&lt;span style="color:#e6db74">&amp;#34;通过加载临时文件的方式来模拟热加载
+&lt;/span>&lt;span style="color:#e6db74">https://emacs.stackexchange.com/a/36501/16450&amp;#34;&lt;/span>
+(interactive &lt;span style="color:#e6db74">&amp;#34;fReload Module file: &amp;#34;&lt;/span>)
+(let ((tmpfile (make-temp-file
+(&lt;span style="color:#a6e22e">file-name-nondirectory&lt;/span> module) &lt;span style="color:#66d9ef">nil&lt;/span> module-file-suffix)))
+(&lt;span style="color:#a6e22e">copy-file&lt;/span> module tmpfile &lt;span style="color:#66d9ef">t&lt;/span>)
+(module-load tmpfile)))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>在 Rust 中，还有一个方案，即 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md">rs-module/load&lt;/a>，后文会具体介绍。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+Rust
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;p>使用 Rust 开发动态模块要比 C 简单不少，毕竟作为新时代的语言，但包管理这一方面就甩 C 好几条街。这里主要会用到 &lt;a href="https://github.com/ubolonton/emacs-module-rs">emacs-module-rs&lt;/a> 这个 crate，示例代码如下：&lt;/p>
+&lt;div class="src src-rust">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-rust" data-lang="rust">&lt;span style="color:#66d9ef">use&lt;/span> emacs::{defun, Env, Result, Value};
+emacs::plugin_is_GPL_compatible&lt;span style="color:#f92672">!&lt;/span>();
+&lt;span style="color:#75715e">// 相当于 C 里面的 emacs_module_init
+&lt;/span>&lt;span style="color:#75715e">&lt;/span>&lt;span style="color:#75715e">#[emacs::module(name = &lt;/span>&lt;span style="color:#e6db74">&amp;#34;greeting&amp;#34;&lt;/span>&lt;span style="color:#75715e">)]&lt;/span>
+&lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">init&lt;/span>(_: &lt;span style="color:#66d9ef">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">Env&lt;/span>) -&amp;gt; Result&lt;span style="color:#f92672">&amp;lt;&lt;/span>()&lt;span style="color:#f92672">&amp;gt;&lt;/span> { Ok(()) }
+&lt;span style="color:#75715e">#[defun]&lt;/span>
+&lt;span style="color:#66d9ef">fn&lt;/span> &lt;span style="color:#a6e22e">say_hello&lt;/span>(env: &lt;span style="color:#66d9ef">&amp;amp;&lt;/span>&lt;span style="color:#a6e22e">Env&lt;/span>, name: String) -&amp;gt; Result&lt;span style="color:#f92672">&amp;lt;&lt;/span>Value&lt;span style="color:#f92672">&amp;lt;&lt;/span>&lt;span style="color:#a6e22e">&amp;#39;_&lt;/span>&lt;span style="color:#f92672">&amp;gt;&amp;gt;&lt;/span> {
+env.message(&lt;span style="color:#f92672">&amp;amp;&lt;/span>format&lt;span style="color:#f92672">!&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello, {}!&amp;#34;&lt;/span>, name))
+}&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>相比 C 代码，这里的代码简洁不少，通过 &lt;code class="verbatim">#[defun]&lt;/code> 将 &lt;code class="verbatim">say_hello&lt;/code> 函数导出到 ELisp 中，并且函数名自动加上了前缀 &lt;code class="verbatim">greeting&lt;/code> ，并提供了相应 &lt;code class="verbatim">feature&lt;/code> 。 &lt;code class="verbatim">cargo build&lt;/code> 成功后执行：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(module-load &lt;span style="color:#e6db74">&amp;#34;/tmp/helloworld-rust/target/debug/libhelloworld_rust.dylib&amp;#34;&lt;/span>)
+(greeting-say-hello &lt;span style="color:#e6db74">&amp;#34;rust&amp;#34;&lt;/span>)
+&lt;span style="color:#75715e">;; 输出 &amp;#34;Hello, rust!&amp;#34;&lt;/span>
+&lt;span style="color:#75715e">;; 或把 dylib 所在目录追加到 load-path，然后执行&lt;/span>
+&lt;span style="color:#75715e">;; (require &amp;#39;greeting)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>更多使用细节可以参考&lt;a href="https://ubolonton.github.io/emacs-module-rs/latest/overview.html">官方文档&lt;/a>，里面有非常详细的描述。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://cireu.github.io/2020/04/05/rust-emacs-module/">用Rust扩展Emacs功能 | NIL&lt;/a>，这篇文章算是对官方文档的中文翻译，供读者参考&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div id="outline-container-headline-5" class="outline-3">
+&lt;h3 id="headline-5">
+热加载
+&lt;/h3>
+&lt;div id="outline-text-headline-5" class="outline-text-3">
+&lt;p>使用 emacs-module-rs 开发的动态模块，会暴露一个 reload 的函数 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/9a29b076681abe3507cec50d9fa424f3ccd70e91/rs-module/src/lib.rs#L48">emacs_rs_module_init&lt;/a>，然后利用 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md">rs-module/load&lt;/a> 即可实现热加载。相关命令如下：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git clone https://github.-com/ubolonton/emacs-module-rs.git
+cd emacs-module-rs &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cargo build&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>这会生成 &lt;code class="verbatim">libemacs_rs_module.dylib&lt;/code> ，它会暴露 &lt;code class="verbatim">rs-module/load&lt;/code> 方法，用这个方法去加载其他模块即可实现热加载：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(module-load &lt;span style="color:#e6db74">&amp;#34;/path/to/emacs-rs-module/target/debug/libemacs_rs_module.dylib&amp;#34;&lt;/span>)
+(rs-module/load &lt;span style="color:#e6db74">&amp;#34;/tmp/helloworld-rust/target/debug/libhelloworld_rust.dylib&amp;#34;&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-6" class="outline-3">
+&lt;h3 id="headline-6">
+参考项目
+&lt;/h3>
+&lt;div id="outline-text-headline-6" class="outline-text-3">
+&lt;p>最后，列举一些使用 Rust 开发动态模块的实际项目，供读者参考：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/1History/eww-history-ext">1History/eww-history-ext: Persist EWW histories into SQLite&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/rustify-emacs/fuz.el">rustify-emacs/fuz.el: Fast and precise fuzzy scoring/matching utils for Emacs&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/emacs-tree-sitter/elisp-tree-sitter">emacs-tree-sitter/elisp-tree-sitter: Tree-sitter bindings for Emacs Lisp&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>使用 eglot 代替 lsp-mode</title><link>https://emacstalk.github.io/post/016/</link><pubDate>Sun, 06 Mar 2022 17:21:47 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/016/</guid><description>&lt;p>
 &lt;a href="https://microsoft.github.io/language-server-protocol/">LSP&lt;/a> 是当前使用最广泛的一套协议，用于给文本编辑器提供类似 IDE 的功能，比如：自动补全、定义跳转等。对于 Emacs 来说，主要有两个实现：&lt;/p>
 &lt;ul>
 &lt;li>
