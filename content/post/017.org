@@ -1,0 +1,96 @@
+#+TITLE: Emacs 动态模块开发指南
+#+DATE: 2022-03-12T12:37:24+0800
+#+LASTMOD: 2022-03-12T12:37:40+0800
+#+DRAFT: true
+#+TAGS[]: c rust module
+
+Emacs 在 25 版本后，支持了动态模块（dynamic module），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以用了。
+
+本文就来介绍，如何使用 C/Rust 两种语言来进行 Emacs 动态模块的开发。
+
+* C
+C 是开发动态模块最直接的语言，Emacs 核心部分就是用 C 开发的。一个简单的 hello world 示例如下：
+#+begin_src c
+// emacs 动态模块的头文件，一般在 Emacs 安装目录内可找到
+#include <emacs-module.h>
+#include <string.h>
+// 声明该模块是 GPL 兼容的
+int plugin_is_GPL_compatible;
+
+// 模块的入口函数，相当于普通 C 程序的 main
+int emacs_module_init (struct emacs_runtime *ert)
+{
+  emacs_env *env = ert->get_environment(ert);
+
+  emacs_value message = env->intern(env, "message");
+  char *msg = "hello world";
+  emacs_value args[] = { env->make_string(env, msg, strlen(msg)) };
+  env->funcall(env, message, 1, args);
+  return 0;
+}
+#+end_src
+把上面的代码编译成动态链接库，macOS 下可以用如下命令：
+#+begin_src bash
+cc -dynamiclib -o helloworld.dylib -I"/Applications/Emacs.app/Contents/Resources/include/" main.c
+#+end_src
+其他环境下的编译命令可参考：
+- [[https://www.oreilly.com/library/view/c-cookbook/0596007612/ch01s05.html][1.4. Building a Dynamic Library from the Command Line]]
+
+生产动态链接库后，可以用下面的命令加载该模块：
+#+BEGIN_SRC emacs-lisp
+(module-load (expand-file-name "~/helloworld.dylib"))
+#+END_SRC
+这时，会在 =*Message*= 内打印出 =hello world= ， =module-load= 函数本身返回 =t=
+
+为了简化数据类型在 C 与 ELisp 之间的转化，Emacs 提供了一系列函数，比如：
+| C-->Elisp      | Elisp-->C              |
+|----------------+------------------------|
+| =make_integer= | =extract_integer=      |
+| =make_float=   | =extract_float=        |
+| =make_string=  | =copy_string_contents= |
+更多类型可参考官方文档：
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Module-Values.html][Conversion Between Lisp and Module Values]]
+
+从上面 helloworld 的示例可看出，基本上每次调用都需要 env 参考，显得有些啰嗦，可以用宏来简化些，比如：
+#+begin_src c
+#define lisp_integer(env, integer)             \
+  ({                                            \
+    emacs_env *_env_ = env;                     \
+    _env_->make_integer(_env_, (integer));      \
+  })
+
+#define lisp_string(env, string)                        \
+  ({                                                    \
+    emacs_env *_env_ = env;                             \
+    char* _str_ = string;                               \
+    _env_->make_string(_env_, _str_, strlen(_str_));    \
+  })
+
+#define lisp_funcall(env, fn_name, ...)                 \
+  ({                                                    \
+    emacs_env *_env_ = env;                             \
+    emacs_value _args_[] = { __VA_ARGS__ };             \
+    int _nargs_ = sizeof(_args_) / sizeof(emacs_value); \
+    _env_->funcall(_env_,                               \
+                   env->intern(env, (fn_name)),         \
+                   _nargs_,                             \
+                   _args_                               \
+                   );                                   \
+  })
+#+end_src
+需要注意的是，上面的宏使用了 [[https://stackoverflow.com/q/6440021/2163429][Statement Expression]]，不是 C 语言的标准，是 [[https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html][GNU99]] 的扩展，但由于十分有用，大多数编译器都支持了这种语法（可通过 =-std=gnu99= 指定），所以可以放心使用。其次是用到了[[https://en.wikipedia.org/wiki/Variadic_macro_in_the_C_preprocessor][可变参的宏]]，这是 C99 引入的。
+
+使用代码如下：
+#+begin_src c
+  emacs_value ret = lisp_funcall(env, "1+", lisp_integer(env, 1));
+  lisp_funcall(env, "message",
+               lisp_string(env, "(1+ %d) is %d"),
+               ret);
+
+#+end_src
+
+* 参考
+- [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html][Emacs Dynamic Modules]]
+- [[https://gcc.gnu.org/onlinedocs/cpp/Variadic-Macros.html][Variadic Macros (The C Preprocessor)]]
+- [[https://phst.eu/emacs-modules.html][Emacs modules | Philipp’s documents]]
+- [[https://github.com/universal-ctags/citre][universal-ctags/citre: Ctags IDE on the True Editor]]
