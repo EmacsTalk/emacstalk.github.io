@@ -1,6 +1,6 @@
 #+TITLE: Emacs 动态模块开发指南
 #+DATE: 2022-03-12T12:37:24+0800
-#+LASTMOD: 2022-03-12T22:08:16+0800
+#+LASTMOD: 2022-03-12T22:19:57+0800
 #+TAGS: c rust
 
 Emacs 在 25 版本后，支持了[[https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html][动态模块]]（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。
@@ -171,7 +171,7 @@ emacs-module-rs 使用了大量过程宏来简化代码的编写，比如上面�
 
 完整的宏展开代码在 [[https://github.com/jiacai2050/blog-snippets/blob/master/emacs-dynamic-module/helloworld-rust/src/expanded.rs][expanded.rs]]，对细节感兴趣的读者可自行研究。
 ** 热加载
-使用 emacs-module-rs 开发的动态模块，会暴露一个 reload 的函数 [[https://github.com/ubolonton/emacs-module-rs/blob/9a29b076681abe3507cec50d9fa424f3ccd70e91/rs-module/src/lib.rs#L48][emacs_rs_module_init]]，然后利用 [[https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md][rs-module/load]] 即可实现热加载。相关命令如下：
+使用 emacs-module-rs 开发的动态模块，除了会生成 =emacs_module_init= 外，还会额外生成一个 [[https://github.com/ubolonton/emacs-module-rs/blob/0.18.0/src/init.rs#L30][emacs_rs_module_init]] 函数，[[https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md][rs-module/load]] 通过[[https://github.com/ubolonton/emacs-module-rs/blob/0.18.0/rs-module/src/lib.rs#L48][执行这个方法]]来实现热加载。热加载相关命令如下：
 #+begin_src bash
 git clone https://github.-com/ubolonton/emacs-module-rs.git
 cd emacs-module-rs && cargo build
