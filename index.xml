@@ -99,7 +99,7 @@ c-add is a module function.
 C-based adder
 &lt;/pre>
 &lt;p>
-上面的示例代码虽然功能简单，但是把开发『动态模块』所需功能都介绍到了，如果需要更复杂的功能，可以参考文档：&lt;/p>
+上面的示例代码虽然功能简单，但把开发『动态模块』的核心功能都介绍到了，像如何进行错误处理、如何在 C 与 ELisp 间传递自定义结构等高级功能，可以参考文档：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Writing-Dynamic-Modules.html">Writing Dynamically-Loaded Modules&lt;/a>&lt;/p>
@@ -113,7 +113,7 @@ C-based adder
 简化方法调用
 &lt;/h3>
 &lt;div id="outline-text-headline-2" class="outline-text-3">
-&lt;p>从上面介绍的示例可看出，基本所有函数都需要 env 这个参数，这是由于 C 的 struct &lt;a href="https://www.geeksforgeeks.org/difference-c-structures-c-structures/">不支持成员函数&lt;/a>，可以用宏来简化些，比如：&lt;/p>
+&lt;p>从上面介绍的示例可看出，基本所有函数都需要 env 这个参数，这是由于 C 的 struct &lt;a href="https://www.geeksforgeeks.org/difference-c-structures-c-structures/">不支持成员函数&lt;/a>，可以用宏来简化，比如：&lt;/p>
 &lt;div class="src src-c">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">&lt;span style="color:#75715e">#define lisp_integer(env, integer) \
 &lt;/span>&lt;span style="color:#75715e"> ({ \
@@ -142,11 +142,11 @@ C-based adder
 &lt;/div>
 &lt;p>需要注意的是，上面的宏使用了 &lt;a href="https://stackoverflow.com/q/6440021/2163429">Statement Expression&lt;/a>，不是 C 语言的标准，是 &lt;a href="https://gcc.gnu.org/onlinedocs/gcc/Statement-Exprs.html">GNU99&lt;/a> 的扩展，但由于十分有用，大多数编译器都支持了这种语法（可通过 &lt;code class="verbatim">-std=gnu99&lt;/code> 指定），所以可以放心使用。其次是用到了&lt;a href="https://en.wikipedia.org/wiki/Variadic_macro_in_the_C_preprocessor">可变参的宏&lt;/a>，这是 C99 引入的。使用方式如下：&lt;/p>
 &lt;div class="src src-c">
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c"> emacs_value ret &lt;span style="color:#f92672">=&lt;/span> lisp_funcall(env, &lt;span style="color:#e6db74">&amp;#34;1+&amp;#34;&lt;/span>, lisp_integer(env, &lt;span style="color:#ae81ff">1&lt;/span>));
-lisp_funcall(env, &lt;span style="color:#e6db74">&amp;#34;message&amp;#34;&lt;/span>,
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-c" data-lang="c">lisp_funcall(env,
+&lt;span style="color:#e6db74">&amp;#34;message&amp;#34;&lt;/span>,
 lisp_string(env, &lt;span style="color:#e6db74">&amp;#34;(1+ %d) is %d&amp;#34;&lt;/span>),
 (lisp_integer(env, &lt;span style="color:#ae81ff">1&lt;/span>)),
-ret);&lt;/code>&lt;/pre>&lt;/div>
+lisp_funcall(env, &lt;span style="color:#e6db74">&amp;#34;1+&amp;#34;&lt;/span>, lisp_integer(env, &lt;span style="color:#ae81ff">1&lt;/span>)));&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/div>
@@ -155,18 +155,17 @@ ret);&lt;/code>&lt;/pre>&lt;/div>
 热加载
 &lt;/h3>
 &lt;div id="outline-text-headline-3" class="outline-text-3">
-&lt;p>在开发过程中，最重要的是热加载，不能每次重启服务来让新代码生效，但是这里通过 module-load 加载的动态模块，&lt;a href="https://emacs.stackexchange.com/questions/33976/how-do-you-reload-a-dynamic-module">是无法卸载的&lt;/a>，只能重启 Emacs 解决，这不是很友好，可以通过一种变通的方式来实现：&lt;/p>
+&lt;p>在开发过程中，热加载是非常重要的需求，不能每次重启服务来让新代码生效。但是通过 module-load 加载的动态模块，&lt;a href="https://emacs.stackexchange.com/questions/33976/how-do-you-reload-a-dynamic-module">是无法卸载的&lt;/a>，那是不是必须要重启 Emacs 呢？&lt;a href="https://emacs.stackexchange.com/a/36501/16450">xuchunyang&lt;/a> 给出了一种不需要重启的热加载方案：&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun fake-module-reload (module)
-&lt;span style="color:#e6db74">&amp;#34;通过加载临时文件的方式来模拟热加载
-&lt;/span>&lt;span style="color:#e6db74">https://emacs.stackexchange.com/a/36501/16450&amp;#34;&lt;/span>
 (interactive &lt;span style="color:#e6db74">&amp;#34;fReload Module file: &amp;#34;&lt;/span>)
 (let ((tmpfile (make-temp-file
 (&lt;span style="color:#a6e22e">file-name-nondirectory&lt;/span> module) &lt;span style="color:#66d9ef">nil&lt;/span> module-file-suffix)))
 (&lt;span style="color:#a6e22e">copy-file&lt;/span> module tmpfile &lt;span style="color:#66d9ef">t&lt;/span>)
 (module-load tmpfile)))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>在 Rust 中，还有一个方案，即 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md">rs-module/load&lt;/a>，后文会具体介绍。&lt;/p>
+&lt;p>该方式很巧妙，虽然已经加载的 dylib 不能卸载，但可通过重新加载另一个功能相同的 dylib 来覆盖之前的，这间接实现了热加载的效果。
+在 Rust 中，还有一个更有技术含量的方案，后文会具体介绍。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;/div>
@@ -204,9 +203,26 @@ env.message(&lt;span style="color:#f92672">&amp;amp;&lt;/span>format&lt;span sty
 &lt;/ul>
 &lt;div id="outline-container-headline-5" class="outline-3">
 &lt;h3 id="headline-5">
-热加载
+实现原理
 &lt;/h3>
 &lt;div id="outline-text-headline-5" class="outline-text-3">
+&lt;p>emacs-module-rs 使用了大量过程宏来简化代码的编写，比如上面的 &lt;code class="verbatim">defun&lt;/code>, &lt;code class="verbatim">emacs::module&lt;/code> ，利用 &lt;a href="https://github.com/dtolnay/cargo-expand">cargo-expand&lt;/a> 可以将这些宏代码展开，可以看到实现原理如下：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>使用 defun 声明的函数会被添加到 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/0.18.0/src/init.rs#L74">&lt;code>__INIT_FNS__&lt;/code>&lt;/a>，这是一个全局的 map&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在生成的 &lt;code class="verbatim">emacs_module_init&lt;/code> 中，去遍历 &lt;code class="verbatim">__INIT_FNS__&lt;/code> ，调用 fset 将 Rust 到 C 的 binding 函数导出到 ELisp 中&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>完整的宏展开代码在 &lt;a href="https://github.com/jiacai2050/blog-snippets/blob/master/emacs-dynamic-module/helloworld-rust/src/expanded.rs">expanded.rs&lt;/a>，对细节感兴趣的读者可自行研究。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-6" class="outline-3">
+&lt;h3 id="headline-6">
+热加载
+&lt;/h3>
+&lt;div id="outline-text-headline-6" class="outline-text-3">
 &lt;p>使用 emacs-module-rs 开发的动态模块，会暴露一个 reload 的函数 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/9a29b076681abe3507cec50d9fa424f3ccd70e91/rs-module/src/lib.rs#L48">emacs_rs_module_init&lt;/a>，然后利用 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md">rs-module/load&lt;/a> 即可实现热加载。相关命令如下：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git clone https://github.-com/ubolonton/emacs-module-rs.git
@@ -219,11 +235,11 @@ cd emacs-module-rs &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> c
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-6" class="outline-3">
-&lt;h3 id="headline-6">
+&lt;div id="outline-container-headline-7" class="outline-3">
+&lt;h3 id="headline-7">
 参考项目
 &lt;/h3>
-&lt;div id="outline-text-headline-6" class="outline-text-3">
+&lt;div id="outline-text-headline-7" class="outline-text-3">
 &lt;p>最后，列举一些使用 Rust 开发动态模块的实际项目，供读者参考：&lt;/p>
 &lt;ul>
 &lt;li>
