@@ -223,7 +223,7 @@ env.message(&lt;span style="color:#f92672">&amp;amp;&lt;/span>format&lt;span sty
 热加载
 &lt;/h3>
 &lt;div id="outline-text-headline-6" class="outline-text-3">
-&lt;p>使用 emacs-module-rs 开发的动态模块，会暴露一个 reload 的函数 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/9a29b076681abe3507cec50d9fa424f3ccd70e91/rs-module/src/lib.rs#L48">emacs_rs_module_init&lt;/a>，然后利用 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md">rs-module/load&lt;/a> 即可实现热加载。相关命令如下：&lt;/p>
+&lt;p>使用 emacs-module-rs 开发的动态模块，除了会生成 &lt;code class="verbatim">emacs_module_init&lt;/code> 外，还会额外生成一个 &lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/0.18.0/src/init.rs#L30">emacs_rs_module_init&lt;/a> 函数，&lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/master/rs-module/README.md">rs-module/load&lt;/a> 通过&lt;a href="https://github.com/ubolonton/emacs-module-rs/blob/0.18.0/rs-module/src/lib.rs#L48">执行这个方法&lt;/a>来实现热加载。热加载相关命令如下：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">git clone https://github.-com/ubolonton/emacs-module-rs.git
 cd emacs-module-rs &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> cargo build&lt;/code>&lt;/pre>&lt;/div>
