@@ -11,7 +11,7 @@ paginatePath = "page"
 enableGitInfo = true
 
 [frontmatter]
-  lastmod = [':git', 'lastmod', ':fileModTime', ':default']
+  lastmod = ['lastmod', ':git', ':fileModTime', ':default']
 
 [author]
     name = "写代码的西瓜"

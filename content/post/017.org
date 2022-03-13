@@ -1,7 +1,7 @@
-#+TITLE: Emacs 动态模块开发指南
+#+TITLE: 使用 C/Rust 开发 Emacs 动态模块
 #+DATE: 2022-03-12T12:37:24+0800
-#+LASTMOD: 2022-03-12T22:19:57+0800
-#+TAGS: c rust
+#+LASTMOD: 2022-03-13T21:51:42+0800
+#+TAGS[]: c rust
 
 Emacs 在 25 版本后，支持了[[https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html][动态模块]]（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。
 
@@ -124,6 +124,7 @@ lisp_funcall(env,
              (lisp_integer(env, 1)),
              lisp_funcall(env, "1+", lisp_integer(env, 1)));
 #+end_src
+由于 C 中的宏仅仅只是文本替换，所以即便使用了宏，代码也还是显得有些冗余。后文会介绍到，在 Rust 中是如何用宏来简化方法调用的。
 ** 热加载
 在开发过程中，热加载是非常重要的需求，不能每次重启服务来让新代码生效。但是通过 module-load 加载的动态模块，[[https://emacs.stackexchange.com/questions/33976/how-do-you-reload-a-dynamic-module][是无法卸载的]]，那是不是必须要重启 Emacs 呢？[[https://emacs.stackexchange.com/a/36501/16450][xuchunyang]] 给出了一种不需要重启的热加载方案：
 #+BEGIN_SRC emacs-lisp
@@ -152,7 +153,9 @@ fn say_hello(env: &Env, name: String) -> Result<Value<'_>> {
     env.message(&format!("Hello, {}!", name))
 }
 #+end_src
-相比 C 代码，这里的代码简洁不少，通过 =#[defun]= 将 =say_hello= 函数导出到 ELisp 中，并且函数名自动加上了前缀 =greeting= ，并提供了相应 =feature= 。 =cargo build= 成功后执行：
+相比 C 代码，这里的代码简洁不少，方法的参数都是 Rust 类型，内部通过 [[https://docs.rs/emacs/latest/emacs/trait.FromLisp.html][FromLisp]]、[[https://docs.rs/emacs/0.18.0/emacs/trait.IntoLisp.html][IntoLisp]] 这两个 trait，进行 C 与 Rust 的类型转化。
+
+通过 =#[defun]= 将 =say_hello= 函数导出到 ELisp 中，并且函数名自动加上了前缀 =greeting= ，并提供了相应 =feature= 。 =cargo build= 成功后，执行下面的命令：
 #+BEGIN_SRC emacs-lisp
 (module-load "/tmp/helloworld-rust/target/debug/libhelloworld_rust.dylib")
 
@@ -162,6 +165,7 @@ fn say_hello(env: &Env, name: String) -> Result<Value<'_>> {
 ;; 或把 dylib 所在目录追加到 load-path，然后执行
 ;; (require 'greeting)
 #+END_SRC
+
 更多使用细节可以参考[[https://ubolonton.github.io/emacs-module-rs/latest/overview.html][官方文档]]，里面有非常详细的描述。
 - [[https://cireu.github.io/2020/04/05/rust-emacs-module/][用Rust扩展Emacs功能 | NIL]]，这篇文章算是对官方文档的中文翻译，供读者参考
 ** 实现原理
