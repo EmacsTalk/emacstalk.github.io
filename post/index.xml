@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description>Recent content in Posts on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 12 Mar 2022 12:37:24 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs 动态模块开发指南</title><link>https://emacstalk.github.io/post/017/</link><pubDate>Sat, 12 Mar 2022 12:37:24 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/017/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description>Recent content in Posts on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 12 Mar 2022 12:37:24 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>使用 C/Rust 开发 Emacs 动态模块</title><link>https://emacstalk.github.io/post/017/</link><pubDate>Sat, 12 Mar 2022 12:37:24 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/017/</guid><description>
 &lt;p>
 Emacs 在 25 版本后，支持了&lt;a href="https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html">动态模块&lt;/a>（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。&lt;/p>
 &lt;p>
@@ -148,6 +148,7 @@ lisp_string(env, &lt;span style="color:#e6db74">&amp;#34;(1+ %d) is %d&amp;#34;&
 (lisp_integer(env, &lt;span style="color:#ae81ff">1&lt;/span>)),
 lisp_funcall(env, &lt;span style="color:#e6db74">&amp;#34;1+&amp;#34;&lt;/span>, lisp_integer(env, &lt;span style="color:#ae81ff">1&lt;/span>)));&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
+&lt;p>由于 C 中的宏仅仅只是文本替换，所以即便使用了宏，代码也还是显得有些冗余。后文会介绍到，在 Rust 中是如何用宏来简化方法调用的。&lt;/p>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-3" class="outline-3">
@@ -187,7 +188,9 @@ emacs::plugin_is_GPL_compatible&lt;span style="color:#f92672">!&lt;/span>();
 env.message(&lt;span style="color:#f92672">&amp;amp;&lt;/span>format&lt;span style="color:#f92672">!&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Hello, {}!&amp;#34;&lt;/span>, name))
 }&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>相比 C 代码，这里的代码简洁不少，通过 &lt;code class="verbatim">#[defun]&lt;/code> 将 &lt;code class="verbatim">say_hello&lt;/code> 函数导出到 ELisp 中，并且函数名自动加上了前缀 &lt;code class="verbatim">greeting&lt;/code> ，并提供了相应 &lt;code class="verbatim">feature&lt;/code> 。 &lt;code class="verbatim">cargo build&lt;/code> 成功后执行：&lt;/p>
+&lt;p>相比 C 代码，这里的代码简洁不少，方法的参数都是 Rust 类型，内部通过 &lt;a href="https://docs.rs/emacs/latest/emacs/trait.FromLisp.html">FromLisp&lt;/a>、&lt;a href="https://docs.rs/emacs/0.18.0/emacs/trait.IntoLisp.html">IntoLisp&lt;/a> 这两个 trait，进行 C 与 Rust 的类型转化。&lt;/p>
+&lt;p>
+通过 &lt;code class="verbatim">#[defun]&lt;/code> 将 &lt;code class="verbatim">say_hello&lt;/code> 函数导出到 ELisp 中，并且函数名自动加上了前缀 &lt;code class="verbatim">greeting&lt;/code> ，并提供了相应 &lt;code class="verbatim">feature&lt;/code> 。 &lt;code class="verbatim">cargo build&lt;/code> 成功后，执行下面的命令：&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(module-load &lt;span style="color:#e6db74">&amp;#34;/tmp/helloworld-rust/target/debug/libhelloworld_rust.dylib&amp;#34;&lt;/span>)
 (greeting-say-hello &lt;span style="color:#e6db74">&amp;#34;rust&amp;#34;&lt;/span>)
@@ -195,7 +198,8 @@ env.message(&lt;span style="color:#f92672">&amp;amp;&lt;/span>format&lt;span sty
 &lt;span style="color:#75715e">;; 或把 dylib 所在目录追加到 load-path，然后执行&lt;/span>
 &lt;span style="color:#75715e">;; (require &amp;#39;greeting)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>更多使用细节可以参考&lt;a href="https://ubolonton.github.io/emacs-module-rs/latest/overview.html">官方文档&lt;/a>，里面有非常详细的描述。&lt;/p>
+&lt;p>
+更多使用细节可以参考&lt;a href="https://ubolonton.github.io/emacs-module-rs/latest/overview.html">官方文档&lt;/a>，里面有非常详细的描述。&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://cireu.github.io/2020/04/05/rust-emacs-module/">用Rust扩展Emacs功能 | NIL&lt;/a>，这篇文章算是对官方文档的中文翻译，供读者参考&lt;/p>
