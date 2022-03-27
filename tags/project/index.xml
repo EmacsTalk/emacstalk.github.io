@@ -13,16 +13,13 @@
 &lt;/div>
 &lt;p>比如， &lt;code class="verbatim">/ssh:vagrant@192.168.31.92:/etc/hosts&lt;/code> 即可以 vagrant 用户使用 ssh 协议登录 192.168.31.92 机器，并且打开 &lt;code class="verbatim">/etc/hosts&lt;/code> 文件。&lt;/p>
 &lt;p>
-借助于 ssh 的功能，可以通过下面的配置来简化打开文件的命令：&lt;/p>
+借助于 ssh 的功能，可以通过下面的配置来简化（免密码）打开文件的命令：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># ~/.ssh/config&lt;/span>
 Host devhost
 HostName 192.168.31.92
 User vagrant
-IdentityFile ~/Documents/configs/vagrant-pk
-ControlMaster auto
-ControlPath ~/.ssh/master-%C
-ControlPersist 1h&lt;/code>&lt;/pre>&lt;/div>
+IdentityFile ~/.ssh/vagrant-pk&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>这样只需输入 &lt;code class="verbatim">/ssh:devhost:/etc/hosts&lt;/code> 即可。通过配置 tramp 默认协议为 ssh，可以进一步简化为： &lt;code class="verbatim">/-:devhost:/etc/hosts&lt;/code>&lt;/p>
 &lt;div class="src src-emacs-lisp">
@@ -37,30 +34,56 @@ ControlPersist 1h&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-2" class="outline-2">
 &lt;h2 id="headline-2">
-&lt;a href="https://www.gnu.org/software/tramp/#Remote-processes">与其他模块结合&lt;/a>
+ssh ControlMaster
 &lt;/h2>
 &lt;div id="outline-text-headline-2" class="outline-text-2">
-&lt;p>在 Emacs 中，shell.el、eshell.el、compile.el、gud.el（gdb）这几个内置模块都与 tramp 做了完美整合，执行相应命令时会通过相应协议在远端执行。&lt;/p>
+&lt;p>&lt;a href="https://www.anchor.com.au/blog/2010/02/ssh-controlmaster-the-good-the-bad-the-ugly/">ControlMaster&lt;/a> 是 ssh 进行多路复用的机制，这样用户只需要在第一次登录时需要输入密码信息，后续 ssh 登录同一主机时，会复用之前的 TCP 连接。&lt;/p>
+&lt;p>
+ControlMaster 的主要缺点是第一次建立连接的 ssh 会话必须一直保留着，如果 logout 这个主会话，其他的 ssh 会话则会“卡住”。也因为这个原因，tramp 使用 ssh 时，默认用 &lt;code class="verbatim">tramp-ssh-controlmaster-options&lt;/code> 覆盖掉 ssh config 中 ControlMaster 的行为，默认值为：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#e6db74">&amp;#34;-o ControlMaster=auto -o ControlPath=&amp;#39;tramp.%%C&amp;#39; -o ControlPersist=no&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>没有进行持久化。如果想要使用 ssh config 中的配置，则需配置：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq tramp-use-ssh-controlmaster-options &lt;span style="color:#66d9ef">nil&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-3" class="outline-2">
 &lt;h2 id="headline-3">
-多级跳跃 multiple hops
+&lt;a href="https://www.gnu.org/software/tramp/#Remote-processes">与其他模块结合&lt;/a>
 &lt;/h2>
 &lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;p>在 Emacs 中，shell.el、eshell.el、compile.el、gud.el（gdb）这几个内置模块都与 tramp 做了完美整合，执行相应命令时会通过相应协议在远端执行。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+多级跳跃 multiple hops
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;p>一般来说，公司内处于安全考虑，会禁止开发同学直接登录生产机器，相应会提供一跳板机来登录生产机器
 ，这时就需要多次跳跃。tramp 支持通过下面的语法，级联登录多个机器&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">C-x C-f /ssh:bird@bastion|ssh:admin@production:/path RET&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>上面命令会先用 bird 用户登录堡垒机 bastion，之后再在堡垒机上以 admin 用户登录 production 打开 &lt;code class="verbatim">/path&lt;/code> 。&lt;/p>
+&lt;p>
+如果要在多级跳跃时使用 ControlMaster，中转的机器需要配置如下：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># ~/.ssh/config&lt;/span>
+Host *
+ControlMaster auto
+ControlPath tramp.%C
+ControlPersist no&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;/div>
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
 以 sudo 方式打开文件
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-5" class="outline-text-2">
 &lt;p>一般来说，登录远端机器时都是非 root 用户，有时会需要用 sudo 来打开某些文件，tramp 通过下面的语法支持这类操作：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">C-x C-f /ssh:you@remotehost|sudo::/path RET&lt;/code>&lt;/pre>&lt;/div>
@@ -71,11 +94,11 @@ ControlPersist 1h&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-5" class="outline-2">
-&lt;h2 id="headline-5">
+&lt;div id="outline-container-headline-6" class="outline-2">
+&lt;h2 id="headline-6">
 注意事项
 &lt;/h2>
-&lt;div id="outline-text-headline-5" class="outline-text-2">
+&lt;div id="outline-text-headline-6" class="outline-text-2">
 &lt;p>Tramp 打开的远端文件和本地的文件没什么区别，会被记录在 backup、autosave、recentf 等中。在今后重启 Emacs 时，如果这时无法连接远端机器，Emacs 可能会卡住，这时因为 tramp 会对之前打开的文件进行检查，可以通过&lt;a href="https://stackoverflow.com/a/22077775/2163429">下面的一些配置&lt;/a>来绕过 tramp，让 backup 等机制不对 tramp 打开的文件起作用：&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq recentf-exclude &lt;span style="color:#f92672">`&lt;/span>(&lt;span style="color:#f92672">,&lt;/span>tramp-file-name-regexp
@@ -105,11 +128,11 @@ backup-directory-alist (&lt;span style="color:#a6e22e">list&lt;/span> (&lt;span 
 &lt;/figure>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-6" class="outline-2">
-&lt;h2 id="headline-6">
+&lt;div id="outline-container-headline-7" class="outline-2">
+&lt;h2 id="headline-7">
 更多实践
 &lt;/h2>
-&lt;div id="outline-text-headline-6" class="outline-text-2">
+&lt;div id="outline-text-headline-7" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://willschenk.com/articles/2020/tramp_tricks/">Emacs Tramp tricks – Editing a file inside of a docker container&lt;/a>&lt;/p>
