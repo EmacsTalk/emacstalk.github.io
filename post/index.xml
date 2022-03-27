@@ -11,9 +11,9 @@
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">/method:user@host:path/to/file&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>比如， &lt;code class="verbatim">/ssh:vagrant@192.168.31.92:/etc/hosts&lt;/code> 即可以 vagrant 用户使用 ssh 协议登录 192.168.31.92 机器，并且打开 &lt;code class="verbatim">/etc/hosts&lt;/code> 文件。&lt;/p>
+&lt;p>比如， &lt;code class="verbatim">/ssh:vagrant@192.168.31.92:/etc/hosts&lt;/code> 即可以 vagrant 用户使用 SSH 协议登录 192.168.31.92 机器，并且打开 &lt;code class="verbatim">/etc/hosts&lt;/code> 文件。&lt;/p>
 &lt;p>
-借助于 ssh 的功能，可以通过下面的配置来简化（免密码）打开文件的命令：&lt;/p>
+借助于 SSH 的功能，可以通过下面的配置来简化（免密码）打开文件的命令：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># ~/.ssh/config&lt;/span>
 Host devhost
@@ -21,7 +21,7 @@ HostName 192.168.31.92
 User vagrant
 IdentityFile ~/.ssh/vagrant-pk&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>这样只需输入 &lt;code class="verbatim">/ssh:devhost:/etc/hosts&lt;/code> 即可。通过配置 tramp 默认协议为 ssh，可以进一步简化为： &lt;code class="verbatim">/-:devhost:/etc/hosts&lt;/code>&lt;/p>
+&lt;p>这样只需输入 &lt;code class="verbatim">/ssh:devhost:/etc/hosts&lt;/code> 即可。通过配置 tramp 默认协议为 SSH，可以进一步简化为： &lt;code class="verbatim">/-:devhost:/etc/hosts&lt;/code>&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq tramp-default-method &lt;span style="color:#e6db74">&amp;#34;ssh&amp;#34;&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
@@ -34,16 +34,16 @@ IdentityFile ~/.ssh/vagrant-pk&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-2" class="outline-2">
 &lt;h2 id="headline-2">
-ssh ControlMaster
+SSH ControlMaster
 &lt;/h2>
 &lt;div id="outline-text-headline-2" class="outline-text-2">
-&lt;p>&lt;a href="https://www.anchor.com.au/blog/2010/02/ssh-controlmaster-the-good-the-bad-the-ugly/">ControlMaster&lt;/a> 是 ssh 进行多路复用的机制，这样用户只需要在第一次登录时需要输入密码信息，后续 ssh 登录同一主机时，会复用之前的 TCP 连接。&lt;/p>
+&lt;p>&lt;a href="https://www.anchor.com.au/blog/2010/02/ssh-controlmaster-the-good-the-bad-the-ugly/">ControlMaster&lt;/a> 是 SSH 进行多路复用的机制，这样用户只需要在第一次登录时需要输入密码信息，后续 SSH 登录同一主机时，会复用之前的 TCP 连接。&lt;/p>
 &lt;p>
-ControlMaster 的主要缺点是第一次建立连接的 ssh 会话必须一直保留着，如果 logout 这个主会话，其他的 ssh 会话则会“卡住”。也因为这个原因，tramp 使用 ssh 时，默认用 &lt;code class="verbatim">tramp-ssh-controlmaster-options&lt;/code> 覆盖掉 ssh config 中 ControlMaster 的行为，默认值为：&lt;/p>
+ControlMaster 的主要缺点是第一次建立连接的 SSH 会话必须一直保留着，如果 logout 这个主会话，其他的 SSH 会话则会“卡住”。也因为这个原因，tramp 使用 SSH 时，默认用 &lt;code class="verbatim">tramp-ssh-controlmaster-options&lt;/code> 覆盖掉 SSH config 中 ControlMaster 的行为，默认值为：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#e6db74">&amp;#34;-o ControlMaster=auto -o ControlPath=&amp;#39;tramp.%%C&amp;#39; -o ControlPersist=no&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>没有进行持久化。如果想要使用 ssh config 中的配置，则需配置：&lt;/p>
+&lt;p>没有进行持久化。如果想要使用 SSH config 中的配置，则需配置：&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq tramp-use-ssh-controlmaster-options &lt;span style="color:#66d9ef">nil&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
