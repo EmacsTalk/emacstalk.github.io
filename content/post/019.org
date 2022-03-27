@@ -1,6 +1,6 @@
 #+TITLE: Tramp 使用指南
 #+DATE: 2022-03-27T10:33:10+0800
-#+LASTMOD: 2022-03-27T13:09:19+0800
+#+LASTMOD: 2022-03-27T13:49:58+0800
 #+TAGS[]: tramp project
 
 [[https://www.gnu.org/software/tramp/][Tramp]] 是 Emacs 中用来编辑远端文件的模块，全称为『Transparent Remote (file) Access, Multiple Protocol』，类似与 VSCode 的 [[https://code.visualstudio.com/docs/remote/remote-overview][Remote Development]]，只不过比它年长 20 岁而已😄。
@@ -11,20 +11,17 @@
 #+BEGIN_SRC emacs-lisp
 /method:user@host:path/to/file
 #+END_SRC
-比如， =/ssh:vagrant@192.168.31.92:/etc/hosts= 即可以 vagrant 用户使用 ssh 协议登录 192.168.31.92 机器，并且打开 =/etc/hosts= 文件。
+比如， =/ssh:vagrant@192.168.31.92:/etc/hosts= 即可以 vagrant 用户使用 SSH 协议登录 192.168.31.92 机器，并且打开 =/etc/hosts= 文件。
 
-借助于 ssh 的功能，可以通过下面的配置来简化打开文件的命令：
+借助于 SSH 的功能，可以通过下面的配置来简化（免密码）tramp 的使用：
 #+begin_src bash
 # ~/.ssh/config
 Host devhost
   HostName 192.168.31.92
   User vagrant
-  IdentityFile ~/Documents/configs/vagrant-pk
-  ControlMaster auto
-  ControlPath ~/.ssh/master-%C
-  ControlPersist 1h
+  IdentityFile ~/.ssh/vagrant-pk
 #+end_src
-这样只需输入 =/ssh:devhost:/etc/hosts= 即可。通过配置 tramp 默认协议为 ssh，可以进一步简化为： =/-:devhost:/etc/hosts=
+这样只需输入 =/ssh:devhost:/etc/hosts= 即可。通过配置 tramp 默认协议为 SSH，可以进一步简化为： =/-:devhost:/etc/hosts=
 #+BEGIN_SRC emacs-lisp
 (setq tramp-default-method "ssh")
 #+END_SRC
@@ -33,6 +30,17 @@ Host devhost
 (setq directory-abbrev-alist '(("^/dev" . "/-:dev:/etc")))
 #+END_SRC
 然后再 find-file 打开 =/dev= 时，输入 TAB，会自动打开 =/-:dev:/etc=
+* SSH ControlMaster
+[[https://www.anchor.com.au/blog/2010/02/ssh-controlmaster-the-good-the-bad-the-ugly/][ControlMaster]] 是 SSH 进行多路复用的机制，这样用户只需要在第一次登录时需要输入密码信息，后续 SSH 登录同一主机时，会复用之前的 TCP 连接。
+
+ControlMaster 的主要缺点是第一次建立连接的 SSH 会话必须一直保留着，如果 logout 这个主会话，其他的 SSH 会话则会“卡住”。也因为这个原因，tramp 使用 SSH 时，默认用 =tramp-ssh-controlmaster-options= 覆盖掉 SSH config 中 ControlMaster 的行为，默认值为：
+#+begin_src bash
+"-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"
+#+end_src
+没有进行持久化。如果想要使用 SSH config 中的配置，则需配置：
+#+begin_src emacs-lisp
+(setq tramp-use-ssh-controlmaster-options nil)
+#+end_src
 * [[https://www.gnu.org/software/tramp/#Remote-processes][与其他模块结合]]
 在 Emacs 中，shell.el、eshell.el、compile.el、gud.el（gdb）这几个内置模块都与 tramp 做了完美整合，执行相应命令时会通过相应协议在远端执行。
 * 多级跳跃 multiple hops
@@ -42,6 +50,15 @@ Host devhost
 C-x C-f /ssh:bird@bastion|ssh:admin@production:/path RET
 #+end_src
 上面命令会先用 bird 用户登录堡垒机 bastion，之后再在堡垒机上以 admin 用户登录 production 打开 =/path= 。
+
+如果要在多级跳跃时使用 ControlMaster，中转的机器需要配置如下：
+#+begin_src bash
+# ~/.ssh/config
+Host *
+     ControlMaster      auto
+     ControlPath        tramp.%C
+     ControlPersist     no
+#+end_src
 * 以 sudo 方式打开文件
 一般来说，登录远端机器时都是非 root 用户，有时会需要用 sudo 来打开某些文件，tramp 通过下面的语法支持这类操作：
 #+begin_src bash
