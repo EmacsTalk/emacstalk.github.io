@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>tramp on EmacsTalk</title><link>https://emacstalk.github.io/tags/tramp/</link><description>Recent content in tramp on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 27 Mar 2022 10:33:10 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/tramp/index.xml" rel="self" type="application/rss+xml"/><item><title>Tramp 使用指南</title><link>https://emacstalk.github.io/post/019/</link><pubDate>Sun, 27 Mar 2022 10:33:10 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/019/</guid><description>
+&lt;p>
+&lt;a href="https://www.gnu.org/software/tramp/">Tramp&lt;/a> 是 Emacs 中用来编辑远端文件的模块，全称为『Transparent Remote (file) Access, Multiple Protocol』，类似与 VSCode 的 &lt;a href="https://code.visualstudio.com/docs/remote/remote-overview">Remote Development&lt;/a>，只不过比它年长 20 岁而已😄。
+这边文章就来介绍下 tramp 的使用方式与注意事项。&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+使用方式
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>在使用 &lt;code class="verbatim">find-file&lt;/code> 打开文件时，使用&lt;a href="https://www.gnu.org/software/tramp/#File-name-syntax">下面的语法&lt;/a>，即可打开远端的文件：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">/method:user@host:path/to/file&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>比如， &lt;code class="verbatim">/ssh:vagrant@192.168.31.92:/etc/hosts&lt;/code> 即可以 vagrant 用户使用 ssh 协议登录 192.168.31.92 机器，并且打开 &lt;code class="verbatim">/etc/hosts&lt;/code> 文件。&lt;/p>
+&lt;p>
+借助于 ssh 的功能，可以通过下面的配置来简化打开文件的命令：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># ~/.ssh/config&lt;/span>
+Host devhost
+HostName 192.168.31.92
+User vagrant
+IdentityFile ~/Documents/configs/vagrant-pk
+ControlMaster auto
+ControlPath ~/.ssh/master-%C
+ControlPersist 1h&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>这样只需输入 &lt;code class="verbatim">/ssh:devhost:/etc/hosts&lt;/code> 即可。通过配置 tramp 默认协议为 ssh，可以进一步简化为： &lt;code class="verbatim">/-:devhost:/etc/hosts&lt;/code>&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq tramp-default-method &lt;span style="color:#e6db74">&amp;#34;ssh&amp;#34;&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>另外，也可以通过配置 directory-abbrev-alist 简化：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq directory-abbrev-alist &lt;span style="color:#f92672">&amp;#39;&lt;/span>((&lt;span style="color:#e6db74">&amp;#34;^/dev&amp;#34;&lt;/span> &lt;span style="color:#f92672">.&lt;/span> &lt;span style="color:#e6db74">&amp;#34;/-:dev:/etc&amp;#34;&lt;/span>)))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>然后再 find-file 打开 &lt;code class="verbatim">/dev&lt;/code> 时，输入 TAB，会自动打开 &lt;code class="verbatim">/-:dev:/etc&lt;/code>&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+&lt;a href="https://www.gnu.org/software/tramp/#Remote-processes">与其他模块结合&lt;/a>
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;p>在 Emacs 中，shell.el、eshell.el、compile.el、gud.el（gdb）这几个内置模块都与 tramp 做了完美整合，执行相应命令时会通过相应协议在远端执行。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+多级跳跃 multiple hops
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;p>一般来说，公司内处于安全考虑，会禁止开发同学直接登录生产机器，相应会提供一跳板机来登录生产机器
+，这时就需要多次跳跃。tramp 支持通过下面的语法，级联登录多个机器&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">C-x C-f /ssh:bird@bastion|ssh:admin@production:/path RET&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>上面命令会先用 bird 用户登录堡垒机 bastion，之后再在堡垒机上以 admin 用户登录 production 打开 &lt;code class="verbatim">/path&lt;/code> 。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+以 sudo 方式打开文件
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;p>一般来说，登录远端机器时都是非 root 用户，有时会需要用 sudo 来打开某些文件，tramp 通过下面的语法支持这类操作：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">C-x C-f /ssh:you@remotehost|sudo::/path RET&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>&lt;code class="verbatim">sudo::&lt;/code> 的方式在 Emacs 27 上&lt;a href="https://stackoverflow.com/a/16408592/2163429">运行没有问题&lt;/a>，其他低版本可能需要输入完整的命令：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">C-x C-f /ssh:you@remotehost|sudo:remotehost:/path RET&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-5" class="outline-2">
+&lt;h2 id="headline-5">
+注意事项
+&lt;/h2>
+&lt;div id="outline-text-headline-5" class="outline-text-2">
+&lt;p>Tramp 打开的远端文件和本地的文件没什么区别，会被记录在 backup、autosave、recentf 等中。在今后重启 Emacs 时，如果这时无法连接远端机器，Emacs 可能会卡住，这时因为 tramp 会对之前打开的文件进行检查，可以通过&lt;a href="https://stackoverflow.com/a/22077775/2163429">下面的一些配置&lt;/a>来绕过 tramp，让 backup 等机制不对 tramp 打开的文件起作用：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq recentf-exclude &lt;span style="color:#f92672">`&lt;/span>(&lt;span style="color:#f92672">,&lt;/span>tramp-file-name-regexp
+&lt;span style="color:#e6db74">&amp;#34;COMMIT_EDITMSG&amp;#34;&lt;/span>)
+tramp-auto-save-directory temporary-file-directory
+backup-directory-alist (&lt;span style="color:#a6e22e">list&lt;/span> (&lt;span style="color:#a6e22e">cons&lt;/span> tramp-file-name-regexp &lt;span style="color:#66d9ef">nil&lt;/span>)))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>如果用了 &lt;a href="https://github.com/emacs-dashboard/emacs-dashboard">emacs-dashboard&lt;/a> 来展示 project.el 中的项目，Emacs 启动时会检查这些项目，因此也需要跳过那些远端项目，不要持久化保存：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/project-remember-advice (fn pr &lt;span style="color:#66d9ef">&amp;amp;optional&lt;/span> no-write)
+(let* ((remote? (file-remote-p (project-root pr)))
+(no-write (if remote? &lt;span style="color:#66d9ef">t&lt;/span> no-write)))
+(&lt;span style="color:#a6e22e">funcall&lt;/span> fn pr no-write)))
+(advice-add &lt;span style="color:#e6db74">&amp;#39;project-remember-project&lt;/span> :around
+&lt;span style="color:#e6db74">&amp;#39;my/project-remember-advice&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+如果通过上面的配置，打开 Emacs 还是有卡吨，可以通过调整 tramp-verbose 来进行调试：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq tramp-verbose &lt;span style="color:#ae81ff">10&lt;/span>)&lt;span style="color:#75715e">; 默认是 3&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>设置之后再重启时，会在 &lt;code class="verbatim">*debug-tramp*&lt;/code> 内打开出 tramp 执行的详细信息。下图为笔者调试因 project.el 卡住时的截图：&lt;/p>
+&lt;figure>
+&lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN011TDwOt1z6A7zQEy7u_!!581166664.png" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN011TDwOt1z6A7zQEy7u_!!581166664.png" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN011TDwOt1z6A7zQEy7u_!!581166664.png" />&lt;figcaption>
+&lt;strong>debug-tramp&lt;/strong> 示意图
+&lt;/figcaption>
+&lt;/figure>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-6" class="outline-2">
+&lt;h2 id="headline-6">
+更多实践
+&lt;/h2>
+&lt;div id="outline-text-headline-6" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://willschenk.com/articles/2020/tramp_tricks/">Emacs Tramp tricks – Editing a file inside of a docker container&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.gnu.org/software/tramp/#Frequently-Asked-Questions">TRAMP 2.5.2 User Manual – Frequently Asked Questions&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
