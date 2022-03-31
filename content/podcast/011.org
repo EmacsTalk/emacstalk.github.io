@@ -1,0 +1,31 @@
+#+TITLE: 011. 与架构师 redraiment 闲聊 Emacs
+#+DATE: 2022-03-31T19:50:52+0800
+#+LASTMOD: 2022-03-31T21:42:43+0800
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/b2da-audiofreehighqps/B9/8F/GKwRIMAGG26rAc71mQEy25S-.m4a
+#+PODCAST_DURATION: 01:02:27
+#+PODCAST_LENGTH: 30324915
+#+PODCAST_IMAGE_SRC: guests/redraiment.jpg
+#+PODCAST_IMAGE_ALT: redraiment
+
+* 概要
+本期嘉宾是使用十二年的 Emacs 资深用户张泽鹏（网络ID：redraiment）。得益于 Emacs 其无与伦比的“开放性”，嘉宾使用它打造出符合自己理念的高效开发环境。Emacs 对于嘉宾来说，即使生产力工具，也是“玩具”，在“玩”的过程中，来学习新技能。使用 Emacs 多年后，万物可编辑的思维给嘉宾的日常工作带来很多启发，总结出一篇与系统设计的文章：[[https://my.oschina.net/u/1464083/blog/4809459][编辑器思维与系统设计思想]]，这其中的精华都会在节目中聊到，近一个小时的节目，精彩不容错过。
+
+* 时间线
+- 00:00:42 嘉宾自我介绍
+- 00:04:18 为什么选择 Emacs
+- 00:11:11 ELisp 学习经历
+- 00:21:34 Emacs 对嘉宾思维的影响
+- 00:33:56 使用 ELisp 开发微信小程序的经历
+- 00:43:20 函数式编程的优势
+- 00:58:06 推荐
+
+* Show Notes
+- 嘉宾介绍
+  - 姓名：张泽鹏
+  - 邮件：redraiment@gmail.com
+  - 工作：外企（道富）⇒ 创业 ⇒ 互金（51） ⇒ 制造（阿里）
+  - 2010 开始用 Emacs
+- 用 Emacs Lisp 开发的微信小程序：[[https://github.com/redraiment/wechat.el][redraiment/wechat.el]]
+- 推荐
+  - [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macros.html][Emacs Keyboard Macros]]
+  - [[https://book.douban.com/subject/1148282/][《计算机程序的构造和解释》（SICP）]]
