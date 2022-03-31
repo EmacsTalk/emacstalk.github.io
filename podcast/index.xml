@@ -1,4 +1,87 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 04 Jan 2022 20:33:25 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>010. 与宇宙学博士后聊 Emacs</title><itunes:title>010. 与宇宙学博士后聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/010/</link><guid>https://emacstalk.github.io/podcast/010/</guid><pubDate>Tue, 04 Jan 2022 20:33:25 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Thu, 31 Mar 2022 19:50:52 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>011. 与架构师 redraiment 闲聊 Emacs</title><itunes:title>011. 与架构师 redraiment 闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/011/</link><guid>https://emacstalk.github.io/podcast/011/</guid><pubDate>Thu, 31 Mar 2022 19:50:52 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+&lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
+&lt;ul>
+&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
+&lt;/ul>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期嘉宾是使用十二年的 Emacs 资深用户张泽鹏（网络ID：redraiment）。得益于 Emacs 其无与伦比的“开放性”，嘉宾使用它打造出符合自己理念的高效开发环境。Emacs 对于嘉宾来说，即使生产力工具，也是“玩具”，在“玩”的过程中，来学习新技能。使用 Emacs 多年后，万物可编辑的思维给嘉宾的日常工作带来很多启发，总结出一篇与系统设计的文章：&lt;a href="https://my.oschina.net/u/1464083/blog/4809459">编辑器思维与系统设计思想&lt;/a>，这其中的精华都会在节目中聊到，近一个小时的节目，精彩不容错过。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>00:00:42 嘉宾自我介绍&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:04:18 为什么选择 Emacs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:11:11 ELisp 学习经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:21:34 Emacs 对嘉宾思维的影响&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:33:56 使用 ELisp 开发微信小程序的经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:43:20 函数式编程的优势&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:58:06 推荐&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>姓名：张泽鹏&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>邮件：redraiment@gmail.com&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>工作：外企（道富）⇒ 创业 ⇒ 互金（51） ⇒ 制造（阿里）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>2010 开始用 Emacs&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>用 Emacs Lisp 开发的微信小程序：&lt;a href="https://github.com/redraiment/wechat.el">redraiment/wechat.el&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>推荐&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="http://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macros.html">Emacs Keyboard Macros&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://book.douban.com/subject/1148282/">《计算机程序的构造和解释》（SICP）&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/b2da-audiofreehighqps/B9/8F/GKwRIMAGG26rAc71mQEy25S-.m4a" type="audio/mpeg" length="30324915"/><itunes:duration>01:02:27</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/redraiment.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>010. 与宇宙学博士后聊 Emacs</title><itunes:title>010. 与宇宙学博士后聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/010/</link><guid>https://emacstalk.github.io/podcast/010/</guid><pubDate>Tue, 04 Jan 2022 20:33:25 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
 &lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
