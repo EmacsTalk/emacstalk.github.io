@@ -1,6 +1,6 @@
 #+TITLE: 011. 与架构师 redraiment 闲聊 Emacs
 #+DATE: 2022-03-31T19:50:52+0800
-#+LASTMOD: 2022-03-31T21:42:43+0800
+#+LASTMOD: 2022-04-01T22:40:18+0800
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/b2da-audiofreehighqps/B9/8F/GKwRIMAGG26rAc71mQEy25S-.m4a
 #+PODCAST_DURATION: 01:02:27
 #+PODCAST_LENGTH: 30324915
@@ -26,6 +26,9 @@
   - 工作：外企（道富）⇒ 创业 ⇒ 互金（51） ⇒ 制造（阿里）
   - 2010 开始用 Emacs
 - 用 Emacs Lisp 开发的微信小程序：[[https://github.com/redraiment/wechat.el][redraiment/wechat.el]]
+- Emacs 是二维的命令行工具
+  - 相关文章：[[https://hongchao.me/cli-and-emacs/][Emacs is the 2D Command-line Interface]]
+  - [[https://emacs-china.org/t/emacs-is-the-2d-command-line-interface/16711][Emacs China 上的讨论]]
 - 推荐
   - [[http://www.gnu.org/software/emacs/manual/html_node/emacs/Keyboard-Macros.html][Emacs Keyboard Macros]]
   - [[https://book.douban.com/subject/1148282/][《计算机程序的构造和解释》（SICP）]]

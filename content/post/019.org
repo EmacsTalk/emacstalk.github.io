@@ -1,10 +1,10 @@
 #+TITLE: Tramp 使用指南
 #+DATE: 2022-03-27T10:33:10+0800
-#+LASTMOD: 2022-03-27T20:11:38+0800
+#+LASTMOD: 2022-03-27T21:31:45+0800
 #+TAGS[]: tramp project
 
-[[https://www.gnu.org/software/tramp/][Tramp]] 是 Emacs 中用来编辑远端文件的模块，全称为『Transparent Remote (file) Access, Multiple Protocol』，类似与 VSCode 的 [[https://code.visualstudio.com/docs/remote/remote-overview][Remote Development]]，只不过比它年长 20 岁而已😄。
-这边文章就来介绍下 tramp 的使用方式与注意事项。
+[[https://www.gnu.org/software/tramp/][Tramp]] 是 Emacs 中用来编辑远端文件的模块，全称为『Transparent Remote (file) Access, Multiple Protocol』，类似于 VSCode 的 [[https://code.visualstudio.com/docs/remote/remote-overview][Remote Development]]，只不过比它年长 20 岁而已😄。
+这篇文章就来介绍下 tramp 的使用方式与注意事项。
 
 * 使用方式
 在使用 =find-file= 打开文件时，使用[[https://www.gnu.org/software/tramp/#File-name-syntax][下面的语法]]，即可打开远端的文件：
@@ -46,7 +46,7 @@ ControlMaster 的主要缺点是第一次建立连接的 SSH 会话必须一直�
 * [[https://www.gnu.org/software/tramp/#Remote-processes][与其他模块结合]]
 在 Emacs 中，shell.el、eshell.el、compile.el、gud.el（gdb）这几个内置模块都与 tramp 做了完美整合，执行相应命令时会通过相应协议在远端执行。
 * 多级跳跃 multiple hops
-一般来说，公司内处于安全考虑，会禁止开发同学直接登录生产机器，相应会提供一跳板机来登录生产机器
+出于安全考虑，公司会禁止开发同学直接登录生产机器，需要通过一跳板机来登录生产机器
 ，这时就需要多次跳跃。tramp 支持通过下面的语法，级联登录多个机器
 #+begin_src bash
 C-x C-f /ssh:bird@bastion|ssh:admin@production:/path RET
@@ -71,7 +71,7 @@ C-x C-f /ssh:you@remotehost|sudo::/path RET
 C-x C-f /ssh:you@remotehost|sudo:remotehost:/path RET
 #+end_src
 * 注意事项
-Tramp 打开的远端文件和本地的文件没什么区别，会被记录在 backup、autosave、recentf 等中。在今后重启 Emacs 时，如果这时无法连接远端机器，Emacs 可能会卡住，这时因为 tramp 会对之前打开的文件进行检查，可以通过[[https://stackoverflow.com/a/22077775/2163429][下面的一些配置]]来绕过 tramp，让 backup 等机制不对 tramp 打开的文件起作用：
+Tramp 打开的远端文件和本地的文件没什么区别，会被记录在 backup、autosave、recentf 等中。在今后重启 Emacs 时，如果这时无法连接远端机器，Emacs 可能会卡住，这是因为 tramp 会对之前打开的文件进行检查，可以通过[[https://stackoverflow.com/a/22077775/2163429][下面的一些配置]]来绕过 tramp，让 backup 等机制不对 tramp 打开的文件起作用：
 #+BEGIN_SRC emacs-lisp
 (setq recentf-exclude `(,tramp-file-name-regexp
                         "COMMIT_EDITMSG")
@@ -89,7 +89,7 @@ Tramp 打开的远端文件和本地的文件没什么区别，会被记录在 b
             'my/project-remember-advice)
 #+END_SRC
 
-如果通过上面的配置，打开 Emacs 还是有卡吨，可以通过调整 tramp-verbose 来进行调试：
+如果通过上面的配置，打开 Emacs 还是有卡顿，可以通过调整 tramp-verbose 来进行调试：
 #+BEGIN_SRC emacs-lisp
 (setq tramp-verbose 10); 默认是 3
 #+END_SRC
