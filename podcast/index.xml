@@ -1,4 +1,143 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Thu, 31 Mar 2022 19:50:52 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>011. 与架构师 redraiment 闲聊 Emacs</title><itunes:title>011. 与架构师 redraiment 闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/011/</link><guid>https://emacstalk.github.io/podcast/011/</guid><pubDate>Thu, 31 Mar 2022 19:50:52 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 05 Apr 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>012. 前 deepin CTO 王勇的 Emacs 传奇经历</title><itunes:title>012. 前 deepin CTO 王勇的 Emacs 传奇经历</itunes:title><link>https://emacstalk.github.io/podcast/012/</link><guid>https://emacstalk.github.io/podcast/012/</guid><pubDate>Tue, 05 Apr 2022 10:01:10 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+&lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
+&lt;ul>
+&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
+&lt;/ul>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期嘉宾可能是国内 Emacs 社区最资深的用户：王勇（常用 ID： &lt;a href="https://manateelazycat.github.io/about.html">manateelazycat&lt;/a>，懒猫）。使用 Emacs 有 15 年之久，创造了 400 多个插件（独立插件包 30 多个），光是这两个数字就足以证明其硬核程度。让听众想不到的是，嘉宾接触 Emacs 的动机竟然是“戒游戏瘾”，且在接触 Emacs 一年左右就达到融会贯通的状态，经过多年深耕，最终达到与 Emacs 心流（身心）合一的境界。对于嘉宾来说，Emacs 已不再只是生产力工具，更像一个老友，默默陪伴在嘉宾身边。近两个小时的内容，精彩不容错过。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>00:00:54 嘉宾自我介绍&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:02:49 Emacs 初印象&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:16:36 什么样的人适合 Emacs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:26:00 谈自由软件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:31:03 写的 400 个插件中，印象最深的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:31:03 开源项目维护的心得体会&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:44:40 使用 Emacs 十五年心得体会&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:54:46 EmacsOS？EAF 的诞生&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:37:20 嘉宾近况&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:41:47 推荐&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>嘉宾介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>GitHub：&lt;a href="https://github.com/manateelazycat">manateelazycat (Andy Stewart)&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>个人博客：&lt;a href="https://manateelazycat.github.io/">ManateeLazyCat&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://emacs-china.org/u/manateelazycat/summary">Emacs China 账户&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>经历总结：&lt;a href="https://manateelazycat.github.io/life/2016/03/03/my-life-before-28-years.html">我人生的前28年&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>对 Emacs 新手的建议：读 ELisp 手册&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>对嘉宾影响比较大的插件&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>项目重构： &lt;a href="https://www.emacswiki.org/emacs/color-moccur.el">color-moccur.el&lt;/a>，嘉宾后来写了 &lt;a href="https://github.com/manateelazycat/color-rg">color-rg&lt;/a>，解决了它大目录搜索慢的问题&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>括号补全：&lt;a href="https://github.com/emacsmirror/paredit">paredit&lt;/a>，嘉宾后来基于 tree-sitter 写了 &lt;a href="https://github.com/manateelazycat/grammatical-edit">grammatical-edit&lt;/a>。前者基于正则匹配，后者基于预法分析&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>纯文本浏览器：&lt;a href="https://github.com/emacs-w3m/emacs-w3m">emacs-w3m&lt;/a>，与 EWW 类似&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="Https://stackoverflow.com/questions/9005698/the-relationship-between-libraries-clutter-cogl-clutter-gtk-etc">Cairo - The relationship between libraries: Clutter, Cogl, Clutter, GTK+, etc&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾使用 Haskell 重新造的一个 Emacs：&lt;a href="https://wiki.haskell.org/Manatee">Manatee&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>推荐：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://www.ximalaya.com/album/3623979">罗大伦博士：每天聊点《道德经》&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>推荐大家多学不同的编程语言，每学一种编程语言就会增加一种看世界的不同角度，学得编程语言多了，自身能力会更强，心态也会更加包容&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>喜欢的三个人，这三个人的经历一直激励着我&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Richard Stallman：世界上现存的顶尖黑客，虽然很多时候都很极端，但是RMS老人家在计算机哲学上有很多深入的思考&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/John_Carmack">John Carmark&lt;/a>（约翰·卡马克）：美国的电玩游戏程序员、&lt;a href="https://zh.wikipedia.org/wiki/Id_Software">id Software&lt;/a>的创始人之一。主要作品：&lt;a href="https://en.wikipedia.org/wiki/Quake_(series)">Quake（雷神之锤）&lt;/a>、&lt;a href="https://en.wikipedia.org/wiki/Doom_(franchise)">Doom（毁灭战士）&lt;/a>。最敬佩他的学习能力和动手能力，有啥困难直接去解决，不给自己设限制&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%AE%88%E4%BB%81">王守仁&lt;/a>（字号：字伯安，号阳明子）：人生最低落的时候看他的书明白了，至善至真，只要内心活洒脱了活明白了，人生的很多事情自然就顺了&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>与懒猫一起工作：&lt;a href="https://manateelazycat.github.io/work/2022/03/31/join-us.html">欢迎加入我们，我们继续折腾 Linux&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
+懒猫生活照
+&lt;/h2>
+&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;p>&lt;img src="https://emacstalk.github.io/images/manateelazycat1.jpg" alt="/images/manateelazycat1.jpg" title="/images/manateelazycat1.jpg" />
+&lt;img src="https://emacstalk.github.io/images/manateelazycat2.jpg" alt="/images/manateelazycat2.jpg" title="/images/manateelazycat2.jpg" />
+&lt;img src="https://emacstalk.github.io/images/manateelazycat3.jpg" alt="/images/manateelazycat3.jpg" title="/images/manateelazycat3.jpg" />&lt;/p>
+&lt;/div>
+&lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/4586-audiofreehighqps/17/FC/GKwRIUEGIZ0kAzYs3AE1ndEd.m4a" type="audio/mpeg" length="53202939"/><itunes:duration>01:50:56</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/manateelazycat.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>011. 与架构师 redraiment 闲聊 Emacs</title><itunes:title>011. 与架构师 redraiment 闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/011/</link><guid>https://emacstalk.github.io/podcast/011/</guid><pubDate>Thu, 31 Mar 2022 19:50:52 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
 &lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
