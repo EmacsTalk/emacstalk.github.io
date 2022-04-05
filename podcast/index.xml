@@ -84,7 +84,7 @@ Show Notes
 &lt;p>项目重构： &lt;a href="https://www.emacswiki.org/emacs/color-moccur.el">color-moccur.el&lt;/a>，嘉宾后来写了 &lt;a href="https://github.com/manateelazycat/color-rg">color-rg&lt;/a>，解决了它大目录搜索慢的问题&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>括号补全：&lt;a href="https://github.com/emacsmirror/paredit">paredit&lt;/a>，嘉宾后来基于 tree-sitter 写了 &lt;a href="https://github.com/manateelazycat/grammatical-edit">grammatical-edit&lt;/a>。前者基于正则匹配，后者基于预法分析&lt;/p>
+&lt;p>括号补全：&lt;a href="https://github.com/emacsmirror/paredit">paredit&lt;/a>，嘉宾后来基于 tree-sitter 写了 &lt;a href="https://github.com/manateelazycat/grammatical-edit">grammatical-edit&lt;/a>。前者基于正则匹配，后者基于语法分析&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>纯文本浏览器：&lt;a href="https://github.com/emacs-w3m/emacs-w3m">emacs-w3m&lt;/a>，与 EWW 类似&lt;/p>
