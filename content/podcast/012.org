@@ -1,0 +1,48 @@
+#+TITLE: 012. 前 Deepin CTO 王勇的 Emacs 传奇经历
+#+DATE: 2022-04-05T10:01:10+0800
+#+LASTMOD: 2022-04-05T15:41:54+0800
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/4586-audiofreehighqps/17/FC/GKwRIUEGIZ0kAzYs3AE1ndEd.m4a
+#+PODCAST_DURATION: 01:50:56
+#+PODCAST_LENGTH: 53202939
+#+PODCAST_IMAGE_SRC: guests/manateelazycat.jpg
+#+PODCAST_IMAGE_ALT: manateelazycat
+
+* 概要
+本期嘉宾可能是国内 Emacs 社区最资深的用户：王勇（常用 ID： [[https://manateelazycat.github.io/about.html][manateelazycat]]，懒猫）。使用 Emacs 有 15 年之久，创造了 400 多个插件（独立插件包 30 多个），光是这两个数字就足以证明其硬核程度。让听众想不到的是，嘉宾接触 Emacs 的动机竟然是“戒游戏瘾”，且在接触 Emacs 一年左右就达到融会贯通的状态，经过多年深耕，最终达到与 Emacs 心流（身心）合一的境界。对于嘉宾来说，Emacs 已不再只是生产力工具，更像一个老友，默默陪伴在嘉宾身边。近两个小时的内容，精彩不容错过。
+* 时间线
+- 00:00:54 嘉宾自我介绍
+- 00:02:49 Emacs 初印象
+- 00:16:36 什么样的人适合 Emacs
+- 00:26:00 谈自由软件
+- 00:31:03 写的 400 个插件中，印象最深的
+- 00:31:03 开源项目维护的心得体会
+- 00:44:40 使用 Emacs 十五年心得体会
+- 00:54:46 EmacsOS？EAF 的诞生
+- 01:37:20 嘉宾近况
+- 01:41:47 推荐
+
+* Show Notes
+- 嘉宾介绍
+  - GitHub：[[https://github.com/manateelazycat][manateelazycat (Andy Stewart)]]
+  - 个人博客：[[https://manateelazycat.github.io/][ManateeLazyCat]]
+  - [[https://emacs-china.org/u/manateelazycat/summary][Emacs China 账户]]
+  - 经历总结：[[https://manateelazycat.github.io/life/2016/03/03/my-life-before-28-years.html][我人生的前28年]]
+- 对 Emacs 新手的建议：读 ELisp 手册
+- 对嘉宾影响比较大的插件
+  - 项目重构： [[https://www.emacswiki.org/emacs/color-moccur.el][color-moccur.el]]，嘉宾后来写了 [[https://github.com/manateelazycat/color-rg][color-rg]]，解决了它大目录搜索慢的问题
+  - 括号补全：[[https://github.com/emacsmirror/paredit][paredit]]，嘉宾后来基于 tree-sitter 写了 [[https://github.com/manateelazycat/grammatical-edit][grammatical-edit]]。前者基于正则匹配，后者基于预法分析
+  - 纯文本浏览器：[[https://github.com/emacs-w3m/emacs-w3m][emacs-w3m]]，与 EWW 类似
+- [[Https://stackoverflow.com/questions/9005698/the-relationship-between-libraries-clutter-cogl-clutter-gtk-etc][Cairo - The relationship between libraries: Clutter, Cogl, Clutter, GTK+, etc]]
+- 嘉宾使用 Haskell 重新造的一个 Emacs：[[https://wiki.haskell.org/Manatee][Manatee]]
+- 推荐：
+  - [[https://www.ximalaya.com/album/3623979][罗大伦博士：每天聊点《道德经》]]
+  - 推荐大家多学不同的编程语言，每学一种编程语言就会增加一种看世界的不同角度，学得编程语言多了，自身能力会更强，心态也会更加包容
+  - 喜欢的三个人，这三个人的经历一直激励着我
+    - Richard Stallman：世界上现存的顶尖黑客，虽然很多时候都很极端，但是RMS老人家在计算机哲学上有很多深入的思考
+    - [[https://en.wikipedia.org/wiki/John_Carmack][John Carmark]]（约翰·卡马克）：美国的电玩游戏程序员、[[https://zh.wikipedia.org/wiki/Id_Software][id Software]]的创始人之一。主要作品：[[https://en.wikipedia.org/wiki/Quake_(series)][Quake（雷神之锤）]]、[[https://en.wikipedia.org/wiki/Doom_(franchise)][Doom（毁灭战士）]]。最敬佩他的学习能力和动手能力，有啥困难直接去解决，不给自己设限制
+    - [[https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%AE%88%E4%BB%81][王守仁]]（字号：字伯安，号阳明子）：人生最低落的时候看他的书明白了，至善至真，只要内心活洒脱了活明白了，人生的很多事情自然就顺了
+- 与懒猫一起工作：[[https://manateelazycat.github.io/work/2022/03/31/join-us.html][欢迎加入我们，我们继续折腾 Linux]]
+* 懒猫生活照
+[[/images/manateelazycat1.jpg]]
+[[/images/manateelazycat2.jpg]]
+[[/images/manateelazycat3.jpg]]
