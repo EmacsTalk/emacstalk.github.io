@@ -1,6 +1,6 @@
 #+TITLE: 012. 前 Deepin CTO 王勇的 Emacs 传奇经历
 #+DATE: 2022-04-05T10:01:10+0800
-#+LASTMOD: 2022-04-05T15:41:54+0800
+#+LASTMOD: 2022-04-05T15:48:22+0800
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/4586-audiofreehighqps/17/FC/GKwRIUEGIZ0kAzYs3AE1ndEd.m4a
 #+PODCAST_DURATION: 01:50:56
 #+PODCAST_LENGTH: 53202939
@@ -30,7 +30,7 @@
 - 对 Emacs 新手的建议：读 ELisp 手册
 - 对嘉宾影响比较大的插件
   - 项目重构： [[https://www.emacswiki.org/emacs/color-moccur.el][color-moccur.el]]，嘉宾后来写了 [[https://github.com/manateelazycat/color-rg][color-rg]]，解决了它大目录搜索慢的问题
-  - 括号补全：[[https://github.com/emacsmirror/paredit][paredit]]，嘉宾后来基于 tree-sitter 写了 [[https://github.com/manateelazycat/grammatical-edit][grammatical-edit]]。前者基于正则匹配，后者基于预法分析
+  - 括号补全：[[https://github.com/emacsmirror/paredit][paredit]]，嘉宾后来基于 tree-sitter 写了 [[https://github.com/manateelazycat/grammatical-edit][grammatical-edit]]。前者基于正则匹配，后者基于语法分析
   - 纯文本浏览器：[[https://github.com/emacs-w3m/emacs-w3m][emacs-w3m]]，与 EWW 类似
 - [[Https://stackoverflow.com/questions/9005698/the-relationship-between-libraries-clutter-cogl-clutter-gtk-etc][Cairo - The relationship between libraries: Clutter, Cogl, Clutter, GTK+, etc]]
 - 嘉宾使用 Haskell 重新造的一个 Emacs：[[https://wiki.haskell.org/Manatee][Manatee]]
