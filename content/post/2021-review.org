@@ -36,10 +36,10 @@ https://img.alicdn.com/imgextra/i3/581166664/O1CN01SDbLcu1z6A7Hdeh1g_!!581166664
 #+CAPTION: 小宇宙信息统计
 https://img.alicdn.com/imgextra/i1/581166664/O1CN01xAP4JM1z6A79huitw_!!581166664.jpg
 *** 听众区域分布
-#+CAPTION: 国内
+#+CAPTION: 百度统计
 https://img.alicdn.com/imgextra/i2/581166664/O1CN01I2obiY1z6A7Dv6h9p_!!581166664.png
 
-#+CAPTION: 国外
+#+CAPTION: 谷歌统计
 https://img.alicdn.com/imgextra/i1/581166664/O1CN01QADkBR1z6A7FmQB7V_!!581166664.png
 
 * 展望
