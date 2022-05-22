@@ -1,0 +1,38 @@
+#+TITLE: Emacs Server 启动方式探讨
+#+DATE: 2022-05-22T13:02:15+0800
+#+LASTMOD: 2022-05-22T13:19:10+0800
+#+TAGS[]: emacsclient
+
+在 Unix-like 的操作系统中，可以通过设置 =EDITOR= 环境变量来配置命令行工具（比如 git commit）默认的文本编辑器，比如：
+#+begin_src bash
+export EDITOR=vim
+
+export EDITOR=emacs
+#+end_src
+通过这种方式，每一次都会新创建一个编辑器实例，对于 Vim 这种轻量级的编辑器还好，但对于 Emacs 这种十八般武艺样样精通的瑞士军刀来说就有些重了，理想状态是把 Emacs 作为一个类似浏览器的常驻进程，需要的时候 new 一个 frame/window 就好了，这时就用到了 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html][Emacs Server 模式]]。
+
+顾名思义，Server 模式只需要启动一次，后续使用时通过 emacsclient 进行连接即可。一般来说，在配置文件中添加如下命令即可：
+#+BEGIN_SRC emacs-lisp
+(unless (server-running-p)
+ (server-start))
+#+END_SRC
+或者可以通过在命令行执行 =emacs --daemon= ，它会在加载完用户配置后，自动调用 =server-start= ，区别于前者，这种方式重复调用时会报错：
+#+begin_src bash
+Starting Emacs daemon.
+Unable to start the daemon.
+Another instance of Emacs is running the server, either as daemon or interactively.
+You can use emacsclient to connect to that Emacs process.
+Error: server did not start correctly
+#+end_src
+
+笔者经过一番探索，发现其实可以直接通过 emacsclient 来直接启动 server 模式，命令如下：
+#+begin_src bash
+emacsclient -a "" -c -n "$@"
+#+end_src
+- =-a= 是 alternate-editor 的简写，意思是在连接 server 失败时的替代编辑器，当为空值时，会自动执行 =emacs --daemon= ，然后再去连接。这样就解决了完美解决了重复调用 daemon 时的错误，而且也能在第一次调用时启动 server 模式
+- =-c= 表示新创建一个 frame，而不是复用已有的
+- =-n= 表示执行完该命令后，立刻退出，不用等待 server 返回。这也非常重要，否则终端就不会立刻返回了。
+
+通过把上面的命令做成 alias（比如 =e= ），可以很方便的在命令行调用，比如 =e ~/.bashrc= ，比 vim 还方便。
+* 参考
+- [[https://bash.cyberciti.biz/guide/$VISUAL_vs._$EDITOR_variable_%E2%80%93_what_is_the_difference%3F][$VISUAL vs. $EDITOR variable – what is the difference? - Linux Bash Shell Scripting Tutorial Wiki]]
