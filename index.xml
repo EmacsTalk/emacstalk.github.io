@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 05 Apr 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</title><link>https://emacstalk.github.io/podcast/012/</link><pubDate>Tue, 05 Apr 2022 10:01:10 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/012/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 22 May 2022 13:02:15 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs Server 模式简述</title><link>https://emacstalk.github.io/post/020/</link><pubDate>Sun, 22 May 2022 13:02:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/020/</guid><description>
+&lt;p>
+在 Unix-like 的操作系统中，可以通过设置 &lt;code class="verbatim">EDITOR&lt;/code> 环境变量来配置命令行工具（比如 git commit）默认的文本编辑器，比如：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">export EDITOR&lt;span style="color:#f92672">=&lt;/span>vim
+export EDITOR&lt;span style="color:#f92672">=&lt;/span>emacs&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>通过这种方式，每一次都会新创建一个编辑器实例，对于 Vim 这种轻量级的编辑器还好，但对于 Emacs 这种十八般武艺样样精通的瑞士军刀来说就有些重了，理想状态是把 Emacs 作为一个类似浏览器的常驻进程，需要的时候 new 一个 frame/window 就好了，这时就用到了 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html">Emacs Server 模式&lt;/a>。&lt;/p>
+&lt;p>
+顾名思义，Server 模式只需要启动一次，后续使用时通过 emacsclient 进行连接即可。一般来说，在配置文件中添加如下命令即可：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(unless (server-running-p)
+(server-start))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>或者可以通过在命令行执行 &lt;code class="verbatim">emacs --daemon&lt;/code> ，它会在加载完用户配置后，自动调用 &lt;code class="verbatim">server-start&lt;/code> ，区别于前者，这种方式重复调用时会报错：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Starting Emacs daemon.
+Unable to start the daemon.
+Another instance of Emacs is running the server, either as daemon or interactively.
+You can use emacsclient to connect to that Emacs process.
+Error: server did not start correctly&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+笔者经过一番探索，发现其实可以直接通过 emacsclient 来直接启动 server 模式，命令如下：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">emacsclient -a &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> -c -n &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code class="verbatim">-a&lt;/code> 是 alternate-editor 的简写，意思是在连接 server 失败时的替代编辑器，当为空值时，会自动执行 &lt;code class="verbatim">emacs --daemon&lt;/code> ，然后再去连接。这样就解决了完美解决了重复调用 daemon 时的错误，而且也能在第一次调用时启动 server 模式&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code class="verbatim">-c&lt;/code> 表示新创建一个 frame，而不是复用已有的&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code class="verbatim">-n&lt;/code> 表示执行完该命令后，立刻退出，不用等待 server 返回。这也非常重要，否则终端就不会立刻返回了。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>通过把上面的命令做成 alias（比如 &lt;code class="verbatim">e&lt;/code> ），可以很方便的在命令行调用，比如 &lt;code class="verbatim">e ~/.bashrc&lt;/code> ，比 vim 还方便。&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+参考
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://bash.cyberciti.biz/guide/$VISUAL_vs._$EDITOR_variable_%E2%80%93_what_is_the_difference%3F">$VISUAL vs. $EDITOR variable – what is the difference? - Linux Bash Shell Scripting Tutorial Wiki&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item><item><title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</title><link>https://emacstalk.github.io/podcast/012/</link><pubDate>Tue, 05 Apr 2022 10:01:10 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/012/</guid><description>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
 概要
