@@ -1,6 +1,6 @@
 #+TITLE: Emacs Server 启动方式探讨
 #+DATE: 2022-05-22T13:02:15+0800
-#+LASTMOD: 2022-05-22T13:19:10+0800
+#+LASTMOD: 2022-05-22T15:03:12+0800
 #+TAGS[]: emacsclient
 
 在 Unix-like 的操作系统中，可以通过设置 =EDITOR= 环境变量来配置命令行工具（比如 git commit）默认的文本编辑器，比如：
@@ -34,5 +34,7 @@ emacsclient -a "" -c -n "$@"
 - =-n= 表示执行完该命令后，立刻退出，不用等待 server 返回。这也非常重要，否则终端就不会立刻返回了。
 
 通过把上面的命令做成 alias（比如 =e= ），可以很方便的在命令行调用，比如 =e ~/.bashrc= ，比 vim 还方便。
+
+通过命令行启动 Emacs 还有一个额外的好处是：自动继承当前 Shell 中的所有环境变量，这样就不需要 [[https://github.com/purcell/exec-path-from-shell][exec-path-from-shell]] 这类插件了。
 * 参考
 - [[https://bash.cyberciti.biz/guide/$VISUAL_vs._$EDITOR_variable_%E2%80%93_what_is_the_difference%3F][$VISUAL vs. $EDITOR variable – what is the difference? - Linux Bash Shell Scripting Tutorial Wiki]]
