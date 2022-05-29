@@ -3,6 +3,7 @@
 在 Unix-like 的操作系统中，可以通过设置 &lt;code class="verbatim">EDITOR&lt;/code> 环境变量来配置命令行工具（比如 git commit）默认的文本编辑器，比如：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">export EDITOR&lt;span style="color:#f92672">=&lt;/span>vim
+&lt;span style="color:#75715e"># or&lt;/span>
 export EDITOR&lt;span style="color:#f92672">=&lt;/span>emacs&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>通过这种方式，每一次都会新创建一个编辑器实例，对于 Vim 这种轻量级的编辑器还好，但对于 Emacs 这种十八般武艺样样精通的瑞士军刀来说就有些重了，理想状态是把 Emacs 作为一个类似浏览器的常驻进程，需要的时候 new 一个 frame/window 就好了，这时就用到了 &lt;a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html">Emacs Server 模式&lt;/a>。&lt;/p>
@@ -36,14 +37,56 @@ Error: server did not start correctly&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>&lt;code class="verbatim">-n&lt;/code> 表示执行完该命令后，立刻退出，不用等待 server 返回。这也非常重要，否则终端就不会立刻返回了。&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>通过把上面的命令做成 alias（比如 &lt;code class="verbatim">e&lt;/code> ），可以很方便的在命令行调用，比如 &lt;code class="verbatim">e ~/.bashrc&lt;/code> ，比 vim 还方便。&lt;/p>
-&lt;p>
-通过命令行启动 Emacs 还有一个额外的好处是：自动继承当前 Shell 中的所有环境变量，这样就不需要 &lt;a href="https://github.com/purcell/exec-path-from-shell">exec-path-from-shell&lt;/a> 这类插件了。&lt;/p>
+&lt;p>通过把上面的命令封装成 shell 脚本或做成 alias（比如 &lt;code class="verbatim">e&lt;/code> ），可以很方便的在命令行调用，比如 &lt;code class="verbatim">e ~/.bashrc&lt;/code> ，比 vim 还方便。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-参考
+stdin
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>在 Vim 中可以用 &lt;code class="verbatim">vim -&lt;/code> 读取标准输入的内容，比如&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">echo &lt;span style="color:#ae81ff">123&lt;/span> | vim -&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>很遗憾，默认 emacs/emacsclient 命令是不支持这种方式的，但可以通过&lt;a href="https://superuser.com/a/843744">间接的方式&lt;/a>实现：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">&lt;span style="color:#75715e"># cat ~/bin/e&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> _emacsclient
+&lt;span style="color:#f92672">{&lt;/span>
+emacsclient -a &lt;span style="color:#e6db74">&amp;#34;&amp;#34;&lt;/span> -c -n &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+&lt;span style="color:#66d9ef">function&lt;/span> main
+&lt;span style="color:#f92672">{&lt;/span>
+&lt;span style="color:#75715e"># If the argument is - then write stdin to a tempfile and open the&lt;/span>
+&lt;span style="color:#75715e"># tempfile.&lt;/span>
+&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[[&lt;/span> $# -ge &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#f92672">]]&lt;/span> &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#f92672">[[&lt;/span> &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$1&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">==&lt;/span> - &lt;span style="color:#f92672">]]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+tempfile&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>mktemp -t emacs-stdin-$USER.XXXXXXX&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+cat - &amp;gt; &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$tempfile&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+_emacsclient --eval &lt;span style="color:#e6db74">&amp;#34;(find-file \&amp;#34;&lt;/span>$tempfile&lt;span style="color:#e6db74">\&amp;#34;)&amp;#34;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> --eval &lt;span style="color:#e6db74">&amp;#39;(set-visited-file-name nil)&amp;#39;&lt;/span> &lt;span style="color:#ae81ff">\
+&lt;/span>&lt;span style="color:#ae81ff">&lt;/span> --eval &lt;span style="color:#e6db74">&amp;#39;(rename-buffer &amp;#34;*stdin*&amp;#34; t))&amp;#39;&lt;/span>
+&lt;span style="color:#66d9ef">else&lt;/span>
+_emacsclient &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;span style="color:#f92672">}&lt;/span>
+main &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+上述脚本通过重定向到一个临时文件的方式来解决，这样 emacsclient 就能够像 Vim 一样读取 stdin 了。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+环境变量
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;p>通过在命令行启动 Emacs 还有一个额外的好处是：自动继承当前 Shell 中的所有环境变量，这样就不需要 &lt;a href="https://github.com/purcell/exec-path-from-shell">exec-path-from-shell&lt;/a> 这类插件了。&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+参考
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://bash.cyberciti.biz/guide/$VISUAL_vs._$EDITOR_variable_%E2%80%93_what_is_the_difference%3F">$VISUAL vs. $EDITOR variable – what is the difference? - Linux Bash Shell Scripting Tutorial Wiki&lt;/a>&lt;/p>
