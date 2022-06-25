@@ -28,12 +28,50 @@ env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>funcall(env, message, &lt;s
 &lt;/div>
 &lt;p>把上面的代码编译成动态链接库，macOS 下可以用如下命令：&lt;/p>
 &lt;div class="src src-bash">
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cc -dynamiclib -o helloworld.dylib -I&lt;span style="color:#e6db74">&amp;#34;/Applications/Emacs.app/Contents/Resources/include/&amp;#34;&lt;/span> main.c&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">cc -shared -fpic -o helloworld.so -I&lt;span style="color:#e6db74">&amp;#34;/Applications/Emacs.app/Contents/Resources/include/&amp;#34;&lt;/span> $main&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code class="verbatim">-shared&lt;/code> 表示生成动态链接库&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code class="verbatim">-fpic&lt;/code> 表示生成&lt;a href="https://en.wikipedia.org/wiki/Position-independent_code">地址无关代码&lt;/a>（position-independent code）&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>其他环境下的编译命令可参考 &lt;a href="https://www.oreilly.com/library/view/c-cookbook/0596007612/ch01s05.html">Building a Dynamic Library from the Command Line&lt;/a>。
-动态链接库后缀名在不同平台是不一样的，Linux 下是 so， Windows 下是 dll。生产动态链接库后，可以用下面的命令加载：&lt;/p>
+动态链接库后缀名在不同平台是不一样的：&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>OS&lt;/th>
+&lt;th>suffix&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Linux&lt;/td>
+&lt;td>so&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Windows&lt;/td>
+&lt;td>dll&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>macOS&lt;/td>
+&lt;td>dylib&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>
+但 Emacs 在加载 dylib 后缀的动态库时，可能会报类似下面的错误：&lt;/p>
+&lt;div class="src src-text">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">Error: error (&amp;#34;omg-dyn.dylib:0:0: error: scan-error: (Containing expression ends prematurely 82277 82278)&amp;#34;)&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>而且 Emacs 在 macOS 上支持加载 so 后缀，因此建议直接生成 so 后缀即可。&lt;/p>
+&lt;p>
+生产动态链接库后，可以用下面的命令加载：&lt;/p>
 &lt;div class="src src-emacs-lisp">
-&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(module-load (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/helloworld.dylib&amp;#34;&lt;/span>))&lt;/code>&lt;/pre>&lt;/div>
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(module-load (&lt;span style="color:#a6e22e">expand-file-name&lt;/span> &lt;span style="color:#e6db74">&amp;#34;~/helloworld.so&amp;#34;&lt;/span>))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>这时，会在 &lt;code class="verbatim">*Message*&lt;/code> 内打印出 &lt;code class="verbatim">hello world&lt;/code> ， &lt;code class="verbatim">module-load&lt;/code> 函数本身返回 &lt;code class="verbatim">t&lt;/code> 。&lt;/p>
 &lt;p>
@@ -90,7 +128,7 @@ env&lt;span style="color:#f92672">-&amp;gt;&lt;/span>funcall (env, env&lt;span s
 (&lt;span style="color:#a6e22e">apply&lt;/span> &lt;span style="color:#e6db74">&amp;#39;c-add&lt;/span> (number-sequence &lt;span style="color:#ae81ff">1&lt;/span> &lt;span style="color:#ae81ff">100&lt;/span>))
 &lt;span style="color:#75715e">;; 5050&lt;/span>
 (c-add)
-&lt;span style="color:#75715e">;; Debugger entered--Lisp error: (wrong-number-of-arguments #&amp;lt;module function c_add from /tmp/helloworld.dylib&amp;gt; 0)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;span style="color:#75715e">;; Debugger entered--Lisp error: (wrong-number-of-arguments #&amp;lt;module function c_add from /tmp/helloworld.so&amp;gt; 0)&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>&lt;code class="verbatim">M-x describe-function RET c-add RET&lt;/code> 返回如下：&lt;/p>
 &lt;pre class="example">
@@ -165,7 +203,7 @@ lisp_funcall(env, &lt;span style="color:#e6db74">&amp;#34;1+&amp;#34;&lt;/span>,
 (&lt;span style="color:#a6e22e">copy-file&lt;/span> module tmpfile &lt;span style="color:#66d9ef">t&lt;/span>)
 (module-load tmpfile)))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>该方式很巧妙，虽然已经加载的 dylib 不能卸载，但可通过重新加载另一个功能相同的 dylib 来覆盖之前的，这间接实现了热加载的效果。
+&lt;p>该方式很巧妙，虽然已经加载的 so 不能卸载，但可通过重新加载另一个功能相同的 so 来覆盖之前的，这间接实现了热加载的效果。
 在 Rust 中，还有一个更有技术含量的方案，后文会具体介绍。&lt;/p>
 &lt;/div>
 &lt;/div>
@@ -244,10 +282,13 @@ cd emacs-module-rs &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> c
 参考项目
 &lt;/h3>
 &lt;div id="outline-text-headline-7" class="outline-text-3">
-&lt;p>最后，列举一些使用 Rust 开发动态模块的实际项目，供读者参考：&lt;/p>
+&lt;p>最后，列举一些使用 C/Rust 开发动态模块的实际项目，供读者参考：&lt;/p>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://github.com/1History/eww-history-ext">1History/eww-history-ext: Persist EWW histories into SQLite&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://github.com/jiacai2050/oh-my-github">jiacai2050/oh-my-github: Oh My GitHub is a delightful, open source tool for managing your GitHub repositories&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;a href="https://github.com/rustify-emacs/fuz.el">rustify-emacs/fuz.el: Fast and precise fuzzy scoring/matching utils for Emacs&lt;/a>&lt;/p>
@@ -258,5 +299,17 @@ cd emacs-module-rs &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> c
 &lt;/ul>
 &lt;/div>
 &lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-8" class="outline-2">
+&lt;h2 id="headline-8">
+参考
+&lt;/h2>
+&lt;div id="outline-text-headline-8" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="http://diobla.info/blog-archive/modules-tut.html">Introduction to Emacs modules&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;/div>
 &lt;/div></description></item></channel></rss>
