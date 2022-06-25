@@ -1,0 +1,43 @@
+#+TITLE: 013. 遥泥的澳洲生活与 Emacs 经验分享
+#+DATE: 2022-06-25T18:26:44+0800
+#+LASTMOD: 2022-06-25T19:21:19+0800
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/640e-audiofreehighqps/A0/9F/GKwRIDoGjLBoAkI7RAFx0mw0.m4a
+#+PODCAST_DURATION: 01:18:01
+#+PODCAST_LENGTH: 37894980
+#+PODCAST_IMAGE_SRC: guests/yaoni.jpg
+#+PODCAST_IMAGE_ALT: yaoni
+
+* 概要
+本期嘉宾是一位半路出家的码农，目前居住在澳大利亚，职位是数据工程师，使用 Emacs 大概三年。
+
+本期节目主要分为两大部分，第一部分是嘉宾的 Emacs 接触过程，会聊到初学者学习 Emacs 的常见问题，二八定律；第二部分会介绍澳大利亚的衣食住行，是开阔眼界的好机会。
+
+#+begin_quote
+温馨提示：本期节目部分内容声音过小，请听众包涵。
+#+end_quote
+* 时间线
+- 00:00:53 自我介绍
+- 00:03:30 接触 Emacs 的过程
+- 00:12:15 Emacs 对嘉宾的吸引点
+- 00:24:55 EmacsLisp 学习经历
+- 00:33:10 使用 org 进行文学编程
+- 00:36:26 选择澳大利亚的原因
+- 00:46:04 澳大利亚生活分享
+- 01:12:44 好物分享
+
+* Show Notes
+- 自我介绍
+  - 网络 ID：遥泥（Yaoni），[[https://github.com/yatsky/emacs-init][Emacs 配置]]
+  - 社交：[[https://yaoni.me][博客]]、[[https://www.linkedin.com/in/thomaswangyi/][LinkedIn]]
+  - 本科经济专业；研究生半年翻译，后转到计算机
+- [[https://sachachua.com/blog/][Sacha Chua]]
+- [[http://xahlee.info/][∑ Xah Code]]
+- [[https://www.orgroam.com/][Org-roam]]
+- [[https://www.cloverdx.com/][CloverDX | Solve demanding, real-world data challenges]]
+- [[http://cachestocaches.com/2018/6/org-literate-programming/][Literate Programming with Org-mode]]
+- 澳洲读研年费用（2017年）
+  - 翻译：20w
+  - 计算机：30w
+- [[https://zh.wikipedia.org/zh-hans/%E5%9B%9B%E5%A4%A7_(%E6%9C%83%E8%A8%88%E5%B8%AB%E8%A1%8C)][四大 (会计师事务所) - 维基百科]]
+- 分享
+  - [[https://open.163.com/newview/movie/courseintro?newurl=M6HV755O6][哈佛大学公开课：幸福课-网易公开课]]
