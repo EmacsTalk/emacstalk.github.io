@@ -1,4 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 22 May 2022 13:02:15 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs Server 启动方式探讨</title><link>https://emacstalk.github.io/post/020/</link><pubDate>Sun, 22 May 2022 13:02:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/020/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/</link><description>Recent content on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 25 Jun 2022 18:26:44 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>013. 遥泥的澳洲生活与 Emacs 经验分享</title><link>https://emacstalk.github.io/podcast/013/</link><pubDate>Sat, 25 Jun 2022 18:26:44 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/podcast/013/</guid><description>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期嘉宾是一位半路出家的码农，目前居住在澳大利亚，职位是数据工程师，使用 Emacs 大概三年。&lt;/p>
+&lt;p>
+本期节目主要分为两大部分，第一部分是嘉宾的 Emacs 接触过程，会聊到初学者学习 Emacs 的常见问题，二八定律；第二部分会介绍澳大利亚的衣食住行，是开阔眼界的好机会。&lt;/p>
+&lt;blockquote>
+&lt;p>温馨提示：本期节目部分内容声音过小，请听众包涵。&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>00:00:53 自我介绍&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:03:30 接触 Emacs 的过程&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:12:15 Emacs 对嘉宾的吸引点&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:24:55 EmacsLisp 学习经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:33:10 使用 org 进行文学编程&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:36:26 选择澳大利亚的原因&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:46:04 澳大利亚生活分享&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:12:44 好物分享&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>自我介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>网络 ID：遥泥（Yaoni），&lt;a href="https://github.com/yatsky/emacs-init">Emacs 配置&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>社交：&lt;a href="https://yaoni.me">博客&lt;/a>、&lt;a href="https://www.linkedin.com/in/thomaswangyi/">LinkedIn&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本科经济专业；研究生半年翻译，后转到计算机&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://sachachua.com/blog/">Sacha Chua&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://xahlee.info/">∑ Xah Code&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.orgroam.com/">Org-roam&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.cloverdx.com/">CloverDX | Solve demanding, real-world data challenges&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://cachestocaches.com/2018/6/org-literate-programming/">Literate Programming with Org-mode&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>澳洲读研年费用（2017年）&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>翻译：20w&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>计算机：30w&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://zh.wikipedia.org/zh-hans/%E5%9B%9B%E5%A4%A7_(%E6%9C%83%E8%A8%88%E5%B8%AB%E8%A1%8C)">四大 (会计师事务所) - 维基百科&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>分享&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://open.163.com/newview/movie/courseintro?newurl=M6HV755O6">哈佛大学公开课：幸福课-网易公开课&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description></item><item><title>Emacs Server 启动方式探讨</title><link>https://emacstalk.github.io/post/020/</link><pubDate>Sun, 22 May 2022 13:02:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/020/</guid><description>
 &lt;p>
 在 Unix-like 的操作系统中，可以通过设置 &lt;code class="verbatim">EDITOR&lt;/code> 环境变量来配置命令行工具（比如 git commit）默认的文本编辑器，比如：&lt;/p>
 &lt;div class="src src-bash">

@@ -1,4 +1,115 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Tue, 05 Apr 2022 10:01:10 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</title><itunes:title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</itunes:title><link>https://emacstalk.github.io/podcast/012/</link><guid>https://emacstalk.github.io/podcast/012/</guid><pubDate>Tue, 05 Apr 2022 10:01:10 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 25 Jun 2022 18:26:44 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>013. 遥泥的澳洲生活与 Emacs 经验分享</title><itunes:title>013. 遥泥的澳洲生活与 Emacs 经验分享</itunes:title><link>https://emacstalk.github.io/podcast/013/</link><guid>https://emacstalk.github.io/podcast/013/</guid><pubDate>Sat, 25 Jun 2022 18:26:44 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
+&lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
+&lt;ul>
+&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
+&lt;/ul>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+概要
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>本期嘉宾是一位半路出家的码农，目前居住在澳大利亚，职位是数据工程师，使用 Emacs 大概三年。&lt;/p>
+&lt;p>
+本期节目主要分为两大部分，第一部分是嘉宾的 Emacs 接触过程，会聊到初学者学习 Emacs 的常见问题，二八定律；第二部分会介绍澳大利亚的衣食住行，是开阔眼界的好机会。&lt;/p>
+&lt;blockquote>
+&lt;p>温馨提示：本期节目部分内容声音过小，请听众包涵。&lt;/p>
+&lt;/blockquote>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>00:00:53 自我介绍&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:03:30 接触 Emacs 的过程&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:12:15 Emacs 对嘉宾的吸引点&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:24:55 EmacsLisp 学习经历&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:33:10 使用 org 进行文学编程&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:36:26 选择澳大利亚的原因&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>00:46:04 澳大利亚生活分享&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>01:12:44 好物分享&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
+Show Notes
+&lt;/h2>
+&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>自我介绍&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>网络 ID：遥泥（Yaoni），&lt;a href="https://github.com/yatsky/emacs-init">Emacs 配置&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>社交：&lt;a href="https://yaoni.me">博客&lt;/a>、&lt;a href="https://www.linkedin.com/in/thomaswangyi/">LinkedIn&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>本科经济专业；研究生半年翻译，后转到计算机&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://sachachua.com/blog/">Sacha Chua&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://xahlee.info/">∑ Xah Code&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.orgroam.com/">Org-roam&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://www.cloverdx.com/">CloverDX | Solve demanding, real-world data challenges&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="http://cachestocaches.com/2018/6/org-literate-programming/">Literate Programming with Org-mode&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>澳洲读研年费用（2017年）&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>翻译：20w&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>计算机：30w&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://zh.wikipedia.org/zh-hans/%E5%9B%9B%E5%A4%A7_(%E6%9C%83%E8%A8%88%E5%B8%AB%E8%A1%8C)">四大 (会计师事务所) - 维基百科&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>分享&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://open.163.com/newview/movie/courseintro?newurl=M6HV755O6">哈佛大学公开课：幸福课-网易公开课&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/640e-audiofreehighqps/A0/9F/GKwRIDoGjLBoAkI7RAFx0mw0.m4a" type="audio/mpeg" length="37894980"/><itunes:duration>01:18:01</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/yaoni.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</title><itunes:title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</itunes:title><link>https://emacstalk.github.io/podcast/012/</link><guid>https://emacstalk.github.io/podcast/012/</guid><pubDate>Tue, 05 Apr 2022 10:01:10 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
 &lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
