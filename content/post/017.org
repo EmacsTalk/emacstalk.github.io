@@ -1,6 +1,6 @@
 #+TITLE: 使用 C/Rust 开发 Emacs 动态模块
 #+DATE: 2022-03-12T12:37:24+0800
-#+LASTMOD: 2022-06-25T22:39:36+0800
+#+LASTMOD: 2022-06-26T10:46:42+0800
 #+TAGS[]: c rust
 
 Emacs 在 25 版本后，支持了[[https://www.gnu.org/software/emacs/manual/html_node/elisp/Dynamic-Modules.html][动态模块]]（dynamic modules），这为 Emacs 插件的开发打开了新的一扇大门，任何能够编译生成符合 Emacs ABI 要求的语言都可以使用。
@@ -31,12 +31,10 @@ int emacs_module_init (struct emacs_runtime *ert)
 #+END_src
 把上面的代码编译成动态链接库，macOS 下可以用如下命令：
 #+name: file-1
-#+begin_src bash :noweb yes :exports none
-f=main.c
-cat << EOF > $f
+#+begin_src bash :noweb yes :exports none :results file :file hello.c
+cat << EOF
 <<c-helloworld>>
 EOF
-echo $f
 #+end_src
 
 #+begin_src bash :var main=file-1
@@ -44,6 +42,7 @@ cc -shared -fpic -o helloworld.so -I"/Applications/Emacs.app/Contents/Resources/
 #+end_src
 
 #+RESULTS:
+
 - =-shared= 表示生成动态链接库
 - =-fpic= 表示生成[[https://en.wikipedia.org/wiki/Position-independent_code][地址无关代码]]（position-independent code）
 其他环境下的编译命令可参考 [[https://www.oreilly.com/library/view/c-cookbook/0596007612/ch01s05.html][Building a Dynamic Library from the Command Line]]。
