@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>EmacsTalk</title><link>https://emacstalk.github.io/podcast/</link><description>EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 25 Jun 2022 18:26:44 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/podcast/index.xml" rel="self" type="application/rss+xml"/><itunes:image href="https://emacstalk.github.io/logo3000.png"/><itunes:category text="Technology"/><itunes:owner><itunes:name>写代码的西瓜</itunes:name><itunes:email>jiacai2050@gmail.com</itunes:email></itunes:owner><itunes:author>写代码的西瓜</itunes:author><itunes:explicit>false</itunes:explicit><item><title>013. 遥泥的澳洲生活与 Emacs 经验分享</title><itunes:title>013. 遥泥的澳洲生活与 Emacs 经验分享</itunes:title><link>https://emacstalk.github.io/podcast/013/</link><guid>https://emacstalk.github.io/podcast/013/</guid><pubDate>Sat, 25 Jun 2022 18:26:44 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -112,7 +112,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/640e-audiofreehighqps/A0/9F/GKwRIDoGjLBoAkI7RAFx0mw0.m4a" type="audio/mpeg" length="37894980"/><itunes:duration>01:18:01</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/yaoni.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</title><itunes:title>012. 前 Deepin CTO 王勇的 Emacs 传奇经历</itunes:title><link>https://emacstalk.github.io/podcast/012/</link><guid>https://emacstalk.github.io/podcast/012/</guid><pubDate>Tue, 05 Apr 2022 10:01:10 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -251,7 +251,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/4586-audiofreehighqps/17/FC/GKwRIUEGIZ0kAzYs3AE1ndEd.m4a" type="audio/mpeg" length="53202939"/><itunes:duration>01:50:56</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/manateelazycat.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>011. 与架构师 redraiment 闲聊 Emacs</title><itunes:title>011. 与架构师 redraiment 闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/011/</link><guid>https://emacstalk.github.io/podcast/011/</guid><pubDate>Thu, 31 Mar 2022 19:50:52 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -345,7 +345,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/b2da-audiofreehighqps/B9/8F/GKwRIMAGG26rAc71mQEy25S-.m4a" type="audio/mpeg" length="30324915"/><itunes:duration>01:02:27</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/redraiment.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>010. 与宇宙学博士后聊 Emacs</title><itunes:title>010. 与宇宙学博士后聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/010/</link><guid>https://emacstalk.github.io/podcast/010/</guid><pubDate>Tue, 04 Jan 2022 20:33:25 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -485,7 +485,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/2098-audiofreehighqps/99/3C/GKwRIW4FrfWkAaCFKQEK8C7n.m4a" type="audio/mpeg" length="27269231"/><itunes:duration>00:56:11</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/guanyilun.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>009. 与 tumashu 聊 Emacs 中文输入法</title><itunes:title>009. 与 tumashu 聊 Emacs 中文输入法</itunes:title><link>https://emacstalk.github.io/podcast/009/</link><guid>https://emacstalk.github.io/podcast/009/</guid><pubDate>Thu, 30 Sep 2021 18:25:19 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -653,7 +653,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/b65c-audiofreehighqps/F9/E8/CKwRIasFK1AmAmoQEgDoJ8xq.m4a" type="audio/mpeg" length="40505362"/><itunes:duration>01:23:23</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/tumashu.png"/><itunes:explicit>false</itunes:explicit></item><item><title>008. Emacs 之光的成长历程</title><itunes:title>008. Emacs 之光的成长历程</itunes:title><link>https://emacstalk.github.io/podcast/008/</link><guid>https://emacstalk.github.io/podcast/008/</guid><pubDate>Fri, 03 Sep 2021 21:45:34 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -809,7 +809,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/8516-audiofreehighqps/D8/E5/CKwRIaIFCNHwAhS1wwDfl_Du.m4a" type="audio/mpeg" length="34911683"/><itunes:duration>01:11:52</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/casouri.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>007. 编辑器专家的 Emacs 世界</title><itunes:title>007. 编辑器专家的 Emacs 世界</itunes:title><link>https://emacstalk.github.io/podcast/007/</link><guid>https://emacstalk.github.io/podcast/007/</guid><pubDate>Sun, 15 Aug 2021 13:42:35 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -987,7 +987,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/1f46-audiofreehighqps/0E/46/CKwRIRwE7udEAl1nOwDX_Jcq.m4a" type="audio/mpeg" length="39675707"/><itunes:duration>01:21:41</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/joyer.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>006. 经济学在读博士生的 Emacs 奇妙之旅</title><itunes:title>006. 经济学在读博士生的 Emacs 奇妙之旅</itunes:title><link>https://emacstalk.github.io/podcast/006/</link><guid>https://emacstalk.github.io/podcast/006/</guid><pubDate>Sat, 31 Jul 2021 09:20:11 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -1147,7 +1147,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/4a5e-audiofreehighqps/46/1D/CKwRIDoE2p3UAdMv1wDQZEPL.m4a" type="audio/mpeg" length="30617559"/><itunes:duration>01:03:02</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/kathy.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>005. 与 Emacs 高手陈斌闲聊 Emacs</title><itunes:title>005. 与 Emacs 高手陈斌闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/005/</link><guid>https://emacstalk.github.io/podcast/005/</guid><pubDate>Fri, 23 Jul 2021 20:30:47 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -1371,7 +1371,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/38c4-audiofreehighqps/43/CA/CKwRIMAE0LA6Al87qgDMt3pR.m4a" type="audio/mpeg" length="39795626"/><itunes:duration>01:21:56</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/chenbin.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>004. 与 stardiviner 聊 Emacs 与他与众不同的人生经历</title><itunes:title>004. 与 stardiviner 聊 Emacs 与他与众不同的人生经历</itunes:title><link>https://emacstalk.github.io/podcast/004/</link><guid>https://emacstalk.github.io/podcast/004/</guid><pubDate>Fri, 16 Jul 2021 22:03:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -1566,7 +1566,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/3651-audiofreehighqps/92/6A/CKwRIMAEyAqhAkMmyQDJOMqH.m4a" type="audio/mpeg" length="37955273"/><itunes:duration>01:18:08</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/stardiviner.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>003. 与子龙山人聊 Emacs 与程序员修炼之道</title><itunes:title>003. 与子龙山人聊 Emacs 与程序员修炼之道</itunes:title><link>https://emacstalk.github.io/podcast/003/</link><guid>https://emacstalk.github.io/podcast/003/</guid><pubDate>Sun, 11 Jul 2021 08:31:38 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -1734,7 +1734,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/0a32-audiofreehighqps/ED/08/CKwRIJEEwCnKAbiQ1gDGQ4Ab.m4a" type="audio/mpeg" length="28872918"/><itunes:duration>59:26</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/zilongshanren.jpg"/><itunes:explicit>false</itunes:explicit></item><item><title>002. 与 DoglooksGood 闲聊 Emacs</title><itunes:title>002. 与 DoglooksGood 闲聊 Emacs</itunes:title><link>https://emacstalk.github.io/podcast/002/</link><guid>https://emacstalk.github.io/podcast/002/</guid><pubDate>Sat, 03 Jul 2021 22:36:08 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
@@ -1898,7 +1898,7 @@ Show Notes
 &lt;/div></description><enclosure url="https://aod.cos.tx.xmcdn.com/storages/1e7c-audiofreehighqps/85/49/CKwRIJEEtj04AbqVuQDCiCOK.m4a" type="audio/mpeg" length="29005241"/><itunes:duration>59:43</itunes:duration><itunes:image href="https://emacstalk.github.io/guests/doglooksgood.png"/><itunes:explicit>false</itunes:explicit></item><item><title>001. EmacsTalk 节目简介</title><itunes:title>001. EmacsTalk 节目简介</itunes:title><link>https://emacstalk.github.io/podcast/001/</link><guid>https://emacstalk.github.io/podcast/001/</guid><pubDate>Sat, 26 Jun 2021 09:43:18 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><description>
 &lt;h4 id="如果-emacstalk-对您有所帮助">如果 EmacsTalk 对您有所帮助&lt;/h4>
 &lt;ul>
-&lt;li>欢迎在各大播客平台留言、打分、转发&lt;/li>
+&lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
 &lt;div id="outline-container-headline-1" class="outline-2">
