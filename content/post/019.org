@@ -1,6 +1,6 @@
 #+TITLE: Tramp 使用指南
 #+DATE: 2022-03-27T10:33:10+0800
-#+LASTMOD: 2022-03-27T21:31:45+0800
+#+LASTMOD: 2022-06-27T12:59:45+0800
 #+TAGS[]: tramp project
 
 [[https://www.gnu.org/software/tramp/][Tramp]] 是 Emacs 中用来编辑远端文件的模块，全称为『Transparent Remote (file) Access, Multiple Protocol』，类似于 VSCode 的 [[https://code.visualstudio.com/docs/remote/remote-overview][Remote Development]]，只不过比它年长 20 岁而已😄。
@@ -89,13 +89,41 @@ Tramp 打开的远端文件和本地的文件没什么区别，会被记录在 b
             'my/project-remember-advice)
 #+END_SRC
 
-如果通过上面的配置，打开 Emacs 还是有卡顿，可以通过调整 tramp-verbose 来进行调试：
+添加上面的配置后，还需要检查下之前是否已经有 tramp 的文件被记录，如有手动删除即可。
+
+如果打开 Emacs 还是有卡顿的问题，可以通过调整 tramp-verbose 来进行调试：
 #+BEGIN_SRC emacs-lisp
 (setq tramp-verbose 10); 默认是 3
 #+END_SRC
-设置之后再重启时，会在 =*debug-tramp*= 内打开出 tramp 执行的详细信息。下图为笔者调试因 project.el 卡住时的截图：
+设置之后再重启时，会在 =*debug-tramp*= 内打印出详细日志。下图堆栈为笔者调试因 project.el 卡住时的截图：
 #+CAPTION: *debug-tramp* 示意图
 https://img.alicdn.com/imgextra/i2/581166664/O1CN011TDwOt1z6A7zQEy7u_!!581166664.png
+
+下面的堆栈是在调试 =docker-tramp= 导致的卡住问题时，通过开启 =(toggle-debug-on-error)= 后得到的：
+#+begin_src bash
+Debugger entered--Lisp error: (file-error "Couldn't find command to check if file exists")
+  signal(file-error ("Couldn't find command to check if file exists"))
+  tramp-error((tramp-file-name "docker" nil nil "helix" nil "/vagrant/" nil) file-error "Couldn't find command to check if file exists")
+  tramp-find-file-exists-command((tramp-file-name "docker" nil nil "helix" nil "/vagrant/" nil))
+  tramp-get-file-exists-command((tramp-file-name "docker" nil nil "helix" nil "/vagrant/" nil))
+  tramp-sh-handle-file-exists-p("/docker:helix:/vagrant/")
+  apply(tramp-sh-handle-file-exists-p "/docker:helix:/vagrant/")
+  tramp-sh-file-name-handler(file-exists-p "/docker:helix:/vagrant/")
+  apply(tramp-sh-file-name-handler file-exists-p "/docker:helix:/vagrant/")
+  tramp-file-name-handler(file-exists-p "/docker:helix:/vagrant/")
+  file-exists-p("/docker:helix:/vagrant/")
+  project-forget-zombie-projects()
+  dashboard-funcall-fboundp(project-forget-zombie-projects)
+  dashboard-projects-backend-load-projects()
+  dashboard-insert-projects(8)
+  #f(compiled-function (els) #<bytecode 0x1573fa35edad7240>)((projects . 8))
+  mapc(#f(compiled-function (els) #<bytecode 0x1573fa35edad7240>) ((agenda . 5) (recents . 10) (projects . 8) (bookmarks . 5)))
+  dashboard-insert-startupify-lists()
+  #f(compiled-function () #<bytecode 0x1f414d8ede95>)()
+  run-hooks(after-init-hook delayed-warnings-hook)
+  command-line()
+  normal-top-level()
+#+end_src
 * Docker/Vagrant
 SSH 是 tramp 中常用的协议，除此之外，tramp 还支持非常多的协议，比如：ftp、smb、adb（连接 Android 手机）等，具体可参考文档：[[https://www.gnu.org/software/tramp/#Inline-methods][TRAMP Inline methods]]。社区内也有一些插件支持 [[https://github.com/emacs-pe/docker-tramp.el][Docker]]，[[https://github.com/dougm/vagrant-tramp][Vagrant]]。use-package 配置如下：
 #+BEGIN_SRC emacs-lisp
@@ -108,10 +136,12 @@ SSH 是 tramp 中常用的协议，除此之外，tramp 还支持非常多的协
   :load-path "/path/to/vagrant-tramp"
   :defer t)
 #+END_SRC
-vagrant-tramp 原作者貌似已经不维护了，有些小问题，笔者已经提交了 [[https://github.com/dougm/vagrant-tramp/pull/48][Pull Request]]，在作者合并前，读者可使用 fork 的版本：
-- https://github.com/jiacai2050/vagrant-tramp
++vagrant-tramp 原作者貌似已经不维护了，有些小问题，笔者已经提交了 [[https://github.com/dougm/vagrant-tramp/pull/48][Pull Request]]，在作者合并前，读者可使用 [[https://github.com/jiacai2050/vagrant-tramp][fork 的版本]]。不仅单实例模式正常工作，在 [[https://www.vagrantup.com/docs/multi-machine][Multi-Machine]] 模式下也没有问题。+
 
-不仅单实例模式正常工作，在 [[https://www.vagrantup.com/docs/multi-machine][Multi-Machine]] 模式下也没有问题。
+#+begin_quote
+Update：2022-06-27 上述 PR 已经合并
+#+end_quote
+
 
 * 更多实践
 - [[https://willschenk.com/articles/2020/tramp_tricks/][Emacs Tramp tricks -- Editing a file inside of a docker container]]
