@@ -1,13 +1,12 @@
 #+TITLE: 012. 前 Deepin CTO 王勇的 Emacs 传奇经历
 #+DATE: 2022-04-05T10:01:10+0800
-#+LASTMOD: 2022-04-05T15:48:22+0800
+#+LASTMOD: 2022-06-27T10:21:27+0800
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/4586-audiofreehighqps/17/FC/GKwRIUEGIZ0kAzYs3AE1ndEd.m4a
 #+PODCAST_DURATION: 01:50:56
 #+PODCAST_LENGTH: 53202939
 #+PODCAST_IMAGE_SRC: guests/manateelazycat.jpg
 #+PODCAST_IMAGE_ALT: manateelazycat
 
-* 概要
 本期嘉宾可能是国内 Emacs 社区最资深的用户：王勇（常用 ID： [[https://manateelazycat.github.io/about.html][manateelazycat]]，懒猫）。使用 Emacs 有 15 年之久，创造了 400 多个插件（独立插件包 30 多个），光是这两个数字就足以证明其硬核程度。让听众想不到的是，嘉宾接触 Emacs 的动机竟然是“戒游戏瘾”，且在接触 Emacs 一年左右就达到融会贯通的状态，经过多年深耕，最终达到与 Emacs 心流（身心）合一的境界。对于嘉宾来说，Emacs 已不再只是生产力工具，更像一个老友，默默陪伴在嘉宾身边。近两个小时的内容，精彩不容错过。
 * 时间线
 - 00:00:54 嘉宾自我介绍

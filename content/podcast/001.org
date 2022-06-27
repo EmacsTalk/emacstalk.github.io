@@ -1,12 +1,11 @@
 #+TITLE: 001. EmacsTalk 节目简介
 #+DATE: 2021-06-26T09:43:18+08:00
-#+LASTMOD: 2022-02-27T20:35:38+0800
+#+LASTMOD: 2022-06-27T10:20:50+0800
 #+ALIASES[]: /podcast/1/
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/56b9-audiofreehighqps/59/A8/CKwRIRwErgs2ADPd0gC_fHiy.m4a
 #+PODCAST_DURATION: 6:59
 #+PODCAST_LENGTH: 3399122
 
-* 概要
 EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？
 
 * Show Notes

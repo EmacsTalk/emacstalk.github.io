@@ -6,8 +6,6 @@
 #+PODCAST_IMAGE_SRC: guests/casouri.jpg
 #+PODCAST_IMAGE_ALT: casouri
 
-* 概要
-
 本期节目请来了一位特殊嘉宾--付禹安，社区内一般称他为『Emacs 之光』。之所以这么称呼，是因为今年才刚刚大学毕业的他，就已经给 Emacs 贡献了多次代码。👍
 
 与大多数用户不同，嘉宾在接触 Emacs 不久即开始尝试攒写自己的配置，并陆陆续续发布了几个比较实用的包，比如 [[https://github.com/casouri/valign][valign]]，嘉宾是如何做到的？更令人好奇的是，嘉宾如何在短期内熟悉 Emacs 源码并为之贡献多个 patch，相信通过嘉宾的学习、贡献经历，可以给听众打开 Emacs 源码的神秘面纱，让更多用户参与到 Emacs 的贡献中，一个多小时的分享，精彩不容错过。

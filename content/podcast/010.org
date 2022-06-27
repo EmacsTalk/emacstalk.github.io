@@ -1,13 +1,12 @@
 #+TITLE: 010. 与宇宙学博士后聊 Emacs
 #+DATE: 2022-01-04T20:33:25+08:00
-#+LASTMOD: 2022-01-08T19:02:36+0800
+#+LASTMOD: 2022-06-27T10:21:00+0800
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/2098-audiofreehighqps/99/3C/GKwRIW4FrfWkAaCFKQEK8C7n.m4a
 #+PODCAST_DURATION: 00:56:11
 #+PODCAST_LENGTH: 27269231
 #+PODCAST_IMAGE_SRC: guests/guanyilun.jpg
 #+PODCAST_IMAGE_ALT: guanyilun
 
-* 概要
 本期嘉宾是一个研究宇宙学的博士后：管轶伦。嘉宾根据自身的学术工作需求，将 Emacs 打造成辅助他高效工作的利器，并且调侃到：“电脑这东西，不就是用来开 Emacs 的嘛”，足见其硬核。
 
 说起物理学，在我们一般人看来是个很遥远的事情，和日常的生活关系不大，更何况是千亿光年外的宇宙呢。嘉宾为什么选择了这条方向？研究宇宙学的意义在哪里？在近一个小时的节目里，这些问题统统可以找到答案，精彩不容错过。
