@@ -213,16 +213,44 @@ backup-directory-alist (&lt;span style="color:#a6e22e">list&lt;/span> (&lt;span 
 &lt;span style="color:#e6db74">&amp;#39;my/project-remember-advice&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;p>
-如果通过上面的配置，打开 Emacs 还是有卡顿，可以通过调整 tramp-verbose 来进行调试：&lt;/p>
+添加上面的配置后，还需要检查下之前是否已经有 tramp 的文件被记录，如有手动删除即可。&lt;/p>
+&lt;p>
+如果打开 Emacs 还是有卡顿的问题，可以通过调整 tramp-verbose 来进行调试：&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(setq tramp-verbose &lt;span style="color:#ae81ff">10&lt;/span>)&lt;span style="color:#75715e">; 默认是 3&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>设置之后再重启时，会在 &lt;code class="verbatim">*debug-tramp*&lt;/code> 内打开出 tramp 执行的详细信息。下图为笔者调试因 project.el 卡住时的截图：&lt;/p>
+&lt;p>设置之后再重启时，会在 &lt;code class="verbatim">*debug-tramp*&lt;/code> 内打印出详细日志。下图堆栈为笔者调试因 project.el 卡住时的截图：&lt;/p>
 &lt;figure>
 &lt;img src="https://img.alicdn.com/imgextra/i2/581166664/O1CN011TDwOt1z6A7zQEy7u_!!581166664.png" alt="https://img.alicdn.com/imgextra/i2/581166664/O1CN011TDwOt1z6A7zQEy7u_!!581166664.png" title="https://img.alicdn.com/imgextra/i2/581166664/O1CN011TDwOt1z6A7zQEy7u_!!581166664.png" />&lt;figcaption>
 &lt;strong>debug-tramp&lt;/strong> 示意图
 &lt;/figcaption>
 &lt;/figure>
+&lt;p>
+下面的堆栈是在调试 &lt;code class="verbatim">docker-tramp&lt;/code> 导致的卡住问题时，通过开启 &lt;code class="verbatim">(toggle-debug-on-error)&lt;/code> 后得到的：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Debugger entered--Lisp error: &lt;span style="color:#f92672">(&lt;/span>file-error &lt;span style="color:#e6db74">&amp;#34;Couldn&amp;#39;t find command to check if file exists&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+signal&lt;span style="color:#f92672">(&lt;/span>file-error &lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;Couldn&amp;#39;t find command to check if file exists&amp;#34;&lt;/span>&lt;span style="color:#f92672">))&lt;/span>
+tramp-error&lt;span style="color:#f92672">((&lt;/span>tramp-file-name &lt;span style="color:#e6db74">&amp;#34;docker&amp;#34;&lt;/span> nil nil &lt;span style="color:#e6db74">&amp;#34;helix&amp;#34;&lt;/span> nil &lt;span style="color:#e6db74">&amp;#34;/vagrant/&amp;#34;&lt;/span> nil&lt;span style="color:#f92672">)&lt;/span> file-error &lt;span style="color:#e6db74">&amp;#34;Couldn&amp;#39;t find command to check if file exists&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+tramp-find-file-exists-command&lt;span style="color:#f92672">((&lt;/span>tramp-file-name &lt;span style="color:#e6db74">&amp;#34;docker&amp;#34;&lt;/span> nil nil &lt;span style="color:#e6db74">&amp;#34;helix&amp;#34;&lt;/span> nil &lt;span style="color:#e6db74">&amp;#34;/vagrant/&amp;#34;&lt;/span> nil&lt;span style="color:#f92672">))&lt;/span>
+tramp-get-file-exists-command&lt;span style="color:#f92672">((&lt;/span>tramp-file-name &lt;span style="color:#e6db74">&amp;#34;docker&amp;#34;&lt;/span> nil nil &lt;span style="color:#e6db74">&amp;#34;helix&amp;#34;&lt;/span> nil &lt;span style="color:#e6db74">&amp;#34;/vagrant/&amp;#34;&lt;/span> nil&lt;span style="color:#f92672">))&lt;/span>
+tramp-sh-handle-file-exists-p&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/docker:helix:/vagrant/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+apply&lt;span style="color:#f92672">(&lt;/span>tramp-sh-handle-file-exists-p &lt;span style="color:#e6db74">&amp;#34;/docker:helix:/vagrant/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+tramp-sh-file-name-handler&lt;span style="color:#f92672">(&lt;/span>file-exists-p &lt;span style="color:#e6db74">&amp;#34;/docker:helix:/vagrant/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+apply&lt;span style="color:#f92672">(&lt;/span>tramp-sh-file-name-handler file-exists-p &lt;span style="color:#e6db74">&amp;#34;/docker:helix:/vagrant/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+tramp-file-name-handler&lt;span style="color:#f92672">(&lt;/span>file-exists-p &lt;span style="color:#e6db74">&amp;#34;/docker:helix:/vagrant/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+file-exists-p&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#e6db74">&amp;#34;/docker:helix:/vagrant/&amp;#34;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
+project-forget-zombie-projects&lt;span style="color:#f92672">()&lt;/span>
+dashboard-funcall-fboundp&lt;span style="color:#f92672">(&lt;/span>project-forget-zombie-projects&lt;span style="color:#f92672">)&lt;/span>
+dashboard-projects-backend-load-projects&lt;span style="color:#f92672">()&lt;/span>
+dashboard-insert-projects&lt;span style="color:#f92672">(&lt;/span>8&lt;span style="color:#f92672">)&lt;/span>
+&lt;span style="color:#75715e">#f(compiled-function (els) #&amp;lt;bytecode 0x1573fa35edad7240&amp;gt;)((projects . 8))&lt;/span>
+mapc&lt;span style="color:#f92672">(&lt;/span>&lt;span style="color:#75715e">#f(compiled-function (els) #&amp;lt;bytecode 0x1573fa35edad7240&amp;gt;) ((agenda . 5) (recents . 10) (projects . 8) (bookmarks . 5)))&lt;/span>
+dashboard-insert-startupify-lists&lt;span style="color:#f92672">()&lt;/span>
+&lt;span style="color:#75715e">#f(compiled-function () #&amp;lt;bytecode 0x1f414d8ede95&amp;gt;)()&lt;/span>
+run-hooks&lt;span style="color:#f92672">(&lt;/span>after-init-hook delayed-warnings-hook&lt;span style="color:#f92672">)&lt;/span>
+command-line&lt;span style="color:#f92672">()&lt;/span>
+normal-top-level&lt;span style="color:#f92672">()&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-7" class="outline-2">
@@ -240,13 +268,10 @@ Docker/Vagrant
 :load-path &lt;span style="color:#e6db74">&amp;#34;/path/to/vagrant-tramp&amp;#34;&lt;/span>
 :defer &lt;span style="color:#66d9ef">t&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>vagrant-tramp 原作者貌似已经不维护了，有些小问题，笔者已经提交了 &lt;a href="https://github.com/dougm/vagrant-tramp/pull/48">Pull Request&lt;/a>，在作者合并前，读者可使用 fork 的版本：&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;a href="https://github.com/jiacai2050/vagrant-tramp">https://github.com/jiacai2050/vagrant-tramp&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;p>不仅单实例模式正常工作，在 &lt;a href="https://www.vagrantup.com/docs/multi-machine">Multi-Machine&lt;/a> 模式下也没有问题。&lt;/p>
+&lt;p>&lt;del>vagrant-tramp 原作者貌似已经不维护了，有些小问题，笔者已经提交了 &lt;a href="https://github.com/dougm/vagrant-tramp/pull/48">Pull Request&lt;/a>，在作者合并前，读者可使用 &lt;a href="https://github.com/jiacai2050/vagrant-tramp">fork 的版本&lt;/a>。不仅单实例模式正常工作，在 &lt;a href="https://www.vagrantup.com/docs/multi-machine">Multi-Machine&lt;/a> 模式下也没有问题。&lt;/del>&lt;/p>
+&lt;blockquote>
+&lt;p>Update：2022-06-27 上述 PR 已经合并&lt;/p>
+&lt;/blockquote>
 &lt;/div>
 &lt;/div>
 &lt;div id="outline-container-headline-8" class="outline-2">
