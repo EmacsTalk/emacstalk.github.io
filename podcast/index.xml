@@ -4,24 +4,18 @@
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期嘉宾是一位半路出家的码农，目前居住在澳大利亚，职位是数据工程师，使用 Emacs 大概三年。&lt;/p>
+&lt;p>
+本期嘉宾是一位半路出家的码农，目前居住在澳大利亚，职位是数据工程师，使用 Emacs 大概三年。&lt;/p>
 &lt;p>
 本期节目主要分为两大部分，第一部分是嘉宾的 Emacs 接触过程，会聊到初学者学习 Emacs 的常见问题，二八定律；第二部分会介绍澳大利亚的衣食住行，是开阔眼界的好机会。&lt;/p>
 &lt;blockquote>
 &lt;p>温馨提示：本期节目部分内容声音过小，请听众包涵。&lt;/p>
 &lt;/blockquote>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
-时间线
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+时间线 🎧
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:53 自我介绍&lt;/p>
@@ -50,11 +44,11 @@
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
-Show Notes
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+Show Notes 📖
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>自我介绍&lt;/p>
@@ -115,19 +109,13 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
+&lt;p>
+本期嘉宾可能是国内 Emacs 社区最资深的用户：王勇（常用 ID： &lt;a href="https://manateelazycat.github.io/about.html">manateelazycat&lt;/a>，懒猫）。使用 Emacs 有 15 年之久，创造了 400 多个插件（独立插件包 30 多个），光是这两个数字就足以证明其硬核程度。让听众想不到的是，嘉宾接触 Emacs 的动机竟然是“戒游戏瘾”，且在接触 Emacs 一年左右就达到融会贯通的状态，经过多年深耕，最终达到与 Emacs 心流（身心）合一的境界。对于嘉宾来说，Emacs 已不再只是生产力工具，更像一个老友，默默陪伴在嘉宾身边。近两个小时的内容，精彩不容错过。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期嘉宾可能是国内 Emacs 社区最资深的用户：王勇（常用 ID： &lt;a href="https://manateelazycat.github.io/about.html">manateelazycat&lt;/a>，懒猫）。使用 Emacs 有 15 年之久，创造了 400 多个插件（独立插件包 30 多个），光是这两个数字就足以证明其硬核程度。让听众想不到的是，嘉宾接触 Emacs 的动机竟然是“戒游戏瘾”，且在接触 Emacs 一年左右就达到融会贯通的状态，经过多年深耕，最终达到与 Emacs 心流（身心）合一的境界。对于嘉宾来说，Emacs 已不再只是生产力工具，更像一个老友，默默陪伴在嘉宾身边。近两个小时的内容，精彩不容错过。&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
 时间线
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:54 嘉宾自我介绍&lt;/p>
@@ -162,11 +150,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -239,11 +227,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 懒猫生活照
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;p>&lt;img src="https://emacstalk.github.io/images/manateelazycat1.jpg" alt="/images/manateelazycat1.jpg" title="/images/manateelazycat1.jpg" />
 &lt;img src="https://emacstalk.github.io/images/manateelazycat2.jpg" alt="/images/manateelazycat2.jpg" title="/images/manateelazycat2.jpg" />
 &lt;img src="https://emacstalk.github.io/images/manateelazycat3.jpg" alt="/images/manateelazycat3.jpg" title="/images/manateelazycat3.jpg" />&lt;/p>
@@ -254,19 +242,13 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
+&lt;p>
+本期嘉宾是使用十二年的 Emacs 资深用户张泽鹏（网络ID：redraiment）。得益于 Emacs 其无与伦比的“开放性”，嘉宾使用它打造出符合自己理念的高效开发环境。Emacs 对于嘉宾来说，即使生产力工具，也是“玩具”，在“玩”的过程中，来学习新技能。使用 Emacs 多年后，万物可编辑的思维给嘉宾的日常工作带来很多启发，总结出一篇与系统设计的文章：&lt;a href="https://my.oschina.net/u/1464083/blog/4809459">编辑器思维与系统设计思想&lt;/a>，这其中的精华都会在节目中聊到，近一个小时的节目，精彩不容错过。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期嘉宾是使用十二年的 Emacs 资深用户张泽鹏（网络ID：redraiment）。得益于 Emacs 其无与伦比的“开放性”，嘉宾使用它打造出符合自己理念的高效开发环境。Emacs 对于嘉宾来说，即使生产力工具，也是“玩具”，在“玩”的过程中，来学习新技能。使用 Emacs 多年后，万物可编辑的思维给嘉宾的日常工作带来很多启发，总结出一篇与系统设计的文章：&lt;a href="https://my.oschina.net/u/1464083/blog/4809459">编辑器思维与系统设计思想&lt;/a>，这其中的精华都会在节目中聊到，近一个小时的节目，精彩不容错过。&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
 时间线
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:42 嘉宾自我介绍&lt;/p>
@@ -292,11 +274,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -348,21 +330,15 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期嘉宾是一个研究宇宙学的博士后：管轶伦。嘉宾根据自身的学术工作需求，将 Emacs 打造成辅助他高效工作的利器，并且调侃到：“电脑这东西，不就是用来开 Emacs 的嘛”，足见其硬核。&lt;/p>
+&lt;p>
+本期嘉宾是一个研究宇宙学的博士后：管轶伦。嘉宾根据自身的学术工作需求，将 Emacs 打造成辅助他高效工作的利器，并且调侃到：“电脑这东西，不就是用来开 Emacs 的嘛”，足见其硬核。&lt;/p>
 &lt;p>
 说起物理学，在我们一般人看来是个很遥远的事情，和日常的生活关系不大，更何况是千亿光年外的宇宙呢。嘉宾为什么选择了这条方向？研究宇宙学的意义在哪里？在近一个小时的节目里，这些问题统统可以找到答案，精彩不容错过。&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
 时间线
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:49 嘉宾自我介绍&lt;/p>
@@ -406,11 +382,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾自我介绍&lt;/p>
@@ -488,22 +464,15 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;p>
 本期节目请来了一位非科班的 Emacs 资深用户冯书（aka tumashu），Emacs 中文输入法 &lt;a href="https://github.com/tumashu/pyim">pyim&lt;/a> 的作者。作为一位卫健委信息中心的办事人员，他是如何接触到 Emacs 的？又是什么原因让他接手、维护 pyim？pyim 的工作原理是怎么样的，与 &lt;a href="https://github.com/DogLooksGood/emacs-rime">emacs-rime&lt;/a> 有什么区别？&lt;/p>
 &lt;p>
 接触 Emacs 十余年后，嘉宾总结出一套&lt;a href="https://github.com/EmacsTalk/joinus/blob/master/podcasts/2021-09-24-tumashu.org#%E6%8E%A8%E8%8D%90%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%96%B9%E5%BC%8F">五个阶段 Emacs 学习境界&lt;/a>，每个境界需要的技能是什么？如何去突破？相信通过嘉宾的经历，可以给更多非科班听众打开 Emacs 源码的神秘面纱，近一个半小时的分享，精彩不容错过。&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
 时间线
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:39 嘉宾自我介绍&lt;/p>
@@ -544,11 +513,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾自我介绍&lt;/p>
@@ -656,22 +625,15 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;p>
 本期节目请来了一位特殊嘉宾–付禹安，社区内一般称他为『Emacs 之光』。之所以这么称呼，是因为今年才刚刚大学毕业的他，就已经给 Emacs 贡献了多次代码。👍&lt;/p>
 &lt;p>
 与大多数用户不同，嘉宾在接触 Emacs 不久即开始尝试攒写自己的配置，并陆陆续续发布了几个比较实用的包，比如 &lt;a href="https://github.com/casouri/valign">valign&lt;/a>，嘉宾是如何做到的？更令人好奇的是，嘉宾如何在短期内熟悉 Emacs 源码并为之贡献多个 patch，相信通过嘉宾的学习、贡献经历，可以给听众打开 Emacs 源码的神秘面纱，让更多用户参与到 Emacs 的贡献中，一个多小时的分享，精彩不容错过。&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
 时间线
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:56 嘉宾自我介绍&lt;/p>
@@ -703,11 +665,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾自我介绍&lt;/p>
@@ -812,24 +774,18 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期节目请来了一位使用 Emacs 15 年之久的编辑器专家领蜂，在高中竞赛时获奖后，父母送给他一台个人电脑，这打开了他的 Emacs 之旅。&lt;/p>
+&lt;p>
+本期节目请来了一位使用 Emacs 15 年之久的编辑器专家领蜂，在高中竞赛时获奖后，父母送给他一台个人电脑，这打开了他的 Emacs 之旅。&lt;/p>
 &lt;p>
 由于其工作领域正好与编辑器相关，领蜂走上了一条专家型的 Emacs 学习路线，接触 Emacs 三天即开始上手 ELisp，他是怎么做的到？更令人想不到的是嘉宾的配置仅仅 200 来行，可谓精简至极，典型的“手动挡”车用户，这背后有什么样的理念？&lt;/p>
 &lt;p>
 另一方面，嘉宾十分关心开源社区的“八卦”，对早期 Emacs Hacker 的事迹信手拈来，嘉宾在节目里分享的先驱者的言论，至今来看，仍然十分超前，这些言论对我们的启发是什么？
 近一个半小时的内容，不容错过。&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
 时间线
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:54 嘉宾自我介绍&lt;/p>
@@ -867,11 +823,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾自我介绍&lt;/p>
@@ -990,23 +946,17 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学在读博士生。&lt;/p>
+&lt;p>
+本期节目请来了一位特别嘉宾 Kathy，她不仅仅是一名四年经验的 Emacs 拥趸，而且还是一位留学英国的经济学在读博士生。&lt;/p>
 &lt;p>
 非程序员群体是如何了解并使用 Emacs 的，Kathy 的经历或许可以给出一种答案。Kathy 还会分享自己参与伦敦 Emacs 线下 meetup 的趣闻，是如何接触 Scheme 以及函数式编程对其专业的影响。&lt;/p>
 &lt;p>
 本期节目的后半部分，Kathy 会讲述对英国留学的一些见解，以及英国留学的运作方式，有留学想法的同学千万不要错过。最后 Kathy 会介绍如何把经济学原理应用到日常生活中，让枯燥的知识真正提高生活品质。近一个小时的内容，精彩不容错过！&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
 时间轴
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:50 嘉宾自我介绍&lt;/p>
@@ -1044,11 +994,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 名词解释
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>vanilla emacs，原生的 GNU Emacs，零配置&lt;/p>
@@ -1062,11 +1012,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -1150,24 +1100,18 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期节目请来了一位使用 Emacs 近十年的资深用户&lt;a href="https://blog.binchen.org/">陈斌&lt;/a>，他是著名文章&lt;a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide">《一年成为 Emacs 高手》&lt;/a>的作者，同时也是一位拥有近二十年软件开发经验的前辈。&lt;/p>
+&lt;p>
+本期节目请来了一位使用 Emacs 近十年的资深用户&lt;a href="https://blog.binchen.org/">陈斌&lt;/a>，他是著名文章&lt;a href="https://github.com/redguardtoo/mastering-emacs-in-one-year-guide">《一年成为 Emacs 高手》&lt;/a>的作者，同时也是一位拥有近二十年软件开发经验的前辈。&lt;/p>
 &lt;p>
 抵触 Emacs 近十年后，陈斌用一年时间就成为了 Emacs 高手，他是怎么做到的？是什么样的契机让他打开了 Emacs 这个潘多拉魔盒？&lt;/p>
 &lt;p>
 作为一个拥有众多插件的开源软件维护者，如何处理用户的不满？如何调节生活与维护的压力？陈斌给出了自己的答案。
 此外，节目里还聊到了 Emacs 与 VSCode/Vim 等开发理念上的区别，学习这些软知识，非常有助于加深对 Emacs 的理解。近一个半小时的内容，“湿货”十足，不容错过！&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
 本期人物
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/p>
@@ -1178,11 +1122,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 时间轴
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:42 嘉宾自我介绍&lt;/p>
@@ -1232,11 +1176,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -1374,23 +1318,17 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
-&lt;div id="outline-container-headline-1" class="outline-2">
-&lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>本期节目又请来了一资深 Emacs 用户 &lt;a href="https://stardiviner.github.io/">stardiviner&lt;/a>，同时也是一名淘宝店主，用来售卖自己的 IT 技能。&lt;/p>
+&lt;p>
+本期节目又请来了一资深 Emacs 用户 &lt;a href="https://stardiviner.github.io/">stardiviner&lt;/a>，同时也是一名淘宝店主，用来售卖自己的 IT 技能。&lt;/p>
 &lt;p>
 从 org-mode 的使用者到贡献者，他是如何做到的？更让人好奇的是他与众不同的人生经历，大学肄业后，他做过房地产销售、必胜客服务员、幼教老师、IT 支持，最后在无意间发现可以通过售卖自己的 IT 技能来赚钱，从此告别职场，走上了 freelancer 的道路。&lt;/p>
 &lt;p>
 在一次次的选择中，他逐渐远离“常人”走过的路，这其中或许有一时的鲁莽，但更多的是他勇于突破传统的束缚，逐渐形成了其独特的做事风格。近一个半小时的内容，“湿货”十足，不容错过！&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
 本期人物
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a>&lt;/p>
@@ -1401,11 +1339,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
 时间轴
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:02:09 嘉宾学习 Emacs 经历&lt;/p>
@@ -1446,11 +1384,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-4" class="outline-2">
-&lt;h2 id="headline-4">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-4" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>嘉宾介绍&lt;/p>
@@ -1901,19 +1839,13 @@ Show Notes
 &lt;li>欢迎在各大&lt;a href="https://xyzfm.link/aak9y">播客平台&lt;/a>留言、打分、转发&lt;/li>
 &lt;li>也欢迎您为本节目进行&lt;a href="https://liujiacai.net/donate/">打赏支持&lt;/a> ❤️&lt;/li>
 &lt;/ul>
+&lt;p>
+EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-概要
-&lt;/h2>
-&lt;div id="outline-text-headline-1" class="outline-text-2">
-&lt;p>EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，主播是谁？&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-1" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://mitpress.mit.edu/sites/default/files/sicp/index.html">Structure
