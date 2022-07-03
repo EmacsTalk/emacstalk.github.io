@@ -648,10 +648,9 @@ Docker/Vagrant
 (&lt;span style="color:#a6e22e">message&lt;/span> &lt;span style="color:#e6db74">&amp;#34;Redirect URL to %s&amp;#34;&lt;/span> url)
 (throw &lt;span style="color:#e6db74">&amp;#39;ret&lt;/span> url)))))
 (&lt;span style="color:#a6e22e">apply&lt;/span> fn url args))
-(advice-add &lt;span style="color:#e6db74">&amp;#39;url-retrieve&lt;/span> :around
-&lt;span style="color:#e6db74">&amp;#39;my/url-redirect&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
+(advice-add &lt;span style="color:#e6db74">&amp;#39;eww&lt;/span> :around &lt;span style="color:#e6db74">&amp;#39;my/url-redirect&lt;/span>)&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>利用 advice 机制，在进行 &lt;code class="verbatim">url-retrieve&lt;/code> 访问时，进行规则匹配，匹配成功时进行 URL 改写，如果所有规则都不匹配，则浏览原始 URL。&lt;/p>
+&lt;p>利用 advice 机制，在使用 &lt;code class="verbatim">eww&lt;/code> 时进行规则匹配，成功时进行 URL 改写，如果所有规则都不匹配，则浏览原始 URL。&lt;/p>
 &lt;p>
 在能以纯文本格式浏览 GitHub 后，可以根据打开的链接，开启对应的 mode，进行语法高亮，更方便阅读，代码如下：&lt;/p>
 &lt;div class="src src-emacs-lisp">
@@ -997,6 +996,9 @@ cd emacs-module-rs &lt;span style="color:#f92672">&amp;amp;&amp;amp;&lt;/span> c
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="http://diobla.info/blog-archive/modules-tut.html">Introduction to Emacs modules&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html">Shared Libraries&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;/div>
