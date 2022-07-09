@@ -1,0 +1,31 @@
+#+TITLE: 打开文件加强版
+#+DATE: 2022-07-09T16:51:36+0800
+#+LASTMOD: 2022-07-09T17:04:29+0800
+#+TAGS[]: file
+
+在 Emacs 中， =find-file(C-x C-f)= 是用来打开文件的最基本方式，但有时当前 buffer 内有需要打开文件的信息，比如有如下文本：
+
+#+begin_example
+/tmp/test.log
+#+end_example
+这时可以用 =find-file-at-point= 直接打开该文件。此外在编辑 elisp 配置时，有时候需要打开一个变量所代表的文件，我之前一直采用在 minibuffer 中执行命令的方式来打开，比如：
+#+begin_src elisp
+(find-file custom-file)
+#+end_src
+
+有些低效，能不能把 =find-file-at-point= 增强下，支持这种变量形式呢？当然是可以的：
+
+#+BEGIN_SRC emacs-lisp
+(defun my/find-file-at-point ()
+  "Enhanced version of `find-file-at-point'.
+First attempt to open file specified by `symbol-at-point', and fallback to normal one."
+  (interactive)
+  (condition-case nil
+      (thread-last (variable-at-point)
+                   (symbol-value)
+                   (find-file-noselect)
+                   (switch-to-buffer))
+    (t (call-interactively 'find-file-at-point))))
+#+END_SRC
+
+最后，把上面这个命令绑定到常用的快捷键，比如 =C-x C-f= ，这样以后就可以方便的使用了。
