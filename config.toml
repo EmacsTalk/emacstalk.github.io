@@ -51,6 +51,7 @@ enableGitInfo = true
 - 欢迎在各大[播客平台](https://xyzfm.link/aak9y)留言、打分、转发
 - 也欢迎您为本节目进行[打赏支持](https://liujiacai.net/donate/) ❤️
 """
+    git_repo = "https://github.com/EmacsTalk/emacstalk.github.io"
     dateformat = "2006-01-02"
     description = "EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。官网：emacstalk.github.io。M-x thanks-for-listening"
     feedlinks = false

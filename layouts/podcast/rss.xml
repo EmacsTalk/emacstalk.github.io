@@ -54,6 +54,13 @@
         {{ .  | markdownify | html }}
         {{ end }}
         {{ .Content | html }}
+        {{ printf "<p>发现错误或链接失效？<a href='%s/blob/master/content/%s'>欢迎提 PR。</a>也欢迎写信交流：<a href='mailto:%s'>%s</a></p>"
+        .Site.Params.git_repo
+        .File.Path
+        .Site.Author.email
+        .Site.Author.email
+        }}
+
       </description>
       <enclosure url="{{.Params.podcast_mp3}}" type="audio/mpeg" length='{{ .Params.podcast_length }}'/>
       {{ with .Params.podcast_duration}}<itunes:duration>{{ . }}</itunes:duration>{{end}}

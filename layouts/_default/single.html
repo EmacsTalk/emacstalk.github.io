@@ -10,6 +10,11 @@
 
 {{ .Content }}
 
+<hr/>
+<p>
+发现错误或链接失效？
+<a href="{{ .Site.Params.git_repo}}/blob/master/content/{{ .File.Path }}">欢迎提 PR</a>！也欢迎<a href="mailto:{{ .Site.Author.email }}">写信️</a>交流。
+
 {{ if $.Param "relatedposts" | default false }}{{ partial "related.html" . }}{{ end -}}
 
 {{ if ne .Lastmod .Date }}{{ partial "dates.html" . }}{{ end -}}
