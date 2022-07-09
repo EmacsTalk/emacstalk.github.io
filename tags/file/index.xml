@@ -15,7 +15,8 @@
 &lt;/span>&lt;span style="color:#e6db74">First attempt to open file specified by &lt;/span>&lt;span style="color:#e6db74">`symbol-at-point&amp;#39;&lt;/span>&lt;span style="color:#e6db74">, and fallback to normal one.&amp;#34;&lt;/span>
 (interactive)
 (condition-case &lt;span style="color:#66d9ef">nil&lt;/span>
-(thread-last (variable-at-point)
+(thread-last (thing-at-point &lt;span style="color:#e6db74">&amp;#39;symbol&lt;/span> &lt;span style="color:#66d9ef">t&lt;/span>)
+(&lt;span style="color:#a6e22e">intern&lt;/span>)
 (&lt;span style="color:#a6e22e">symbol-value&lt;/span>)
 (find-file-noselect)
 (switch-to-buffer))
