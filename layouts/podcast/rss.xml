@@ -53,8 +53,13 @@
         {{ with .Site.Params.fadian }}
         {{ .  | markdownify | html }}
         {{ end }}
+
+        {{ with .Params.podcast_image_src }}{{ $image := resources.Get . }}
+        {{ printf "<img src='%s'>" $image.Permalink }}
+        {{ end }}
+
         {{ .Content | html }}
-        {{ printf "<p>发现错误或链接失效？<a href='%s/blob/master/content/%s'>欢迎提 PR。</a>也欢迎写信交流：<a href='mailto:%s'>%s</a></p>"
+        {{ printf "<h2> 反馈 ✉️ </h2><ul><li>发现错误或链接失效？<a href='%s/blob/master/content/%s'>欢迎提 PR</a></li><li>对节目有任何想法与建议，欢迎写信交流：<a href='mailto:%s'>%s</a></li></ul>"
         .Site.Params.git_repo
         .File.Path
         .Site.Author.email

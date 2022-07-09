@@ -1,6 +1,6 @@
 #+TITLE: 013. 遥泥的澳洲生活与 Emacs 经验分享
 #+DATE: 2022-06-25T18:26:44+0800
-#+LASTMOD: 2022-06-27T10:38:48+0800
+#+LASTMOD: 2022-07-09T20:36:02+0800
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/640e-audiofreehighqps/A0/9F/GKwRIDoGjLBoAkI7RAFx0mw0.m4a
 #+PODCAST_DURATION: 01:18:01
 #+PODCAST_LENGTH: 37894980
@@ -14,6 +14,10 @@
 #+begin_quote
 温馨提示：本期节目部分内容声音过小，请听众包涵。
 #+end_quote
+* 本期人物
+- 主播：[[https://liujiacai.net/][西瓜]] | [[https://twitter.com/liujiacai][Twitter]]
+- 嘉宾：遥泥（Yaoni）| [[https://yaoni.me][博客]]、[[https://www.linkedin.com/in/thomaswangyi/][LinkedIn]] | 本科经济专业；研究生半年翻译，后转到计算机
+
 * 时间线 🎧
 - 00:00:53 自我介绍
 - 00:03:30 接触 Emacs 的过程
@@ -25,10 +29,7 @@
 - 01:12:44 好物分享
 
 * Show Notes 📖
-- 自我介绍
-  - 网络 ID：遥泥（Yaoni），[[https://github.com/yatsky/emacs-init][Emacs 配置]]
-  - 社交：[[https://yaoni.me][博客]]、[[https://www.linkedin.com/in/thomaswangyi/][LinkedIn]]
-  - 本科经济专业；研究生半年翻译，后转到计算机
+- [[https://github.com/yatsky/emacs-init][嘉宾 Emacs 配置]]
 - [[https://sachachua.com/blog/][Sacha Chua]]
 - [[http://xahlee.info/][∑ Xah Code]]
 - [[https://www.orgroam.com/][Org-roam]]
