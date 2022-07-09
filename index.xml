@@ -33,9 +33,24 @@
 &lt;/blockquote>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-时间线 🎧
+本期人物
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a> | &lt;a href="https://twitter.com/liujiacai">Twitter&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾：遥泥（Yaoni）| &lt;a href="https://yaoni.me">博客&lt;/a>、&lt;a href="https://www.linkedin.com/in/thomaswangyi/">LinkedIn&lt;/a> | 本科经济专业；研究生半年翻译，后转到计算机&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线 🎧
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:53 自我介绍&lt;/p>
@@ -64,25 +79,14 @@
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 Show Notes 📖
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
 &lt;li>
-&lt;p>自我介绍&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>网络 ID：遥泥（Yaoni），&lt;a href="https://github.com/yatsky/emacs-init">Emacs 配置&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>社交：&lt;a href="https://yaoni.me">博客&lt;/a>、&lt;a href="https://www.linkedin.com/in/thomaswangyi/">LinkedIn&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>本科经济专业；研究生半年翻译，后转到计算机&lt;/p>
-&lt;/li>
-&lt;/ul>
+&lt;p>&lt;a href="https://github.com/yatsky/emacs-init">嘉宾 Emacs 配置&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;a href="https://sachachua.com/blog/">Sacha Chua&lt;/a>&lt;/p>
@@ -223,9 +227,24 @@ main &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#
 本期嘉宾可能是国内 Emacs 社区最资深的用户：王勇（常用 ID： &lt;a href="https://manateelazycat.github.io/about.html">manateelazycat&lt;/a>，懒猫）。使用 Emacs 有 15 年之久，创造了 400 多个插件（独立插件包 30 多个），光是这两个数字就足以证明其硬核程度。让听众想不到的是，嘉宾接触 Emacs 的动机竟然是“戒游戏瘾”，且在接触 Emacs 一年左右就达到融会贯通的状态，经过多年深耕，最终达到与 Emacs 心流（身心）合一的境界。对于嘉宾来说，Emacs 已不再只是生产力工具，更像一个老友，默默陪伴在嘉宾身边。近两个小时的内容，精彩不容错过。&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-时间线
+本期人物
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>主播：&lt;a href="https://liujiacai.net/">西瓜&lt;/a> | &lt;a href="https://twitter.com/liujiacai">Twitter&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>嘉宾：&lt;a href="https://manateelazycat.github.io/">王勇&lt;/a> | &lt;a href="https://github.com/manateelazycat">GitHub&lt;/a> | &lt;a href="https://emacs-china.org/u/manateelazycat/summary">Emacs China 账户&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+时间线
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;ul>
 &lt;li>
 &lt;p>00:00:54 嘉宾自我介绍&lt;/p>
@@ -260,28 +279,14 @@ main &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$@&lt;span style="color:#
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-2" class="outline-2">
-&lt;h2 id="headline-2">
+&lt;div id="outline-container-headline-3" class="outline-2">
+&lt;h2 id="headline-3">
 Show Notes
 &lt;/h2>
-&lt;div id="outline-text-headline-2" class="outline-text-2">
+&lt;div id="outline-text-headline-3" class="outline-text-2">
 &lt;ul>
-&lt;li>
-&lt;p>嘉宾介绍&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>GitHub：&lt;a href="https://github.com/manateelazycat">manateelazycat (Andy Stewart)&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>个人博客：&lt;a href="https://manateelazycat.github.io/">ManateeLazyCat&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>&lt;a href="https://emacs-china.org/u/manateelazycat/summary">Emacs China 账户&lt;/a>&lt;/p>
-&lt;/li>
 &lt;li>
 &lt;p>经历总结：&lt;a href="https://manateelazycat.github.io/life/2016/03/03/my-life-before-28-years.html">我人生的前28年&lt;/a>&lt;/p>
-&lt;/li>
-&lt;/ul>
 &lt;/li>
 &lt;li>
 &lt;p>对 Emacs 新手的建议：读 ELisp 手册&lt;/p>
@@ -337,11 +342,11 @@ Show Notes
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;div id="outline-container-headline-3" class="outline-2">
-&lt;h2 id="headline-3">
+&lt;div id="outline-container-headline-4" class="outline-2">
+&lt;h2 id="headline-4">
 懒猫生活照
 &lt;/h2>
-&lt;div id="outline-text-headline-3" class="outline-text-2">
+&lt;div id="outline-text-headline-4" class="outline-text-2">
 &lt;p>&lt;img src="https://emacstalk.github.io/images/manateelazycat1.jpg" alt="/images/manateelazycat1.jpg" title="/images/manateelazycat1.jpg" />
 &lt;img src="https://emacstalk.github.io/images/manateelazycat2.jpg" alt="/images/manateelazycat2.jpg" title="/images/manateelazycat2.jpg" />
 &lt;img src="https://emacstalk.github.io/images/manateelazycat3.jpg" alt="/images/manateelazycat3.jpg" title="/images/manateelazycat3.jpg" />&lt;/p>
