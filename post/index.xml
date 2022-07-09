@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description>Recent content in Posts on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 22 May 2022 13:02:15 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Emacs Server 启动方式探讨</title><link>https://emacstalk.github.io/post/020/</link><pubDate>Sun, 22 May 2022 13:02:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/020/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on EmacsTalk</title><link>https://emacstalk.github.io/post/</link><description>Recent content in Posts on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sat, 09 Jul 2022 16:51:36 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>打开文件加强版</title><link>https://emacstalk.github.io/post/021/</link><pubDate>Sat, 09 Jul 2022 16:51:36 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/021/</guid><description>&lt;p>
+在 Emacs 中， &lt;code class="verbatim">find-file(C-x C-f)&lt;/code> 是用来打开文件的最基本方式，但有时当前 buffer 内有需要打开文件的信息，比如有如下文本：&lt;/p>
+&lt;pre class="example">
+/tmp/test.log
+&lt;/pre>
+&lt;p>这时可以用 &lt;code class="verbatim">find-file-at-point&lt;/code> 直接打开该文件。此外在编辑 elisp 配置时，有时候需要打开一个变量所代表的文件，我之前一直采用在 minibuffer 中执行命令的方式来打开，比如：&lt;/p>
+&lt;div class="src src-elisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-elisp" data-lang="elisp">(find-file custom-file)&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+有些低效，能不能把 &lt;code class="verbatim">find-file-at-point&lt;/code> 增强下，支持这种变量形式呢？当然是可以的：&lt;/p>
+&lt;div class="src src-emacs-lisp">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(defun my/find-file-at-point ()
+&lt;span style="color:#e6db74">&amp;#34;Enhanced version of &lt;/span>&lt;span style="color:#e6db74">`find-file-at-point&amp;#39;&lt;/span>&lt;span style="color:#e6db74">.
+&lt;/span>&lt;span style="color:#e6db74">First attempt to open file specified by &lt;/span>&lt;span style="color:#e6db74">`symbol-at-point&amp;#39;&lt;/span>&lt;span style="color:#e6db74">, and fallback to normal one.&amp;#34;&lt;/span>
+(interactive)
+(condition-case &lt;span style="color:#66d9ef">nil&lt;/span>
+(thread-last (variable-at-point)
+(&lt;span style="color:#a6e22e">symbol-value&lt;/span>)
+(find-file-noselect)
+(switch-to-buffer))
+(&lt;span style="color:#66d9ef">t&lt;/span> (&lt;span style="color:#a6e22e">call-interactively&lt;/span> &lt;span style="color:#e6db74">&amp;#39;find-file-at-point&lt;/span>))))&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>
+最后，把上面这个命令绑定到常用的快捷键，比如 &lt;code class="verbatim">C-x C-f&lt;/code> ，这样以后就可以方便的使用了。&lt;/p></description></item><item><title>Emacs Server 启动方式探讨</title><link>https://emacstalk.github.io/post/020/</link><pubDate>Sun, 22 May 2022 13:02:15 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/020/</guid><description>
 &lt;p>
 在 Unix-like 的操作系统中，可以通过设置 &lt;code class="verbatim">EDITOR&lt;/code> 环境变量来配置命令行工具（比如 git commit）默认的文本编辑器，比如：&lt;/p>
 &lt;div class="src src-bash">
