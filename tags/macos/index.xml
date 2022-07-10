@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>macOS on EmacsTalk</title><link>https://emacstalk.github.io/tags/macos/</link><description>Recent content in macOS on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 10 Jul 2022 10:12:53 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml"/><item><title>修复 Emacs 在 macOS 下最大打开文件数为 1024 的问题</title><link>https://emacstalk.github.io/post/022/</link><pubDate>Sun, 10 Jul 2022 10:12:53 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/022/</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>macOS on EmacsTalk</title><link>https://emacstalk.github.io/tags/macos/</link><description>Recent content in macOS on EmacsTalk</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>emacstalk@liujiacai.net (写代码的西瓜)</managingEditor><webMaster>emacstalk@liujiacai.net (写代码的西瓜)</webMaster><copyright>2021 emacstalk.github.io</copyright><lastBuildDate>Sun, 10 Jul 2022 10:12:53 +0800</lastBuildDate><atom:link href="https://emacstalk.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml"/><item><title>修复 Emacs 在 macOS 下最大打开文件数为 1024 的问题</title><link>https://emacstalk.github.io/post/022/</link><pubDate>Sun, 10 Jul 2022 10:12:53 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/022/</guid><description>
+&lt;p>
 不知道从哪个版本开始，macOS 最大文件数（max open files）改成了 1024，这对于使用 lsp 进行开发来说，显得有些小。而且这个问题并不能简单通过调大 ulimit 解决，在&lt;a href="https://www.reddit.com/r/emacs/comments/mq2znn/comment/gudivjv/?utm_source=share&amp;amp;utm_medium=web2x&amp;amp;context=3">这个 reddit 帖子&lt;/a>里，rpluim 用户提到：&lt;/p>
 &lt;blockquote>
 &lt;p>Emacs uses pselect, which is limited to FD_SETSIZE file descriptors, usually 1024. I suspect you&amp;#39;ve got one of the file-watching utilities enabled in emacs, which tends to use up a lot of file descriptors.&lt;/p>
@@ -58,11 +59,12 @@ sudo chmod &lt;span style="color:#ae81ff">644&lt;/span> /Library/LaunchDaemons/l
 sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
 &lt;span style="color:#75715e"># 确认已经生效&lt;/span>
 launchctl limit maxfiles
+&lt;span style="color:#75715e"># 或&lt;/span>
 ulimit -n&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
 &lt;/li>
 &lt;li>
-&lt;p>下载 emacs 源码，在 configure 时指定 CFLAGS 参数。参考命令：&lt;/p>
+&lt;p>从源码编译 Emacs，在 configure 时指定 CFLAGS 参数。参考命令：&lt;/p>
 &lt;div class="src src-text">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-text" data-lang="text">git clone https://git.savannah.gnu.org/emacs &amp;amp;&amp;amp; cd emacs
 git checkout emacs-28
@@ -72,7 +74,7 @@ git clean -xf
 export CPATH=`xcrun --show-sdk-path`/usr/include:`xcrun --show-sdk-path`/usr/include/libxml2
 make -j 4 &amp;amp;&amp;amp; make install&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
-&lt;p>之后打开新编译的 Emacs 进行测试：&lt;/p>
+&lt;p>这里指定 &lt;code class="verbatim">FD_SETSIZE&lt;/code> 为 1w，需要小于 xml 中的 hard 限制。之后打开新编译的 Emacs 进行测试：&lt;/p>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(shell-command-to-string &lt;span style="color:#e6db74">&amp;#34;ulimit -n&amp;#34;&lt;/span>)
 &lt;span style="color:#75715e">;; 10000&lt;/span>
@@ -83,11 +85,27 @@ make -j 4 &amp;amp;&amp;amp; make install&lt;/code>&lt;/pre>&lt;/div>
 :command &lt;span style="color:#f92672">&amp;#39;&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;sleep&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;60000&amp;#34;&lt;/span>)
 :connection-type &lt;span style="color:#e6db74">&amp;#39;pipe&lt;/span>))&lt;/code>&lt;/pre>&lt;/div>
 &lt;/div>
+&lt;p>
+上面的 &lt;code class="verbatim">dotimes&lt;/code> 代码块创建了 2000 个进程，之后用 &lt;code class="verbatim">lsof -p ${emacs_pid} | wc -l&lt;/code> 查看打开的文件数，可以看到是 4000 多个，应该是一个 process 会打开两个文件：stdout 与 stderr。&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>上面的 &lt;code class="verbatim">dotimes&lt;/code> 代码块创建了 2000 个进程，之后用 &lt;code class="verbatim">lsof -p ${emacs_pid} | wc -l&lt;/code> 查看打开的文件数，可以看到是 4000 多个，应该是一个 process 会打开两个文件：stdout 与 stderr。&lt;/p>
-&lt;p>
-这样，Emacs 最大文件打开数就成功修改了！&lt;/p></description></item><item><title>设置 emacsclient 为文件默认打开程序</title><link>https://emacstalk.github.io/post/006/</link><pubDate>Sat, 11 Sep 2021 14:38:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/006/</guid><description>
+&lt;p>这样，Emacs 最大文件打开数就成功修改了！&lt;/p>
+&lt;div id="outline-container-headline-1" class="outline-2">
+&lt;h2 id="headline-1">
+签名
+&lt;/h2>
+&lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;p>如果在启动 Emacs 时，遇到下面的错误：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Killed: &lt;span style="color:#ae81ff">9&lt;/span>
+Exception Type: EXC_BAD_ACCESS &lt;span style="color:#f92672">(&lt;/span>SIGKILL &lt;span style="color:#f92672">(&lt;/span>Code Signature Invalid&lt;span style="color:#f92672">))&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;p>可以尝试&lt;a href="https://github.com/nodejs/node/issues/40827#issuecomment-1135940696">重新签名&lt;/a>：&lt;/p>
+&lt;div class="src src-bash">
+&lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">codesign --force --deep --sign - /Applications/Emacs.app/&lt;/code>&lt;/pre>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>设置 emacsclient 为文件默认打开程序</title><link>https://emacstalk.github.io/post/006/</link><pubDate>Sat, 11 Sep 2021 14:38:01 +0800</pubDate><author>emacstalk@liujiacai.net (写代码的西瓜)</author><guid>https://emacstalk.github.io/post/006/</guid><description>
 &lt;p>
 对于 Emacs 熟练用户来说，大部分都会选择启动 server 模式，这样可以加速后续的启动时间，为与其他命令行工具组合使用奠定基础。
 本文介绍一种将 emacsclient 设置为文件默认打开程序的方式，适用平台 macOS。&lt;/p>
