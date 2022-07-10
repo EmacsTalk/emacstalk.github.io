@@ -1,0 +1,94 @@
+#+TITLE: 修复 macOS 最大文件数为 1024 的问题
+#+DATE: 2022-07-10T10:12:53+0800
+#+LASTMOD: 2022-07-10T10:12:54+0800
+#+TAGS[]: macOS
+
+不知道从哪个版本开始，macOS 最大文件数（max open files）改成了 1024，这对于使用 lsp 进行开发来说，显得有些小。而且这个问题并不能简单通过调大 ulimit 解决，在[[https://www.reddit.com/r/emacs/comments/mq2znn/comment/gudivjv/?utm_source=share&utm_medium=web2x&context=3][这个 reddit 帖子]]里，rpluim 用户提到：
+
+#+begin_quote
+Emacs uses pselect, which is limited to FD_SETSIZE file descriptors, usually 1024. I suspect you've got one of the file-watching utilities enabled in emacs, which tends to use up a lot of file descriptors.
+
+...
+
+Increasing the maxfiles limit will not change the value of FD_SETSIZE compiled into emacs and the macOS libraries. Emacs would have to move to using poll or kqueue to fully solve this issue.
+#+end_quote
+
+在 macOS 的[[https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/select.2.html][开发者文档]]里也能找到应征：
+#+begin_quote
+The default size FD_SETSIZE (currently 1024) is some-what somewhat
+     what smaller than the current kernel limit to the number of open files.
+     However, in order to accommodate programs which might potentially use a
+     larger number of open files with select, it is possible to increase this
+     size within a program by providing a larger definition of FD_SETSIZE
+     before the inclusion of <sys/types.h>.
+#+end_quote
+
+但是文档里没提到怎么改，搜了下找到了一个 erlang 的[[https://github.com/Homebrew/legacy-homebrew/issues/6143][类似问题]]，里面有提到怎么修改：
+#+begin_src bash
+CFLAGS="-DFD_SETSIZE=10000 -DDARWIN_UNLIMITED_SELECT"
+#+end_src
+
+Great！经过一番测试，成功将 emacs 的最大文件数改成 10000，这里总结下步骤：
+1. 调大系统级别 ulimit 的限制，可参考[[https://gist.github.com/skylock/0117ec637d468f91260927b43b816eda][这个 gist]] 或 [[https://wudaijun.com/2017/02/max-osx-ulimit/][Mac OS X下的资源限制]]。新建文件 =limit.maxfiles.plist=
+   #+begin_src xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+        "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>limit.maxfiles</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>launchctl</string>
+      <string>limit</string>
+      <string>maxfiles</string>
+      <string>64000</string>
+      <string>524288</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>ServiceIPC</key>
+    <false/>
+  </dict>
+</plist>
+   #+end_src
+   上面的 xml 含义是把最大文件打开数的 soft/hard 限制分别改成 64000 与 524288。
+   #+begin_src bash
+ sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
+ sudo chmod 644 /Library/LaunchDaemons/limit.maxfiles.plist
+# 加载plist文件
+ sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
+# 确认已经生效
+launchctl limit maxfiles
+ulimit -n
+   #+end_src
+2. 下载 emacs 源码，在 configure 是指定 CFLAGS 参数。参考命令：
+   #+begin_src
+git clone https://git.savannah.gnu.org/emacs && cd emacs
+git checkout emacs-28
+git clean -xf
+
+./autogen.sh
+./configure "CFLAGS=-DFD_SETSIZE=10000 -DDARWIN_UNLIMITED_SELECT"
+
+export CPATH=`xcrun --show-sdk-path`/usr/include:`xcrun --show-sdk-path`/usr/include/libxml2
+
+make -j 4 && make install
+   #+end_src
+   之后打开新编译的 Emacs 进行测试：
+   #+BEGIN_SRC emacs-lisp
+(shell-command-to-string "ulimit -n")
+;; 10000
+
+(dotimes (i 2000)
+  (make-process
+   :name (format "Sleep-%s" i)
+   :buffer nil
+   :command '("sleep" "60000")
+   :connection-type 'pipe))
+   #+END_SRC
+
+上面的 =dotimes= 代码块创建了 2000 个进程，之后用 =lsof -p ${emacs_pid} | wc -l= 查看打开的文件数，可以看到是 4000 多个，应该是一个 process 会打开两个文件：stdout 与 stderr。
+
+这样，Emacs 最大文件打开数就成功修改了！
