@@ -1,6 +1,6 @@
 #+TITLE: 修复 Emacs 在 macOS 下最大打开文件数为 1024 的问题
 #+DATE: 2022-07-10T10:12:53+0800
-#+LASTMOD: 2022-07-10T10:21:40+0800
+#+LASTMOD: 2022-07-10T12:05:25+0800
 #+TAGS[]: macOS
 
 不知道从哪个版本开始，macOS 最大文件数（max open files）改成了 1024，这对于使用 lsp 进行开发来说，显得有些小。而且这个问题并不能简单通过调大 ulimit 解决，在[[https://www.reddit.com/r/emacs/comments/mq2znn/comment/gudivjv/?utm_source=share&utm_medium=web2x&context=3][这个 reddit 帖子]]里，rpluim 用户提到：
@@ -61,9 +61,10 @@ Great！经过一番测试，成功将 emacs 的最大文件数改成 10000，�
  sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist
 # 确认已经生效
 launchctl limit maxfiles
+# 或
 ulimit -n
    #+end_src
-2. 下载 emacs 源码，在 configure 时指定 CFLAGS 参数。参考命令：
+2. 从源码编译 Emacs，在 configure 时指定 CFLAGS 参数。参考命令：
    #+begin_src
 git clone https://git.savannah.gnu.org/emacs && cd emacs
 git checkout emacs-28
@@ -76,7 +77,7 @@ export CPATH=`xcrun --show-sdk-path`/usr/include:`xcrun --show-sdk-path`/usr/inc
 
 make -j 4 && make install
    #+end_src
-   之后打开新编译的 Emacs 进行测试：
+   这里指定 =FD_SETSIZE= 为 1w，需要小于 xml 中的 hard 限制。之后打开新编译的 Emacs 进行测试：
    #+BEGIN_SRC emacs-lisp
 (shell-command-to-string "ulimit -n")
 ;; 10000
@@ -89,6 +90,17 @@ make -j 4 && make install
    :connection-type 'pipe))
    #+END_SRC
 
-上面的 =dotimes= 代码块创建了 2000 个进程，之后用 =lsof -p ${emacs_pid} | wc -l= 查看打开的文件数，可以看到是 4000 多个，应该是一个 process 会打开两个文件：stdout 与 stderr。
+   上面的 =dotimes= 代码块创建了 2000 个进程，之后用 =lsof -p ${emacs_pid} | wc -l= 查看打开的文件数，可以看到是 4000 多个，应该是一个 process 会打开两个文件：stdout 与 stderr。
 
 这样，Emacs 最大文件打开数就成功修改了！
+
+* 签名
+如果在启动 Emacs 时，遇到下面的错误：
+#+begin_src bash
+Killed: 9
+Exception Type:  EXC_BAD_ACCESS (SIGKILL (Code Signature Invalid))
+#+end_src
+可以尝试[[https://github.com/nodejs/node/issues/40827#issuecomment-1135940696][重新签名]]：
+#+begin_src bash
+codesign --force --deep --sign - /Applications/Emacs.app/
+#+end_src
