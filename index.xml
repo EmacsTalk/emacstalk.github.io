@@ -92,9 +92,21 @@ make -j 4 &amp;amp;&amp;amp; make install&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>这样，Emacs 最大文件打开数就成功修改了！&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-签名
+相关讨论
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://lists.gnu.org/archive/html/bug-gnu-emacs/2020-03/msg00463.html">bug#40023: 26.3; Emacs crashes when creating process if many file handle&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+签名
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;p>如果在启动 Emacs 时，遇到下面的错误：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Killed: &lt;span style="color:#ae81ff">9&lt;/span>
@@ -1175,7 +1187,7 @@ Largest Buffers
 &lt;p>&lt;a href="https://github.com/joaotavora/eglot/issues/42#issuecomment-1059820859">How to configure eglot to use flycheck? · Issue #42&lt;/a>&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>笔者使用 eglot 的配置如下，主要进行了下面三点的改进：&lt;/p>
+&lt;p>笔者使用 eglot 的配置如下，主要进行了下面几点的改进：&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>eldoc 高度限制为 3 行，太大了影响阅读代码&lt;/p>
@@ -1186,13 +1198,23 @@ Largest Buffers
 &lt;li>
 &lt;p>增加 Rust 宏展开的命令，lsp-mode &lt;a href="https://emacs-lsp.github.io/lsp-mode/page/lsp-rust-analyzer/#macro-expansion">默认支持&lt;/a>，这里给出了 eglot 的实现&lt;/p>
 &lt;/li>
+&lt;li>
+&lt;p>修改 &lt;code class="verbatim">eldoc-documentation-functions&lt;/code> ，支持直接在 minibuffer 中显示 flymake 错误信息&lt;/p>
+&lt;/li>
 &lt;/ol>
 &lt;div class="src src-emacs-lisp">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">(use-package eglot
 :defer &lt;span style="color:#66d9ef">t&lt;/span>
 :commands (eglot-ensure my/rust-expand-macro)
+:hook (eglot-managed-mode &lt;span style="color:#f92672">.&lt;/span> my/eglot-hook)
 :config
 (progn
+(defun my/eglot-hook ()
+&lt;span style="color:#75715e">;; Show flymake diagnostics first.&lt;/span>
+&lt;span style="color:#75715e">;; https://github.com/joaotavora/eglot/discussions/898#discussioncomment-2609402&lt;/span>
+(setq eldoc-documentation-functions
+(&lt;span style="color:#a6e22e">cons&lt;/span> &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>flymake-eldoc-function
+(remove &lt;span style="color:#a6e22e">#&amp;#39;&lt;/span>flymake-eldoc-function eldoc-documentation-functions))))
 (setq eldoc-echo-area-use-multiline-p &lt;span style="color:#ae81ff">3&lt;/span>
 eldoc-echo-area-display-truncation-message &lt;span style="color:#66d9ef">nil&lt;/span>)
 (set-face-attribute &lt;span style="color:#e6db74">&amp;#39;eglot-highlight-symbol-face&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span>

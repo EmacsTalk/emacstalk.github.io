@@ -92,9 +92,21 @@ make -j 4 &amp;amp;&amp;amp; make install&lt;/code>&lt;/pre>&lt;/div>
 &lt;p>这样，Emacs 最大文件打开数就成功修改了！&lt;/p>
 &lt;div id="outline-container-headline-1" class="outline-2">
 &lt;h2 id="headline-1">
-签名
+相关讨论
 &lt;/h2>
 &lt;div id="outline-text-headline-1" class="outline-text-2">
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://lists.gnu.org/archive/html/bug-gnu-emacs/2020-03/msg00463.html">bug#40023: 26.3; Emacs crashes when creating process if many file handle&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/div>
+&lt;div id="outline-container-headline-2" class="outline-2">
+&lt;h2 id="headline-2">
+签名
+&lt;/h2>
+&lt;div id="outline-text-headline-2" class="outline-text-2">
 &lt;p>如果在启动 Emacs 时，遇到下面的错误：&lt;/p>
 &lt;div class="src src-bash">
 &lt;div class="highlight">&lt;pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;code class="language-bash" data-lang="bash">Killed: &lt;span style="color:#ae81ff">9&lt;/span>
