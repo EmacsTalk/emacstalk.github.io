@@ -1,7 +1,7 @@
 #+TITLE: 使用 EWW 阅读技术文章
 #+DATE: 2022-02-06T21:56:31+0800
 #+LASTMOD: 2022-02-12T18:20:59+0800
-#+TAGS[]: eww
+#+TAGS: eww
 
 [[https://www.gnu.org/software/emacs/manual/html_mono/eww.html][EWW]] 是 Emacs 内置的 Web 浏览器，虽然比起 Firefox 之类的主流浏览器来说，EWW 显得有些“简陋”，但[[https://baike.baidu.com/item/少即是多/8634644][少就是多]]，在阅读技术文章，或其他有深度的文字时，EWW 有它无与伦比的优势：
 1. 干净、纯粹，不容易分心

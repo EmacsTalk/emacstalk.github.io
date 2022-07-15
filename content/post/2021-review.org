@@ -1,7 +1,7 @@
 #+TITLE: 2021 年终回顾
 #+DATE: 2021-12-31T18:20:27+08:00
 #+DRAFT: false
-#+TAGS[]: review
+#+TAGS: review
 
 Time Flies！
 

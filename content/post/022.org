@@ -1,7 +1,7 @@
 #+TITLE: 修复 Emacs 在 macOS 下最大打开文件数为 1024 的问题
 #+DATE: 2022-07-10T10:12:53+0800
-#+LASTMOD: 2022-07-10T12:05:25+0800
-#+TAGS[]: macOS
+#+LASTMOD: 2022-07-15T12:10:11+0800
+#+TAGS: macOS
 
 不知道从哪个版本开始，macOS 最大文件数（max open files）改成了 1024，这对于使用 lsp 进行开发来说，显得有些小。而且这个问题并不能简单通过调大 ulimit 解决，在[[https://www.reddit.com/r/emacs/comments/mq2znn/comment/gudivjv/?utm_source=share&utm_medium=web2x&context=3][这个 reddit 帖子]]里，rpluim 用户提到：
 
@@ -94,6 +94,8 @@ make -j 4 && make install
 
 这样，Emacs 最大文件打开数就成功修改了！
 
+* 相关讨论
+- [[https://lists.gnu.org/archive/html/bug-gnu-emacs/2020-03/msg00463.html][bug#40023: 26.3; Emacs crashes when creating process if many file handle]]
 * 签名
 如果在启动 Emacs 时，遇到下面的错误：
 #+begin_src bash

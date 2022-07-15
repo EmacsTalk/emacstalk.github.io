@@ -1,7 +1,7 @@
 #+TITLE: org-agenda 设置每月最后一天为 deadline
 #+DATE: 2022-01-08T23:26:01+08:00
 #+LASTMOD: 2022-01-09T10:19:19+0800
-#+TAGS[]: tips org-mode text
+#+TAGS: tips org-mode text
 
 在 org-agenda 中，支持设置[[https://orgmode.org/manual/Repeated-tasks.html][重复的任务]]，示例如下：
 #+BEGIN_SRC emacs-lisp

@@ -1,7 +1,7 @@
 #+TITLE: Tramp 使用指南
 #+DATE: 2022-03-27T10:33:10+0800
 #+LASTMOD: 2022-06-27T12:59:45+0800
-#+TAGS[]: tramp project
+#+TAGS: tramp project
 
 [[https://www.gnu.org/software/tramp/][Tramp]] 是 Emacs 中用来编辑远端文件的模块，全称为『Transparent Remote (file) Access, Multiple Protocol』，类似于 VSCode 的 [[https://code.visualstudio.com/docs/remote/remote-overview][Remote Development]]，只不过比它年长 20 岁而已😄。
 这篇文章就来介绍下 tramp 的使用方式与注意事项。

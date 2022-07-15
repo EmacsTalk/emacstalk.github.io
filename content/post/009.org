@@ -2,7 +2,7 @@
 #+DATE: 2021-11-02T08:21:22+08:00
 #+LASTMOD: 2022-02-24T09:08:44+0800
 #+DRAFT: false
-#+TAGS[]: tips
+#+TAGS: tips
 
 现任 Emacs 维护者 Eli Zaretskii 在 9 月 30 号通过[[https://mail.gnu.org/archive/html/emacs-devel/2021-09/msg02290.html][邮件列表]]宣布 emacs-28 分支已经创建出，这意味着 28 版本的大功能已经 ready，不会再有大改动，但距离正式发版还要一段时间，根据之前的[[https://www.gnu.org/software/emacs/history.html][发版记录]]，大概率会在 22 年上半年 release。
 
