@@ -1,6 +1,6 @@
 #+TITLE: 向后转大写
 #+DATE: 2022-08-08T08:27:39+0800
-#+LASTMOD: 2022-08-08T09:05:17+0800
+#+LASTMOD: 2022-08-08T09:57:54+0800
 #+AUTHOR: Jiacai Liu
 #+LANGUAGE: cn
 #+EMAIL: jiacai2050+org@gmail.com
@@ -20,9 +20,9 @@ Lowercase letters have a more distinctive shape than capital letters, therefore 
 因此很多人采用下面的方式输入大写字母的方式：
 - 先输入小写字母，之后选中改成大写
 
-这样的好处时便于识别是否有拼写错误，对于 Emacs 来说就是 =M-u(upcase-word)= ，但是有一点麻烦的地方在于：在转化前，需要先 =M-b= 向后移动到字母开始处，然后再按 =M-u= 一次，如果有连字符，那么向后移动、转大写都需要按多次，显得有些麻烦。
+这样的好处是便于识别是否有拼写错误，对于 Emacs 来说就是 =M-u(upcase-word)= ，但是有一点麻烦的地方在于：在转化前，需要先 =M-b= 向后移动到字母开始处，然后再按 =M-u= 一次，如果有连字符，那么向后移动、转大写都需要按多次，显得有些麻烦。
 
-=(upcase-word ARG)= 支持传入负数向前移动，但是遇到字母中有连字符时只会转化最后一个单词，而且光标不会移动，如果想继续转化，还是需要 =M-b= ，因此无法胜任，只能自己写代码解决：
+=(upcase-word ARG)= 支持传入负数向后移动，但是遇到字母中有连字符时只会转化最后一个单词，而且光标不会移动，如果想继续转化，还是需要 =M-b= ，因此无法胜任，只能自己写代码解决：
 
 #+BEGIN_SRC emacs-lisp
 (defun my/upcase-backwards ()
@@ -43,15 +43,15 @@ Lowercase letters have a more distinctive shape than capital letters, therefore 
 
 上面的函数用空格作为单词的边界，这样就能一次性处理 =a-b-c= 这种用连字符串起来的单词了。此外，还处理了以下几个 corner case：
 1. 只在同一行内操作
-2. 当光标所在处为空格时，向前回溯，直到找到非空格字母
+2. 当光标所在处为空格时，向后回溯，直到找到非空格字母
 
 * 示例演示
-=|= 为光标，处理前
+- 处理前（ =|= 为光标）
 #+begin_example
 abc  |abc
 abc-abc|
 #+end_example
-处理后
+- 处理后
 #+begin_example
 ABC  |abc
 ABC-ABC|
