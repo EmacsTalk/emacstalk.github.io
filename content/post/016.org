@@ -33,16 +33,25 @@ Largest Buffers
 在替换成 eglot 后，内存使用就没有这么夸张了，用 rust-analyzer 进行补全时，之前的卡顿感没有了，和在 VSCode 中的体验无异。而且 eglot 的依赖很少，会尽量复用 Emacs 内置的模块，比如采用 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Flymake.html][flymake]]，而不是 [[https://www.flycheck.org/en/latest/][flycheck]]，也有相关 issue 讨论如何用在 eglot 中使用 flycheck：
 - [[https://github.com/joaotavora/eglot/issues/42#issuecomment-1059820859][How to configure eglot to use flycheck? · Issue #42]]
 
-笔者使用 eglot 的配置如下，主要进行了下面三点的改进：
+笔者使用 eglot 的配置如下，主要进行了下面几点的改进：
 1. eldoc 高度限制为 3 行，太大了影响阅读代码
 2. 修改高亮『当前变量』的字体，默认的不是很明显
 3. 增加 Rust 宏展开的命令，lsp-mode [[https://emacs-lsp.github.io/lsp-mode/page/lsp-rust-analyzer/#macro-expansion][默认支持]]，这里给出了 eglot 的实现
+4. 修改 =eldoc-documentation-functions= ，支持直接在 minibuffer 中显示 flymake 错误信息
 #+BEGIN_SRC emacs-lisp
 (use-package eglot
   :defer t
   :commands (eglot-ensure my/rust-expand-macro)
+  :hook (eglot-managed-mode . my/eglot-hook)
   :config
   (progn
+    (defun my/eglot-hook ()
+      ;; Show flymake diagnostics first.
+      ;; https://github.com/joaotavora/eglot/discussions/898#discussioncomment-2609402
+      (setq eldoc-documentation-functions
+            (cons #'flymake-eldoc-function
+                  (remove #'flymake-eldoc-function eldoc-documentation-functions))))
+
     (setq eldoc-echo-area-use-multiline-p 3
           eldoc-echo-area-display-truncation-message nil)
     (set-face-attribute 'eglot-highlight-symbol-face nil

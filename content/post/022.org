@@ -94,6 +94,8 @@ make -j 4 && make install
 
 这样，Emacs 最大文件打开数就成功修改了！
 
+* 相关讨论
+- [[https://lists.gnu.org/archive/html/bug-gnu-emacs/2020-03/msg00463.html][bug#40023: 26.3; Emacs crashes when creating process if many file handle]]
 * 签名
 如果在启动 Emacs 时，遇到下面的错误：
 #+begin_src bash
