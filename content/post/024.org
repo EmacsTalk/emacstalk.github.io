@@ -1,6 +1,6 @@
 #+TITLE: 对另一个窗口进行上下翻页
 #+DATE: 2022-08-16T23:14:28+0800
-#+LASTMOD: 2022-08-16T23:27:50+0800
+#+LASTMOD: 2022-08-16T23:32:00+0800
 #+AUTHOR: Jiacai Liu
 #+LANGUAGE: cn
 #+EMAIL: jiacai2050+org@gmail.com
@@ -25,5 +25,6 @@
 本来更好的键位是 =C-[= 和 =C-]= ，但是在很多系统中，Control 键经常用做转义，比如 =C-[= 在 US 键盘中表示 =escape= ，所以最好不要用 Control 来组合一些特殊符号来用。
 
 * 参考
+- [[https://pragmaticemacs.wordpress.com/2016/11/28/scroll-other-window/][Scroll other window | Pragmatic Emacs]]
 - [[https://emacs.stackexchange.com/questions/7832/how-to-bind-c-for-real][key bindings - How to bind C-[ for real? - Emacs Stack Exchange]]
 - [[https://emacsnotes.wordpress.com/2022/08/16/who-stole-c-c-and-possibly-other-keys-from-my-emacs/][Who stole “C-.”, “C-;” and possibly other keys from my Emacs?]]
