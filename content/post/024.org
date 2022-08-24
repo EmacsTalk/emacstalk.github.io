@@ -1,6 +1,6 @@
 #+TITLE: 对另一个窗口进行上下翻页
 #+DATE: 2022-08-16T23:14:28+0800
-#+LASTMOD: 2022-08-16T23:32:00+0800
+#+LASTMOD: 2022-08-17T08:39:52+0800
 #+AUTHOR: Jiacai Liu
 #+LANGUAGE: cn
 #+EMAIL: jiacai2050+org@gmail.com
@@ -22,7 +22,7 @@
 #+END_SRC
 
 
-本来更好的键位是 =C-[= 和 =C-]= ，但是在很多系统中，Control 键经常用做转义，比如 =C-[= 在 US 键盘中表示 =escape= ，所以最好不要用 Control 来组合一些特殊符号来用。
+本来更好的键位是 =C-[= 和 =C-]= ，但是在很多系统中，Control 键经常用作转义，比如 =C-[= 在 US 布局的键盘中表示 =escape= ，所以最好不要用 Control 来组合一些特殊符号来用。
 
 * 参考
 - [[https://pragmaticemacs.wordpress.com/2016/11/28/scroll-other-window/][Scroll other window | Pragmatic Emacs]]
