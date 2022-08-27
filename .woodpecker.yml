@@ -12,7 +12,7 @@ pipeline:
   build:
     image: klakegg/hugo:ext-ubuntu-ci
     commands:
-      - hugo --minify
+      - hugo --minify --baseURL https://emacs.liujiacai.net
     when:
       # branch:
       #   include: [ master ]
@@ -36,7 +36,7 @@ pipeline:
       - git init
       - git remote add origin https://$${CBTOKEN}@codeberg.org/$${CI_REPO}.git
       - git add --all
-      - git commit -m "deploy $${CI_COMMIT_SHA} [CI SKIP]"
+      - git commit -m "[CI SKIP] deploy $${CI_COMMIT_SHA}"
       - git push -f origin $${PAGE_BRANCH}:$${PAGE_BRANCH}
     when:
       event: push
