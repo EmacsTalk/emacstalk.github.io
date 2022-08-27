@@ -1,0 +1,42 @@
+# https://codeberg.org/Codeberg-CI/examples/src/branch/main/Hugo/hugo.yml
+
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      recursive: true
+    when:
+      event: push
+
+pipeline:
+  build:
+    image: klakegg/hugo:ext-ubuntu-ci
+    commands:
+      - hugo --minify
+    when:
+      # branch:
+      #   include: [ master ]
+      #   exclude: pages
+      - event: push
+
+  publish:
+    image: bitnami/git
+    # Must be set in woodpecker configuration
+    secrets: [ cbmail, cbtoken ]
+    environment:
+      - PAGE_BRANCH=pages
+      - HUGO_OUTPUT=./public
+    commands:
+      # Git configuration
+      - git config --global --add safe.directory /woodpecker/src/codeberg.org/$${CI_REPO}/$${HUGO_OUTPUT}
+      - git config --global init.defaultBranch "$${PAGE_BRANCH}"
+      - git config --global user.email "$${CBMAIL}"
+      - git config --global user.name "Woodpecker CI"
+      - cd $${HUGO_OUTPUT}
+      - git init
+      - git remote add origin https://$${CBTOKEN}@codeberg.org/$${CI_REPO}.git
+      - git add --all
+      - git commit -m "deploy $${CI_COMMIT_SHA} [CI SKIP]"
+      - git push -f origin $${PAGE_BRANCH}:$${PAGE_BRANCH}
+    when:
+      event: push

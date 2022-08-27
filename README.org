@@ -1,6 +1,8 @@
 [[https://twitter.com/EmacsTalk][https://img.shields.io/twitter/follow/emacstalk.svg]]
 [[https://t.me/emacstalk][file:static/images/chat-on-telegram.svg]]
 [[https://emacstalk.github.io/podcast/index.xml][https://img.shields.io/badge/rss-F88900.svg?style=flat&logo=rss&logoColor=white]]
+[[https://ci.codeberg.org/jiacai2050/emacstalk/][https://ci.codeberg.org/api/badges/jiacai2050/emacstalk/status.svg]]
+[[https://github.com/EmacsTalk/emacstalk.github.io/actions/workflows/gh-pages.yml][https://github.com/EmacsTalk/emacstalk.github.io/actions/workflows/gh-pages.yml/badge.svg]]
 
 #+begin_src
  ______                       _______    _ _

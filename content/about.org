@@ -1,6 +1,6 @@
 #+TITLE: 关于
 #+DATE: 2021-06-26T13:06:19+0800
-#+LASTMOD: 2022-03-01T22:31:17+0800
+#+LASTMOD: 2022-08-27T16:22:39+0800
 
 #+BEGIN_EXPORT html
 <p align="center">
@@ -22,13 +22,15 @@ EmacsTalk 是一档专注在 Emacs 社区的程序员闲聊节目。节目主旨
   - QQ：[[https://jq.qq.com/?_wv=1027&k=9tAXJ8gG][530146104]]
   - Telegram：https://t.me/emacstalk
 - 写信：[[mailto:emacstalk@liujiacai.net][emacstalk@liujiacai.net]]
-- [[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]（网站备份）
+- 网站备份：
+  - https://emacs.liujiacai.net/
+  - [[https://www.zhihu.com/column/c_1392481558700384256][知乎专栏]]
 - 微信公众号：EmacsTalk
   #+CAPTION: 微信公众号
   [[/images/weixin.jpg]]
 
 * 主播
-- 西瓜 :: 个人博客：https://liujiacai.net/
+- 西瓜 :: 博客：https://liujiacai.net/
 
 * 参与录制
 - https://github.com/EmacsTalk/joinus
