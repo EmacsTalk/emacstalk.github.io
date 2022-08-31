@@ -1,6 +1,6 @@
 #+TITLE: Emacs 启动时间优化实践
 #+DATE: 2021-08-22T12:49:15+08:00
-#+LASTMOD: 2021-09-01T00:16:48+08:00
+#+LASTMOD: 2022-08-31T22:10:12+0800
 #+TAGS[]: tips
 
 最近在知乎上回答了一个问题[[https://www.zhihu.com/question/472788138/answer/2006637253][ Emacs启动需要多久]]，之前一直没怎么花精力去优化启动时间，虽然知道一些理论，但纸上得来终觉浅，于是动手实践。截至发表本文前，优化后的配置运行了三周多，体验和之前无异。
@@ -126,7 +126,7 @@ use-package 提供了 =:defer= 关键字来支持懒加载，取值如下：
 
 projectile 我也是调教了很久才用的比较舒服，但感觉还是太重，于是想看看能否用 Emacs 自带的 project.el 来替代它，通过一番搜索，发现 28 版本的 project.el 通过一些简单配置即可满足上述三点需求，于是果断去掉了 projectile 这个依赖。
 
-目前使用的 project.el 配置可参考：[[https://github.com/jiacai2050/dotfiles/blob/4f32f740a7a793bbf12d1557fd4e0e60baf2381a/.config/emacs/i-basic.el#L85-L166][i-basic.el#L85-L166]]，对于 27 版本的用户，可以在 [[https://elpa.gnu.org/packages/project.html][这里]]下载最新的 project.el。这次去掉的其他华而不实的包主要还有：
+目前使用的配置可参考：[[/elisp/project-config.el][project-config.el]]，对于 27 版本的用户，可以在[[https://elpa.gnu.org/packages/project.html][这里]]下载最新的版本。这次去掉的其他华而不实的包主要还有：
 - evil-numbers
 - company-native-complete
 - comment-dwim-2

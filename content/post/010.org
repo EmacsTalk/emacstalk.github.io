@@ -6,7 +6,7 @@
 在之前的文章中就多次提到过 28 版本的 project.el 是如何好用，但一直没去详细介绍，这篇文章就来填上这个坑。一句话总结，project.el 完全可以替换 [[https://github.com/bbatsov/projectile][projectile]]。
 
 * 下载
-直接编译 28 版本或者在[[https://elpa.gnu.org/packages/project.html][ elpa]] 下载最新版。project 相关命令绑定在 =C-x p= ，笔者使用的相关配置在 [[https://github.com/jiacai2050/dotfiles/blob/143ec31c02b18163e825b784f2a83fb4dbe03f2e/.config/emacs/i-basic.el#L78-L187][i-basic.el#L78-L187]]，共读者参考。
+直接编译 28 版本或者在[[https://elpa.gnu.org/packages/project.html][ elpa]] 下载最新版。project 相关命令绑定在 =C-x p= ，笔者使用的相关配置在 [[/elisp/project-config.el][project-config.el]]，共读者参考。
 * 根目录
 在日常编程中，Emacs 的很多包都依赖一个功能：查找当前项目的根目录，比如 lsp-mode、citre 等。在 project.el 中，默认只支持 [[https://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html][VC]] 中的 Git，即 project-try-vc，但可以自定义找根目录的方式，配置如下：
 

@@ -1,6 +1,6 @@
 #+TITLE: 001. EmacsTalk 节目简介
 #+DATE: 2021-06-26T09:43:18+08:00
-#+LASTMOD: 2022-06-27T10:20:50+0800
+#+LASTMOD: 2022-08-31T22:13:11+0800
 #+ALIASES[]: /podcast/1/
 #+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/56b9-audiofreehighqps/59/A8/CKwRIRwErgs2ADPd0gC_fHiy.m4a
 #+PODCAST_DURATION: 6:59
@@ -14,14 +14,13 @@ EmacsTalk 是干啥的，是主播一时脑袋发热想出来的嘛？等等，�
 - [[https://www.gnu.org/software/mit-scheme/][MIT/GNU Scheme]]
 - 主播最早用的配置
   [[https://www.braveclojure.com/basic-emacs/][emacs-for-clojure]]
-- 主播目前的配置 [[https://github.com/jiacai2050/dotfiles/tree/master/.config/emacs][.config/emacs]]。一些用到的库
+- 主播目前重度依赖的包
   - [[https://github.com/jwiegley/use-package][use-package]], 包安装与配置
   - [[https://github.com/emacs-evil/evil][evil]]，让 Emacs 拥有 VI 按键方式，释放小手指
   - [[https://company-mode.github.io/][company]]，代码补全
-  - [[https://github.com/emacs-lsp/lsp-mode/][lsp-mode]] 代码跳转
+  - [[https://github.com/joaotavora/eglot][eglot]] 小巧的 LSP 客户端
   - [[https://www.djcbsoftware.nl/code/mu/mu4e.html][mu4e]] 邮件
   - [[https://github.com/skeeto/elfeed][elfeed]] RSS 阅读
-
 - 主播博客：[[https://liujiacai.net/]]
   - 网络 ID：写代码的西瓜
 - *立 flag，节目坚持做五年（即 2026-06-27）*

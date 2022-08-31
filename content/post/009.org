@@ -1,6 +1,6 @@
 #+TITLE: Emacs 28 新特性介绍
 #+DATE: 2021-11-02T08:21:22+08:00
-#+LASTMOD: 2022-02-24T09:08:44+0800
+#+LASTMOD: 2022-08-31T22:10:38+0800
 #+DRAFT: false
 #+TAGS[]: tips
 
@@ -67,7 +67,7 @@ https://img.alicdn.com/imgextra/i3/581166664/O1CN01KPbMHi1z6A6HsqYx3_!!581166664
 - 新 mode =repeat-mode= ，比如 =C-x u u= 表示 =C-x u C-x u=
 - 新主题 =modus-vivendi= 与 =modus-operandi=
 - 新 major mode =lisp-data-mode= 适用于 lisp 表达式,但不是可执行的程序，比如 =.dir-locals.el=
-- [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/transient.el][transient.el]]，就是 magit 中菜单导航使用的库，[[https://github.com/jiacai2050/dotfiles/blob/1758c493243087f09f087e382f2021e139bb4c41/.config/emacs/i-basic.el#L346][我的配置]]中大量使用。
+- [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/transient.el][transient.el]]，就是 magit 中菜单导航使用的库
 - [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/hierarchy.el][hierarchy.el]]，用于操作具有层级关系数据结构的库
 - [[https://github.com/emacs-mirror/emacs/blob/emacs-28/lisp/emacs-lisp/shorthands.el][shorthands.el]] 一种 ELisp 命名空间的实现，社区内[[https://emacs-china.org/t/elisp-shorthands-emacs28/18481][相关讨论]]
 * 平台相关变更
