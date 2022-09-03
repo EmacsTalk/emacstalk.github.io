@@ -1,7 +1,8 @@
 #+TITLE: 自动更新文件中的修改时间
 #+DATE: 2021-12-28T19:57:14+08:00
+#+LASTMOD: 2022-09-03T22:42:10+0800
 #+DRAFT: false
-#+TAGS[]: tips org-mode
+#+TAGS[]: tips org-mode edit
 
 写博客多年，除了 [[https://emacstalk.github.io/][EmacsTalk]] 这个网站，我还有个[[https://liujiacai.net/][ Keep Coding]] 的个人博客。写博客的好处这里不想多说，可以参考这篇文章：
 - [[http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/][[BetterExplained]为什么你应该（从现在开始就）写博客 – 刘未鹏 | Mind Hacks]]
@@ -19,22 +20,22 @@ enableGitInfo = true
 [frontmatter]
   lastmod = [':git', 'lastmod', ':fileModTime', ':default']
 #+end_src
+
 frontmatter 里面的 lastmod 字段表示『更新时间』的获取方式，依次为：
 - =:git= 从文件的 git 提交记录获取
 - =lastmod= 从文件中的 =lastmod= 字段获取
 - =:fileModTime'= 从文件修改时间获取
 
-我个人比较倾向 =:git= ，读者可根据自身情况调整配置顺序。
+个人比较倾向 =:git= ，读者可根据自身情况调整配置顺序。
 
 最近逛 [[https://github.com/pprevos/EmacsLife][Managing your life and work with Emacs]] 时发现，Emacs 默认就提供了修改文件更新时间的功能，配置如下：
 
 #+BEGIN_SRC emacs-lisp
-(setq time-stamp-start "#\\+LASTMOD:[ \t]*"
-      time-stamp-end  "$"
-	  time-stamp-format "%Y-%m-%dT%02H:%02M:%02S%5z")
-
-;; 然后在博客根目录的 .dir-locals 中添加如下代码即可
-((org-mode . ((eval . (add-hook 'before-save-hook 'time-stamp nil t)))))
+; 在博客根目录的 .dir-locals 中添加如下代码
+((org-mode . ((time-stamp-start . "#\\+LASTMOD:[ \t]*")
+              (time-stamp-end . "$")
+              (time-stamp-format . "%Y-%m-%dT%02H:%02M:%02S%5z")
+              (eval . (add-hook 'before-save-hook 'time-stamp nil t)))))
 #+END_SRC
 =time-stamp= 函数会根据 time-stamp-start 指定的模式进行匹配，之后换成 =time-stamp-format= 指定的时间格式。比如有个[[https://github.com/EmacsTalk/emacstalk.github.io/blob/master/content/about.org][页面]]配置如下：
 
