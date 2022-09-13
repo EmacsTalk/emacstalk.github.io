@@ -1,6 +1,6 @@
 #+TITLE: 对另一个窗口进行上下翻页
 #+DATE: 2022-08-16T23:14:28+0800
-#+LASTMOD: 2022-08-17T08:39:52+0800
+#+LASTMOD: 2022-09-13T09:23:09+0800
 #+AUTHOR: Jiacai Liu
 #+LANGUAGE: cn
 #+EMAIL: jiacai2050+org@gmail.com
@@ -27,4 +27,6 @@
 * 参考
 - [[https://pragmaticemacs.wordpress.com/2016/11/28/scroll-other-window/][Scroll other window | Pragmatic Emacs]]
 - [[https://emacs.stackexchange.com/questions/7832/how-to-bind-c-for-real][key bindings - How to bind C-[ for real? - Emacs Stack Exchange]]
+- [[https://emacs.stackexchange.com/questions/220/how-to-bind-c-i-as-different-from-tab/20290#20290][key bindings - How to bind C-i as different from TAB? - Emacs Stack Exchange]]
+- [[https://unix.stackexchange.com/questions/116629/how-do-keyboard-input-and-text-output-work/116630#116630][x11 - How do keyboard input and text output work? - Unix & Linux Stack Exchange]]
 - [[https://emacsnotes.wordpress.com/2022/08/16/who-stole-c-c-and-possibly-other-keys-from-my-emacs/][Who stole “C-.”, “C-;” and possibly other keys from my Emacs?]]
