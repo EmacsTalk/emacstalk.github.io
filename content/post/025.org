@@ -1,14 +1,14 @@
 #+TITLE: 解决 evil 模式下，TAB 在 org-mode 失效的问题
 #+DATE: 2022-09-23T18:34:07+0800
-#+LASTMOD: 2022-09-23T19:13:41+0800
+#+LASTMOD: 2022-09-23T19:35:08+0800
 #+AUTHOR: Jiacai Liu
 #+LANGUAGE: cn
 #+EMAIL: jiacai2050+org@gmail.com
 #+OPTIONS: toc:nil num:nil
 #+STARTUP: content
-#+TAGS[]: org evil
+#+TAGS[]: org-mode evil
 
-在 Org 中，TAB 被绑定在了 =org-cycle= ，可以非常方便的对某个标题下的内容折叠/展开，当时在 evil 的 normal 模式下，TAB 被绑定到了 =evil-jump-forward= ，这是和 [[https://zhuanlan.zhihu.com/p/270989474][Vim 对应的]]
+在 Org 中，TAB 被绑定在了 =org-cycle= ，可以非常方便的对某个标题下的内容折叠/展开，但是在 evil 的 normal 模式下，TAB 则被覆盖成了 =evil-jump-forward= ，这其实是和 [[https://zhuanlan.zhihu.com/p/270989474][Vim 对应的]]
 - =Ctrl-i= jump forward to the next (newer) location.
 - =Ctrl-o= to jump back to the previous (older) location.
 
