@@ -1,6 +1,6 @@
 #+TITLE: compile 时只保存项目内的文件
 #+DATE: 2022-10-30T21:47:34+0800
-#+LASTMOD: 2022-10-30T22:09:52+0800
+#+LASTMOD: 2022-10-30T23:02:43+0800
 #+AUTHOR: Jiacai Liu
 #+LANGUAGE: cn
 #+EMAIL: blog@liujiacai.net
@@ -20,17 +20,32 @@ Emacs 中有一个非常好用的 compile 模块，可以非常方便的编译�
 
 幸好，compile 模块提供了一个选项用来控制提示那些文件： =compilation-save-buffers-predicate= 。
 
-我定义了如下函数实现上述目的：
+实现方式如下：
 #+BEGIN_SRC emacs-lisp
+(defvar my/compile-project-root nil)
+(defvar my/compile-file nil)
+(defun my/update-compile-dir (cmd &optional comint)
+  (if-let* ((pr (project-current))
+            (root (project-root pr)))
+	  (setq my/compile-project-root (file-truename root))
+	(progn
+	  (setq my/compile-project-root nil)
+	  (setq my/compile-file (file-truename (buffer-file-name))))))
+
+(advice-add 'compile :before 'my/update-compile-dir)
+
 (defun my/file-in-project? ()
   "检查当前 buffer 是否属于当前项目，如果当前目录不属于任何项目，直接返回 `nil'"
-  (when-let* ((pr (project-current))
-              (root (project-root pr)))
-    (string-prefix-p root (file-truename (buffer-file-name)))))
-
-
-(setq =compilation-save-buffers-predicate 'my/file-in-project?)
+  (if my/compile-project-root
+	  (string-prefix-p my/compile-project-root
+					   (file-truename (buffer-file-name)))
+	(string-equal my/compile-file (file-truename (buffer-file-name)))))
+(setq compilation-save-buffers-predicate 'my/file-in-project?)
 #+END_SRC
+
+思路就是在执行 compile 前记录下当前文件所属的项目，之后就判断当前未修改的文件是否在之内就好了。
+
+需要注意一点，当 compile 的当前目录不属于任何项目时，这时候只会提醒当前文件是否需要保存。
 
 * 参考
 - [[https://superuser.com/questions/799859/suppress-prompt-for-save-file-in-emacs-with-recompile][Suppress prompt for save file in emacs with recompile - Super User]]
