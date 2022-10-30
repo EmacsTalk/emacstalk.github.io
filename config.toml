@@ -63,6 +63,11 @@ enableGitInfo = true
     copyright = "© 2021 [EmacsTalk](https://github.com/EmacsTalk/emacstalk.github.io) Licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)"
     poweredby = true
     # footer = "footer"
+    [params.giscus]           # https://giscus.app/
+        repo = "EmacsTalk/emacstalk.github.io"
+        repoId = "MDEwOlJlcG9zaXRvcnkzODAzOTkwNjg="
+        category = "Comments"
+        categoryId = "DIC_kwDOFqxt3M4CSRY-"
     [params.podcast]
         local = false
         image = "logo3000.png"
