@@ -1,6 +1,6 @@
 #+TITLE: Tramp 使用指南
 #+DATE: 2022-03-27T10:33:10+0800
-#+LASTMOD: 2022-06-27T12:59:45+0800
+#+LASTMOD: 2022-11-15T23:12:28+0800
 #+TAGS[]: tramp project
 
 [[https://www.gnu.org/software/tramp/][Tramp]] 是 Emacs 中用来编辑远端文件的模块，全称为『Transparent Remote (file) Access, Multiple Protocol』，类似于 VSCode 的 [[https://code.visualstudio.com/docs/remote/remote-overview][Remote Development]]，只不过比它年长 20 岁而已😄。
@@ -124,6 +124,12 @@ Debugger entered--Lisp error: (file-error "Couldn't find command to check if fil
   command-line()
   normal-top-level()
 #+end_src
+** file-truename
+=file-truename= 作用在 tramp 打开的 buffer 上时，也会进行远程连接。笔者之前配置时，曾出现过下面这个错误信息：
+#+begin_src bash
+Tramp: Opening connection nil for ${HOSTNAME} using ssh...failed
+#+end_src
+主要原因就是在配置中使用了 =file-truename= 。
 * Docker/Vagrant
 SSH 是 tramp 中常用的协议，除此之外，tramp 还支持非常多的协议，比如：ftp、smb、adb（连接 Android 手机）等，具体可参考文档：[[https://www.gnu.org/software/tramp/#Inline-methods][TRAMP Inline methods]]。社区内也有一些插件支持 [[https://github.com/emacs-pe/docker-tramp.el][Docker]]，[[https://github.com/dougm/vagrant-tramp][Vagrant]]。use-package 配置如下：
 #+BEGIN_SRC emacs-lisp
