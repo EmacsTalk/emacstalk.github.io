@@ -1,7 +1,7 @@
 #+TITLE: 004. 与 stardiviner 聊 Emacs 与他与众不同的人生经历
 #+OPTIONS: broken-links:t
 #+DATE: 2021-07-16T22:03:01+08:00
-#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/3651-audiofreehighqps/92/6A/CKwRIMAEyAqhAkMmyQDJOMqH.m4a
+#+PODCAST_MP3: https://aod.cos.tx.xmcdn.com/storages/0290-audiofreehighqps/23/BD/CKwRIaIEyAkcABAAAADJOCEv.mp3
 #+PODCAST_DURATION: 01:18:08
 #+PODCAST_LENGTH: 37955273
 #+PODCAST_IMAGE_SRC: guests/stardiviner.jpg
