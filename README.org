@@ -1,4 +1,2 @@
-* EmacsTalk 已经迁移到 [[https://codeberg.org/emacstalk/pages][Codeberg]]
-- 网站： https://emacstalk.codeberg.page/
-- 为什么迁移
-  - https://liujiacai.net/blog/2022/08/27/github-alternatives/
+
+- 网站： https://emacs.liujiacai.net
